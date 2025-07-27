@@ -31,7 +31,7 @@ const Navbar = ({ scrollRefs }) => {
   };
 
   return (
-    <nav className="bg-white shadow p-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+<nav className="sticky top-0 z-50 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg p-4 flex flex-col sm:flex-row items-center justify-between gap-2 rounded-xl">
       <div className="flex items-center gap-6 w-full sm:w-auto justify-between">
         <Link to="/" className="text-2xl font-bold">BuildOnCoffee</Link>
       </div>
