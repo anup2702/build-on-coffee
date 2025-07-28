@@ -13,20 +13,17 @@ import Contribute from "./Component/Contribute";
 import CoursePage from "./Component/CoursePage";
 import FreeCertificateCourses from "./Component/FreeCertificateCourses";
 
-import HeroSection from "./Component/HeroSection";
-import Navbar from "./Component/Navbar";
-import ToolCard from "./Component/ToolCard";
-import WhatWeDoDifferently from "./Component/WhatWeDoDifferently";
-import BackToTop from "./Component/BackToTop";
-import DotCursor from "./Component/DotCursor";
-=======
 import LearnTools from "./Component/Tools/LearnTools";
 import CoursesList from "./Component/CoursesList";
 import ToolsList from "./Component/ToolsList";
+import courseimg from "./assets/course.svg";
+import toolsimg from "./assets/tools.svg";
+import snapimg from "./assets/snapfolio.svg";
 
 
 import { tools } from "../data/tools";
 import { courses } from "../data/courses";
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -41,7 +38,7 @@ const Home = () => {
             className="border rounded-xl p-8 shadow-lg bg-white flex flex-col items-center cursor-pointer hover:shadow-2xl hover:bg-gray-100 transition"
             onClick={() => navigate("/courses")}
           >
-            <img src="/assets/courses.png" alt="Courses" className="w-24 h-24 mb-4" />
+            <img src={courseimg} alt="Courses" className="w-24 h-24 mb-4" />
             <h3 className="text-2xl font-bold mb-2">Courses</h3>
             <p className="text-gray-600">Curated CS courses with video tutorials, docs, and references.</p>
           </div>
@@ -49,7 +46,7 @@ const Home = () => {
             className="border rounded-xl p-8 shadow-lg bg-white flex flex-col items-center cursor-pointer hover:shadow-2xl hover:bg-gray-100 transition"
             onClick={() => navigate("/tools")}
           >
-            <img src="/assets/tools.png" alt="Tools" className="w-24 h-24 mb-4" />
+            <img src={toolsimg} alt="Tools" className="w-24 h-24 mb-4" />
             <h3 className="text-2xl font-bold mb-2">Tools</h3>
             <p className="text-gray-600">Discover and use the best developer tools for productivity.</p>
           </div>
@@ -59,7 +56,7 @@ const Home = () => {
             rel="noopener noreferrer"
             className="border rounded-xl p-8 shadow-lg bg-white flex flex-col items-center hover:shadow-2xl hover:bg-gray-100 transition cursor-pointer"
           >
-            <img src="/assets/snapfolio-preview.png" alt="SnapFolio" className="w-24 h-24 mb-4" />
+            <img src={snapimg} alt="SnapFolio" className="w-24 h-24 mb-4" />
             <h3 className="text-2xl font-bold mb-2">SnapFolio</h3>
             <p className="text-gray-600">Generate your developer portfolio instantly. Try SnapFolio now!</p>
           </a>
