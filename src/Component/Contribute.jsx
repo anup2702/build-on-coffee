@@ -1,78 +1,48 @@
-import React from 'react';
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+import { courses } from "../../data/courses";
 
-const Contribute = () => {
+const CourseDetail = () => {
+  const { id } = useParams();
+  const course = courses[parseInt(id, 10)];
+  if (!course) return <div className="text-center py-16">Course not found.</div>;
   return (
-    <div className="max-w-4xl mx-auto px-6 py-10">
-      <h1 className="text-4xl font-bold mb-6 text-center text-coffee-700">🤝 Contribute to BuildOnCoffee</h1>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-coffee-600 mb-2">📌 How to Get Started</h2>
-        <ol className="list-decimal list-inside space-y-2 text-gray-800">
-          <li>Fork the repo → <code>https://github.com/anup2702/build-on-coffee</code></li>
-          <li>Clone your fork: <code>git clone https://github.com/your-username/build-on-coffee</code></li>
-          <li>Create a new branch: <code>git checkout -b feature/your-feature-name</code></li>
-          <li>Make your changes, test with <code>npm run dev</code></li>
-          <li>Commit and push: <code>git commit -m "your message"</code></li>
-          <li>Open a Pull Request with a clear title and description</li>
-        </ol>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-coffee-600 mb-2">🧑‍💻 What You Can Contribute</h2>
-        <ul className="list-disc list-inside space-y-1 text-gray-800">
-          <li>New features or UI improvements</li>
-          <li>Fix bugs or issues from GitHub</li>
-          <li>Add useful content like tools, courses, project ideas</li>
-          <li>Improve the documentation</li>
-        </ul>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-coffee-600 mb-2">🧭 Code Guidelines</h2>
-        <ul className="list-disc list-inside space-y-1 text-gray-800">
-          <li>Use semantic HTML, readable and modular React components</li>
-          <li>Follow Tailwind or existing style conventions</li>
-          <li>Run Prettier and ESLint before making a PR</li>
-          <li>Write meaningful commit messages</li>
-        </ul>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-coffee-600 mb-2">🎖️ Issue Levels</h2>
-        <p className="text-gray-800">
-          Issues are marked by difficulty to help you choose:
-        </p>
-        <ul className="list-disc list-inside space-y-1 text-gray-800 mt-2">
-          <li><strong>Level 0:</strong> Typo fix, small doc update</li>
-          <li><strong>Level 1:</strong> Simple UI task (e.g. card layout)</li>
-          <li><strong>Level 2:</strong> Intermediate features like filters</li>
-          <li><strong>Level 3:</strong> API integration, new page/component</li>
-          <li><strong>Level 4:</strong> Full-stack or major feature overhaul</li>
-        </ul>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-coffee-600 mb-2">📣 Join the Community</h2>
-        <p className="text-gray-800">
-          Ask questions or suggest ideas in GitHub Discussions or our community Discord.
-        </p>
-        <p className="text-gray-800 mt-2">
-          Don't forget to star the repo ⭐ if you like the project!
-        </p>
-      </section>
-
-      <div className="text-center mt-12">
-        <a
-          href="https://github.com/anup2702/build-on-coffee"
-          className="inline-block bg-coffee-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-coffee-700 transition"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit GitHub Repo
-        </a>
+    <section className="max-w-3xl mx-auto py-16 px-4 animate-fade-in">
+      <Link to="/" className="text-blue-600 hover:underline">← Back to Learn</Link>
+      <div className="flex flex-col md:flex-row gap-8 mt-6">
+        <img src={course.image} alt={course.name} className="w-full md:w-1/3 rounded shadow" />
+        <div className="flex-1">
+          <h1 className="text-3xl font-extrabold mb-2">{course.name}</h1>
+          <p className="text-lg text-gray-700 mb-4">{course.details || course.description}</p>
+          <a href={course.link} target="_blank" rel="noopener noreferrer" className="inline-block mb-4 text-white bg-black px-4 py-2 rounded hover:bg-gray-800 transition">Go to Course</a>
+          <div className="mb-4">
+            <h2 className="text-xl font-bold mb-2">YouTube Tutorial</h2>
+            {course.youtube ? (
+              <div className="aspect-w-16 aspect-h-9">
+                <iframe
+                  src={course.youtube}
+                  title="YouTube tutorial"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-64 rounded shadow"
+                />
+              </div>
+            ) : (
+              <p className="text-gray-500">No video available.</p>
+            )}
+          </div>
+          <div>
+            <h2 className="text-xl font-bold mb-2">References</h2>
+            <ul className="list-disc list-inside text-gray-700">
+              {course.references && course.references.map((ref, i) => (
+                <li key={i}><a href={ref.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-black">{ref.label}</a></li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Contribute;
+export default CourseDetail; 
