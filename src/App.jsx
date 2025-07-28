@@ -20,6 +20,7 @@ import courseimg from "./assets/course.svg";
 import toolsimg from "./assets/tools.svg";
 import snapimg from "./assets/snapfolio.svg";
 
+
 import { tools } from "../data/tools";
 import { courses } from "../data/courses";
 
@@ -79,6 +80,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
+      <DotCursor />
       <Navbar
         scrollRefs={{
           differently: differentlyRef,
