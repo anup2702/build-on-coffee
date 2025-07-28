@@ -1,4 +1,4 @@
-import { freeCertificateCourses } from "../../data/freeCertificateCourses"
+-import { freeCertificateCourses } from "../../data/freeCertificateCourses"
 const FreeCertificateCourses = () => {
     return (
         <>
@@ -20,7 +20,7 @@ const FreeCertificateCourses = () => {
                             />
                             <h3 className="text-xl font-semibold mb-2">{course.name}</h3>
                             <p className="text-gray-700 mb-2">{course.description}</p>
-                            <span className="text-green-600 font-medium text-sm mb-2">
+                            <span className="text-green-600 hover-text-green-800 font-medium text-sm mb-2">
                                 {course.certificate}
                             </span>
                             <a

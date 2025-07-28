@@ -1,15 +1,15 @@
 const ToolCard = ({ name, description, link, image, youtube, references, docs, onClick, selected }) => (
-  <div
-    className={`border rounded-xl p-4 shadow-lg transition-all bg-white flex flex-col items-center group cursor-pointer ${selected ? 'ring-2 ring-black' : 'hover:shadow-2xl hover:bg-gray-100'}`}
+  <div>
+    <div className={`border rounded-xl p-4 shadow-lg transition-all bg-white flex flex-col items-start group cursor-pointer ${selected ? 'ring-2 ring-black' : 'hover:shadow-2xl hover:bg-gray-100'}`}>
     onClick={onClick}
   >
+    <div className="flex items-center gap-4 w-full mb-3">
     {image && (
-      <div className="overflow-hidden rounded w-full mb-3 flex justify-center">
         <img src={image} alt={name} className="rounded max-h-40 object-contain" />
-      </div>
     )}
-    <h3 className="text-xl font-bold mb-1 group-hover:text-black transition-colors text-center">{name}</h3>
-    <p className="text-gray-600 mt-1 group-hover:text-gray-800 transition-colors text-center mb-2">{description}</p>
+    <h3 className="text-xl font-bold mb-1 group-hover:text-black transition-colors text-left">{name}</h3>
+    </div>
+    <p className="text-gray-600 mt-1 group-hover:text-gray-800 transition-colors text-left mb-2">{description}</p>
     {youtube && (
       <div className="w-full mb-2">
         <div className="aspect-w-16 aspect-h-9">
@@ -31,7 +31,7 @@ const ToolCard = ({ name, description, link, image, youtube, references, docs, o
     {references && references.length > 0 && (
       <div className="w-full">
         <h4 className="font-semibold text-sm mb-1">References:</h4>
-        <div className="flex flex-wrap gap-3 items-center">
+        <div className="flex flex-col gap-3 items-start">
           {references.map((ref, i) => (
             ref.image ? (
               <a

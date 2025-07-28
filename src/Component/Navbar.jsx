@@ -17,7 +17,7 @@ const Navbar = ({ scrollRefs }) => {
 
   // Define top links (e.g., "Join our community" button)
   const topLinks = [
-    { key: "community", label: "Join our community" },
+    { key: "community", label: "Join our community" url: "https://discord.com/invite/yourinvite" },
   ];
 
   // Handler for smooth scrolling to sections on the homepage
@@ -82,11 +82,11 @@ const Navbar = ({ scrollRefs }) => {
           {topLinks.map((link) => (
             <a
               key={link.key}
-              href={`#${link.key}`}
-              onClick={handleScroll(link.key)}
-              // Styling for the "Join" button: black background, white text, shadow, hover effect
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`px-4 py-2 rounded transition font-semibold shadow-md cursor-pointer
-                ${link.key === 'community' ? 'bg-black text-white hover:bg-gray-800' : 'text-gray-600 hover:bg-gray-100 hover:text-black'}
+                ${link.key === 'community' ? 'bg-black text-white hover:bg-gray-800' : 'text-gray-200 hover:bg-gray-100 hover:text-black'}
               `}
             >
               {link.label}
