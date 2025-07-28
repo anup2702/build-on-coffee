@@ -41,7 +41,7 @@ const socialLinks = [
 
 const Footer = () => (
   <footer className="bg-white text-center py-6 border-t mt-8 text-gray-500 text-sm flex flex-col items-center gap-3">
-    <span className="mt-2">This website is open source. <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">View on GitHub</a></span>
+    <span className="mt-2">This website is open source. <a href="https://github.com/anup2702/build-on-coffee" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">View on GitHub</a></span>
     <span className="mt-2">© {new Date().getFullYear()} BuildOnCoffee. All rights reserved.</span>
   </footer>
 );
