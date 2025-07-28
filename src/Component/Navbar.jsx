@@ -12,8 +12,6 @@ const Navbar = ({ scrollRefs }) => {
     { to: "/free-certificates", label: "Free Certificate Courses" },
   ];
   const topLinks = [
-    { key: "learn", label: "Learn" },
-    { key: "tools", label: "Tools" },
     { key: "community", label: "Join our community" },
   ];
 
