@@ -12,6 +12,7 @@ import Contact from "./Component/Contact";
 import Contribute from "./Component/Contribute";
 import CoursePage from "./Component/CoursePage";
 import FreeCertificateCourses from "./Component/FreeCertificateCourses";
+
 import LearnTools from "./Component/Tools/LearnTools";
 import CoursesList from "./Component/CoursesList";
 import ToolsList from "./Component/ToolsList";
@@ -21,7 +22,7 @@ import snapimg from "./assets/snapfolio.svg";
 
 import { tools } from "../data/tools";
 import { courses } from "../data/courses";
-import { LucideSoapDispenserDroplet } from "lucide-react";
+
 
 const Home = () => {
   const navigate = useNavigate();
