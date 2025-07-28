@@ -1,20 +1,18 @@
 // src/App.jsx
-import Navbar from "./Component/Navbar";
-import HeroSection from "./Component/HeroSection";
-import ToolCard from "./Component/ToolCard";
-import Footer, { CommunitySection } from "./Component/Footer";
-import { tools } from "../data/tools";
+import { useRef } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { courses } from "../data/courses";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { tools } from "../data/tools";
 import About from "./Component/About";
 import Contact from "./Component/Contact";
-import WhatWeDoDifferently from "./Component/WhatWeDoDifferently";
-import { useRef } from "react";
 import Contribute from "./Component/Contribute";
-import CourseDetail from "./Component/Contribute";
-import React, { useState } from "react";
-import CourseDetailPanel from "./Component/CourseDetailPanel";
 import CoursePage from "./Component/CoursePage";
+import Footer, { CommunitySection } from "./Component/Footer";
+import FreeCertificateCourses from "./Component/FreeCertificateCourses";
+import HeroSection from "./Component/HeroSection";
+import Navbar from "./Component/Navbar";
+import ToolCard from "./Component/ToolCard";
+import WhatWeDoDifferently from "./Component/WhatWeDoDifferently";
 
 const Learn = () => (
   <section className="max-w-2xl mx-auto py-16 px-4 text-center animate-fade-in">
@@ -108,6 +106,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/contribute" element={<Contribute />} />
           <Route path="/courses/:slug" element={<CoursePage />} />
+          <Route path="/free-certificates" element={<FreeCertificateCourses />} />
         </Routes>
       </main>
       <Footer />

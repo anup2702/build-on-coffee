@@ -9,6 +9,7 @@ const Navbar = ({ scrollRefs }) => {
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
     { to: "/contribute", label: "Contribute" },
+    { to: "/free-certificates", label: "Free Certificate Courses" },
   ];
   const topLinks = [
     { key: "learn", label: "Learn" },
@@ -62,4 +63,4 @@ const Navbar = ({ scrollRefs }) => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
