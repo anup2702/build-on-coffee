@@ -17,7 +17,7 @@ const Navbar = ({ scrollRefs }) => {
 
   // Define top links (e.g., "Join our community" button)
   const topLinks = [
-    { key: "community", label: "Join our community" url: "https://discord.com/invite/yourinvite" },
+    { key: "community", label: "Join our community" , url: "https://discord.com/invite/yourinvite" },
   ];
 
   // Handler for smooth scrolling to sections on the homepage

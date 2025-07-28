@@ -1,4 +1,4 @@
--import { freeCertificateCourses } from "../../data/freeCertificateCourses"
+import { freeCertificateCourses } from "../../data/freeCertificateCourses"
 const FreeCertificateCourses = () => {
     return (
         <>
