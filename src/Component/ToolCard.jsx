@@ -1,6 +1,20 @@
-const ToolCard = ({ name, description, link, image, youtube, references, docs, onClick, selected }) => (
+import React from 'react';
+
+const ToolCard = ({
+  name,
+  description,
+  link,
+  image,
+  youtube,
+  references = [],
+  docs,
+  onClick,
+  selected,
+}) => (
   <div
-    className={`border rounded-xl p-4 shadow-lg transition-all bg-white flex flex-col items-start group cursor-pointer ${selected ? 'ring-2 ring-black' : 'hover:shadow-2xl hover:bg-gray-100'}`}
+    className={`border rounded-xl p-4 shadow-lg transition-all bg-white flex flex-col items-start group cursor-pointer ${
+      selected ? 'ring-2 ring-black' : 'hover:shadow-2xl hover:bg-gray-100'
+    }`}
     onClick={onClick}
   >
     <div className="flex items-center gap-4 w-full mb-3">
@@ -14,13 +28,13 @@ const ToolCard = ({ name, description, link, image, youtube, references, docs, o
 
     {youtube && (
       <div className="w-full mb-2">
-        <div className="aspect-w-16 aspect-h-9">
+        <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
           <iframe
             src={youtube}
             title="YouTube tutorial"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className="w-full h-40 rounded shadow"
+            className="absolute top-0 left-0 w-full h-full rounded shadow"
           />
         </div>
       </div>
@@ -34,11 +48,11 @@ const ToolCard = ({ name, description, link, image, youtube, references, docs, o
       </div>
     )}
 
-    {references && references.length > 0 && (
+    {references.length > 0 && (
       <div className="w-full">
         <h4 className="font-semibold text-sm mb-1">References:</h4>
         <div className="flex flex-col gap-3 items-start">
-          {references.map((ref, i) => (
+          {references.map((ref, i) =>
             ref.image ? (
               <a
                 key={i}
@@ -48,7 +62,11 @@ const ToolCard = ({ name, description, link, image, youtube, references, docs, o
                 className="block"
                 title={ref.label || ''}
               >
-                <img src={ref.image} alt={ref.label || 'Reference'} className="w-16 h-16 object-contain rounded shadow hover:scale-105 transition-transform" />
+                <img
+                  src={ref.image}
+                  alt={ref.label || 'Reference'}
+                  className="w-16 h-16 object-contain rounded shadow hover:scale-105 transition-transform"
+                />
                 {ref.label && <div className="text-xs text-center mt-1">{ref.label}</div>}
               </a>
             ) : (
@@ -58,7 +76,7 @@ const ToolCard = ({ name, description, link, image, youtube, references, docs, o
                 </a>
               </div>
             )
-          ))}
+          )}
         </div>
       </div>
     )}
