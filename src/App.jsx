@@ -14,6 +14,7 @@ import Navbar from "./Component/Navbar";
 import ToolCard from "./Component/ToolCard";
 import WhatWeDoDifferently from "./Component/WhatWeDoDifferently";
 import BackToTop from "./Component/BackToTop";
+import DotCursor from "./Component/DotCursor";
 
 
 const Learn = () => (
@@ -83,6 +84,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
+      <DotCursor />
       <Navbar
         scrollRefs={{
           differently: differentlyRef,
