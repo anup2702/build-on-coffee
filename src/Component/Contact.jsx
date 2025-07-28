@@ -1,5 +1,5 @@
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { useRef, useState } from "react";
 
 const Contact = () => {
   const form = useRef();
@@ -7,9 +7,9 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   // Replace these with your actual EmailJS values
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_USER_ID;
+  const SERVICE_ID = "your_service_id";
+  const TEMPLATE_ID = "your_template_id";
+  const PUBLIC_KEY = "your_public_key";
 
   const sendEmail = (e) => {
     e.preventDefault();
