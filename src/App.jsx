@@ -13,6 +13,8 @@ import HeroSection from "./Component/HeroSection";
 import Navbar from "./Component/Navbar";
 import ToolCard from "./Component/ToolCard";
 import WhatWeDoDifferently from "./Component/WhatWeDoDifferently";
+import BackToTop from "./Component/BackToTop";
+
 
 const Learn = () => (
   <section className="max-w-2xl mx-auto py-16 px-4 text-center animate-fade-in">
@@ -109,6 +111,7 @@ const App = () => {
           <Route path="/free-certificates" element={<FreeCertificateCourses />} />
         </Routes>
       </main>
+      <BackToTop />
       <Footer />
     </div>
   );
