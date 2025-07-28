@@ -31,7 +31,7 @@ We welcome contributions! To get started:
 - Fork this repository
 - Create a new branch for your feature or fix
 - Submit a pull request with a clear description
-- See the [Contribute page](./src/Component/Contribute.jsx) or [CONTRIBUTING.md](https://github.com/your-repo/build-on-coffee/CONTRIBUTING.md) for more details
+- See the [Contribute page](./src/Component/Contribute.jsx) or [CONTRIBUTING.md](https://github.com/build-on-coffee/CONTRIBUTING.md) for more details
 
 ## License
 
