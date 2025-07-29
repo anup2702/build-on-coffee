@@ -6,13 +6,9 @@ const Contact = () => {
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  // const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  // const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_USER_ID;
-
-  const SERVICE_ID = "service_rd76a37";
-const TEMPLATE_ID = "template_li87v04";
-const PUBLIC_KEY = "FLVZNcIiKdNFgsuWE";
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_USER_ID;
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -60,14 +56,8 @@ const PUBLIC_KEY = "FLVZNcIiKdNFgsuWE";
           className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
           required
         />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
-          rows={4}
-          required
-        />
-          <select
+
+         <select
           name="query_type"
           className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
           required
@@ -78,6 +68,14 @@ const PUBLIC_KEY = "FLVZNcIiKdNFgsuWE";
           <option value="General Inquiry">General Inquiry</option>
           <option value="Contribution">Contribution</option>
         </select>
+        
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
+          rows={4}
+          required
+        />
 
         <button
           type="submit"
