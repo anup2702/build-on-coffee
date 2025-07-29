@@ -6,9 +6,13 @@ const Contact = () => {
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_USER_ID;
+  // const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  // const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  // const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_USER_ID;
+
+  const SERVICE_ID = "service_rd76a37";
+const TEMPLATE_ID = "template_li87v04";
+const PUBLIC_KEY = "FLVZNcIiKdNFgsuWE";
 
   const sendEmail = (e) => {
     e.preventDefault();
