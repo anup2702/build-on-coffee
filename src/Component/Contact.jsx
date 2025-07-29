@@ -57,17 +57,6 @@ const Contact = () => {
           required
         />
 
-         <select
-          name="query_type"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
-          required
-        >
-          <option value="">Select your query type</option>
-          <option value="Report a Bug">Report a Bug</option>
-          <option value="Suggestion">Suggestion</option>
-          <option value="General Inquiry">General Inquiry</option>
-          <option value="Contribution">Contribution</option>
-        </select>
         
         <textarea
           name="message"
