@@ -41,10 +41,9 @@ const Contact = () => {
         onSubmit={sendEmail}
         className="bg-white shadow rounded-lg p-8 flex flex-col gap-4"
       >
-    
         <input
           type="text"
-          name="user_name"
+          name="name"
           placeholder="Your Name"
           className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
           required
@@ -56,8 +55,13 @@ const Contact = () => {
           className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
           required
         />
-
-        
+        <input
+          type="text"
+          name="title"
+          placeholder="Subject / Title"
+          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
+          required
+        />
         <textarea
           name="message"
           placeholder="Your Message"
@@ -65,7 +69,6 @@ const Contact = () => {
           rows={4}
           required
         />
-
         <button
           type="submit"
           className={`bg-black text-white py-2 rounded hover:bg-gray-800 transition ${loading ? "opacity-60 cursor-not-allowed" : ""}`}
