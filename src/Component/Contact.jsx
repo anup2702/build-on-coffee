@@ -6,9 +6,9 @@ const Contact = () => {
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const SERVICE_ID = process.env.VITE_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = process.env.VITE_EMAILJS_TEMPLATE_ID;
-  const PUBLIC_KEY = process.env.VITE_EMAILJS_USER_ID;
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_USER_ID;
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -41,18 +41,7 @@ const Contact = () => {
         onSubmit={sendEmail}
         className="bg-white shadow rounded-lg p-8 flex flex-col gap-4"
       >
-        <select
-          name="query_type"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
-          required
-        >
-          <option value="">Select your query type</option>
-          <option value="Report a Bug">Report a Bug</option>
-          <option value="Suggestion">Suggestion</option>
-          <option value="General Inquiry">General Inquiry</option>
-          <option value="Contribution">Contribution</option>
-        </select>
-
+    
         <input
           type="text"
           name="user_name"
@@ -74,6 +63,18 @@ const Contact = () => {
           rows={4}
           required
         />
+          <select
+          name="query_type"
+          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
+          required
+        >
+          <option value="">Select your query type</option>
+          <option value="Report a Bug">Report a Bug</option>
+          <option value="Suggestion">Suggestion</option>
+          <option value="General Inquiry">General Inquiry</option>
+          <option value="Contribution">Contribution</option>
+        </select>
+
         <button
           type="submit"
           className={`bg-black text-white py-2 rounded hover:bg-gray-800 transition ${loading ? "opacity-60 cursor-not-allowed" : ""}`}
