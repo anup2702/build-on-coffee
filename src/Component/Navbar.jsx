@@ -1,125 +1,144 @@
-import { useState } from "react"; // Import useState for managing mobile menu state
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState , useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  Home,
+  Info,
+  Mail,
+  UserPlus,
+  Award,
+  MoonStar,
+  Users,
+  Coffee,
+} from "lucide-react";
 
-const Navbar = ({ scrollRefs }) => {
+
+const Navbar = ({ }) => {
   const location = useLocation();
-  const navigate = useNavigate();
-  const [menuOpen, setMenuOpen] = useState(false); // State to control the mobile menu visibility
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleDarkMode = () => {
+  document.body.classList.toggle("dark-theme");
+};
 
-  // Define navigation links
+
+
+
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
-    { to: "/contribute", label: "Contribute" },
-    { to: "/free-certificates", label: "Free Certificate Courses" },
+    { to: "/", label: "Home", icon: <Home className="w-4 h-4" /> },
+    { to: "/about", label: "About", icon: <Info className="w-4 h-4" /> },
+    { to: "/contact", label: "Contact", icon: <Mail className="w-4 h-4" /> },
+    { to: "/contribute", label: "Contribute", icon: <UserPlus className="w-4 h-4" /> },
+    { to: "/free-certificates", label: "Certificates", icon: <Award className="w-4 h-4" /> },
   ];
-
-  // Define top links (e.g., "Join our community" button)
-  const topLinks = [
-    { key: "community", label: "Join our community" , url: "https://discord.com/invite/yourinvite" },
-  ];
-
-  // Handler for smooth scrolling to sections on the homepage
-  const handleScroll = (key) => (e) => {
-    // If on the homepage and the scrollRef exists, prevent default link behavior and scroll
-    if (location.pathname === "/" && scrollRefs && scrollRefs[key] && scrollRefs[key].current) {
-      e.preventDefault();
-      scrollRefs[key].current.scrollIntoView({ behavior: "smooth" });
-    } else {
-      // If not on the homepage, navigate to home and then scroll
-      navigate("/", { replace: false });
-      setTimeout(() => {
-        if (scrollRefs && scrollRefs[key] && scrollRefs[key].current) {
-          scrollRefs[key].current.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100); // Small delay to allow navigation to complete
-    }
-    setMenuOpen(false); // Close mobile menu after clicking a link
-  };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg p-4 rounded-xl">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div className="flex items-center justify-between w-full sm:w-auto">
-          {/* Logo and Title */}
-          <div className="flex items-center gap-2"> {/* Added gap for spacing between logo and text */}
-            <Link to="/">
+    <header className="w-full bg-white border-b navbar border-gray-200 shadow-sm sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+        {/* Logo + Text */}
+        <Link to="/" className="flex items-center gap-3">
+        <div className="p-2 rounded-xl bg-blue-300/20 backdrop-blur-lg shadow-md border border-blue-200/30 w-fit">
+  <Coffee className="w-6 h-6 text-blue-500" />
+</div>
 
-              <img
-                src="/perpex.png"
-                alt="BuildOnCoffee Logo"
-                className="w-12 h-12 rounded-full"
-              />
-            </Link>
-            <Link to="/" className="text-2xl font-bold text-gray-900 hover:text-black transition">
+
+          <div className="leading-tight">
+            <h1
+              className="text-xl font-extrabold text-transparent bg-clip-text"
+              style={{
+                backgroundImage: "linear-gradient(to right, #0d9dadff, #17c8c8ee, #0f7ec8ff)",
+              }}
+            >
               BuildOnCoffee
-            </Link>
+            </h1>
+            <p className="text-xs text-gray-500">Code • Learn • Create</p>
           </div>
+        </Link>
 
-          {/* Hamburger Menu Button (visible only on small screens) */}
-          <button
-            className="sm:hidden flex flex-col justify-center items-center w-10 h-10"
-            onClick={() => setMenuOpen((prev) => !prev)}
-            aria-label="Toggle menu"
+        {/* Desktop Nav */}
+     <nav className="hidden md:flex items-center gap-5 px-4 py-2">
+  {navLinks.map((link) => {
+    const isActive = location.pathname === link.to;
+
+    return (
+      <Link
+        key={link.to}
+        to={link.to}
+        className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition ${
+          isActive
+            ? "bg-blue-300/20 backdrop-blur-lg border border-blue-200/30 shadow text-blue-500"
+            : "text-gray-700 hover:bg-gray-100 hover:text-black"
+        }`}
+      >
+        {link.icon}
+        {link.label}
+      </Link>
+    );
+  })}
+
+
+
+          {/* CTA Button */}
+          {/* <a
+            href="https://discord.com/invite/yourinvite"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-100 transition"
           >
-            <span className={`block h-0.5 w-6 bg-black mb-1 transition-all ${menuOpen ? "rotate-45 translate-y-2" : ""}`}></span>
-            <span className={`block h-0.5 w-6 bg-black mb-1 transition-all ${menuOpen ? "opacity-0" : ""}`}></span>
-            <span className={`block h-0.5 w-6 bg-black transition-all ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}></span>
-          </button>
-        </div>
+            <Users className="w-4 h-4" />
+            Join Community
+          </a> */}
 
-        <div className="hidden sm:flex flex-wrap gap-2 items-center">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`text-gray-700 px-3 py-1 rounded transition hover:bg-gray-200 hover:text-black font-medium ${location.pathname === link.to ? 'bg-gray-200 text-black' : ''}`}
-            >
-              {link.label}
-            </Link>
-          ))}
-          {topLinks.map((link) => (
-            <a
-              key={link.key}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`px-4 py-2 rounded transition font-semibold shadow-md cursor-pointer
-                ${link.key === 'community' ? 'bg-black text-white hover:bg-gray-800' : 'text-gray-200 hover:bg-gray-100 hover:text-black'}
-              `}
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
+          {/* Theme Toggle */}
+        <button
+  className="p-2 rounded-full transition"
+  onClick={toggleDarkMode}
+>
+  <MoonStar className="w-5 h-5 toggle-dark-mode-icon" />
+</button>
+
+
+
+
+
+
+        </nav>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden p-2 rounded-md focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <div className="space-y-1">
+            <span className="block w-6 h-0.5 bg-black"></span>
+            <span className="block w-6 h-0.5 bg-black"></span>
+            <span className="block w-6 h-0.5 bg-black"></span>
+          </div>
+        </button>
       </div>
 
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="sm:hidden mt-4 flex flex-col gap-2 animate-fade-in">
+        <div className="md:hidden px-4 pb-4 space-y-2">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              onClick={() => setMenuOpen(false)} // Close menu when a link is clicked
-              className={`block text-gray-700 px-3 py-2 rounded transition hover:bg-gray-200 hover:text-black font-medium ${location.pathname === link.to ? 'bg-gray-200 text-black' : ''}`}
+              className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100"
+              onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </Link>
           ))}
-          {topLinks.map((link) => (
-            <a
-              key={link.key}
-              href={`#${link.key}`}
-              onClick={handleScroll(link.key)} // handleScroll also closes the menu
-              className={`block text-gray-600 px-3 py-2 rounded transition hover:bg-gray-100 hover:text-black font-medium cursor-pointer ${link.key === 'community' ? 'bg-black text-white hover:bg-gray-800 font-semibold shadow-md' : ''}`}
-            >
-              {link.label}
-            </a>
-          ))}
+          <a
+            href="https://discord.com/invite/yourinvite"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100"
+          >
+            Join Community
+          </a>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 
