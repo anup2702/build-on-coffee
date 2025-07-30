@@ -20,6 +20,7 @@ import courseimg from "./assets/course.svg";
 import toolsimg from "./assets/tools.svg";
 import snapimg from "./assets/snapfolio.svg";
 import DotCursor from "./Component/DotCursor"
+import './App.css';
 
 
 import { tools } from "../data/tools";
