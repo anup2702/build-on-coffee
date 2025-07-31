@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 
 const steps = [
   {
@@ -67,14 +67,27 @@ const steps = [
 
 const ContributePage = () => {
   const [openIndex, setOpenIndex] = useState(null);
+const [contributors, setContributors] = useState([]);
 
-  const topContributors = [
-    { id: 1, name: "Alice Johnson", contributions: 15, profileUrl: "#" },
-    { id: 2, name: "Bob Williams", contributions: 12, profileUrl: "#" },
-    { id: 3, name: "Charlie Brown", contributions: 10, profileUrl: "#" },
-    { id: 4, name: "Diana Prince", contributions: 8, profileUrl: "#" },
-    { id: 5, name: "Eve Adams", contributions: 7, profileUrl: "#" },
-  ];
+  useEffect(() => {
+    fetch("https://api.github.com/repos/anup2702/build-on-coffee/contributors")
+      .then((res) => res.json())
+      .then((data) => {
+        const sorted = data
+          .map((c, index) => ({
+            id: index + 1,
+            name: c.login,
+            profileUrl: c.html_url,
+            contributions: c.contributions,
+            avatarUrl: c.avatar_url,
+          }))
+          .sort((a, b) => b.contributions - a.contributions)
+          .slice(0, 7);
+        setContributors(sorted);
+      })
+      .catch((err) => console.error("GitHub API Error:", err));
+  }, []);
+
 
   const toggleContent = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -200,42 +213,39 @@ const ContributePage = () => {
               </h2>
             </div>
 
-            <div className="space-y-4 ">
-              {topContributors.map((contributor) => (
-                <div
-                  key={contributor.id}
-                  className="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 hover:border-blue-200 "
-                >
-                  <div className="flex items-center space-x-4 ">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg ">
-                      {contributor.name.charAt(0)}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 ">
-                        {contributor.name}
-                      </h3>
-                      <p className="text-sm text-blue-800 font-medium">
-                        {contributor.contributions} Contributions
-                      </p>
-                    </div>
-                  </div>
-                  <a
-                    href={contributor.profileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900"
-                  >
-                    <svg
-                      className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.18 6.84 9.5.5.09.68-.22.68-.48 0-.24-.01-1.03-.02-1.87-2.78.6-3.37-1.34-3.37-1.34-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.28.1-2.65 0 0 .84-.27 2.75 1.03a9.58 9.58 0 012.5-.34c.85.01 1.71.12 2.5.34 1.91-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85 0 1.34-.01 2.42-.01 2.75 0 .27.18.58.69.48A10.02 10.02 0 0022 12c0-5.52-4.48-10-10-10z" />
-                    </svg>
-                  </a>
-                </div>
-              ))}
-            </div>
+          <div className="grid gap-4 mt-6">
+  {contributors.map((contributor) => (
+    <div
+      key={contributor.id}
+      className="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 hover:border-blue-200"
+    >
+      <div className="flex items-center space-x-4">
+        <img
+          src={contributor.avatarUrl}
+          alt={contributor.name}
+          className="w-12 h-12 rounded-full shadow-lg"
+        />
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900">
+            {contributor.name}
+          </h3>
+          <p className="text-sm text-blue-800 font-medium">
+            {contributor.contributions} Contributions
+          </p>
+        </div>
+      </div>
+      <a
+        href={contributor.profileUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-600 hover:text-gray-900"
+      >
+        View Profile
+      </a>
+    </div>
+  ))}
+</div>
+
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mb-16"></div>
 
