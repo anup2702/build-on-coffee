@@ -1,59 +1,58 @@
-body {
-  background-color: white;
-  color: black;
-  transition: background-color 0.3s ease, color 0.3s ease;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-body.dark-theme {
-  background: radial-gradient(ellipse at top, #0f172a, #0a0f1f);
-  color: white;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-
-.dark-theme .navbar {
-  background-color: #0f172a;
-  color: white;
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.dark-theme .hero-section {
-  background-image: linear-gradient(to right, #1e293b, #0f172a);
-  color: white;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
-.dark-theme a {
-  color: white;
+.card {
+  padding: 2em;
 }
 
-.dark-theme .text-gray-600,
-.dark-theme .text-gray-500,
-.dark-theme .text-gray-800 {
-  color: #d1d5db !important;
+.read-the-docs {
+  color: #888;
 }
 
-.dark-theme .bg-blue-100 {
-  background-color: #1e293b !important;
+/* Fade-in animation for page transitions */
+.animate-fade-in {
+  animation: fadeIn 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.dark-theme .text-blue-600 {
-  color: #38bdf8 !important;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-.dark-theme .border-gray-300 {
-  border-color: #334155 !important;
-}
-
-.dark-theme .gradient-text {
-  background: linear-gradient(to right, #3b82f6, #6366f1, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.toggle-dark-mode-icon {
-  color: #1f2937;
-}
-
-.dark-theme .toggle-dark-mode-icon {
-  color: #ffffff;
-}
-
-
