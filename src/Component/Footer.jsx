@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Discord from "./Discord";
+import X from "./X";
 import { Github, Instagram, Linkedin, MessageCircle, Twitter, Coffee, Heart, Sparkles } from "lucide-react";
 
 const socialLinks = [
@@ -18,13 +20,13 @@ const socialLinks = [
   {
     href: "https://discord.com/invite/yourinvite",
     label: "Discord",
-    icon: <MessageCircle className="w-5 h-5" />,
+    icon: <Discord  />,
     color: "purple",
   },
   {
     href: "https://twitter.com/yourprofile",
     label: "Twitter",
-    icon: <Twitter className="w-5 h-5" />,
+    icon: <X/>,
     color: "cyan",
   },
 ];
