@@ -19,7 +19,7 @@ const ToolCard = ({
   >
     <div className="flex items-center gap-4 w-full mb-3">
       {image && (
-        <img src={image} alt={name} className="rounded max-h-40 object-contain" />
+        <img src={image} alt={name} className="rounded max-h-40 w-7 h-7 object-contain" />
       )}
       <h3 className="text-xl font-bold mb-1 group-hover:text-black transition-colors text-left">{name}</h3>
     </div>
