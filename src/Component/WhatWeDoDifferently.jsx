@@ -167,7 +167,7 @@ const WhatWeDoDifferently = () => {
                      <motion.h2
              variants={itemVariants}
              className={`text-3xl md:text-4xl font-black mb-4 ${
-               isDarkMode ? "text-gray-900" : "text-gray-900"
+               isDarkMode ? "text-white" : "text-gray-900"
              }`}
            >
              What We Do{" "}
@@ -179,7 +179,7 @@ const WhatWeDoDifferently = () => {
                      <motion.p
              variants={itemVariants}
              className={`text-base md:text-lg max-w-2xl mx-auto leading-relaxed ${
-               isDarkMode ? "text-gray-700" : "text-gray-600"
+               isDarkMode ? "text-gray-300" : "text-gray-600"
              }`}
            >
              At BuildOnCoffee, we focus on community-driven curation, hands-on learning, and real-world developer growth. Our approach is unique:
@@ -227,7 +227,7 @@ const WhatWeDoDifferently = () => {
               {/* Content */}
                              <motion.h3
                  className={`text-xl font-bold mb-3 text-center ${
-                   isDarkMode ? "text-gray-900" : "text-gray-900"
+                   isDarkMode ? "text-white" : "text-gray-900"
                  }`}
                  whileHover={{ scale: 1.05 }}
                  transition={{ type: "spring", stiffness: 300 }}
@@ -237,7 +237,7 @@ const WhatWeDoDifferently = () => {
 
                              <motion.p
                  className={`text-center leading-relaxed text-sm ${
-                   isDarkMode ? "text-gray-700" : "text-gray-600"
+                   isDarkMode ? "text-gray-300" : "text-gray-600"
                  }`}
                  whileHover={{ scale: 1.02 }}
                  transition={{ type: "spring", stiffness: 300 }}

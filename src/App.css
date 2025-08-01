@@ -9,7 +9,7 @@ body.dark-theme {
   color: white;
 }
 
-
+/* Dark theme overrides for better visibility */
 .dark-theme .navbar {
   background-color: #0f172a;
   color: white;
@@ -24,36 +24,145 @@ body.dark-theme {
   color: white;
 }
 
+/* Text color fixes for dark mode */
 .dark-theme .text-gray-600,
 .dark-theme .text-gray-500,
 .dark-theme .text-gray-800 {
   color: #d1d5db !important;
 }
 
+.dark-theme .text-gray-700 {
+  color: #e5e7eb !important;
+}
+
+.dark-theme .text-gray-900 {
+  color: #f9fafb !important;
+}
+
+/* Background color fixes for dark mode */
 .dark-theme .bg-blue-100 {
   background-color: #1e293b !important;
 }
 
-.dark-theme .text-blue-600 {
-  color: #38bdf8 !important;
+.dark-theme .bg-white\/50,
+.dark-theme .bg-white\/80 {
+  background-color: rgba(30, 41, 59, 0.5) !important;
 }
 
+.dark-theme .bg-white\/10 {
+  background-color: rgba(30, 41, 59, 0.1) !important;
+}
+
+.dark-theme .bg-white\/20 {
+  background-color: rgba(30, 41, 59, 0.2) !important;
+}
+
+.dark-theme .bg-white\/70 {
+  background-color: rgba(30, 41, 59, 0.7) !important;
+}
+
+/* Card and container fixes */
+.dark-theme .bg-white\/80\.backdrop-blur-sm {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+.dark-theme .bg-gradient-to-br\.from-blue-50\.to-indigo-50,
+.dark-theme .bg-gradient-to-br\.from-green-50\.to-emerald-50,
+.dark-theme .bg-gradient-to-br\.from-purple-50\.to-pink-50,
+.dark-theme .bg-gradient-to-br\.from-yellow-50\.to-orange-50 {
+  background: linear-gradient(to bottom right, rgba(30, 41, 59, 0.1), rgba(15, 23, 42, 0.1)) !important;
+}
+
+/* Border fixes for dark mode */
 .dark-theme .border-gray-300 {
   border-color: #334155 !important;
 }
 
+.dark-theme .border-gray-200\/50 {
+  border-color: rgba(51, 65, 85, 0.5) !important;
+}
+
+.dark-theme .border-gray-200 {
+  border-color: #334155 !important;
+}
+
+/* Text color fixes */
+.dark-theme .text-blue-600 {
+  color: #38bdf8 !important;
+}
+
+.dark-theme .text-green-600 {
+  color: #4ade80 !important;
+}
+
+.dark-theme .text-purple-600 {
+  color: #a78bfa !important;
+}
+
+.dark-theme .text-yellow-600 {
+  color: #fbbf24 !important;
+}
+
+/* Hover state fixes */
+.dark-theme .hover\:bg-gray-50:hover {
+  background-color: rgba(30, 41, 59, 0.3) !important;
+}
+
+.dark-theme .hover\:border-gray-400:hover {
+  border-color: #475569 !important;
+}
+
+/* Gradient text fixes */
 .dark-theme .gradient-text {
   background: linear-gradient(to right, #3b82f6, #6366f1, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* Toggle button fixes */
 .toggle-dark-mode-icon {
   color: #1f2937;
 }
 
 .dark-theme .toggle-dark-mode-icon {
   color: #ffffff;
+}
+
+/* Additional fixes for specific components */
+.dark-theme .bg-gray-50 {
+  background-color: #1e293b !important;
+}
+
+.dark-theme .bg-gray-100 {
+  background-color: #334155 !important;
+}
+
+.dark-theme .bg-gray-200 {
+  background-color: #475569 !important;
+}
+
+/* Fix for main background */
+.dark-theme .min-h-screen.flex.flex-col.bg-gray-50 {
+  background-color: #0f172a !important;
+}
+
+/* Fix for CommunitySection background */
+.dark-theme .bg-white {
+  background-color: #1e293b !important;
+}
+
+/* Fix for text in CommunitySection */
+.dark-theme .text-gray-900 {
+  color: #f9fafb !important;
+}
+
+.dark-theme .text-gray-600 {
+  color: #d1d5db !important;
+}
+
+/* Fix for WhatWeDoDifferently section */
+.dark-theme .bg-gradient-to-br\.from-blue-50\.via-white\.to-purple-50 {
+  background: linear-gradient(to bottom right, rgba(30, 41, 59, 0.1), rgba(15, 23, 42, 0.05), rgba(30, 41, 59, 0.1)) !important;
 }
 
 

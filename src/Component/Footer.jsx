@@ -335,14 +335,20 @@ export const CommunitySection = () => {
   return (
     <motion.section
       id="community"
-      className="max-w-2xl mx-auto py-12 px-4 text-center text-gray-900 bg-white"
+      className={`max-w-2xl mx-auto py-12 px-4 text-center transition-all duration-500 ${
+        isDarkMode 
+          ? "text-white bg-gray-800" 
+          : "text-gray-900 bg-white"
+      }`}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
       <motion.h2
-        className="text-3xl font-bold mb-4 text-gray-900"
+        className={`text-3xl font-bold mb-4 ${
+          isDarkMode ? "text-white" : "text-gray-900"
+        }`}
         whileHover={{ scale: 1.02 }}
         transition={{ type: "spring", stiffness: 300 }}
       >
@@ -350,7 +356,9 @@ export const CommunitySection = () => {
       </motion.h2>
       
       <motion.p
-        className="text-lg mb-6 text-gray-600"
+        className={`text-lg mb-6 ${
+          isDarkMode ? "text-gray-300" : "text-gray-600"
+        }`}
         whileHover={{ scale: 1.01 }}
         transition={{ type: "spring", stiffness: 300 }}
       >
@@ -371,7 +379,11 @@ export const CommunitySection = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={link.label}
-            className="p-2 rounded-lg transition-all duration-300 bg-gray-100 hover:bg-gray-200 border border-gray-200"
+            className={`p-2 rounded-lg transition-all duration-300 border ${
+              isDarkMode
+                ? "bg-gray-700 hover:bg-gray-600 border-gray-600"
+                : "bg-gray-100 hover:bg-gray-200 border-gray-200"
+            }`}
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -402,7 +414,11 @@ export const CommunitySection = () => {
         href="https://discord.com/invite/yourinvite"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm shadow-lg transition-all duration-300 bg-gray-900 text-white hover:bg-gray-800 border border-gray-200"
+        className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm shadow-lg transition-all duration-300 border ${
+          isDarkMode
+            ? "bg-gray-700 text-white hover:bg-gray-600 border-gray-600"
+            : "bg-gray-900 text-white hover:bg-gray-800 border-gray-200"
+        }`}
         whileHover={{ 
           scale: 1.05, 
           y: -2,
