@@ -1,28 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Users, Code2, Stars, ChevronRight, Coffee, Sparkles, ArrowRight, Zap } from "lucide-react";
+import { useTheme } from './context/ThemeContext';
 
 const HeroSection = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDark } = useTheme();
   const [isHovered, setIsHovered] = useState(false);
-
-  // Check theme state
-  useEffect(() => {
-    const isDark = document.body.classList.contains("dark-theme");
-    setIsDarkMode(isDark);
-
-    // Listen for theme changes
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-          setIsDarkMode(document.body.classList.contains("dark-theme"));
-        }
-      });
-    });
-
-    observer.observe(document.body, { attributes: true });
-    return () => observer.disconnect();
-  }, []);
+  
+  // Use isDark from ThemeContext instead of local state
+  const isDarkMode = isDark;
 
   const containerVariants = {
     hidden: { opacity: 0 },
