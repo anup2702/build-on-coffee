@@ -12,17 +12,29 @@ const CoursePage = () => {
   if (!course) return <div className="text-center py-16">Course not found.</div>;
 
   return (
-    <div className="max-w-3xl mx-auto py-16 px-4 animate-fade-in">
-      <button onClick={() => navigate(-1)} className="mb-4 text-blue-600 hover:underline">← Back</button>
-      <h1 className="text-3xl font-extrabold mb-6 text-center">{course.name}</h1>
-      <CourseDetailPanel
-        course={course}
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        onClose={() => navigate(-1)}
-      />
+    <div className="max-w-4xl mx-auto py-16 px-4 animate-fade-in">
+      <button
+        onClick={() => navigate(-1)}
+        className="mb-6 text-blue-600 hover:underline text-sm flex items-center"
+      >
+        ← Back to Courses
+      </button>
+
+      <div className="text-center">
+        <h1 className="text-4xl font-extrabold mb-4">{course.name}</h1>
+        <p className="text-gray-600 max-w-2xl mx-auto">{course.details}</p>
+      </div>
+
+      <div className="mt-10">
+        <CourseDetailPanel
+          course={course}
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          onClose={() => navigate(-1)}
+        />
+      </div>
     </div>
   );
 };
 
-export default CoursePage; 
+export default CoursePage;
