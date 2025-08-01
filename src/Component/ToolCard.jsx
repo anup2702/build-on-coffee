@@ -7,6 +7,7 @@ const ToolCard = ({
   youtube,
   references = [],
   docs,
+  image,
   onClick,
   selected,
 }) => (
@@ -16,14 +17,23 @@ const ToolCard = ({
       selected ? "ring-2 ring-black dark:ring-white" : ""
     }`}
   >
-    {/* Title and Description */}
-    <div>
-      <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2 tracking-tight">
-        {name}
-      </h3>
-      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-        {description}
-      </p>
+    {/* Title, Image, and Description */}
+    <div className="flex items-start gap-4 w-full mb-3">
+      {image && (
+        <img
+          src={image}
+          alt={name}
+          className="rounded w-8 h-8 object-contain"
+        />
+      )}
+      <div>
+        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-1 tracking-tight">
+          {name}
+        </h3>
+        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+          {description}
+        </p>
+      </div>
     </div>
 
     {/* Embedded YouTube Preview */}
