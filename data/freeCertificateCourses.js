@@ -1,6 +1,6 @@
 // src/data/freeCertificateCourses.js
 // src/data/freeCertificateCourses.js
-export const freeCertificateCourses = [
+export  const freeCertificateCourses = [
     {
         slug: "google-android-basics",
         name: "Google Android Basics",
@@ -37,16 +37,40 @@ export const freeCertificateCourses = [
             { label: "Meta Front-End", url: "https://www.coursera.org/professional-certificates/meta-front-end-developer" }
         ]
     },
-    {
-        slug: "freecodecamp-responsive-web",
-        name: "freeCodeCamp Responsive Web Design",
-        description: "Master responsive web design and earn a free certificate from freeCodeCamp.",
-        details: "Covers HTML, CSS, Flexbox, Grid, and accessibility. Build real projects and earn certification.",
-        link: "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
-        image: "https://design-style-guide.freecodecamp.org/downloads/fcc_secondary_large.png", // freeCodeCamp logo
-        certificate: "Free certificate on completion",
-        references: [
-            { label: "freeCodeCamp Responsive Web Design", url: "https://www.freecodecamp.org/learn/2022/responsive-web-design/" }
-        ]
-    }
-];
+   {
+  slug: "ibm-fullstack",
+  name: "IBM Full Stack Software Developer",
+  description: "Master front-end and back-end development with IBM's expert-led program.",
+  details: "Covers HTML, CSS, JavaScript, React, Node.js, Python, Git, and cloud-native development.",
+  link: "https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer",
+  image: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+  certificate: "Free certificate (audit available; financial aid for full access)",
+  references: [
+    {label: "IBM Full Stack on Coursera",url: "https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer"}
+  ]
+},
+     {
+    slug: "google-intro-gen-ai",
+    name: "Introduction to Generative AI (Google Cloud)",
+    description: "Learn the fundamentals of generative AI directly from Google Cloud.",
+    details: "45‑minute microlearning course covering what generative AI is, how it works, model types, and applications using Google tools. No prerequisites.",
+    link: "https://cloudskillsboost.google/course_templates/536nnfree",
+    image: "https://cloud.google.com/images/social-icon-google-cloud-1200-630.png",
+    certificate: "Badge/certificate upon completion",
+    references: [
+      { label: "Introduction to Generative AI — Google Cloud", url: "https://cloudskillsboost.google/course_templates/536nnfree" }
+    ]
+  },
+   {
+    slug: "microsoft-gen-ai-for-beginners",
+    name: "Generative AI for Beginners (Microsoft Learn)",
+    description: "Hands-on lessons on LLMs, prompt engineering, fine‑tuning, and RAG.",
+    details: "18 lessons with code samples, Python/TypeScript, Azure OpenAI examples.",
+    link: "https://microsoft.github.io/generative-ai-for-beginners/#/",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    certificate: "Microsoft Learn badge on completion",
+    references: [
+      { label: "Generative AI for Beginners — Microsoft", url: "https://microsoft.github.io/generative-ai-for-beginners/#/" }
+    ]
+  },
+]
