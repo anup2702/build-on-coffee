@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+
 import {
   Home,
   Info,
@@ -52,8 +53,16 @@ const Navbar = () => {
       label: "Contribute",
       icon: <UserPlus className="w-4 h-4" />,
     },
+
+    {
+  to: "/tools",
+  label: "Tools",
+  icon: <Users className="w-4 h-4" />,
+},
+
   ];
 
+  
   const containerVariants = {
     hidden: { opacity: 0, y: -50 },
     visible: {

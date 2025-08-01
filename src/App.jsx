@@ -13,6 +13,7 @@ import Contact from "./Component/Contact";
 import Contribute from "./Component/Contribute";
 import CoursePage from "./Component/CoursePage";
 import FreeCertificateCourses from "./Component/FreeCertificateCourses";
+import BeginnerTools from "./Component/BeginnerTools";
 
 import LearnTools from "./Component/Tools/LearnTools";
 import CoursesList from "./Component/CoursesList";
