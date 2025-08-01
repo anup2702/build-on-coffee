@@ -184,7 +184,7 @@ const Footer = () => {
                {["Home", "About", "Courses", "Tools", "Contact"].map((link, index) => (
                  <motion.a
                    key={link}
-                   href={`#${link.toLowerCase()}`}
+                   href={link.toLowerCase() === "home" ? "/" : `/${link.toLowerCase()}`}
                    className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-1 group text-xs"
                    whileHover={{ x: 2, scale: 1.05 }}
                    initial={{ opacity: 0, x: -20 }}q
@@ -280,7 +280,7 @@ const Footer = () => {
         </div>
 
         {/* Decorative Sparkles */}
-        <motion.div
+        {/* <motion.div
           className="absolute top-8 left-8"
           animate={{
             rotate: [0, 360],
@@ -293,7 +293,7 @@ const Footer = () => {
           }}
         >
           <Sparkles className="w-4 h-4 text-yellow-400" />
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           className="absolute bottom-8 right-8"
