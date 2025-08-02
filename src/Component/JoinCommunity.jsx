@@ -102,7 +102,7 @@ const JoinCommunity = React.forwardRef((props, ref) => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Join Our Growing Community
           </h2>
-          
+
           <p className="text-xl text-gray-600 dark:text-blue-100 max-w-3xl mx-auto mb-8">
             Connect with passionate developers from around the world. Share knowledge, 
             collaborate on projects, and accelerate your career together.
@@ -146,7 +146,7 @@ const JoinCommunity = React.forwardRef((props, ref) => {
             <h3 className="text-2xl font-bold mb-6 text-center lg:text-left">
               Choose Your Platform
             </h3>
-            
+
             {socialLinks.map((social, index) => {
               const Icon = social.icon;
               return (
@@ -163,7 +163,7 @@ const JoinCommunity = React.forwardRef((props, ref) => {
                     <div className={`p-3 bg-gradient-to-r ${social.color} rounded-lg mr-4 group-hover:scale-110 transition-transform duration-200`}>
                       <Icon className="w-6 h-6 text-white" />
                     </div>
-                    
+
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
                         <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{social.name}</h4>
@@ -199,11 +199,11 @@ const JoinCommunity = React.forwardRef((props, ref) => {
               >
                 <Mail className="w-6 h-6 text-white" />
               </motion.div>
-              
+
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 Stay Updated
               </h3>
-              
+
               <p className="text-gray-600 dark:text-blue-100">
                 Get weekly updates on new tools, courses, and community highlights.
               </p>
@@ -221,7 +221,7 @@ const JoinCommunity = React.forwardRef((props, ref) => {
                     required
                   />
                 </div>
-                
+
                 <motion.button
                   type="submit"
                   className="w-full py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-teal-600 transition-all duration-300 flex items-center justify-center space-x-2 group"
