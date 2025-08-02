@@ -19,6 +19,7 @@ import ToolsList from "./Component/ToolsList";
 import { tools } from "../data/tools";
 import { courses } from "../data/courses";
 import ProductsSection from "./Component/ProductsSection";
+import JoinCommunity from "./Component/JoinCommunity";
 
 
 const Home = ({ scrollRefs }) => {
@@ -29,6 +30,7 @@ const Home = ({ scrollRefs }) => {
       <HeroSection communityRef={scrollRefs?.community} />
       <ProductsSection />
       <WhatWeDoDifferently ref={scrollRefs?.differently} />
+      <JoinCommunity ref={scrollRefs?.community} />
     </>
   );
 };
