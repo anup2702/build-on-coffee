@@ -9,13 +9,13 @@ const LearnTools = () => {
   return (
     <div className="flex flex-col md:flex-row bg-white rounded shadow p-6">
       <div className="md:w-1/4 border-r md:pr-4 mb-4 md:mb-0">
-        <h2 className="text-lg font-semibold mb-2">Select Tool</h2>
+        <h2 className="text-lg font-semibold mb-2 dark:text-black">Select Tool</h2>
         {learnToolsList.map((tool) => (
           <button
             key={tool}
             onClick={() => setSelectedTool(tool)}
             className={`block w-full text-left px-4 py-2 mb-2 rounded transition font-medium ${
-              selectedTool === tool ? 'bg-blue-600 text-white' : 'bg-gray-100 hover:bg-gray-200'
+              selectedTool === tool ? 'bg-blue-600 text-white' : 'bg-gray-100 hover:bg-gray-200' 
             }`}
           >
             {tool}
