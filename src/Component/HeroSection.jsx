@@ -1,92 +1,375 @@
-import { Users, Code2, Stars , ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Users, Code2, Stars, ChevronRight, Coffee, Sparkles, ArrowRight, Zap } from "lucide-react";
 
 const HeroSection = () => {
-  
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Check theme state
+  useEffect(() => {
+    const isDark = document.body.classList.contains("dark-theme");
+    setIsDarkMode(isDark);
+
+    // Listen for theme changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          setIsDarkMode(document.body.classList.contains("dark-theme"));
+        }
+      });
+    });
+
+    observer.observe(document.body, { attributes: true });
+    return () => observer.disconnect();
+  }, []);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
+  };
+
+  const floatingVariants = {
+    animate: {
+      y: [0, -10, 0],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const pulseVariants = {
+    animate: {
+      scale: [1, 1.05, 1],
+      opacity: [0.7, 1, 0.7],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <section className="text-center py-20 bg-gradient-to-b hero-section  ">
-      {/* Badge */}
-     <div className="flex flex-col items-center space-y-3">
-    <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-blue-100 text-blue-500 font-medium text-sm shadow-sm">
-      <Stars className="w-4 h-4" />
-      Building the future, one cup at a time
-    </div>
-
-    <h1
-      className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent"
-      style={{
-        backgroundImage:
-          "linear-gradient(to right, #3858beff, #268bcfff, #17c8c8ee, #6943c0ff)",
-      }}
-    >
-      Welcome to BuildOnCoffee
-    </h1>
-  </div>
-
-
-
-
-      {/* Subtitle */}
-      <p className="text-lg md:text-xl text-gray-600 max-w-2xl mt-5 mx-auto mb-10">
-        Join our community of passionate developers. Learn cutting-edge technologies,
-        discover powerful tools, and build amazing projects together.
-      </p>
-
-      {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-    <a
-  href="#tools"
-  className="inline-flex items-center gap-2 px-6 py-2 rounded-xl font-semibold shadow text-white hover:opacity-90 border border-white/20 transition"
-  style={{
-    backgroundImage: "linear-gradient(90deg, #3858be, #268bcf, #17c8c8)",
-    backgroundClip: "padding-box",
-    border: "1px solid rgba(255,255,255,0.2)",
-    WebkitBackgroundClip: "padding-box",
-    overflow: "hidden",         // ensures nothing spills
-    boxSizing: "border-box",    // safe spacing
-  }}
->
-  Explore Tools
-  <ChevronRight />
-</a>
-
-
-
-
-
-        <a
-          href="#community"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 font-semibold text-gray-800 hover:bg-gray-100 transition"
-        >
-          <Users className="w-4 h-4" />
-          Join Community
-        </a>
+         <section className={`relative py-16 flex items-center justify-center overflow-hidden transition-all duration-500 ${
+       isDarkMode 
+         ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" 
+         : "bg-gradient-to-br from-blue-50 via-white to-purple-50"
+     }`}>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className={`absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl opacity-20 ${
+            isDarkMode ? "bg-blue-500" : "bg-blue-400"
+          }`}
+          animate={{
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        <motion.div
+          className={`absolute top-40 right-20 w-96 h-96 rounded-full blur-3xl opacity-20 ${
+            isDarkMode ? "bg-purple-500" : "bg-purple-400"
+          }`}
+          animate={{
+            x: [0, -80, 0],
+            y: [0, 60, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        <motion.div
+          className={`absolute bottom-20 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-20 ${
+            isDarkMode ? "bg-pink-500" : "bg-pink-400"
+          }`}
+          animate={{
+            x: [0, 60, 0],
+            y: [0, -40, 0],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
       </div>
 
-      {/* Stats Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-  <div className="p-6 rounded-xl text-center">
-    <div className="bg-blue-100 text-blue-600 w-10 h-10 mx-auto rounded-md flex items-center justify-center mb-2">
-      <Users className="w-5 h-5" />
-    </div>
-    <h3 className="text-xl font-bold">10K+</h3>
-    <p className="text-gray-500 text-sm">Active Developers</p>
-  </div>
-  <div className="p-6 rounded-xl text-center">
-    <div className="bg-blue-100 text-blue-600 w-10 h-10 mx-auto rounded-md flex items-center justify-center mb-2">
-      <Code2 className="w-5 h-5" />
-    </div>
-    <h3 className="text-xl font-bold">50+</h3>
-    <p className="text-gray-500 text-sm">Tools & Resources</p>
-  </div>
-  <div className="p-6 rounded-xl text-center">
-    <div className="bg-blue-100 text-blue-600 w-10 h-10 mx-auto rounded-md flex items-center justify-center mb-2">
-      <Stars className="w- h-5" />
-    </div>
-    <h3 className="text-xl font-bold">100+</h3>
-    <p className="text-gray-500 text-sm">Learning Paths</p>
-  </div>
-</div>
+      {/* Main Content */}
+             <motion.div
+         className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-8 text-center"
+         variants={containerVariants}
+         initial="hidden"
+         animate="visible"
+       >
+        {/* Badge */}
+                 <motion.div
+           variants={itemVariants}
+           className="flex flex-col items-center space-y-4 mb-6"
+         >
+                     <motion.div
+             className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-xs shadow-lg border backdrop-blur-lg ${
+               isDarkMode
+                 ? "bg-blue-500/20 text-blue-300 border-blue-400/30"
+                 : "bg-blue-100/80 text-blue-600 border-blue-200/50"
+             }`}
+                         whileHover={{ scale: 1.05, y: -2 }}
+             transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          >
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            >
+                             <Stars className="w-4 h-4" />
+            </motion.div>
+            <span className="font-bold">Building the future, one cup at a time</span>
+            <motion.div
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+                             <Zap className="w-3 h-3" />
+            </motion.div>
+          </motion.div>
 
+          {/* Main Title */}
+                     <motion.h1
+             variants={itemVariants}
+             className="text-4xl md:text-6xl font-black leading-tight"
+            onHoverStart={() => setIsHovered(true)}
+            onHoverEnd={() => setIsHovered(false)}
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+              Welcome to
+            </span>
+            <br />
+            <motion.span
+              className="text-transparent bg-clip-text"
+              style={{
+                backgroundImage: isHovered
+                  ? "linear-gradient(135deg, #ec4899, #8b5cf6, #0f7ec8ff, #17c8c8ee, #0d9dadff)"
+                  : "linear-gradient(135deg, #0d9dadff, #17c8c8ee, #0f7ec8ff, #8b5cf6, #ec4899)",
+              }}
+              animate={{
+                backgroundPosition: isHovered ? "100% 50%" : "0% 50%",
+              }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+            >
+              BuildOnCoffee
+            </motion.span>
+          </motion.h1>
+        </motion.div>
+
+        {/* Subtitle */}
+                 <motion.p
+           variants={itemVariants}
+           className={`text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed ${
+             isDarkMode ? "text-gray-300" : "text-gray-600"
+           }`}
+         >
+          Join our vibrant community of passionate developers. Learn cutting-edge technologies,
+          discover powerful tools, and build amazing projects together with fellow coffee enthusiasts.
+        </motion.p>
+
+        {/* CTA Buttons */}
+                 <motion.div
+           variants={itemVariants}
+           className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
+         >
+                     <motion.a
+             href="#tools"
+             className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white shadow-xl transition-all duration-300 overflow-hidden"
+            style={{
+              background: "linear-gradient(135deg, #3858be, #268bcf, #17c8c8, #8b5cf6)",
+              backgroundSize: "300% 300%",
+            }}
+                         whileHover={{ scale: 1.05, y: -2 }}
+             whileTap={{ scale: 0.95 }}
+            animate={{
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+            }}
+            transition={{
+              backgroundPosition: { duration: 3, repeat: Infinity, ease: "linear" },
+            }}
+          >
+            <motion.div
+              className="absolute inset-0 bg-white/20"
+              initial={{ x: "-100%" }}
+              whileHover={{ x: "100%" }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            />
+            <span className="relative z-10">Explore Tools</span>
+            <motion.div
+              className="relative z-10"
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+                             <ChevronRight className="w-4 h-4" />
+            </motion.div>
+          </motion.a>
+
+                     <motion.a
+             href="#community"
+             className={`group inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold border-2 transition-all duration-300 ${
+               isDarkMode
+                 ? "border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500"
+                 : "border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400"
+             }`}
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            >
+                             <Users className="w-4 h-4" />
+            </motion.div>
+            <span>Join Community</span>
+            <motion.div
+              animate={{ x: [0, 3, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+                             <ArrowRight className="w-3 h-3" />
+            </motion.div>
+          </motion.a>
+        </motion.div>
+
+        {/* Stats Section */}
+                 <motion.div
+           variants={itemVariants}
+           className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+         >
+          {[
+            {
+              icon: <Users className="w-6 h-6" />,
+              number: "10K+",
+              label: "Active Developers",
+              color: "blue",
+            },
+            {
+              icon: <Code2 className="w-6 h-6" />,
+              number: "50+",
+              label: "Tools & Resources",
+              color: "purple",
+            },
+            {
+              icon: <Stars className="w-6 h-6" />,
+              number: "100+",
+              label: "Learning Paths",
+              color: "pink",
+            },
+          ].map((stat, index) => (
+                         <motion.div
+               key={index}
+               className={`relative p-6 rounded-xl backdrop-blur-lg border transition-all duration-300 ${
+                 isDarkMode
+                   ? "bg-gray-800/50 border-gray-700/50 hover:bg-gray-800/70"
+                   : "bg-white/50 border-gray-200/50 hover:bg-white/70"
+               }`}
+                             whileHover={{ scale: 1.05, y: -2 }}
+              variants={floatingVariants}
+              animate="animate"
+              transition={{ delay: index * 0.2 }}
+            >
+                             <motion.div
+                 className={`w-12 h-12 mx-auto rounded-xl flex items-center justify-center mb-3 ${
+                  stat.color === "blue"
+                    ? isDarkMode
+                      ? "bg-blue-500/20 text-blue-400"
+                      : "bg-blue-100 text-blue-600"
+                    : stat.color === "purple"
+                    ? isDarkMode
+                      ? "bg-purple-500/20 text-purple-400"
+                      : "bg-purple-100 text-purple-600"
+                    : isDarkMode
+                    ? "bg-pink-500/20 text-pink-400"
+                    : "bg-pink-100 text-pink-600"
+                }`}
+                                 whileHover={{ scale: 1.05, y: -2 }}
+                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              >
+                {stat.icon}
+              </motion.div>
+                             <motion.h3
+                 className={`text-2xl font-black mb-2 ${
+                   isDarkMode ? "text-white" : "text-gray-900"
+                 }`}
+                variants={pulseVariants}
+                animate="animate"
+              >
+                {stat.number}
+              </motion.h3>
+                             <p className={`text-xs font-medium ${
+                 isDarkMode ? "text-gray-400" : "text-gray-600"
+               }`}>
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Floating Coffee Cup */}
+                 <motion.div
+           className="absolute top-1/2 right-8 hidden lg:block"
+          variants={floatingVariants}
+          animate="animate"
+        >
+                     <motion.div
+             className={`p-3 rounded-xl backdrop-blur-lg border ${
+               isDarkMode
+                 ? "bg-gray-800/50 border-gray-700/50"
+                 : "bg-white/50 border-gray-200/50"
+             }`}
+                         whileHover={{ scale: 1.05, y: -2 }}
+             transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          >
+                         <Coffee className={`w-6 h-6 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
+          </motion.div>
+        </motion.div>
+
+        {/* Floating Sparkles */}
+                 <motion.div
+           className="absolute top-16 left-16 hidden lg:block"
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+                     <Sparkles className={`w-5 h-5 ${isDarkMode ? "text-yellow-400" : "text-yellow-500"}`} />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
