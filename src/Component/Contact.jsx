@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <section className="max-w-xl mx-auto py-16 px-4 animate-fade-in">
       <h2 className="text-3xl font-bold mb-4 text-center">Contact Us</h2>
-      <p className="text-gray-600 mb-8 text-center">
+      <p className="text-gray-600 mb-8 text-center dark:text-gray-300">
         Have a question, suggestion, or want to contribute? Fill out the form below and we’ll get back to you!
       </p>
       <form
@@ -45,27 +45,27 @@ const Contact = () => {
           type="text"
           name="name"
           placeholder="Your Name"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
+          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition dark:text-black"
           required
         />
         <input
           type="email"
           name="user_email"
           placeholder="Your Email"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
+          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition dark:text-black"
           required
         />
         <input
           type="text"
           name="title"
           placeholder="Subject / Title"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
+          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition dark:text-black"
           required
         />
         <textarea
           name="message"
           placeholder="Your Message"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
+          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition dark:text-black"
           rows={4}
           required
         />

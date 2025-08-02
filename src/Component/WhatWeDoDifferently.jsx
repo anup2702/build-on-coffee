@@ -56,7 +56,7 @@ const WhatWeDoDifferently = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%239C92AC\' fill-opacity=\'0.4\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'2\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
         }} />
       </div>
 
@@ -104,7 +104,7 @@ const WhatWeDoDifferently = () => {
                 <div className="h-full bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/20 dark:border-gray-700/20 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:border-blue-300/30 dark:group-hover:border-blue-600/30">
                   {/* Animated background gradient */}
                   <motion.div
-                    className={absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500}
+                    className='absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500'
                     initial={false}
                   />
 
@@ -114,13 +114,13 @@ const WhatWeDoDifferently = () => {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className={w-16 h-16 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300}>
+                    <div className='w-16 h-16 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300'>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     
                     {/* Floating animation dot */}
                     <motion.div
-                      className={absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r ${feature.color} rounded-full opacity-0 group-hover:opacity-100}
+                      className='absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r ${feature.color} rounded-full opacity-0 group-hover:opacity-100'
                       animate={inView ? {
                         scale: [0, 1.2, 1],
                         opacity: [0, 1, 0.8],
@@ -145,7 +145,7 @@ const WhatWeDoDifferently = () => {
 
                   {/* Hover effect line */}
                   <motion.div
-                    className={absolute bottom-0 left-0 h-1 bg-gradient-to-r ${feature.color} rounded-b-2xl}
+                    className='absolute bottom-0 left-0 h-1 bg-gradient-to-r ${feature.color} rounded-b-2xl'
                     initial={{ width: 0 }}
                     whileHover={{ width: '100%' }}
                     transition={{ duration: 0.3 }}

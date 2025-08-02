@@ -3,15 +3,15 @@ const About = () => (
     <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600">
       About BuildOnCoffee
     </h2>
-    <p className="text-lg md:text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto mb-6">
+    <p className="text-lg md:text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto mb-6 dark:text-gray-300">
       <span className="font-bold text-blue-700">BuildOnCoffee</span> is a{" "}
-      <span className="font-semibold text-gray-900">
+      <span className="font-semibold text-gray-900 dark:text-gray-300">
         modern, community-driven platform
       </span>{" "}
       dedicated to helping developers discover, share, and use the best tools
       and resources for building software.
     </p>
-    <p className="text-lg md:text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto mb-10">
+    <p className="text-lg md:text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto mb-10 dark:text-gray-300">
       Our mission is to{" "}
       <span className="text-purple-700 font-medium">
         empower developers of all backgrounds
@@ -23,7 +23,7 @@ const About = () => (
       , and a vibrant space for collaboration.
     </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12 mb-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12 mb-20 dark:text-gray-300">
       <img
         src="./perpex.png"
         alt="BuildOnCoffee Logo"
@@ -31,11 +31,11 @@ const About = () => (
       />
 
       <div className="text-left">
-        <h2 className="text-2xl md:text-3xl font-extrabold mb-2 text-transparent bg-clip-text bg-black">
+        <h2 className="text-2xl md:text-3xl font-extrabold mb-2 text-transparent bg-clip-text bg-black dark:text-white">
           Why BuildOnCoffee?
         </h2>
 
-        <ul className=" text-lg md:text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto list-disc list-inside">
+        <ul className=" text-lg md:text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto list-disc list-inside dark:text-gray-300">
           <li>
             <span className="font-semibold text-blue-700">Discover</span>{" "}
             top-rated tools and resources for developers, all in one place.
