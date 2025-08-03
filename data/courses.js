@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 // src/data/courses.js
 
+=======
+>>>>>>> 7ac1baa (Added new courses popup and dateAdded handling)
 export const courses = [
   {
     slug: "data-structures",
@@ -12,7 +15,8 @@ export const courses = [
     references: [
       { label: "GeeksforGeeks Data Structures", url: "https://www.geeksforgeeks.org/data-structures/" },
       { label: "MIT 6.006", url: "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/" }
-    ]
+    ],
+    dateAdded: "2025-08-02"
   },
   {
     slug: "algorithms",
@@ -25,7 +29,8 @@ export const courses = [
     references: [
       { label: "Khan Academy Algorithms", url: "https://www.khanacademy.org/computing/computer-science/algorithms" },
       { label: "Princeton Algorithms", url: "https://www.coursera.org/specializations/algorithms" }
-    ]
+    ],
+    dateAdded: "2025-08-01"
   },
   {
     slug: "operating-systems",
@@ -38,7 +43,8 @@ export const courses = [
     references: [
       { label: "Udacity OS Course", url: "https://www.udacity.com/course/introduction-to-operating-systems--ud923" },
       { label: "OSTEP Book", url: "https://pages.cs.wisc.edu/~remzi/OSTEP/" }
-    ]
+    ],
+    dateAdded: "2025-07-28"
   },
   {
     slug: "computer-networks",
@@ -51,7 +57,8 @@ export const courses = [
     references: [
       { label: "Coursera Computer Networks", url: "https://www.coursera.org/learn/computer-networking" },
       { label: "Stanford Networking", url: "https://web.stanford.edu/class/cs144/" }
-    ]
+    ],
+    dateAdded: "2025-07-25"
   },
   {
     slug: "databases",
@@ -64,7 +71,8 @@ export const courses = [
     references: [
       { label: "Coursera Databases", url: "https://www.coursera.org/learn/databases-intro" },
       { label: "Stanford DB Class", url: "https://web.stanford.edu/class/cs145/" }
-    ]
+    ],
+    dateAdded: "2025-07-29"
   },
   {
     slug: "system-design",
@@ -77,6 +85,7 @@ export const courses = [
     references: [
       { label: "System Design Primer", url: "https://github.com/donnemartin/system-design-primer" },
       { label: "Grokking System Design", url: "https://www.educative.io/courses/grokking-the-system-design-interview" }
-    ]
+    ],
+    dateAdded: "2025-07-30"
   }
-]; 
+];
