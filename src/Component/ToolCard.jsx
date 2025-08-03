@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React from "react";
+=======
+import React from 'react';
+import { isNewItem } from '../utils/dateUtils'; // import utility
+>>>>>>> 7ac1baa (Added new courses popup and dateAdded handling)
 
 const ToolCard = ({
   name,
@@ -7,18 +12,39 @@ const ToolCard = ({
   youtube,
   references = [],
   docs,
+<<<<<<< HEAD
   image,
+=======
+  dateAdded, // ✅ add prop
+>>>>>>> 7ac1baa (Added new courses popup and dateAdded handling)
   onClick,
   selected,
 }) => (
   <div
+<<<<<<< HEAD
+=======
+    className={`relative border rounded-xl p-4 shadow-lg transition-all bg-white flex flex-col items-start group cursor-pointer ${
+      selected ? 'ring-2 ring-black' : 'hover:shadow-2xl hover:bg-gray-100'
+    }`}
+>>>>>>> 7ac1baa (Added new courses popup and dateAdded handling)
     onClick={onClick}
     className={`group cursor-pointer relative border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-md transition-all bg-white dark:bg-[#0f172a] flex flex-col gap-5 hover:shadow-xl hover:-translate-y-1 duration-300 ${
       selected ? "ring-2 ring-black dark:ring-white" : ""
     }`}
   >
+<<<<<<< HEAD
     {/* Title, Image, and Description */}
     <div className="flex items-start gap-4 w-full mb-3">
+=======
+    {/* "New" badge if dateAdded is within 7 days */}
+    {dateAdded && isNewItem(dateAdded) && (
+      <span className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
+        New
+      </span>
+    )}
+
+    <div className="flex items-center gap-4 w-full mb-3">
+>>>>>>> 7ac1baa (Added new courses popup and dateAdded handling)
       {image && (
         <img
           src={image}
