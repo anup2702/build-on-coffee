@@ -72,7 +72,7 @@ const FreeCertificateCourses = () => {
     }, []);
   
   return (
-    <section className={` mx-auto py-16 px-10 text-center animate-fade-in ${isDarkMode ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen": ""}`}>
+    <section className={`mx-auto py-16 px-10 text-center animate-fade-in ${isDarkMode ? "bg-gray-900 min-h-screen" : ""}`}>
     <h2
   className="inline-block text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-600 via-cyan-400 to-purple-500 bg-clip-text text-transparent"
 >
@@ -98,22 +98,22 @@ const FreeCertificateCourses = () => {
 
 
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
   {freeCertificateCourses.map((course, i) => (
    <motion.div
   key={i}
-  className={`relative p-6 rounded-xl backdrop-blur-lg border transition-all duration-300 flex flex-col items-center justify-between h-full ${
-    isDarkMode
-      ? "bg-gray-800/50 border-gray-700/50 hover:bg-gray-800/70"
-      : "bg-white/50 border-gray-200/50 hover:bg-white/70"
-  }`}
+   className={`relative p-6 rounded-xl border transition-all duration-300 flex flex-col items-center justify-between h-full ${
+     isDarkMode
+       ? "bg-gray-900 border-blue-700 hover:bg-gray-800"
+       : "bg-white/80 border-gray-700 hover:bg-blue-50"
+   }`}
   whileHover={{ scale: 1.05, y: -2 }}
   variants={floatingVariants}
   animate="animate"
   transition={{ delay: i * 0.2 }}
 >
   <motion.img
-    src={course.image}
+    src={course.image}  
     alt={`Logo of ${course.name}`}
     className="w-16 h-16 object-contain rounded-xl mb-4"
     whileHover={{ scale: 1.05, y: -2 }}
@@ -153,9 +153,9 @@ const FreeCertificateCourses = () => {
     href={course.link}
     target="_blank"
     rel="noopener noreferrer"
-    className={`inline-block mt-4 px-4 py-2 rounded-xl font-semibold transition-all duration-200 backdrop-blur-md ${
+    className={`inline-block mt-4 px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
       isDarkMode
-        ? "bg-gray-700/60 text-white hover:bg-gray-600/80"
+        ? "bg-gray-800 text-white hover:bg-gray-700"
         : "bg-black text-white hover:bg-gray-800"
     }`}
   >
