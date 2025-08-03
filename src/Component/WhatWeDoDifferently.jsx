@@ -115,7 +115,7 @@ const WhatWeDoDifferently = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <div className='w-16 h-16 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300'>
-                      <Icon className="w-8 h-8 text-white" />
+                      <Icon className="w-8 h-8" />
                     </div>
                     
                     {/* Floating animation dot */}
