@@ -1,105 +1,121 @@
-import React from "react";
+import React from 'react';
+import isNewItem from "../utils/isNewItem"; // ✅ import utility
 
 const ToolCard = ({
   name,
   description,
   link,
+  image,
   youtube,
   references = [],
   docs,
-  image,
   onClick,
   selected,
+  dateAdded // ✅ accept dateAdded as prop
 }) => (
   <div
-    onClick={onClick}
-    className={`group cursor-pointer relative border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-md transition-all bg-white dark:bg-[#0f172a] flex flex-col gap-5 hover:shadow-xl hover:-translate-y-1 duration-300 ${
-      selected ? "ring-2 ring-black dark:ring-white" : ""
+    className={`relative border rounded-xl p-4 shadow-lg transition-all bg-white flex flex-col items-start group cursor-pointer ${
+      selected ? 'ring-2 ring-black' : 'hover:shadow-2xl hover:bg-gray-100'
     }`}
+    onClick={onClick}
   >
-    {/* Title, Image, and Description */}
-    <div className="flex items-start gap-4 w-full mb-3">
+    {/* ✅ New Badge */}
+    {isNewItem(dateAdded) && (
+      <span className="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-sm shadow">
+        NEW
+      </span>
+    )}
+
+    {/* Image and Title */}
+    <div className="flex items-center gap-4 w-full mb-3">
       {image && (
-        <img
-          src={image}
-          alt={name}
-          className="rounded w-8 h-8 object-contain"
-        />
+        <div className="w-16 h-16 flex items-center justify-center">
+          <img
+            src={image}
+            alt={name}
+            className="max-w-full max-h-full object-contain rounded"
+          />
+        </div>
       )}
-      <div>
-        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-1 tracking-tight">
-          {name}
-        </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-          {description}
-        </p>
-      </div>
+      <h3 className="text-xl font-bold mb-1 group-hover:text-black transition-colors text-left">
+        {name}
+      </h3>
     </div>
 
-    {/* Embedded YouTube Preview */}
+    {/* Description */}
+    <p className="text-gray-600 mt-1 group-hover:text-gray-800 transition-colors text-left mb-2">
+      {description}
+    </p>
+
+    {/* YouTube Video */}
     {youtube && (
-      <div className="w-full rounded-lg overflow-hidden shadow">
-        <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+      <div className="w-full mb-2">
+        <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
           <iframe
             src={youtube}
             title="YouTube tutorial"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className="absolute top-0 left-0 w-full h-full"
+            className="absolute top-0 left-0 w-full h-full rounded shadow"
           />
         </div>
       </div>
     )}
 
-    {/* Documentation Link */}
+    {/* Documentation */}
     {docs && (
-      <a
-        href={docs}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={(e) => e.stopPropagation()}
-        className="inline-block text-sm text-blue-600 dark:text-blue-400 relative group font-medium mt-1"
-      >
-        <span className="relative z-10">📄 View Documentation</span>
-        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
-      </a>
+      <div className="mb-2 w-full">
+        <a
+          href={docs}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-black"
+          onClick={(e) => e.stopPropagation()}
+        >
+          Documentation
+        </a>
+      </div>
     )}
 
     {/* References */}
     {references.length > 0 && (
-      <div className="mt-1">
-        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-          References:
-        </h4>
-        <div className="flex flex-wrap gap-2">
+      <div className="w-full">
+        <h4 className="font-semibold text-sm mb-1">References:</h4>
+        <div className="flex flex-wrap gap-3 items-start">
           {references.map((ref, i) =>
             ref.image ? (
               <a
                 key={i}
-                href={ref.url}
+                href={ref.url || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={ref.label || ''}
                 onClick={(e) => e.stopPropagation()}
-                className="block w-10 h-10 rounded overflow-hidden border border-gray-300 dark:border-gray-600 hover:scale-110 transition-transform"
-                title={ref.label || ""}
+                className="block"
               >
-                <img
-                  src={ref.image}
-                  alt={ref.label || "Reference"}
-                  className="w-full h-full object-contain"
-                />
+                <div className="w-12 h-12 flex items-center justify-center border rounded shadow hover:scale-105 transition-transform">
+                  <img
+                    src={ref.image}
+                    alt={ref.label || 'Reference'}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+                {ref.label && (
+                  <div className="text-xs text-center mt-1">{ref.label}</div>
+                )}
               </a>
             ) : (
-              <a
-                key={i}
-                href={ref.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="relative text-xs text-blue-600 dark:text-blue-400 font-medium underline-offset-2 hover:underline hover:text-blue-800 dark:hover:text-white transition-all"
-              >
-                {ref.label}
-              </a>
+              <div key={i} className="text-xs">
+                <a
+                  href={ref.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-black"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {ref.label}
+                </a>
+              </div>
             )
           )}
         </div>
@@ -108,20 +124,15 @@ const ToolCard = ({
 
     {/* CTA Button */}
     {link && (
-      <div className="mt-auto pt-2">
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="group relative inline-block w-full text-center bg-black dark:bg-white text-white dark:text-black px-4 py-2 text-sm rounded-lg overflow-hidden transition-all duration-300 hover:bg-gray-800 dark:hover:bg-gray-300"
-        >
-          <span className="relative z-10 font-semibold tracking-wide">
-            🚀 Go to Course
-          </span>
-          <span className="absolute inset-0 w-0 h-full bg-white dark:bg-black transition-all duration-300 group-hover:w-full group-hover:scale-105 opacity-10 rounded-lg" />
-        </a>
-      </div>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 inline-block text-white bg-black px-4 py-2 rounded hover:bg-gray-800 transition w-full text-center"
+        onClick={(e) => e.stopPropagation()}
+      >
+        🚀 Go to Course
+      </a>
     )}
   </div>
 );
