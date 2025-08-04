@@ -32,46 +32,46 @@ const Contact = () => {
 
   return (
     <section className="max-w-xl mx-auto py-16 px-4 animate-fade-in">
-      <h2 className="text-3xl font-bold mb-4 text-center">Contact Us</h2>
-      <p className="text-gray-600 mb-8 text-center">
+      <h2 className="text-3xl font-bold mb-4 text-center dark:text-white">Contact Us</h2>
+      <p className="text-gray-600 mb-8 text-center dark:text-gray-300">
         Have a question, suggestion, or want to contribute? Fill out the form below and we’ll get back to you!
       </p>
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="bg-white shadow rounded-lg p-8 flex flex-col gap-4"
+        className="bg-white dark:bg-gray-800 shadow rounded-lg p-8 flex flex-col gap-4"
       >
         <input
           type="text"
           name="name"
           placeholder="Your Name"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
+          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition dark:bg-gray-700 dark:text-white"
           required
         />
         <input
           type="email"
           name="user_email"
           placeholder="Your Email"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
+          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition dark:bg-gray-700 dark:text-white"
           required
         />
         <input
           type="text"
           name="title"
           placeholder="Subject / Title"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
+          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition dark:bg-gray-700 dark:text-white"
           required
         />
         <textarea
           name="message"
           placeholder="Your Message"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black transition"
+          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition dark:bg-gray-700 dark:text-white"
           rows={4}
           required
         />
         <button
           type="submit"
-          className={`bg-black text-white py-2 rounded hover:bg-gray-800 transition ${loading ? "opacity-60 cursor-not-allowed" : ""}`}
+          className={`bg-black text-white dark:bg-white dark:text-black py-2 rounded hover:bg-gray-800 dark:hover:bg-gray-200 transition ${loading ? "opacity-60 cursor-not-allowed" : ""}`}
           disabled={loading}
         >
           {loading ? "Sending..." : "Send Message"}

@@ -94,14 +94,14 @@ const [contributors, setContributors] = useState([]);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-8 sm:p-10 lg:p-12 border border-white/20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-gray-900 dark:bg-none">
+      <div className="max-w-7xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-8 sm:p-10 lg:p-12 border border-white/20 dark:bg-gray-900/90 dark:border-gray-800">
         {/* Page Title */}
         <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent mb-4 dark:bg-gradient-to-r dark:text-white">
             Contribute to BuildOnCoffee
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full dark:bg-gradient-to-r dark:from-blue-400 dark:to-indigo-500"></div>
         </div>
 
         {/* Two Column Layout */}
@@ -124,7 +124,7 @@ const [contributors, setContributors] = useState([]);
                   />
                 </svg>
               </div>
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent dark:bg-gradient-to-r dark:from-blue-200 dark:to-indigo-200">
                 How You Can Contribute
               </h2>
             </div>
@@ -136,16 +136,16 @@ const [contributors, setContributors] = useState([]);
                   className="group relative cursor-pointer"
                   onClick={() => toggleContent(index)}
                 >
-                  <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-blue-200">
+                  <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-blue-200 dark:bg-gray-900 dark:border-gray-700">
                     <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
                       {item.step}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-700 transition-colors">
+                      <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-700 transition-colors dark:text-white dark:group-hover:text-blue-300">
                         {item.title}
                       </h3>
                       {openIndex === index && (
-                        <div className="text-sm text-gray-700 mt-2">
+                        <div className="text-sm text-gray-700 mt-2 dark:text-gray-200">
                           {item.link ? (
                             <>
                               {item.content
@@ -159,7 +159,7 @@ const [contributors, setContributors] = useState([]);
                                       href={item.link}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      className="text-blue-600 hover:text-blue-800 underline font-medium"
+                                      className="text-blue-600 hover:text-blue-800 underline font-medium dark:text-blue-400 dark:hover:text-blue-300"
                                     >
                                       GitHub Issues
                                     </a>
@@ -169,7 +169,7 @@ const [contributors, setContributors] = useState([]);
                                       href={item.link}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      className="text-blue-600 hover:text-blue-800 underline font-medium"
+                                      className="text-blue-600 hover:text-blue-800 underline font-medium dark:text-blue-400 dark:hover:text-blue-300"
                                     >
                                       BuildOnCoffee repository
                                     </a>
@@ -208,7 +208,7 @@ const [contributors, setContributors] = useState([]);
                   />
                 </svg>
               </div>
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent dark:bg-gradient-to-r dark:from-blue-200 dark:to-indigo-200">
                 Our Top Contributors
               </h2>
             </div>
@@ -217,7 +217,7 @@ const [contributors, setContributors] = useState([]);
   {contributors.map((contributor) => (
     <div
       key={contributor.id}
-      className="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 hover:border-blue-200"
+      className="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 hover:border-blue-200 dark:bg-gray-900 dark:border-gray-700"
     >
       <div className="flex items-center space-x-4">
         <img
@@ -226,10 +226,10 @@ const [contributors, setContributors] = useState([]);
           className="w-12 h-12 rounded-full shadow-lg"
         />
         <div>
-          <h3 className="text-lg font-semibold text-gray-900">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             {contributor.name}
           </h3>
-          <p className="text-sm text-blue-800 font-medium">
+          <p className="text-sm text-blue-800 font-medium dark:text-blue-300">
             {contributor.contributions} Contributions
           </p>
         </div>
@@ -238,7 +238,7 @@ const [contributors, setContributors] = useState([]);
         href={contributor.profileUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-gray-600 hover:text-gray-900"
+        className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
       >
         View Profile
       </a>

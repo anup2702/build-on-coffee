@@ -1,273 +1,206 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Sparkles, Zap } from "lucide-react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { BookOpen, Users, Wrench, Rocket, Heart, Trophy } from 'lucide-react';
 
 const WhatWeDoDifferently = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // Check theme state
-  useEffect(() => {
-    const isDark = document.body.classList.contains("dark-theme");
-    setIsDarkMode(isDark);
-
-    // Listen for theme changes
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-          setIsDarkMode(document.body.classList.contains("dark-theme"));
-        }
-      });
-    });
-
-    observer.observe(document.body, { attributes: true });
-    return () => observer.disconnect();
-  }, []);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
-  };
-
-  const floatingVariants = {
-    animate: {
-      y: [0, -10, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   const features = [
     {
-      title: "Cohorts",
-      description: "Learn together in small, focused groups with real projects and mentorship.",
-      color: "blue",
+      icon: BookOpen,
+      title: 'Curated Learning Paths',
+      description: 'Hand-picked courses and tutorials that actually matter in today\'s tech landscape',
+      color: 'from-blue-500 to-cyan-500',
+      delay: 0.1
     },
     {
-      title: "Learn",
-      description: "Access curated resources, workshops, and hands-on sessions for all levels.",
-      color: "purple",
+      icon: Wrench,
+      title: 'Production-Ready Tools',
+      description: 'Battle-tested tools and utilities that solve real-world development challenges',
+      color: 'from-green-500 to-teal-500',
+      delay: 0.2
     },
     {
-      title: "Tools & Links",
-      description: "Discover, share, and use the best tools and links for modern development.",
-      color: "pink",
+      icon: Users,
+      title: 'Vibrant Community',
+      description: 'Connect with like-minded developers, share knowledge, and grow together',
+      color: 'from-purple-500 to-pink-500',
+      delay: 0.3
     },
+    {
+      icon: Rocket,
+      title: 'Career Acceleration',
+      description: 'Fast-track your development career with industry insights and mentorship',
+      color: 'from-orange-500 to-red-500',
+      delay: 0.4
+    },
+    {
+      icon: Heart,
+      title: 'Open Source First',
+      description: 'Everything we build is open source and designed to give back to the community',
+      color: 'from-pink-500 to-rose-500',
+      delay: 0.5
+    },
+    {
+      icon: Trophy,
+      title: 'Excellence Driven',
+      description: 'We don\'t just teach code, we instill best practices and engineering excellence',
+      color: 'from-indigo-500 to-purple-500',
+      delay: 0.6
+    }
   ];
 
   return (
-    <section className={`relative py-12 overflow-hidden transition-all duration-500 ${
-      isDarkMode 
-        ? "bg-transparent" 
-        : "bg-gradient-to-br from-blue-50 via-white to-purple-50"
-    }`}>
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className={`absolute top-16 left-8 w-48 h-48 rounded-full blur-3xl opacity-10 ${
-            isDarkMode ? "bg-blue-500" : "bg-blue-400"
-          }`}
-          animate={{
-            x: [0, 40, 0],
-            y: [0, -20, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className={`absolute bottom-16 right-8 w-60 h-60 rounded-full blur-3xl opacity-10 ${
-            isDarkMode ? "bg-purple-500" : "bg-purple-400"
-          }`}
-          animate={{
-            x: [0, -30, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
+    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden" ref={ref}>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5 dark:opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%239C92AC\' fill-opacity=\'0.4\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'2\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+        }} />
       </div>
 
-      {/* Main Content */}
-      <motion.div
-        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        {/* Header Section */}
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
-          variants={itemVariants}
-          className="text-center mb-12"
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full font-semibold text-xs shadow-lg border backdrop-blur-lg mb-4"
-            style={{
-              background: isDarkMode 
-                ? "rgba(59, 130, 246, 0.1)" 
-                : "rgba(59, 130, 246, 0.1)",
-              borderColor: isDarkMode 
-                ? "rgba(59, 130, 246, 0.3)" 
-                : "rgba(59, 130, 246, 0.2)",
-              color: isDarkMode ? "#93c5fd" : "#2563eb"
-            }}
-            whileHover={{ scale: 1.05, y: -2 }}
-            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            className="inline-block mb-4"
+            initial={{ scale: 0 }}
+            animate={inView ? { scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span className="font-bold">Our Unique Approach</span>
-            <motion.div
-              className="relative z-10"
-              animate={{ x: [0, 3, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              <Zap className="w-3 h-3" />
-            </motion.div>
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Heart className="w-8 h-8 text-white" />
+            </div>
           </motion.div>
-
-                     <motion.h2
-             variants={itemVariants}
-             className={`text-3xl md:text-4xl font-black mb-4 ${
-               isDarkMode ? "text-gray-900" : "text-gray-900"
-             }`}
-           >
-             What We Do{" "}
-             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-               Differently
-             </span>
-           </motion.h2>
-
-                     <motion.p
-             variants={itemVariants}
-             className={`text-base md:text-lg max-w-2xl mx-auto leading-relaxed ${
-               isDarkMode ? "text-gray-700" : "text-gray-600"
-             }`}
-           >
-             At BuildOnCoffee, we focus on community-driven curation, hands-on learning, and real-world developer growth. Our approach is unique:
-           </motion.p>
+          
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            What We Do Differently
+          </h2>
+          
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            We're not just another learning platform. We're a community-driven ecosystem 
+            focused on practical skills, real projects, and career growth.
+          </p>
         </motion.div>
 
-        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div
+                key={index}
+                className="group relative"
+                initial={{ opacity: 0, y: 50 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: feature.delay }}
+                whileHover={{ y: -8 }}
+              >
+                <div className="h-full bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/20 dark:border-gray-700/20 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:border-blue-300/30 dark:group-hover:border-blue-600/30">
+                  {/* Animated background gradient */}
+                  <motion.div
+                    className='absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500'
+                    initial={false}
+                  />
+
+                  {/* Icon */}
+                  <motion.div
+                    className="relative mb-6"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className='w-16 h-16 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300'>
+                      <Icon className="w-8 h-8" />
+                    </div>
+                    
+                    {/* Floating animation dot */}
+                    <motion.div
+                      className='absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r ${feature.color} rounded-full opacity-0 group-hover:opacity-100'
+                      animate={inView ? {
+                        scale: [0, 1.2, 1],
+                        opacity: [0, 1, 0.8],
+                      } : {}}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        delay: feature.delay + 1
+                      }}
+                    />
+                  </motion.div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {feature.description}
+                  </p>
+
+                  {/* Hover effect line */}
+                  <motion.div
+                    className='absolute bottom-0 left-0 h-1 bg-gradient-to-r ${feature.color} rounded-b-2xl'
+                    initial={{ width: 0 }}
+                    whileHover={{ width: '100%' }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Stats Section */}
         <motion.div
-          variants={itemVariants}
-          className="grid gap-6 md:grid-cols-3"
+          className="mt-20 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              variants={cardVariants}
-                             className={`relative p-6 rounded-xl backdrop-blur-lg border transition-all duration-300 ${
-                 isDarkMode
-                   ? "bg-white/10 border-gray-600/30 hover:bg-white/20"
-                   : "bg-white/50 border-gray-200/50 hover:bg-white/70"
-               }`}
-              whileHover={{ 
-                scale: 1.05, 
-                y: -5,
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
-              }}
-              animate="animate"
-              transition={{ delay: index * 0.2 }}
-            >
-              {/* Floating Emoji */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            {[
+              { number: '10K+', label: 'Active Learners' },
+              { number: '500+', label: 'Projects Built' },
+              { number: '50+', label: 'Industry Partners' },
+              { number: '95%', label: 'Success Rate' }
+            ].map((stat, index) => (
               <motion.div
-                className="absolute -top-3 -right-3 text-2xl"
-                animate={{
-                  rotate: [0, 10, -10, 0],
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
+                key={index}
+                className="text-center"
+                initial={{ scale: 0 }}
+                animate={inView ? { scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
               >
-                {feature.emoji}
+                <motion.div
+                  className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent mb-2"
+                  animate={inView ? { 
+                    backgroundPosition: ['0%', '100%', '0%'],
+                  } : {}}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity,
+                    delay: 1.5 + index * 0.2 
+                  }}
+                >
+                  {stat.number}
+                </motion.div>
+                <div className="text-gray-600 dark:text-gray-400 font-medium">
+                  {stat.label}
+                </div>
               </motion.div>
-
-              {/* Content */}
-                             <motion.h3
-                 className={`text-xl font-bold mb-3 text-center ${
-                   isDarkMode ? "text-gray-900" : "text-gray-900"
-                 }`}
-                 whileHover={{ scale: 1.05 }}
-                 transition={{ type: "spring", stiffness: 300 }}
-               >
-                 {feature.title}
-               </motion.h3>
-
-                             <motion.p
-                 className={`text-center leading-relaxed text-sm ${
-                   isDarkMode ? "text-gray-700" : "text-gray-600"
-                 }`}
-                 whileHover={{ scale: 1.02 }}
-                 transition={{ type: "spring", stiffness: 300 }}
-               >
-                 {feature.description}
-               </motion.p>
-
-              {/* Decorative Sparkles */}
-              <motion.div
-                className="absolute top-3 left-3"
-                animate={{
-                  rotate: [0, 360],
-                  scale: [1, 1.2, 1],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <Sparkles className={`w-3 h-3 ${
-                  isDarkMode ? "text-yellow-400" : "text-yellow-500"
-                }`} />
-              </motion.div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };
 
-export default WhatWeDoDifferently; 
+
+export default WhatWeDoDifferently;

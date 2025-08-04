@@ -1,28 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Users, Code2, Stars, ChevronRight, Coffee, Sparkles, ArrowRight, Zap } from "lucide-react";
+import { useTheme } from './context/ThemeContext';
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDark } = useTheme();
   const [isHovered, setIsHovered] = useState(false);
-
-  // Check theme state
-  useEffect(() => {
-    const isDark = document.body.classList.contains("dark-theme");
-    setIsDarkMode(isDark);
-
-    // Listen for theme changes
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-          setIsDarkMode(document.body.classList.contains("dark-theme"));
-        }
-      });
-    });
-
-    observer.observe(document.body, { attributes: true });
-    return () => observer.disconnect();
-  }, []);
+  
+  // Use isDark from ThemeContext instead of local state
+  const isDarkMode = isDark;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -203,8 +190,8 @@ const HeroSection = () => {
            variants={itemVariants}
            className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
          >
+           
                      <motion.a
-             href="#tools"
              className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white shadow-xl transition-all duration-300 overflow-hidden"
             style={{
               background: "linear-gradient(135deg, #3858be, #268bcf, #17c8c8, #8b5cf6)",
@@ -225,7 +212,7 @@ const HeroSection = () => {
               whileHover={{ x: "100%" }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
             />
-            <span className="relative z-10">Explore Tools</span>
+            <Link to={"/tools"} className="relative z-10">Explore Tools</Link>
             <motion.div
               className="relative z-10"
               animate={{ x: [0, 5, 0] }}
@@ -236,7 +223,7 @@ const HeroSection = () => {
           </motion.a>
 
                      <motion.a
-             href="#community"
+             href="https://github.com/anup2702/build-on-coffee"
              className={`group inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold border-2 transition-all duration-300 ${
                isDarkMode
                  ? "border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500"
