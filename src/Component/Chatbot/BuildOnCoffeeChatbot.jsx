@@ -211,7 +211,7 @@ const BuildOnCoffeeChatbot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-2xl shadow-2xl z-50 flex flex-col border border-gray-200 overflow-hidden">
+        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white dark:bg-gray-800 rounded-2xl shadow-2xl z-50 flex flex-col border border-gray-200 dark:border-gray-700 overflow-hidden">
           {/* Header */}
           <div className="bg-gradient-to-r from-amber-500 to-orange-600 text-white p-4 flex items-center justify-between rounded-t-2xl">
             <div className="flex items-center space-x-3">
@@ -234,7 +234,7 @@ const BuildOnCoffeeChatbot = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-900">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -266,7 +266,7 @@ const BuildOnCoffeeChatbot = () => {
                     className={`rounded-2xl px-4 py-3 ${
                       message.sender === "user"
                         ? "bg-amber-500 text-white rounded-br-sm"
-                        : "bg-white text-gray-800 rounded-bl-sm border border-gray-200"
+                        : "bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-bl-sm border border-gray-200 dark:border-gray-600"
                     }`}
                   >
                     <div className="text-sm whitespace-pre-line">
@@ -276,7 +276,7 @@ const BuildOnCoffeeChatbot = () => {
                       className={`text-xs mt-1 opacity-70 ${
                         message.sender === "user"
                           ? "text-amber-100"
-                          : "text-gray-500"
+                          : "text-gray-500 dark:text-gray-400"
                       }`}
                     >
                       {formatTime(message.timestamp)}
@@ -293,15 +293,15 @@ const BuildOnCoffeeChatbot = () => {
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center">
                     <Bot className="w-4 h-4" />
                   </div>
-                  <div className="bg-white rounded-2xl rounded-bl-sm px-4 py-3 border border-gray-200">
+                  <div className="bg-white dark:bg-gray-700 rounded-2xl rounded-bl-sm px-4 py-3 border border-gray-200 dark:border-gray-600">
                     <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-gray-400 dark:bg-gray-300 rounded-full animate-bounce"></div>
                       <div
-                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        className="w-2 h-2 bg-gray-400 dark:bg-gray-300 rounded-full animate-bounce"
                         style={{ animationDelay: "0.1s" }}
                       ></div>
                       <div
-                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        className="w-2 h-2 bg-gray-400 dark:bg-gray-300 rounded-full animate-bounce"
                         style={{ animationDelay: "0.2s" }}
                       ></div>
                     </div>
@@ -315,13 +315,13 @@ const BuildOnCoffeeChatbot = () => {
 
           {/* Quick Suggestions */}
           {suggestions.length > 0 && (
-            <div className="px-4 py-2 bg-white border-t border-gray-100">
+            <div className="px-4 py-2 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
               <div className="flex flex-wrap gap-2">
                 {suggestions.map((suggestion, index) => (
                   <button
                     key={index}
                     onClick={() => handleSendMessage(suggestion)}
-                    className="text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 px-3 py-1 rounded-full transition-colors border border-amber-200"
+                    className="text-xs bg-amber-50 text-amber-700 hover:bg-amber-100 dark:bg-gray-700 dark:text-amber-200 dark:hover:bg-gray-600 px-3 py-1 rounded-full transition-colors border border-amber-200 dark:border-gray-600"
                   >
                     {suggestion}
                   </button>
@@ -331,7 +331,7 @@ const BuildOnCoffeeChatbot = () => {
           )}
 
           {/* Input */}
-          <div className="p-4 bg-white border-t border-gray-200 rounded-b-2xl">
+          <div className="p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 rounded-b-2xl">
             <div className="flex items-center space-x-2">
               <div className="flex-1 relative">
                 <textarea
@@ -340,7 +340,7 @@ const BuildOnCoffeeChatbot = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask me about courses, tools, or how to get started..."
-                  className="w-full p-3 pr-12 border border-gray-300 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm"
+                  className="w-full p-3 pr-12 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm"
                   rows="1"
                   style={{ minHeight: "44px", maxHeight: "100px" }}
                 />
@@ -353,7 +353,7 @@ const BuildOnCoffeeChatbot = () => {
                 </button>
               </div>
             </div>
-            <p className="text-xs text-gray-500 mt-2 text-center">
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center">
               Powered by BuildOnCoffee AI • Press Enter to send
             </p>
           </div>
