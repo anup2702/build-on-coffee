@@ -20,7 +20,8 @@ import { tools } from "../data/tools";
 import { courses } from "../data/courses";
 import ProductsSection from "./Component/ProductsSection";
 import JoinCommunity from "./Component/JoinCommunity";
-
+import PrivacyPolicy from "./Component/PrivacyPolicy";
+import TermsOfService from "./Component/TermsOfService";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -62,6 +63,8 @@ const App = () => {
           <Route path="/tools" element={<ToolsList />} />
           <Route path="/learn/tools" element={<LearnTools />} />
           <Route path="/free-certificates" element={<FreeCertificateCourses />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService/>}/>
         </Routes>
       </main>
       <BackToTop />
