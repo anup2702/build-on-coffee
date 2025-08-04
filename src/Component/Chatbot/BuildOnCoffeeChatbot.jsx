@@ -196,8 +196,8 @@ const BuildOnCoffeeChatbot = () => {
 
   return (
     <>
-      {/* Floating Chat Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      {/* Floating Chat Button - MOVED HIGHER TO AVOID OVERLAP */}
+      <div className="fixed bottom-20 right-6 z-50">
         {!isOpen && (
           <button
             onClick={() => setIsOpen(true)}
@@ -209,9 +209,9 @@ const BuildOnCoffeeChatbot = () => {
         )}
       </div>
 
-      {/* Chat Window */}
+      {/* Chat Window - ADJUSTED POSITION TO MATCH BUTTON */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white dark:bg-gray-800 rounded-2xl shadow-2xl z-50 flex flex-col border border-gray-200 dark:border-gray-700 overflow-hidden">
+        <div className="fixed bottom-20 right-6 w-96 h-[600px] bg-white dark:bg-gray-800 rounded-2xl shadow-2xl z-50 flex flex-col border border-gray-200 dark:border-gray-700 overflow-hidden">
           {/* Header */}
           <div className="bg-gradient-to-r from-amber-500 to-orange-600 text-white p-4 flex items-center justify-between rounded-t-2xl">
             <div className="flex items-center space-x-3">
