@@ -1,19 +1,22 @@
-// src/Component/ToolsList.jsx
+// src/Component/ToolsList.tsx
 import React, { useState } from "react";
 import learnToolsList from "../../data/learnToolsList";
 import tutorialData from "../../data/tutorialData";
-
 
 const ToolsList = () => {
   const [selectedTool, setSelectedTool] = useState(learnToolsList[0]);
 
   return (
-    <section className="max-w-6xl mx-auto py-16 px-4 animate-fade-in">
-      <h2 className="text-3xl font-bold mb-8 text-center">All Tools</h2>
-      <div className="flex flex-col md:flex-row bg-white rounded shadow p-6">
+    <section className="max-w-6xl mx-auto py-16 px-4 animate-fade-in ">
+      <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">
+        All Tools
+      </h2>
+      <div className="flex flex-col md:flex-row bg-white dark:bg-[#111827] rounded shadow p-6 border-1 border-gray-300 dark:border-neutral-600">
         {/* Sidebar Tool Buttons */}
-        <div className="md:w-1/4 border-r md:pr-4 mb-4 md:mb-0">
-          <h2 className="text-lg font-semibold mb-2">Select Tool</h2>
+        <div className="md:w-1/4 border-r border-gray-300 dark:border-neutral-600 md:pr-4 mb-4 md:mb-0">
+          <h2 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+            Select Tool
+          </h2>
           {learnToolsList.map((tool) => (
             <button
               key={tool}
@@ -21,7 +24,7 @@ const ToolsList = () => {
               className={`block w-full text-left px-4 py-2 mb-2 rounded transition font-medium ${
                 selectedTool === tool
                   ? "bg-blue-600 text-white"
-                  : "bg-gray-100 hover:bg-gray-200"
+                  : "bg-gray-100 dark:bg-[#003459] text-black dark:text-white hover:bg-gray-200 dark:hover:bg-neutral-600"
               }`}
             >
               {tool}
@@ -31,7 +34,9 @@ const ToolsList = () => {
 
         {/* Video Section */}
         <div className="md:w-3/4 md:pl-6">
-          <h2 className="text-xl font-bold mb-4">{selectedTool} Tutorials</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
+            {selectedTool} Tutorials
+          </h2>
           <ul className="space-y-6">
             {tutorialData[selectedTool]?.map((tutorial, idx) => {
               const videoId = new URLSearchParams(
@@ -40,7 +45,9 @@ const ToolsList = () => {
 
               return (
                 <li key={idx} className="space-y-2">
-                  <h3 className="text-lg font-semibold">{tutorial.title}</h3>
+                  <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+                    {tutorial.title}
+                  </h3>
                   {videoId ? (
                     <iframe
                       width="100%"
@@ -56,7 +63,7 @@ const ToolsList = () => {
                       href={tutorial.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline"
+                      className="text-blue-600 dark:text-blue-400 hover:underline"
                     >
                       Watch here
                     </a>
