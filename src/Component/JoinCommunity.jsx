@@ -24,21 +24,24 @@ const JoinCommunity = React.forwardRef((props, ref) => {
       name: 'Discord', 
       members: '5.2K', 
       color: 'from-indigo-500 to-purple-600',
-      description: 'Join our active Discord community'
+      description: 'Join our active Discord community',
+      link:"https://discord.gg/CgwHe35M"
     },
     { 
       icon: Github, 
       name: 'GitHub', 
       members: '3.1K', 
       color: 'from-gray-700 to-gray-900',
-      description: 'Contribute to open source projects'
+      description: 'Contribute to open source projects',
+      link:"https://github.com/anup2702/build-on-coffee"
     },
     { 
       icon: Twitter, 
       name: 'Twitter', 
       members: '8.5K', 
       color: 'from-blue-400 to-blue-600',
-      description: 'Follow for daily tech insights'
+      description: 'Follow for daily tech insights',
+      link:"https://x.com/buildoncoffee"
     }
   ];
 
@@ -146,12 +149,14 @@ const JoinCommunity = React.forwardRef((props, ref) => {
             <h3 className="text-2xl font-bold mb-6 text-center lg:text-left">
               Choose Your Platform
             </h3>
-
             {socialLinks.map((social, index) => {
               const Icon = social.icon;
               return (
-                <motion.div
+                <><motion.a
                   key={index}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener norferrer"
                   className="group cursor-pointer"
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -159,28 +164,28 @@ const JoinCommunity = React.forwardRef((props, ref) => {
                   whileHover={{ x: 10, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <div className="flex items-center p-6 bg-white/80 dark:bg-white/5 backdrop-blur-sm rounded-xl border border-black/5 dark:border-white/10 hover:bg-white dark:hover:bg-white/10 hover:border-black/10 dark:hover:border-white/20 transition-all duration-300">
-                    <div className={`p-3 bg-gradient-to-r ${social.color} rounded-lg mr-4 group-hover:scale-110 transition-transform duration-200`}>
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{social.name}</h4>
-                        <div className="flex items-center space-x-2">
-                          <span className="text-sm text-gray-500 dark:text-blue-200">{social.members} members</span>
-                          <motion.div
-                            animate={{ x: [0, 5, 0] }}
-                            transition={{ duration: 2, repeat: Infinity }}
-                          >
-                            <ChevronRight className="w-4 h-4 text-blue-500 dark:text-blue-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" />
-                          </motion.div>
-                        </div>
+                    <div className="flex items-center p-6 bg-white/80 dark:bg-white/5 backdrop-blur-sm rounded-xl border border-black/5 dark:border-white/10 hover:bg-white dark:hover:bg-white/10 hover:border-black/10 dark:hover:border-white/20 transition-all duration-300">
+                      <div className={`p-3 bg-gradient-to-r ${social.color} rounded-lg mr-4 group-hover:scale-110 transition-transform duration-200`}>
+                        <Icon className="w-6 h-6 text-white" />
                       </div>
-                      <p className="text-gray-600 dark:text-blue-100 text-sm">{social.description}</p>
+
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-1">
+                          <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{social.name}</h4>
+                          <div className="flex items-center space-x-2">
+                            <span className="text-sm text-gray-500 dark:text-blue-200">{social.members} members</span>
+                            <motion.div
+                              animate={{ x: [0, 5, 0] }}
+                              transition={{ duration: 2, repeat: Infinity }}
+                            >
+                              <ChevronRight className="w-4 h-4 text-blue-500 dark:text-blue-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" />
+                            </motion.div>
+                          </div>
+                        </div>
+                        <p className="text-gray-600 dark:text-blue-100 text-sm">{social.description}</p>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.a></>
               );
             })}
           </motion.div>
