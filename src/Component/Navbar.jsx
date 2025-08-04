@@ -6,16 +6,6 @@ import { useTheme } from './context/ThemeContext';
 const [isVisible, setIsVisible] = useState(true);
 const [lastScrollY, setLastScrollY] = useState(0);
 
-useEffect(() => {
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    setIsVisible(lastScrollY > currentScrollY || currentScrollY < 10);
-    setLastScrollY(currentScrollY);
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, [lastScrollY]);
 
 
 const Navbar = ({ scrollRefs }) => {
@@ -53,6 +43,17 @@ const Navbar = ({ scrollRefs }) => {
       }
     };
   };
+
+  useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    setIsVisible(lastScrollY > currentScrollY || currentScrollY < 10);
+    setLastScrollY(currentScrollY);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [lastScrollY]);
 
   return (
    <motion.header
