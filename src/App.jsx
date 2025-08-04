@@ -21,7 +21,7 @@ import JoinCommunity from "./Component/JoinCommunity";
 import PrivacyPolicy from "./Component/PrivacyPolicy";
 import TermsOfService from "./Component/TermsOfService";
 
-// 🤖 ADD THIS: Chatbot Import
+// 🤖 Chatbot Import
 import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
 
 const Home = ({ scrollRefs }) => {
@@ -71,9 +71,10 @@ const App = () => {
       <BackToTop />
       <Footer />
 
-      {/* 🤖 ADD THIS: Chatbot Integration */}
+      {/* 🤖 Chatbot Integration */}
       <BuildOnCoffeeChatbot />
     </div>
   );
 };
+
 export default App;
