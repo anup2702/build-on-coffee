@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTheme } from './context/ThemeContext';
 import { motion } from 'framer-motion';
-import { Coffee, Heart, Github, Twitter, Disc as Discord, Mail } from 'lucide-react';
+import { Coffee, Heart, Github, Linkedin, Disc as Discord, Mail } from 'lucide-react';
+import { FaXTwitter } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -35,8 +36,9 @@ const Footer = () => {
 
   const socialIcons = [
     { icon: Github, href: '#', color: 'hover:text-gray-800 dark:hover:text-gray-400' },
+    { icon: Linkedin, href: '#', color: 'hover:text-[#0077B5] dark:hover:text-[#3399cc]' },
+    { icon: FaXTwitter, href: '#', color: 'hover:text-black dark:hover:text-white' },
     { icon: Discord, href: '#', color: 'hover:text-indigo-500 dark:hover:text-indigo-400' },
-    { icon: Twitter, href: '#', color: 'hover:text-blue-500 dark:hover:text-blue-400' },
     { icon: Mail, href: '#', color: 'hover:text-green-500 dark:hover:text-green-400' }
   ];
 
