@@ -33,7 +33,7 @@ const CoursesList = () => {
       )}
 
       <section className="max-w-6xl mx-auto pt-8 pb-16 px-4 animate-fade-in relative">
-        <h2 className="text-3xl font-bold mb-8 text-center relative">
+        <h2 className="text-3xl font-bold mb-8 text-center relative dark:text-white">
           All Courses
         </h2>
 
