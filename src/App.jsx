@@ -28,6 +28,8 @@ import "./App.css";
 import { tools } from "../data/tools";
 import { courses } from "../data/courses";
 
+import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -419,6 +421,9 @@ const App = () => {
       </main>
       <BackToTop />
       <Footer />
+
+      {/* 🤖 Chatbot Integration - Add this line */}
+      <BuildOnCoffeeChatbot />
     </div>
   );
 };
