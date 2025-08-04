@@ -3,6 +3,20 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Coffee, Menu, X, Sun, Moon, Home, Info, Mail, GitBranch, Award, Wrench } from 'lucide-react';
 import { useTheme } from './context/ThemeContext';
+const [isVisible, setIsVisible] = useState(true);
+const [lastScrollY, setLastScrollY] = useState(0);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    setIsVisible(lastScrollY > currentScrollY || currentScrollY < 10);
+    setLastScrollY(currentScrollY);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [lastScrollY]);
+
 
 const Navbar = ({ scrollRefs }) => {
   const location = useLocation();
@@ -41,8 +55,9 @@ const Navbar = ({ scrollRefs }) => {
   };
 
   return (
-    <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 shadow-lg shadow-black/5 dark:shadow-black/20 border-b border-gray-200/50 dark:border-gray-700/50`}
+   <motion.header
+  className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-500 ease-in-out transform ${isVisible ? 'translate-y-0' : '-translate-y-full'} backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 shadow-lg shadow-black/5 dark:shadow-black/20 border-b border-gray-200/50 dark:border-gray-700/50`}
+
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
