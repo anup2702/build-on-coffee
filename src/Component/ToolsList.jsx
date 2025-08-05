@@ -10,7 +10,7 @@ const ToolsList = () => {
   return (
     <section className="max-w-6xl mx-auto py-16 px-4 animate-fade-in">
       <h2 className="text-3xl font-bold mb-8 text-center">All Tools</h2>
-      <div className="flex flex-col md:flex-row bg-white rounded shadow p-6">
+      <div className="flex flex-col md:flex-row dark:bg-gray-900 rounded shadow p-6">
         {/* Sidebar Tool Buttons */}
         <div className="md:w-1/4 border-r md:pr-4 mb-4 md:mb-0">
           <h2 className="text-lg font-semibold mb-2">Select Tool</h2>
@@ -20,8 +20,8 @@ const ToolsList = () => {
               onClick={() => setSelectedTool(tool)}
               className={`block w-full text-left px-4 py-2 mb-2 rounded transition font-medium ${
                 selectedTool === tool
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 hover:bg-gray-200"
+                  ? "bg-blue-600 text-white font-bold"
+                  : "bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-black dark:text-white font-medium"
               }`}
             >
               {tool}
