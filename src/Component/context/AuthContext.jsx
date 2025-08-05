@@ -12,8 +12,8 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({
-    name: 'Anup Kumar',
-    email: 'anupkumar@example.com',
+    name: 'Priya S.',
+    email: 'priya@gmail.com',
     provider: 'Google',
     contributions: {
       pullRequests: 5,
