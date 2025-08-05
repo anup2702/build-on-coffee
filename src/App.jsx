@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-
 import Navbar from "./Component/Navbar";
 import HeroSection from "./Component/HeroSection";
 import ToolCard from "./Component/ToolCard";
@@ -15,17 +14,19 @@ import FreeCertificateCourses from "./Component/FreeCertificateCourses";
 import LearnTools from "./Component/Tools/LearnTools";
 import CoursesList from "./Component/CoursesList";
 import ToolsList from "./Component/ToolsList";
-
 import { tools } from "../data/tools";
 import { courses } from "../data/courses";
 import ProductsSection from "./Component/ProductsSection";
 import JoinCommunity from "./Component/JoinCommunity";
 import PrivacyPolicy from "./Component/PrivacyPolicy";
 import TermsOfService from "./Component/TermsOfService";
+import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
+import { AuthProvider } from "./Component/context/AuthContext";
+import PrivateRoute from "./Component/PrivateRoute";
+import Profile from "./Component/Profile";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
-
   return (
     <>
       <HeroSection communityRef={scrollRefs?.community} />
@@ -41,36 +42,49 @@ const App = () => {
   const learnRef = useRef(null);
   const toolsRef = useRef(null);
   const communityRef = useRef(null);
-
   const scrollRefs = {
     differently: differentlyRef,
     learn: learnRef,
     tools: toolsRef,
     community: communityRef,
   };
-
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-      <Navbar scrollRefs={scrollRefs} />
-      <main className="flex-1 pt-20">
-        <Routes>
-          <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/contribute" element={<Contribute />} />
-          <Route path="/courses" element={<CoursesList />} />
-          <Route path="/courses/:slug" element={<CoursePage />} />
-          <Route path="/tools" element={<ToolsList />} />
-          <Route path="/learn/tools" element={<LearnTools />} />
-          <Route path="/free-certificates" element={<FreeCertificateCourses />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService/>}/>
-        </Routes>
-      </main>
-      <BackToTop />
-      <Footer />
-    </div>
+    <AuthProvider>
+      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+        <Navbar scrollRefs={scrollRefs} />
+        <main className="flex-1 pt-20">
+          <Routes>
+            <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/contribute" element={<Contribute />} />
+            <Route path="/courses" element={<CoursesList />} />
+            <Route path="/courses/:slug" element={<CoursePage />} />
+            <Route path="/tools" element={<ToolsList />} />
+            <Route path="/learn/tools" element={<LearnTools />} />
+            <Route
+              path="/free-certificates"
+              element={<FreeCertificateCourses />}
+            />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route
+              path="/profile"
+              element={
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </main>
+        <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-2">
+          <BackToTop />
+          <BuildOnCoffeeChatbot />
+        </div>
+        <Footer />
+      </div>
+    </AuthProvider>
   );
 };
-
 export default App;

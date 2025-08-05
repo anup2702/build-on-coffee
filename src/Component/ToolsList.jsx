@@ -1,4 +1,4 @@
-// src/Component/ToolsList.jsx
+// src/Component/ToolsList.tsx
 import React, { useState } from "react";
 import tutorialData from "../../data/tutorialData";
 import {motion, spring} from 'motion/react'
