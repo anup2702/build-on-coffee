@@ -69,29 +69,29 @@ const tutorialData = {
       },
     ],
   },
-  "React.js": {
-    logo: "./src/assets/tools_logo/icons8-react-native.svg",
+  "Twilio": {
+    logo: "./src/assets/tools_logo/twilio-icon.svg",
     tutorials: [
       {
-        title: "React JS 19 Crash Course - 2025 | Build and Deploy App",
-        link: "https://www.youtube.com/watch?v=GPWHql7scWc",
+        title: "Twilio complete beginners guide",
+        link: "https://www.youtube.com/watch?v=4jUMqutYmyE&pp=ygUPdHdpbGlvIHR1dG9yaWFs",
       },
       {
-        title: "React Tutorial for Beginners (React 19, 2025)",
-        link: "https://www.youtube.com/watch?v=dCLhUialKPQ&pp=ygUIcmVhY3QganM%3D",
+        title: "Twilio tutorial for beginners",
+        link: "https://www.youtube.com/watch?v=8OIl8pMK90U&pp=ygUPdHdpbGlvIHR1dG9yaWFs",
       },
     ],
   },
-  "Node.js": {
-    logo: "./src/assets/tools_logo/icons8-nodejs.svg",
+  "Firebase": {
+    logo: "./src/assets/tools_logo/firebase-1-logo.svg",
     tutorials: [
       {
-        title: "Node JS Tutorial For Beginners 2025",
-        link: "https://www.youtube.com/watch?v=yGl3f0xTl_0",
+        title: "Firebase basics tutorial",
+        link: "https://www.youtube.com/watch?v=9kRgVxULbag&pp=ygURZmlyZWJhc2UgdHV0b3JpYWw%3D",
       },
       {
-        title: "Node.js Full Course 2025 | Learn Node.js From Scratch",
-        link: "https://www.youtube.com/watch?v=U8XF6AFGqlc",
+        title: "Firebase tutorial 2025",
+        link: "https://www.youtube.com/watch?v=_L8j-ZC83y4&pp=ygURZmlyZWJhc2UgdHV0b3JpYWw%3D",
       },
     ],
   },
