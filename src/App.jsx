@@ -68,11 +68,11 @@ const App = () => {
           <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
       </main>
-      <BackToTop />
+      <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-2">  
+        <BackToTop />
+        <BuildOnCoffeeChatbot />
+      </div>
       <Footer />
-
-      {/* 🤖 ADD THIS: Chatbot Integration */}
-      <BuildOnCoffeeChatbot />
     </div>
   );
 };
