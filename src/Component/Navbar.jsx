@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Coffee, Menu, X, Sun, Moon, Home, Info, Mail, GitBranch, Award, Wrench } from 'lucide-react';
@@ -9,10 +9,13 @@ const Navbar = ({ scrollRefs }) => {
   const navigate = useNavigate();
   const { isDark, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   const handleThemeToggle = () => {
     toggleTheme();
   };
+
   const navItems = [
     { id: "home", to: "/", label: "Home", icon: Home },
     { id: "about", to: "/about", label: "About", icon: Info },
@@ -20,6 +23,7 @@ const Navbar = ({ scrollRefs }) => {
     { id: "contribute", to: "/contribute", label: "Contribute", icon: GitBranch },
     { id: "tools", to: "/tools", label: "Tools", icon: Wrench },
   ];
+
   const topLinks = [
     { key: "community", label: "Join our community" },
   ];
@@ -40,9 +44,20 @@ const Navbar = ({ scrollRefs }) => {
     };
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsVisible(lastScrollY > currentScrollY || currentScrollY < 10);
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 shadow-lg shadow-black/5 dark:shadow-black/20 border-b border-gray-200/50 dark:border-gray-700/50`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-500 ease-in-out transform ${isVisible ? 'translate-y-0' : '-translate-y-full'} backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 shadow-lg shadow-black/5 dark:shadow-black/20 border-b border-gray-200/50 dark:border-gray-700/50`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
@@ -201,70 +216,3 @@ const Navbar = ({ scrollRefs }) => {
 };
 
 export default Navbar;
-
-
-
-// import React from "react";
-// import { Link, useLocation, useNavigate } from "react-router-dom";
-
-// const Navbar = ({ scrollRefs }) => {
-//   const location = useLocation();
-//   const navigate = useNavigate();
-//   const navLinks = [
-//     { to: "/", label: "Home" },
-//     { to: "/about", label: "About" },
-//     { to: "/contact", label: "Contact" },
-//     { to: "/contribute", label: "Contribute" },
-//     { to: "/free-certificates", label: "Free Certificate Courses" },
-//   ];
-//   const topLinks = [
-//     { key: "community", label: "Join our community" },
-//   ];
-
-//   const handleScroll = (key) => (e) => {
-//     if (location.pathname === "/" && scrollRefs && scrollRefs[key] && scrollRefs[key].current) {
-//       e.preventDefault();
-//       scrollRefs[key].current.scrollIntoView({ behavior: "smooth" });
-//     } else {
-//       navigate("/", { replace: false });
-//       setTimeout(() => {
-//         if (scrollRefs && scrollRefs[key] && scrollRefs[key].current) {
-//           scrollRefs[key].current.scrollIntoView({ behavior: "smooth" });
-//         }
-//       }, 100);
-//     }
-//   };
-
-//   return (
-// <nav className="sticky top-0 z-50 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg p-4 flex flex-col sm:flex-row items-center justify-between gap-2 rounded-xl">
-//       <div className="flex items-center gap-6 w-full sm:w-auto justify-between">
-//         <Link to="/" className="text-2xl font-bold">BuildOnCoffee</Link>
-//       </div>
-//       <div className="flex flex-wrap gap-2 mt-2 sm:mt-0">
-//         {navLinks.map((link) => (
-//           <Link
-//             key={link.to}
-//             to={link.to}
-//             className={`text-gray-700 px-3 py-1 rounded transition hover:bg-gray-200 hover:text-black font-medium ${location.pathname === link.to ? 'bg-gray-200 text-black' : ''}`}
-//           >
-//             {link.label}
-//           </Link>
-//         ))}
-//       </div>
-//       <div className="flex flex-wrap gap-2 mt-2 sm:mt-0">
-//         {topLinks.map((link) => (
-//           <a
-//             key={link.key}
-//             href={`#${link.key}`}
-//             onClick={handleScroll(link.key)}
-//             className={`text-gray-600 px-3 py-1 rounded transition hover:bg-gray-100 hover:text-black font-medium cursor-pointer ${location.pathname === "/" ? '' : ''} ${link.key === 'community' ? 'bg-black text-white hover:bg-gray-800 font-semibold shadow-md' : ''}`}
-//           >
-//             {link.label}
-//           </a>
-//         ))}
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;

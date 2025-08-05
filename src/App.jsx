@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-
 import Navbar from "./Component/Navbar";
 import HeroSection from "./Component/HeroSection";
 import ToolCard from "./Component/ToolCard";
@@ -15,16 +14,18 @@ import FreeCertificateCourses from "./Component/FreeCertificateCourses";
 import LearnTools from "./Component/Tools/LearnTools";
 import CoursesList from "./Component/CoursesList";
 import ToolsList from "./Component/ToolsList";
-
 import { tools } from "../data/tools";
 import { courses } from "../data/courses";
 import ProductsSection from "./Component/ProductsSection";
 import JoinCommunity from "./Component/JoinCommunity";
+import PrivacyPolicy from "./Component/PrivacyPolicy";
+import TermsOfService from "./Component/TermsOfService";
 
+// 🤖 ADD THIS: Chatbot Import
+import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
-
   return (
     <>
       <HeroSection communityRef={scrollRefs?.community} />
@@ -40,14 +41,12 @@ const App = () => {
   const learnRef = useRef(null);
   const toolsRef = useRef(null);
   const communityRef = useRef(null);
-
   const scrollRefs = {
     differently: differentlyRef,
     learn: learnRef,
     tools: toolsRef,
     community: communityRef,
   };
-
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
       <Navbar scrollRefs={scrollRefs} />
@@ -61,13 +60,20 @@ const App = () => {
           <Route path="/courses/:slug" element={<CoursePage />} />
           <Route path="/tools" element={<ToolsList />} />
           <Route path="/learn/tools" element={<LearnTools />} />
-          <Route path="/free-certificates" element={<FreeCertificateCourses />} />
+          <Route
+            path="/free-certificates"
+            element={<FreeCertificateCourses />}
+          />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
       </main>
-      <BackToTop />
+      <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-2">  
+        <BackToTop />
+        <BuildOnCoffeeChatbot />
+      </div>
       <Footer />
     </div>
   );
 };
-
 export default App;

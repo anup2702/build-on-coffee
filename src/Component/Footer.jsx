@@ -2,14 +2,35 @@ import React from 'react';
 import { useTheme } from './context/ThemeContext';
 import { motion } from 'framer-motion';
 import { Coffee, Heart, Github, Twitter, Disc as Discord, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { isDark } = useTheme();
   const footerLinks = {
-    Product: ['Learn', 'Tools', 'Community', 'API'],
-    Company: ['About', 'Blog', 'Careers', 'Contact'],
-    Resources: ['Documentation', 'Help Center', 'Privacy Policy', 'Terms of Service'],
-    Connect: ['GitHub', 'Discord', 'Twitter', 'Newsletter']
+    Product: [
+    { label: 'Learn', to: '/' },
+    { label: 'Tools', to: '/tools' },
+    { label: 'Community', to: '/' },
+    { label: 'API', to: '/' },
+  ],
+  Company: [
+    { label: 'About', to: '/about' },
+    { label: 'Blog', to: '/' },
+    { label: 'Careers', to: '/' },
+    { label: 'Contact', to: '/contact' },
+  ],
+  Resources: [
+    { label: 'Documentation', to: '/' },
+    { label: 'Help Center', to: '/' },
+    { label: 'Privacy Policy', to: '/privacy-policy' },
+    { label: 'Terms of Service', to: '/terms-of-service' },
+  ],
+  Connect: [
+    { label: 'GitHub', href: 'https://github.com/anup2702/build-on-coffee' },
+    { label: 'Discord', href: 'https://discord.gg/gUJnX8dQ' },
+    { label: 'Twitter', href: '/' },
+    { label: 'Newsletter', to: '/' },
+  ]
   };
 
   const socialIcons = [
@@ -70,18 +91,29 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link, linkIndex) => (
                   <motion.li
-                    key={link}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 + linkIndex * 0.05 }}
-                  >
-                    <a
-                      href="#"
-                      className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm"
-                    >
-                      {link}
-                    </a>
-                  </motion.li>
+          key={linkIndex}
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3, delay: index * 0.1 + linkIndex * 0.05 }}
+        >
+          {link.to ? (
+            <Link
+              to={link.to}
+              className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm"
+            >
+              {link.label}
+            </Link>
+          ) : (
+            <a
+              href={link.href || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm"
+            >
+              {link.label}
+            </a>
+          )}
+        </motion.li>
                 ))}
               </ul>
             </div>

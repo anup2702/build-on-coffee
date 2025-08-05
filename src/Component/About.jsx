@@ -35,7 +35,7 @@ const About = () => (
           Why BuildOnCoffee?
         </h2>
 
-        <ul className=" text-lg md:text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto list-disc list-inside dark:text-gray-300">
+        <ul className=" text-lg md:text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto list-none dark:text-gray-300">
           <li>
             <span className="font-semibold text-blue-700">Discover</span>{" "}
             top-rated tools and resources for developers, all in one place.
