@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Coffee, Menu, X, Sun, Moon, Home, Info, Mail, GitBranch, Award, Wrench } from 'lucide-react';
+import { Coffee, Menu, X, Sun, Moon, Home, Info, Mail, GitBranch, Award, Wrench, User } from 'lucide-react';
 import { useTheme } from './context/ThemeContext';
 
 const Navbar = ({ scrollRefs }) => {
@@ -22,6 +22,7 @@ const Navbar = ({ scrollRefs }) => {
     { id: "contact", to: "/contact", label: "Contact", icon: Mail },
     { id: "contribute", to: "/contribute", label: "Contribute", icon: GitBranch },
     { id: "tools", to: "/tools", label: "Tools", icon: Wrench },
+    { id: "profile", to: "/profile", label: "Profile", icon: User },
   ];
 
   const topLinks = [

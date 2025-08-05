@@ -20,9 +20,10 @@ import ProductsSection from "./Component/ProductsSection";
 import JoinCommunity from "./Component/JoinCommunity";
 import PrivacyPolicy from "./Component/PrivacyPolicy";
 import TermsOfService from "./Component/TermsOfService";
-
-// 🤖 ADD THIS: Chatbot Import
 import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
+import { AuthProvider } from "./Component/context/AuthContext";
+import PrivateRoute from "./Component/PrivateRoute";
+import Profile from "./Component/Profile";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -48,32 +49,42 @@ const App = () => {
     community: communityRef,
   };
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-      <Navbar scrollRefs={scrollRefs} />
-      <main className="flex-1 pt-20">
-        <Routes>
-          <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/contribute" element={<Contribute />} />
-          <Route path="/courses" element={<CoursesList />} />
-          <Route path="/courses/:slug" element={<CoursePage />} />
-          <Route path="/tools" element={<ToolsList />} />
-          <Route path="/learn/tools" element={<LearnTools />} />
-          <Route
-            path="/free-certificates"
-            element={<FreeCertificateCourses />}
-          />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-        </Routes>
-      </main>
-      <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-2">  
-        <BackToTop />
-        <BuildOnCoffeeChatbot />
+    <AuthProvider>
+      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+        <Navbar scrollRefs={scrollRefs} />
+        <main className="flex-1 pt-20">
+          <Routes>
+            <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/contribute" element={<Contribute />} />
+            <Route path="/courses" element={<CoursesList />} />
+            <Route path="/courses/:slug" element={<CoursePage />} />
+            <Route path="/tools" element={<ToolsList />} />
+            <Route path="/learn/tools" element={<LearnTools />} />
+            <Route
+              path="/free-certificates"
+              element={<FreeCertificateCourses />}
+            />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route
+              path="/profile"
+              element={
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </main>
+        <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-2">
+          <BackToTop />
+          <BuildOnCoffeeChatbot />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </AuthProvider>
   );
 };
 export default App;
