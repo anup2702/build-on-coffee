@@ -40,8 +40,6 @@ const Navbar = ({ scrollRefs }) => {
       label: "Contribute",
       icon: GitBranch,
     },
-    { id: "tools", to: "/tools", label: "Tools", icon: Wrench },
-    { id: "roadmap", to: "/roadmap", label: "Roadmap", icon: Route },
     { id: "profile", to: "/profile", label: "Profile", icon: User },
   ];
 
