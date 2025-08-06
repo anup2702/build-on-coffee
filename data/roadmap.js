@@ -7,7 +7,7 @@ export const roadmap = [
   {
     title: "Web Development",
     description: "Frontend + Backend technologies for modern apps.",
-    path: "/roadmap/webdev",
+    path: "/roadmap/web-development",
   },
   {
     title: "DevOps",
