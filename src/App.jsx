@@ -26,6 +26,7 @@ import PrivateRoute from "./Component/PrivateRoute";
 import Profile from "./Component/Profile";
 import Roadmap from "./Component/Roadmap";
 import DsaRoadmap from "./Component/Roadmaps/DsaRoadmap";
+import WebDevRoadmap from "./Component/Roadmaps/WebDevRoadmap";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -65,6 +66,7 @@ const App = () => {
             <Route path="/tools" element={<ToolsList />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/roadmap/dsa" element={<DsaRoadmap />} />
+            <Route path="/roadmap/web-development" element={<WebDevRoadmap />} />
             <Route path="/learn/tools" element={<LearnTools />} />
             <Route
               path="/free-certificates"
