@@ -1,7 +1,7 @@
 // src/Component/ToolsList.tsx
 import React, { useState } from "react";
 import tutorialData from "../../data/tutorialData";
-import {motion, spring} from 'motion/react'
+import { motion, spring } from "framer-motion";
 
 // A self-contained component for each tool in the list.
 const ToolsItem = ({ category, toolData }) => {

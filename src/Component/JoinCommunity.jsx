@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { MessageSquare, Users, Github, Twitter, Disc as Discord, Mail, ChevronRight, Star } from 'lucide-react';
+import { MessageSquare, Users, Github, Linkedin, Disc as Discord, Mail, ChevronRight, Star } from 'lucide-react';
+import { FaXTwitter } from "react-icons/fa6";
 import { useTheme } from './context/ThemeContext';
 
 const JoinCommunity = React.forwardRef((props, ref) => {
@@ -20,14 +21,6 @@ const JoinCommunity = React.forwardRef((props, ref) => {
 
   const socialLinks = [
     { 
-      icon: Discord, 
-      name: 'Discord', 
-      members: '5.2K', 
-      color: 'from-indigo-500 to-purple-600',
-      description: 'Join our active Discord community',
-      link:"https://discord.gg/CgwHe35M"
-    },
-    { 
       icon: Github, 
       name: 'GitHub', 
       members: '3.1K', 
@@ -36,12 +29,28 @@ const JoinCommunity = React.forwardRef((props, ref) => {
       link:"https://github.com/anup2702/build-on-coffee"
     },
     { 
-      icon: Twitter, 
-      name: 'Twitter', 
+      icon: Linkedin, 
+      name: 'LinkedIn', 
+      members: '4.7K',  // (replace with actual if different)
+      color: 'from-blue-500 to-blue-700',
+      description: 'Connect with us professionally',
+      link:"https://www.linkedin.com/company/build-on-coffee/"
+    },
+    { 
+      icon: FaXTwitter, 
+      name: 'X', 
       members: '8.5K', 
-      color: 'from-blue-400 to-blue-600',
+      color: 'bg-black',
       description: 'Follow for daily tech insights',
       link:"https://x.com/buildoncoffee"
+    },
+    { 
+      icon: Discord, 
+      name: 'Discord', 
+      members: '5.2K', 
+      color: 'from-indigo-500 to-purple-600',
+      description: 'Join our active Discord community',
+      link:"https://discord.gg/CgwHe35M"
     }
   ];
 
