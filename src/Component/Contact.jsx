@@ -12,6 +12,22 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    const name = form.current.name.value.trim();
+    const email = form.current.user_email.value.trim();
+
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const emailRegex = /^[A-Za-z][A-Za-z0-9._%+-]*@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if (!nameRegex.test(name)) {
+      setStatus({ type: "error", msg: "Name must contain only alphabets." });
+      return;
+    }
+
+    if (!emailRegex.test(email)) {
+      setStatus({ type: "error", msg: "Please enter a valid email starting with an alphabet." });
+      return;
+    }
+
     setLoading(true);
     setStatus(null);
 
