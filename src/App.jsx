@@ -24,6 +24,8 @@ import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
 import { AuthProvider } from "./Component/context/AuthContext";
 import PrivateRoute from "./Component/PrivateRoute";
 import Profile from "./Component/Profile";
+import Roadmap from "./Component/Roadmap";
+import DsaRoadmap from "./Component/Roadmaps/DsaRoadmap";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -61,6 +63,8 @@ const App = () => {
             <Route path="/courses" element={<CoursesList />} />
             <Route path="/courses/:slug" element={<CoursePage />} />
             <Route path="/tools" element={<ToolsList />} />
+            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/roadmap/dsa" element={<DsaRoadmap />} />
             <Route path="/learn/tools" element={<LearnTools />} />
             <Route
               path="/free-certificates"
