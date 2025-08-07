@@ -3,7 +3,7 @@
 
 import React, { useState } from "react";
 import { useSignIn } from "@clerk/clerk-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { Loader2 } from "lucide-react";
 
@@ -77,7 +77,7 @@ const Login = () => {
           <FcGoogle className="text-xl text-black" /> Continue with Google
         </button>
         <p className="mt-6 text-center text-sm text-gray-600">
-          Don’t have an account? <a href="/signup" className="text-blue-800 hover:underline">Sign up</a>
+          Don’t have an account? <Link to ="/signup" className="text-blue-800 hover:underline">Sign up</Link>
         </p>
       </div>
     </div>

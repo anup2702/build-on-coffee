@@ -68,8 +68,8 @@ const App = () => {
       <AuthProvider>
         <Routes>
           {/* ✅ Auth Routes */}
-          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
           <Route path="/about" element={<About /> }/>
           <Route path="/contact" element={<Contact />} />
