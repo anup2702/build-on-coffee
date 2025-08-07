@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Navbar from "./Component/Navbar";
@@ -20,6 +21,9 @@ import ProductsSection from "./Component/ProductsSection";
 import JoinCommunity from "./Component/JoinCommunity";
 import PrivacyPolicy from "./Component/PrivacyPolicy";
 import TermsOfService from "./Component/TermsOfService";
+import ProtectedRoute from "./Component/Auth/ProtectedRoute";
+import Login from "./Component/Auth/Login";
+import Signup from "./Component/Auth/SignUp";
 
 // 🤖 ADD THIS: Chatbot Import
 import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
@@ -47,28 +51,56 @@ const App = () => {
     tools: toolsRef,
     community: communityRef,
   };
+
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
       <Navbar scrollRefs={scrollRefs} />
       <main className="flex-1 pt-20">
         <Routes>
+          {/* ✅ Auth Routes */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About /> }/>
           <Route path="/contact" element={<Contact />} />
-          <Route path="/contribute" element={<Contribute />} />
-          <Route path="/courses" element={<CoursesList />} />
-          <Route path="/courses/:slug" element={<CoursePage />} />
-          <Route path="/tools" element={<ToolsList />} />
-          <Route path="/learn/tools" element={<LearnTools />} />
+
+
+          {/* ✅ Protected Routes */}
           <Route
-            path="/free-certificates"
-            element={<FreeCertificateCourses />}
+            path="/contribute"
+            element={
+              <ProtectedRoute>
+                <Contribute />
+              </ProtectedRoute>
+            }
           />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route
+            path="/courses/:slug"
+            element={
+              <ProtectedRoute>
+                <CoursePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/tools"
+            element={
+              <ProtectedRoute>
+                <ToolsList />
+              </ProtectedRoute>
+            }
+          />
+
+         
+          <Route path="/courses" element={<CoursesList />} />
+          <Route path="/learn/tools" element={<ProtectedRoute><LearnTools /></ProtectedRoute>} />
+          <Route path="/free-certificates" element={<ProtectedRoute><FreeCertificateCourses /></ProtectedRoute>} />
+          <Route path="/privacy-policy" element={<ProtectedRoute><PrivacyPolicy /></ProtectedRoute>} />
+          <Route path="/terms-of-service" element={<ProtectedRoute><TermsOfService /></ProtectedRoute>} />
         </Routes>
       </main>
-      <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-2">  
+
+      <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-2">
         <BackToTop />
         <BuildOnCoffeeChatbot />
       </div>
@@ -76,4 +108,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
