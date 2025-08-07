@@ -22,6 +22,6 @@ export const roadmap = [
   {
     title: "Open Source Journey",
     description: "Start contributing to real-world projects.",
-    path: "/roadmap/open-source",
+    path: "/roadmap/opensource",
   },
 ];
