@@ -29,6 +29,7 @@ import DsaRoadmap from "./Component/Roadmaps/DsaRoadmap";
 import OpenSourceRoadmap from "./Component/Roadmaps/OpenSourceRoadmap";
 import WebDevRoadmap from "./Component/Roadmaps/WebDevRoadmap";
 import DevOpsRoadmap from "./Component/Roadmaps/DevOpsRoadmap";
+import Glossary from "./Component/Glossary/Glossary";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -66,6 +67,7 @@ const App = () => {
             <Route path="/courses" element={<CoursesList />} />
             <Route path="/courses/:slug" element={<CoursePage />} />
             <Route path="/tools" element={<ToolsList />} />
+            <Route path="/glossary" element={<Glossary />} />   
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/roadmap/dsa" element={<DsaRoadmap />} />
             <Route path="/roadmap/opensource" element={<OpenSourceRoadmap />} />
