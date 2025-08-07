@@ -27,6 +27,13 @@ import Signup from "./Component/Auth/SignUp";
 
 // 🤖 ADD THIS: Chatbot Import
 import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
+import { AuthProvider } from "./Component/context/AuthContext";
+import PrivateRoute from "./Component/PrivateRoute";
+import Profile from "./Component/Profile";
+import Roadmap from "./Component/Roadmap";
+import DsaRoadmap from "./Component/Roadmaps/DsaRoadmap";
+import OpenSourceRoadmap from "./Component/Roadmaps/OpenSourceRoadmap";
+import WebDevRoadmap from "./Component/Roadmaps/WebDevRoadmap";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -53,9 +60,11 @@ const App = () => {
   };
 
   return (
+        <>
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
       <Navbar scrollRefs={scrollRefs} />
       <main className="flex-1 pt-20">
+      <AuthProvider>
         <Routes>
           {/* ✅ Auth Routes */}
           <Route path="/login" element={<Login />} />
@@ -97,15 +106,35 @@ const App = () => {
           <Route path="/free-certificates" element={<ProtectedRoute><FreeCertificateCourses /></ProtectedRoute>} />
           <Route path="/privacy-policy" element={<ProtectedRoute><PrivacyPolicy /></ProtectedRoute>} />
           <Route path="/terms-of-service" element={<ProtectedRoute><TermsOfService /></ProtectedRoute>} />
-        </Routes>
-      </main>
+        
+      
 
-      <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-2">
-        <BackToTop />
-        <BuildOnCoffeeChatbot />
-      </div>
-      <Footer />
-    </div>
+      
+            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/roadmap/dsa" element={<DsaRoadmap />} />
+            <Route path="/roadmap/opensource" element={<OpenSourceRoadmap />} />
+            <Route path="/roadmap/web-development" element={<WebDevRoadmap />} />
+            
+           
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-2">
+          <BackToTop />
+          <BuildOnCoffeeChatbot />
+        </div>
+        <Footer />
+      
+    </AuthProvider>
+        </main>
+   </div> 
+   </>
   );
 };
 

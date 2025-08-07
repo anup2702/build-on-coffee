@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTheme } from './context/ThemeContext';
 import { motion } from 'framer-motion';
-import { Coffee, Heart, Github, Twitter, Disc as Discord, Mail } from 'lucide-react';
+import { Coffee, Heart, Github, Linkedin, Disc as Discord, Mail } from 'lucide-react';
+import { FaXTwitter } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -27,17 +28,19 @@ const Footer = () => {
   ],
   Connect: [
     { label: 'GitHub', href: 'https://github.com/anup2702/build-on-coffee' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/build-on-coffee/' },
+    { label: 'X', href: 'https://x.com/buildoncoffee' },
     { label: 'Discord', href: 'https://discord.gg/gUJnX8dQ' },
-    { label: 'Twitter', href: '/' },
-    { label: 'Newsletter', to: '/' },
+    { label: 'Mail', href: 'mailto:buildoncoffee@gmail.com' },
   ]
   };
 
   const socialIcons = [
-    { icon: Github, href: '#', color: 'hover:text-gray-800 dark:hover:text-gray-400' },
-    { icon: Discord, href: '#', color: 'hover:text-indigo-500 dark:hover:text-indigo-400' },
-    { icon: Twitter, href: '#', color: 'hover:text-blue-500 dark:hover:text-blue-400' },
-    { icon: Mail, href: '#', color: 'hover:text-green-500 dark:hover:text-green-400' }
+    { icon: Github, href: 'https://github.com/anup2702/build-on-coffee', label: 'GitHub', color: 'hover:text-gray-800 dark:hover:text-gray-400' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/build-on-coffee/', label: 'LinkedIn', color: 'hover:text-[#0077B5] dark:hover:text-[#3399cc]' },
+    { icon: FaXTwitter, href: 'https://x.com/buildoncoffee', label: 'X', color: 'hover:text-black dark:hover:text-white' },
+    { icon: Discord, href: 'https://discord.gg/gUJnX8dQ', label: 'Discord', color: 'hover:text-indigo-500 dark:hover:text-indigo-400' },
+    { icon: Mail, href: 'mailto:buildoncoffee@gmail.com', label: 'Email', color: 'hover:text-green-500 dark:hover:text-green-400' }
   ];
 
   return (
@@ -66,19 +69,31 @@ const Footer = () => {
               to build amazing projects and advance their careers.
             </p>
 
-            <div className="flex space-x-4">
-              {socialIcons.map((social, index) => {
+            <div className="flex space-x-4 mt-9">
+               {socialIcons.map((social, index) => {
                 const Icon = social.icon;
                 return (
-                  <motion.a
-                    key={index}
-                    href={social.href}
-                    className={`p-2 bg-gray-200 dark:bg-gray-800 rounded-lg text-gray-500 dark:text-gray-400 ${social.color} transition-colors duration-200`}
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </motion.a>
+                  <div key={index} className="group relative flex items-center justify-center">
+                    {/* Tooltip ABOVE the icon */}
+                    <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 
+                                    scale-95 group-hover:scale-100 transition-all duration-200 ease-out 
+                                    bg-white text-black dark:bg-black dark:text-white 
+                                    text-xs px-2 py-1 rounded shadow z-10 pointer-events-none whitespace-nowrap">
+                      {social.label}
+                    </div>
+
+                    {/* Icon Button */}
+                    <motion.a
+                      href={social.href}
+                      className={`p-2 bg-gray-200 dark:bg-gray-800 rounded-lg text-gray-500 dark:text-gray-400 ${social.color} transition-colors duration-200`}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileTap={{ scale: 0.9 }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Icon className="w-5 h-5" />
+                    </motion.a>
+                  </div>
                 );
               })}
             </div>
