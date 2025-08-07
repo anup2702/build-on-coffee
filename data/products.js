@@ -48,8 +48,21 @@ export const products = [
     hoverColor: "group-hover:text-orange-600 dark:group-hover:text-orange-400",
     route: "/free-certificates",
   },
+   {
+  id: 5,
+  name: "Glossary",
+  description:
+    "A collection of essential tech terms explained simply – perfect for beginners and experts alike.",
+  icon: BookOpen,
+  color: "from-purple-500 to-indigo-500",
+  bgColor: "bg-purple-50 dark:bg-purple-900/20",
+  borderColor: "border-purple-200 dark:border-purple-800",
+  hoverColor: "group-hover:text-purple-600 dark:group-hover:text-purple-400",
+  route: "/glossary",
+},
+
   {
-    id: 5,
+    id: 6,
     name: "Roadmaps",
     description:
       "Explore structured learning paths with videos, resources, and topic breakdowns for various tech domains.",
