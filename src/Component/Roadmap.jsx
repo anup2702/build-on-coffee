@@ -1,8 +1,16 @@
 import React from "react";
-import { Route } from "lucide-react";
+import { Route, Code, Terminal, GitMerge, Server, GitBranch } from "lucide-react";
 import { motion } from "framer-motion";
 import { roadmap } from "../../data/roadmap.js";
 import { Link } from "react-router-dom";
+
+const iconMap = {
+  "DSA for Placements": <Code className="w-8 h-8 mb-4 text-blue-500" />,
+  "Web Development": <Server className="w-8 h-8 mb-4 text-green-500" />,
+  "DevOps": <Terminal className="w-8 h-8 mb-4 text-red-500" />,
+  "System Design": <GitMerge className="w-8 h-8 mb-4 text-purple-500" />,
+  "Open Source Journey": <GitBranch className="w-8 h-8 mb-4 text-yellow-500" />,
+};
 
 const Roadmap = () => {
   const floatingVariants = {
@@ -39,6 +47,7 @@ const Roadmap = () => {
             animate="animate"
             transition={{ delay: i * 0.2 }}
           >
+            {iconMap[item.title]}
             <h3 className="text-xl font-black mb-2 text-gray-900 dark:text-white">
               {item.title}
             </h3>
