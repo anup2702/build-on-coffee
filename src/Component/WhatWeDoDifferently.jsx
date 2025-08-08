@@ -46,51 +46,23 @@ const WhatWeDoDifferently = () => {
   ];
 
   return (
- main
-            <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-coffee-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden" ref={ref}>
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 dark:opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%239C92AC\' fill-opacity=\'0.4\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'2\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
-        }} />
-      </div>
-
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-
     <section
       className="py-20 bg-[#f9fafb] dark:bg-[#0f172a] relative overflow-hidden"
       ref={ref}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
- main
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
- main
-          <motion.div
-            className="inline-block mb-4"
-            initial={{ scale: 0 }}
-            animate={inView ? { scale: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="w-16 h-16 bg-gradient-to-r from-coffee-600 to-mocha-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Heart className="w-8 h-8 text-white" />
-            </div>
-          </motion.div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-
           <div className="w-16 h-16 bg-[#1d4ed8] rounded-2xl flex items-center justify-center mx-auto mb-6">
             <Heart className="w-8 h-8 text-white" />
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-[#111] dark:text-white mb-6">
- main
             What We Do Differently
           </h2>
           <p className="text-xl text-[#333] dark:text-gray-300 max-w-3xl mx-auto">
@@ -156,21 +128,7 @@ const WhatWeDoDifferently = () => {
                 animate={inView ? { scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
               >
- main
-                <motion.div
-                  className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-coffee-600 to-mocha-500 bg-clip-text text-transparent mb-2"
-                  animate={inView ? { 
-                    backgroundPosition: ['0%', '100%', '0%'],
-                  } : {}}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity,
-                    delay: 1.5 + index * 0.2 
-                  }}
-                >
-
                 <div className="text-3xl md:text-4xl font-bold text-[#1d4ed8] mb-2">
- main
                   {stat.number}
                 </div>
                 <div className="text-[#333] dark:text-gray-400 font-medium">

@@ -89,35 +89,6 @@ const HeroSection = () => {
     animate="visible"
   >
 
- main
-          {/* Main Title */}
-                     <motion.h1
-             variants={itemVariants}
-             className="text-4xl md:text-6xl font-black leading-tight"
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
-          >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-coffee-600 via-mocha-600 to-latte-600">
-              Welcome to
-            </span>
-            <br />
-            <motion.span
-              className="text-transparent bg-clip-text"
-              style={{
-                backgroundImage: isHovered
-                  ? "linear-gradient(135deg, #eab84d, #d35f2a, #e35a1f, #bc431c, #96361e)"
-                  : "linear-gradient(135deg, #96361e, #bc431c, #e35a1f, #d35f2a, #eab84d)",
-              }}
-              animate={{
-                backgroundPosition: isHovered ? "100% 50%" : "0% 50%",
-              }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-            >
-              BuildOnCoffee
-            </motion.span>
-          </motion.h1>
-        </motion.div>
-
     {/* Badge */}
     <motion.div variants={itemVariants} className="flex flex-col items-center space-y-4 mb-6">
       <motion.div
@@ -133,7 +104,6 @@ const HeroSection = () => {
         <span className="font-bold">Building the future, one cup at a time</span>
         <Zap className="w-3 h-3" />
       </motion.div>
- main
 
       {/* Title */}
       <motion.h1
@@ -148,44 +118,6 @@ const HeroSection = () => {
       </motion.h1>
     </motion.div>
 
- main
-        {/* CTA Buttons */}
-                 <motion.div
-           variants={itemVariants}
-           className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
-         >
-           
-                     <motion.a
-             className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white shadow-xl transition-all duration-300 overflow-hidden"
-            style={{
-              background: "linear-gradient(135deg, #e35a1f, #d35f2a, #eab84d, #bc431c)",
-              backgroundSize: "300% 300%",
-            }}
-                         whileHover={{ scale: 1.05, y: -2 }}
-             whileTap={{ scale: 0.95 }}
-            animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-            }}
-            transition={{
-              backgroundPosition: { duration: 3, repeat: Infinity, ease: "linear" },
-            }}
-          >
-            <motion.div
-              className="absolute inset-0 bg-white/20"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: "100%" }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-            />
-            <Link to={"/tools"} className="relative z-10">Explore Tools</Link>
-            <motion.div
-              className="relative z-10"
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-                             <ChevronRight className="w-4 h-4" />
-            </motion.div>
-          </motion.a>
-
     {/* Subtitle */}
     <motion.p
       variants={itemVariants}
@@ -196,7 +128,6 @@ const HeroSection = () => {
       Join our vibrant community of passionate developers. Learn cutting-edge technologies,
       discover powerful tools, and build amazing projects together with fellow coffee enthusiasts.
     </motion.p>
- main
 
     {/* CTA Buttons */}
     <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
