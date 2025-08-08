@@ -4,6 +4,10 @@ import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { products } from "../../data/products";
+import { useTheme } from "next-themes";
+const { theme } = useTheme();
+const isDarkMode = theme === "dark";
+
 
 const ProductsSection = () => {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
