@@ -101,11 +101,11 @@ const Navbar = ({ scrollRefs }) => {
                 whileHover={{ rotate: 5 }}
                 transition={{ duration: 0.3 }}
               >
-                <Coffee className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                <Coffee className="h-6 w-6 text-coffee-600 dark:text-coffee-400" />
               </motion.div>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 bg-clip-text text-transparent bg-size-200 animate-gradient-x">
+              <span className="text-2xl font-bold bg-gradient-to-r from-coffee-600 via-mocha-500 to-coffee-600 bg-clip-text text-transparent bg-size-200 animate-gradient-x">
                 BuildOnCoffee
               </span>
               <span className="text-xs text-gray-500 dark:text-gray-400 -mt-1 font-medium">
@@ -124,8 +124,13 @@ const Navbar = ({ scrollRefs }) => {
                   onClick={() => navigate(item.to)}
                   className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 group overflow-hidden ${
                     location.pathname === item.to
+main
+                      ? 'text-coffee-600 dark:text-coffee-400 bg-coffee-50/80 dark:bg-coffee-900/30 border border-coffee-200/60 dark:border-coffee-700/60 shadow-sm'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200/40 dark:hover:border-gray-700/40'
+
                       ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/60 dark:border-blue-700/60 shadow-sm"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200/40 dark:hover:border-gray-700/40"
+ main
                   }`}
                   whileHover={{ y: -1 }}
                   whileTap={{ scale: 0.96 }}
@@ -136,7 +141,7 @@ const Navbar = ({ scrollRefs }) => {
                   </span>
                   {location.pathname === item.to && (
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-teal-500/5 dark:from-blue-400/5 dark:to-teal-400/5 rounded-full"
+                      className="absolute inset-0 bg-gradient-to-r from-coffee-500/5 to-mocha-500/5 dark:from-coffee-400/5 dark:to-mocha-400/5 rounded-full"
                       layoutId="activeBackground"
                       transition={{
                         type: "spring",

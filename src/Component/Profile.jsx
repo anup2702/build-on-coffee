@@ -15,7 +15,7 @@ const Profile = () => {
       <div className="max-w-2xl w-full bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 space-y-8">
         {/* User Info Section */}
         <div className="flex flex-col items-center text-center">
-          <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center mb-4">
+                      <div className="w-24 h-24 bg-gradient-to-br from-coffee-400 to-mocha-500 rounded-full flex items-center justify-center mb-4">
             <User className="w-12 h-12 text-white" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{user.name}</h2>

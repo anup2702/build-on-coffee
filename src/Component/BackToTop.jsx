@@ -21,7 +21,7 @@ const BackToTop = () => {
   return showButton ? (
     <button
       onClick={scrollToTop}
-      className="bg-gradient-to-r from-[#121212] to-[#1f1f1f] hover:from-[#222] hover:to-[#333] text-white p-3 rounded-full shadow-xl transition duration-300 group"
+              className="bg-gradient-to-r from-coffee-900 to-mocha-900 hover:from-coffee-800 hover:to-mocha-800 text-white p-3 rounded-full shadow-xl transition duration-300 group"
       aria-label="Scroll to top"
     >
       <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform duration-300" />

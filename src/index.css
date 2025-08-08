@@ -4,8 +4,8 @@
 @variant dark (.dark &);
 
 :root {
-  --color-primary: #3b82f6;
-  --color-secondary: #8b5cf6;
+  --color-primary: #e35a1f;
+  --color-secondary: #d35f2a;
   --bg-color: rgb(255 255 255);
   --text-color: rgb(17 24 39);
   --border-color: rgb(229 231 235);
