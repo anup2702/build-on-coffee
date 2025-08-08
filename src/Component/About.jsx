@@ -14,21 +14,21 @@ const About = () => {
     <section className="relative max-w-7xl mx-auto py-20 px-6 overflow-hidden">
       {/* bg decorative elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-yellow-400/20 to-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-purple-600/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-green-400/10 to-cyan-500/10 rounded-full blur-2xl animate-pulse delay-500"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-latte-400/20 to-coffee-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-mocha-600/20 to-coffee-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-latte-400/10 to-coffee-500/10 rounded-full blur-2xl animate-pulse delay-500"></div>
       </div>
 
       {/* hero */}
       <div
         className={`text-center mb-20 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
       >
-        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-100 to-pink-100 dark:from-yellow-900/30 dark:to-pink-900/30 px-4 py-2 rounded-full mb-6 border border-yellow-200 dark:border-yellow-800">
-          <Coffee className="w-4 h-4 text-yellow-600" />
-          <span className="text-sm font-medium text-yellow-800 dark:text-yellow-200">Fueled by Community</span>
+                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-latte-100 to-coffee-100 dark:from-latte-900/30 dark:to-coffee-900/30 px-4 py-2 rounded-full mb-6 border border-latte-200 dark:border-latte-800">
+                      <Coffee className="w-4 h-4 text-coffee-600" />
+            <span className="text-sm font-medium text-coffee-800 dark:text-coffee-200">Fueled by Community</span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-black mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 animate-gradient-x leading-tight">
+                    <h1 className="text-5xl md:text-7xl font-black mb-8 text-transparent bg-clip-text bg-gradient-to-r from-latte-400 via-coffee-500 to-mocha-600 animate-gradient-x leading-tight">
           About BuildOnCoffee
         </h1>
 
@@ -44,7 +44,7 @@ const About = () => {
       >
         <div className="relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-200 dark:border-gray-700">
           <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-            <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-2xl shadow-lg">
+            <div className="bg-gradient-to-r from-coffee-500 to-mocha-500 p-4 rounded-2xl shadow-lg">
               <Target className="w-8 h-8 text-white" />
             </div>
           </div>
@@ -72,11 +72,11 @@ const About = () => {
       >
         {/* img */}
         <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-pink-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-latte-400 to-coffee-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
           <div className="relative bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-200 dark:border-gray-700">
-            <div className="w-full h-64 bg-gradient-to-br from-yellow-100 to-pink-100 dark:from-yellow-900/30 dark:to-pink-900/30 rounded-2xl flex items-center justify-center">
+            <div className="w-full h-64 bg-gradient-to-br from-latte-100 to-coffee-100 dark:from-latte-900/30 dark:to-coffee-900/30 rounded-2xl flex items-center justify-center">
               <div className="text-center">
-                <Coffee className="w-16 h-16 text-yellow-600 dark:text-yellow-400 mx-auto mb-4" />
+                <Coffee className="w-16 h-16 text-coffee-600 dark:text-coffee-400 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200">BuildOnCoffee</h3>
                 <p className="text-gray-600 dark:text-gray-400">Community Platform</p>
               </div>
@@ -138,13 +138,13 @@ const About = () => {
       >
         {/* vision */}
         <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-          <div className="relative bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-3xl p-8 shadow-xl border border-blue-200 dark:border-blue-800 h-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-coffee-400 to-mocha-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+          <div className="relative bg-gradient-to-br from-coffee-50 to-mocha-50 dark:from-coffee-900/20 dark:to-mocha-900/20 rounded-3xl p-8 shadow-xl border border-coffee-200 dark:border-coffee-800 h-full">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-blue-500 rounded-2xl">
+              <div className="p-3 bg-coffee-500 rounded-2xl">
                 <Target className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-blue-800 dark:text-blue-200">Our Vision</h3>
+              <h3 className="text-2xl font-bold text-coffee-800 dark:text-coffee-200">Our Vision</h3>
             </div>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
               We believe that sharing knowledge and tools accelerates innovation. BuildOnCoffee aims to break down
@@ -156,13 +156,13 @@ const About = () => {
 
         {/* involvement */}
         <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-          <div className="relative bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-3xl p-8 shadow-xl border border-yellow-200 dark:border-yellow-800 h-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-latte-400 to-coffee-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+          <div className="relative bg-gradient-to-br from-latte-50 to-coffee-50 dark:from-latte-900/20 dark:to-coffee-900/20 rounded-3xl p-8 shadow-xl border border-latte-200 dark:border-latte-800 h-full">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-yellow-500 rounded-2xl">
+              <div className="p-3 bg-latte-500 rounded-2xl">
                 <Users className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-yellow-800 dark:text-yellow-200">How You Can Get Involved</h3>
+              <h3 className="text-2xl font-bold text-latte-800 dark:text-latte-200">How You Can Get Involved</h3>
             </div>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
               {[
@@ -172,7 +172,7 @@ const About = () => {
                 "Become a contributor and help curate the best content for everyone.",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <ArrowRight className="w-5 h-5 text-yellow-600 dark:text-yellow-400 mt-0.5 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 text-coffee-600 dark:text-coffee-400 mt-0.5 flex-shrink-0" />
                   <span className="leading-relaxed">{item}</span>
                 </li>
               ))}
@@ -189,7 +189,7 @@ const About = () => {
           href="https://github.com/anup2702/build-on-coffee"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-gray-100 dark:to-gray-300 text-white dark:text-gray-900 rounded-2xl hover:scale-105 transition-all duration-300 font-semibold text-lg shadow-2xl hover:shadow-3xl group"
+          className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-coffee-900 to-mocha-700 dark:from-coffee-100 dark:to-mocha-300 text-white dark:text-coffee-900 rounded-2xl hover:scale-105 transition-all duration-300 font-semibold text-lg shadow-2xl hover:shadow-3xl group"
         >
           <Github className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
           <span>Visit our GitHub</span>

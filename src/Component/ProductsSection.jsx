@@ -15,10 +15,10 @@ const ProductsSection = () => {
       name: 'Courses',
       description: 'Curated CS courses with video tutorials, docs, and references.',
       icon: BookOpen,
-      color: 'from-blue-400 to-indigo-500',
-      bgColor: 'bg-blue-50 dark:bg-blue-900/20',
-      borderColor: 'border-blue-200 dark:border-blue-800',
-      hoverColor: 'group-hover:text-blue-600 dark:group-hover:text-blue-400',
+      color: 'from-coffee-400 to-mocha-500',
+      bgColor: 'bg-coffee-50 dark:bg-coffee-900/20',
+      borderColor: 'border-coffee-200 dark:border-coffee-800',
+      hoverColor: 'group-hover:text-coffee-600 dark:group-hover:text-coffee-400',
       route: '/courses'
     },
     {
@@ -26,10 +26,10 @@ const ProductsSection = () => {
       name: 'Tools',
       description: 'Discover and use the best developer tools for productivity.',
       icon: Wrench,
-      color: 'from-green-400 to-emerald-500',
-      bgColor: 'bg-green-50 dark:bg-green-900/20',
-      borderColor: 'border-green-200 dark:border-green-800',
-      hoverColor: 'group-hover:text-green-600 dark:group-hover:text-green-400',
+      color: 'from-latte-400 to-coffee-500',
+      bgColor: 'bg-latte-50 dark:bg-latte-900/20',
+      borderColor: 'border-latte-200 dark:border-latte-800',
+      hoverColor: 'group-hover:text-latte-600 dark:group-hover:text-latte-400',
       route: '/tools'
     },
     {
@@ -37,10 +37,10 @@ const ProductsSection = () => {
       name: 'SnapFolio',
       description: 'Generate your developer portfolio instantly. Try SnapFolio now!',
       icon: User,
-      color: 'from-purple-400 to-pink-500',
-      bgColor: 'bg-purple-50 dark:bg-purple-900/20',
-      borderColor: 'border-purple-200 dark:border-purple-800',
-      hoverColor: 'group-hover:text-purple-600 dark:group-hover:text-purple-400',
+      color: 'from-mocha-400 to-coffee-500',
+      bgColor: 'bg-mocha-50 dark:bg-mocha-900/20',
+      borderColor: 'border-mocha-200 dark:border-mocha-800',
+      hoverColor: 'group-hover:text-mocha-600 dark:group-hover:text-mocha-400',
       route: 'https://snapfolio.vercel.app',
       external: true
     },
@@ -49,10 +49,10 @@ const ProductsSection = () => {
       name: 'Certificates',
       description: 'Browse top courses from leading platforms and earn certificates to showcase your skills.',
       icon: Award,
-      color: 'from-yellow-400 to-orange-500',
-      bgColor: 'bg-orange-50 dark:bg-orange-900/20',
-      borderColor: 'border-orange-200 dark:border-orange-800',
-      hoverColor: 'group-hover:text-orange-600 dark:group-hover:text-orange-400',
+      color: 'from-coffee-400 to-latte-500',
+      bgColor: 'bg-coffee-50 dark:bg-coffee-900/20',
+      borderColor: 'border-coffee-200 dark:border-coffee-800',
+      hoverColor: 'group-hover:text-coffee-600 dark:group-hover:text-coffee-400',
       route: '/free-certificates'
     }
 

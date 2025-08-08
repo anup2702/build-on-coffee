@@ -3,13 +3,13 @@ const TermsOfService = () => {
   return (
     <section className="max-w-4xl mx-auto px-6 py-12 text-gray-800 dark:text-gray-200">
       <h1 className="text-5xl font-bold mb-6 text-center">
-        <span className="bg-gradient-to-r from-blue-600 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-coffee-600 via-latte-400 to-mocha-500 bg-clip-text text-transparent">
           Terms of Service
         </span>
       </h1>
 
       <p className="mb-6">
-        Welcome to <strong className="bg-gradient-to-r from-blue-600 via-cyan-400 to-purple-500 bg-clip-text text-transparent"> BuildOnCoffee</strong>. By accessing this site, you agree to the
+                  Welcome to <strong className="bg-gradient-to-r from-coffee-600 via-latte-400 to-mocha-500 bg-clip-text text-transparent"> BuildOnCoffee</strong>. By accessing this site, you agree to the
         following terms and conditions. Please read them carefully.
       </p>
 

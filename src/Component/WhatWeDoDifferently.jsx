@@ -52,7 +52,7 @@ const WhatWeDoDifferently = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden" ref={ref}>
+            <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-coffee-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden" ref={ref}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <div className="absolute inset-0" style={{
@@ -74,7 +74,7 @@ const WhatWeDoDifferently = () => {
             animate={inView ? { scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 bg-gradient-to-r from-coffee-600 to-mocha-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <Heart className="w-8 h-8 text-white" />
             </div>
           </motion.div>
@@ -178,7 +178,7 @@ const WhatWeDoDifferently = () => {
                 transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
               >
                 <motion.div
-                  className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent mb-2"
+                  className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-coffee-600 to-mocha-500 bg-clip-text text-transparent mb-2"
                   animate={inView ? { 
                     backgroundPosition: ['0%', '100%', '0%'],
                   } : {}}

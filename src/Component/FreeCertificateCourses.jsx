@@ -28,7 +28,7 @@ const FreeCertificateCourses = () => {
   return (
     <section className="mx-auto py-16 px-10 text-center animate-fade-in dark:bg-gray-900 min-h-screen">
       <h2
-        className="inline-block text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-600 via-cyan-400 to-purple-500 bg-clip-text text-transparent"
+                    className="inline-block text-5xl font-extrabold mb-6 bg-gradient-to-r from-coffee-600 via-latte-400 to-mocha-500 bg-clip-text text-transparent"
       >
         Courses with Free Certificates
       </h2>

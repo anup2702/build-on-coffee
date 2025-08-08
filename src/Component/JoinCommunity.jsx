@@ -88,7 +88,7 @@ const JoinCommunity = React.forwardRef((props, ref) => {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="inline-block p-4 bg-gradient-to-r from-blue-100/50 to-purple-100/50 dark:from-blue-600/20 dark:to-purple-600/20 rounded-2xl backdrop-blur-sm border border-black/5 dark:border-white/10 mb-6"
+            className="inline-block p-4 bg-gradient-to-r from-coffee-100/50 to-mocha-100/50 dark:from-coffee-600/20 dark:to-mocha-600/20 rounded-2xl backdrop-blur-sm border border-black/5 dark:border-white/10 mb-6"
             whileHover={{ scale: 1.05 }}
             animate={inView ? {
               boxShadow: [
@@ -199,7 +199,7 @@ const JoinCommunity = React.forwardRef((props, ref) => {
           >
             <div className="text-center mb-6">
               <motion.div
-                className="inline-block p-3 bg-gradient-to-r from-teal-500 to-blue-500 rounded-xl mb-4"
+                className="inline-block p-3 bg-gradient-to-r from-coffee-500 to-mocha-500 rounded-xl mb-4"
                 whileHover={{ rotate: 10, scale: 1.1 }}
               >
                 <Mail className="w-6 h-6 text-white" />
@@ -229,7 +229,7 @@ const JoinCommunity = React.forwardRef((props, ref) => {
 
                 <motion.button
                   type="submit"
-                  className="w-full py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-teal-600 transition-all duration-300 flex items-center justify-center space-x-2 group"
+                  className="w-full py-3 bg-gradient-to-r from-coffee-600 to-mocha-500 text-white font-semibold rounded-lg hover:from-coffee-700 hover:to-mocha-600 transition-all duration-300 flex items-center justify-center space-x-2 group"
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >

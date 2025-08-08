@@ -153,7 +153,7 @@ const HeroSection = () => {
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-coffee-600 via-mocha-600 to-latte-600">
               Welcome to
             </span>
             <br />
@@ -161,8 +161,8 @@ const HeroSection = () => {
               className="text-transparent bg-clip-text"
               style={{
                 backgroundImage: isHovered
-                  ? "linear-gradient(135deg, #ec4899, #8b5cf6, #0f7ec8ff, #17c8c8ee, #0d9dadff)"
-                  : "linear-gradient(135deg, #0d9dadff, #17c8c8ee, #0f7ec8ff, #8b5cf6, #ec4899)",
+                  ? "linear-gradient(135deg, #eab84d, #d35f2a, #e35a1f, #bc431c, #96361e)"
+                  : "linear-gradient(135deg, #96361e, #bc431c, #e35a1f, #d35f2a, #eab84d)",
               }}
               animate={{
                 backgroundPosition: isHovered ? "100% 50%" : "0% 50%",
@@ -194,7 +194,7 @@ const HeroSection = () => {
                      <motion.a
              className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white shadow-xl transition-all duration-300 overflow-hidden"
             style={{
-              background: "linear-gradient(135deg, #3858be, #268bcf, #17c8c8, #8b5cf6)",
+              background: "linear-gradient(135deg, #e35a1f, #d35f2a, #eab84d, #bc431c)",
               backgroundSize: "300% 300%",
             }}
                          whileHover={{ scale: 1.05, y: -2 }}

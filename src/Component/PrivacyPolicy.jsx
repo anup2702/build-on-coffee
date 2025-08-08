@@ -4,13 +4,13 @@ const PrivacyPolicy = () => {
   return (
     <section className="max-w-4xl mx-auto px-6 py-12 text-gray-800 dark:text-gray-200">
       <h1 className="text-5xl font-bold mb-6 text-center">
-        <span className="bg-gradient-to-r from-blue-600 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-coffee-600 via-latte-400 to-mocha-500 bg-clip-text text-transparent">
           Privacy Policy
         </span>
       </h1>
 
       <p className="mb-6">
-        At <strong className="bg-gradient-to-r from-blue-600 via-cyan-400 to-purple-500 bg-clip-text  text-transparent">BuildOnCoffee</strong>, your privacy is important to us. We do not collect
+                  At <strong className="bg-gradient-to-r from-coffee-600 via-latte-400 to-mocha-500 bg-clip-text  text-transparent">BuildOnCoffee</strong>, your privacy is important to us. We do not collect
         personal information unless explicitly provided. Our services rely solely on public
         GitHub APIs, and we do not store any user data on our servers.
       </p>
