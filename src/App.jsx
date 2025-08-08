@@ -30,6 +30,7 @@ import OpenSourceRoadmap from "./Component/Roadmaps/OpenSourceRoadmap";
 import WebDevRoadmap from "./Component/Roadmaps/WebDevRoadmap";
 import DevOpsRoadmap from "./Component/Roadmaps/DevOpsRoadmap";
 import Glossary from "./Component/Glossary/Glossary";
+import Documentation from "./Component/Documentation";
 import SystemDesignRoadmap from "./Component/Roadmaps/SystemDesignRoadmap";
 import MobileDevRoadmap from "./Component/Roadmaps/MobileDevRoadmap";
 
@@ -70,6 +71,7 @@ const App = () => {
             <Route path="/courses/:slug" element={<CoursePage />} />
             <Route path="/tools" element={<ToolsList />} />
             <Route path="/glossary" element={<Glossary />} />   
+            <Route path="/documentation" element={<Documentation />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/roadmap/dsa" element={<DsaRoadmap />} />
             <Route path="/roadmap/opensource" element={<OpenSourceRoadmap />} />

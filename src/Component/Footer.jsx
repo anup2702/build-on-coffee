@@ -21,7 +21,7 @@ const Footer = () => {
     { label: 'Contact', to: '/contact' },
   ],
   Resources: [
-    { label: 'Documentation', to: '/' },
+    { label: 'Documentation', to: '/documentation' },
     { label: 'Help Center', to: '/' },
     { label: 'Privacy Policy', to: '/privacy-policy' },
     { label: 'Terms of Service', to: '/terms-of-service' },
