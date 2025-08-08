@@ -24,6 +24,14 @@ import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
 import { AuthProvider } from "./Component/context/AuthContext";
 import PrivateRoute from "./Component/PrivateRoute";
 import Profile from "./Component/Profile";
+import Roadmap from "./Component/Roadmap";
+import DsaRoadmap from "./Component/Roadmaps/DsaRoadmap";
+import OpenSourceRoadmap from "./Component/Roadmaps/OpenSourceRoadmap";
+import WebDevRoadmap from "./Component/Roadmaps/WebDevRoadmap";
+import DevOpsRoadmap from "./Component/Roadmaps/DevOpsRoadmap";
+import Glossary from "./Component/Glossary/Glossary";
+import SystemDesignRoadmap from "./Component/Roadmaps/SystemDesignRoadmap";
+import MobileDevRoadmap from "./Component/Roadmaps/MobileDevRoadmap";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -61,6 +69,14 @@ const App = () => {
             <Route path="/courses" element={<CoursesList />} />
             <Route path="/courses/:slug" element={<CoursePage />} />
             <Route path="/tools" element={<ToolsList />} />
+            <Route path="/glossary" element={<Glossary />} />   
+            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/roadmap/dsa" element={<DsaRoadmap />} />
+            <Route path="/roadmap/opensource" element={<OpenSourceRoadmap />} />
+            <Route path="/roadmap/web-development" element={<WebDevRoadmap />} />
+            <Route path="/roadmap/system-design" element={<SystemDesignRoadmap />} />
+            <Route path="/roadmap/devops" element={<DevOpsRoadmap />} />
+            <Route path="/roadmap/mobile-development" element={<MobileDevRoadmap />} />
             <Route path="/learn/tools" element={<LearnTools />} />
             <Route
               path="/free-certificates"

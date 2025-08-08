@@ -59,93 +59,37 @@ const HeroSection = () => {
   };
 
   return (
-         <section className={`relative py-16 flex items-center justify-center overflow-hidden transition-all duration-500 ${
-       isDarkMode 
-         ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" 
-         : "bg-gradient-to-br from-blue-50 via-white to-purple-50"
-     }`}>
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className={`absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl opacity-20 ${
-            isDarkMode ? "bg-blue-500" : "bg-blue-400"
-          }`}
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className={`absolute top-40 right-20 w-96 h-96 rounded-full blur-3xl opacity-20 ${
-            isDarkMode ? "bg-purple-500" : "bg-purple-400"
-          }`}
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 60, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className={`absolute bottom-20 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-20 ${
-            isDarkMode ? "bg-pink-500" : "bg-pink-400"
-          }`}
-          animate={{
-            x: [0, 60, 0],
-            y: [0, -40, 0],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-      </div>
+        <section className={`relative py-16 flex items-center justify-center overflow-hidden transition-all duration-500 ${
+  isDarkMode ? "bg-[#0f172a]" : "bg-[#f9fafb]"
+}`}>
+  {/* Animated Background Elements */}
+  <div className="absolute inset-0 overflow-hidden">
+    <motion.div
+      className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl opacity-10 bg-[#1d4ed8]"
+      animate={{ x: [0, 100, 0], y: [0, -50, 0] }}
+      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+    />
+    <motion.div
+      className="absolute top-40 right-20 w-96 h-96 rounded-full blur-3xl opacity-10 bg-[#3b82f6]"
+      animate={{ x: [0, -80, 0], y: [0, 60, 0] }}
+      transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+    />
+    <motion.div
+      className="absolute bottom-20 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-10 bg-[#60a5fa]"
+      animate={{ x: [0, 60, 0], y: [0, -40, 0] }}
+      transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+    />
+  </div>
 
-      {/* Main Content */}
-             <motion.div
-         className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-8 text-center"
-         variants={containerVariants}
-         initial="hidden"
-         animate="visible"
-       >
-        {/* Badge */}
-                 <motion.div
-           variants={itemVariants}
-           className="flex flex-col items-center space-y-4 mb-6"
-         >
-                     <motion.div
-             className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-xs shadow-lg border backdrop-blur-lg ${
-               isDarkMode
-                 ? "bg-blue-500/20 text-blue-300 border-blue-400/30"
-                 : "bg-blue-100/80 text-blue-600 border-blue-200/50"
-             }`}
-                         whileHover={{ scale: 1.05, y: -2 }}
-             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-          >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            >
-                             <Stars className="w-4 h-4" />
-            </motion.div>
-            <span className="font-bold">Building the future, one cup at a time</span>
-            <motion.div
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-                             <Zap className="w-3 h-3" />
-            </motion.div>
-          </motion.div>
+  {/* Main Content */}
+  <motion.div
+    className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-8 text-center"
+    variants={containerVariants}
+    initial="hidden"
+    animate="visible"
+  >
 
+ main
           {/* Main Title */}
                      <motion.h1
              variants={itemVariants}
@@ -174,17 +118,37 @@ const HeroSection = () => {
           </motion.h1>
         </motion.div>
 
-        {/* Subtitle */}
-                 <motion.p
-           variants={itemVariants}
-           className={`text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed ${
-             isDarkMode ? "text-gray-300" : "text-gray-600"
-           }`}
-         >
-          Join our vibrant community of passionate developers. Learn cutting-edge technologies,
-          discover powerful tools, and build amazing projects together with fellow coffee enthusiasts.
-        </motion.p>
+    {/* Badge */}
+    <motion.div variants={itemVariants} className="flex flex-col items-center space-y-4 mb-6">
+      <motion.div
+        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-xs shadow border ${
+          isDarkMode
+            ? "bg-[#1e293b] text-blue-300 border-blue-600"
+            : "bg-white text-[#1d4ed8] border-[#dbeafe]"
+        }`}
+        whileHover={{ scale: 1.05, y: -2 }}
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      >
+        <Stars className="w-4 h-4" />
+        <span className="font-bold">Building the future, one cup at a time</span>
+        <Zap className="w-3 h-3" />
+      </motion.div>
+ main
 
+      {/* Title */}
+      <motion.h1
+        variants={itemVariants}
+        className="text-4xl md:text-6xl font-extrabold leading-tight"
+      >
+        <span className={`text-[#1d4ed8] ${isDarkMode ? "text-[#60a5fa]" : ""}`}>
+          Welcome to
+        </span>
+        <br />
+        <span className={`text-[#111] dark:text-white`}>BuildOnCoffee</span>
+      </motion.h1>
+    </motion.div>
+
+ main
         {/* CTA Buttons */}
                  <motion.div
            variants={itemVariants}
@@ -222,142 +186,76 @@ const HeroSection = () => {
             </motion.div>
           </motion.a>
 
-                     <motion.a
-             href="https://github.com/anup2702/build-on-coffee"
-             className={`group inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold border-2 transition-all duration-300 ${
-               isDarkMode
-                 ? "border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:border-gray-500"
-                 : "border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400"
-             }`}
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <motion.div
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-            >
-                             <Users className="w-4 h-4" />
-            </motion.div>
-            <span>Join Community</span>
-            <motion.div
-              animate={{ x: [0, 3, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-                             <ArrowRight className="w-3 h-3" />
-            </motion.div>
-          </motion.a>
-        </motion.div>
+    {/* Subtitle */}
+    <motion.p
+      variants={itemVariants}
+      className={`text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed ${
+        isDarkMode ? "text-gray-400" : "text-[#333]"
+      }`}
+    >
+      Join our vibrant community of passionate developers. Learn cutting-edge technologies,
+      discover powerful tools, and build amazing projects together with fellow coffee enthusiasts.
+    </motion.p>
+ main
 
-        {/* Stats Section */}
-                 <motion.div
-           variants={itemVariants}
-           className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-         >
-          {[
-            {
-              icon: <Users className="w-6 h-6" />,
-              number: "10K+",
-              label: "Active Developers",
-              color: "blue",
-            },
-            {
-              icon: <Code2 className="w-6 h-6" />,
-              number: "50+",
-              label: "Tools & Resources",
-              color: "purple",
-            },
-            {
-              icon: <Stars className="w-6 h-6" />,
-              number: "100+",
-              label: "Learning Paths",
-              color: "pink",
-            },
-          ].map((stat, index) => (
-                         <motion.div
-               key={index}
-               className={`relative p-6 rounded-xl backdrop-blur-lg border transition-all duration-300 ${
-                 isDarkMode
-                   ? "bg-gray-800/50 border-gray-700/50 hover:bg-gray-800/70"
-                   : "bg-white/50 border-gray-200/50 hover:bg-white/70"
-               }`}
-                             whileHover={{ scale: 1.05, y: -2 }}
-              variants={floatingVariants}
-              animate="animate"
-              transition={{ delay: index * 0.2 }}
-            >
-                             <motion.div
-                 className={`w-12 h-12 mx-auto rounded-xl flex items-center justify-center mb-3 ${
-                  stat.color === "blue"
-                    ? isDarkMode
-                      ? "bg-blue-500/20 text-blue-400"
-                      : "bg-blue-100 text-blue-600"
-                    : stat.color === "purple"
-                    ? isDarkMode
-                      ? "bg-purple-500/20 text-purple-400"
-                      : "bg-purple-100 text-purple-600"
-                    : isDarkMode
-                    ? "bg-pink-500/20 text-pink-400"
-                    : "bg-pink-100 text-pink-600"
-                }`}
-                                 whileHover={{ scale: 1.05, y: -2 }}
-                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              >
-                {stat.icon}
-              </motion.div>
-                             <motion.h3
-                 className={`text-2xl font-black mb-2 ${
-                   isDarkMode ? "text-white" : "text-gray-900"
-                 }`}
-                variants={pulseVariants}
-                animate="animate"
-              >
-                {stat.number}
-              </motion.h3>
-                             <p className={`text-xs font-medium ${
-                 isDarkMode ? "text-gray-400" : "text-gray-600"
-               }`}>
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+    {/* CTA Buttons */}
+    <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+      <motion.a
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold text-white bg-[#1d4ed8] hover:bg-[#1e40af] transition"
+        whileHover={{ scale: 1.05, y: -2 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <Link to="/tools">Explore Tools</Link>
+        <ChevronRight className="w-4 h-4" />
+      </motion.a>
 
-        {/* Floating Coffee Cup */}
-                 <motion.div
-           className="absolute top-1/2 right-8 hidden lg:block"
+      <motion.a
+        href="https://github.com/anup2702/build-on-coffee"
+        className={`inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold border transition ${
+          isDarkMode
+            ? "text-gray-300 border-gray-600 hover:bg-[#1e293b]"
+            : "text-[#111] border-gray-300 hover:bg-gray-100"
+        }`}
+        whileHover={{ scale: 1.05, y: -2 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <Users className="w-4 h-4" />
+        Join Community
+        <ArrowRight className="w-3 h-3" />
+      </motion.a>
+    </motion.div>
+
+    {/* Stats */}
+    <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      {[
+        { icon: <Users className="w-6 h-6" />, number: "10K+", label: "Active Developers" },
+        { icon: <Code2 className="w-6 h-6" />, number: "50+", label: "Tools & Resources" },
+        { icon: <Stars className="w-6 h-6" />, number: "100+", label: "Learning Paths" },
+      ].map((stat, index) => (
+        <motion.div
+          key={index}
+          className={`relative p-6 rounded-lg border ${
+            isDarkMode
+              ? "bg-[#1e293b] border-[#334155]"
+              : "bg-white border-[#e5e7eb]"
+          }`}
+          whileHover={{ scale: 1.05, y: -2 }}
           variants={floatingVariants}
           animate="animate"
         >
-                     <motion.div
-             className={`p-3 rounded-xl backdrop-blur-lg border ${
-               isDarkMode
-                 ? "bg-gray-800/50 border-gray-700/50"
-                 : "bg-white/50 border-gray-200/50"
-             }`}
-                         whileHover={{ scale: 1.05, y: -2 }}
-             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-          >
-                         <Coffee className={`w-6 h-6 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
-          </motion.div>
+          <div className="w-12 h-12 mx-auto rounded-lg flex items-center justify-center mb-3 bg-[#e0e7ff] text-[#1d4ed8] dark:bg-[#1e40af]/30 dark:text-[#60a5fa]">
+            {stat.icon}
+          </div>
+          <h3 className={`text-2xl font-black mb-1 ${isDarkMode ? "text-white" : "text-[#111]"}`}>
+            {stat.number}
+          </h3>
+          <p className={`text-sm ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>{stat.label}</p>
         </motion.div>
+      ))}
+    </motion.div>
+  </motion.div>
+</section>
 
-        {/* Floating Sparkles */}
-                 <motion.div
-           className="absolute top-16 left-16 hidden lg:block"
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-                     <Sparkles className={`w-5 h-5 ${isDarkMode ? "text-yellow-400" : "text-yellow-500"}`} />
-        </motion.div>
-      </motion.div>
-    </section>
   );
 };
 
