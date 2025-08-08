@@ -31,6 +31,7 @@ import WebDevRoadmap from "./Component/Roadmaps/WebDevRoadmap";
 import DevOpsRoadmap from "./Component/Roadmaps/DevOpsRoadmap";
 import Glossary from "./Component/Glossary/Glossary";
 import SystemDesignRoadmap from "./Component/Roadmaps/SystemDesignRoadmap";
+import MobileDevRoadmap from "./Component/Roadmaps/MobileDevRoadmap";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -75,6 +76,7 @@ const App = () => {
             <Route path="/roadmap/web-development" element={<WebDevRoadmap />} />
             <Route path="/roadmap/system-design" element={<SystemDesignRoadmap />} />
             <Route path="/roadmap/devops" element={<DevOpsRoadmap />} />
+            <Route path="/roadmap/mobile-development" element={<MobileDevRoadmap />} />
             <Route path="/learn/tools" element={<LearnTools />} />
             <Route
               path="/free-certificates"
