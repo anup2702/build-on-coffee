@@ -1,107 +1,151 @@
-import emailjs from "@emailjs/browser";
-import { useRef, useState } from "react";
+import { Mail, Phone, Github, Linkedin, Twitter } from "lucide-react";
+import { useState } from "react";
 
-const Contact = () => {
-  const form = useRef();
-  const [status, setStatus] = useState(null);
-  const [loading, setLoading] = useState(false);
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
 
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_USER_ID;
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const sendEmail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const name = form.current.name.value.trim();
-    const email = form.current.user_email.value.trim();
-
-    const nameRegex = /^[A-Za-z\s]+$/;
-    const emailRegex = /^[A-Za-z][A-Za-z0-9._%+-]*@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-    if (!nameRegex.test(name)) {
-      setStatus({ type: "error", msg: "Name must contain only alphabets." });
-      return;
-    }
-
-    if (!emailRegex.test(email)) {
-      setStatus({ type: "error", msg: "Please enter a valid email starting with an alphabet." });
-      return;
-    }
-
-    setLoading(true);
-    setStatus(null);
-
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-      .then(
-        () => {
-          setStatus({ type: "success", msg: "Message sent successfully!" });
-          setLoading(false);
-          form.current.reset();
-        },
-        () => {
-          setStatus({ type: "error", msg: "Failed to send message. Please try again." });
-          setLoading(false);
-        }
-      );
+    // API call here
+    setSubmitted(true);
   };
 
   return (
-    <section className="max-w-xl mx-auto py-16 px-4 animate-fade-in">
-      <h2 className="text-3xl font-bold mb-4 text-center dark:text-white">Contact Us</h2>
-      <p className="text-gray-600 mb-8 text-center dark:text-gray-300">
-        Have a question, suggestion, or want to contribute? Fill out the form below and we’ll get back to you!
-      </p>
-      <form
-        ref={form}
-        onSubmit={sendEmail}
-        className="bg-white dark:bg-gray-800 shadow rounded-lg p-8 flex flex-col gap-4"
-      >
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition dark:bg-gray-700 dark:text-white"
-          required
-        />
-        <input
-          type="email"
-          name="user_email"
-          placeholder="Your Email"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition dark:bg-gray-700 dark:text-white"
-          required
-        />
-        <input
-          type="text"
-          name="title"
-          placeholder="Subject / Title"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition dark:bg-gray-700 dark:text-white"
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          className="border p-3 rounded focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition dark:bg-gray-700 dark:text-white"
-          rows={4}
-          required
-        />
-        <button
-          type="submit"
-          className={`bg-black text-white dark:bg-white dark:text-black py-2 rounded hover:bg-gray-800 dark:hover:bg-gray-200 transition ${loading ? "opacity-60 cursor-not-allowed" : ""}`}
-          disabled={loading}
-        >
-          {loading ? "Sending..." : "Send Message"}
-        </button>
-        {status && (
-          <div
-            className={`text-center mt-2 font-medium ${status.type === "success" ? "text-green-600" : "text-red-600"}`}
-          >
-            {status.msg}
+    <section className="bg-[#F3E5D0] dark:bg-[#1A14178] py-12 px-4 md:px-12 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 bg-white dark:bg-[#2B1F1B] shadow-lg rounded-2xl overflow-hidden transition-colors duration-300">
+        
+        {/* Left Column */}
+        <div className="bg-[#FFF8F0] dark:bg-[#1F1715] p-8 flex flex-col justify-between border-r border-[#E6D2B5] dark:border-[#3B2A25]">
+          <div>
+            <h2 className="text-2xl font-bold text-[#4B2E2A] dark:text-[#EADAC5] mb-4">
+              Let’s Chat Over Coffee ☕
+            </h2>
+            <p className="text-[#6B4E42] dark:text-[#C2A896] mb-6">
+              Whether it’s a project idea, collaboration request, or feedback — 
+              we’d love to hear from you.
+            </p>
+
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <Mail className="text-[#C49A6C] dark:text-[#E0B98E]" />
+                <a
+                  href="mailto:contact@buildoncoffee.dev"
+                  className="text-[#4B2E2A] dark:text-[#EADAC5] hover:underline"
+                >
+                  buildoncoffee@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="text-[#C49A6C] dark:text-[#E0B98E]" />
+                <span className="text-[#4B2E2A] dark:text-[#EADAC5]">
+                  +91 1234567890
+                </span>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-lg font-semibold text-[#4B2E2A] dark:text-[#EADAC5] mb-3">
+                Connect with us
+              </h3>
+              <div className="flex gap-4 text-[#4B2E2A] dark:text-[#EADAC5]">
+                <a href="https://github.com/anup2702/build-on-coffee" className="hover:text-[#C49A6C] dark:hover:text-[#E0B98E]"><Github /></a>
+                <a href="https://www.linkedin.com/company/build-on-coffee/" className="hover:text-[#C49A6C] dark:hover:text-[#E0B98E]"><Linkedin /></a>
+                <a href="https://x.com/buildoncoffee" className="hover:text-[#C49A6C] dark:hover:text-[#E0B98E]"><Twitter /></a>
+              </div>
+            </div>
           </div>
-        )}
-      </form>
+
+          <div className="mt-12">
+            <img
+              src="perpex.png"
+              alt="Coffee Cup"
+              className="w-24 opacity-70"
+            />
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="p-8">
+          {!submitted ? (
+            <>
+              <h2 className="text-2xl font-bold text-[#4B2E2A] dark:text-[#EADAC5] mb-4">
+                Brew Your Message
+              </h2>
+              <p className="text-[#6B4E42] dark:text-[#C2A896] mb-6">
+                Tell us what’s on your mind, and we’ll get back to you within 48 hours.
+              </p>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name *"
+                  className="w-full border border-[#E6D2B5] dark:border-[#3B2A25] bg-white dark:bg-[#2B1F1B] text-[#4B2E2A] dark:text-[#EADAC5] p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C49A6C] dark:focus:ring-[#E0B98E]"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email *"
+                  className="w-full border border-[#E6D2B5] dark:border-[#3B2A25] bg-white dark:bg-[#2B1F1B] text-[#4B2E2A] dark:text-[#EADAC5] p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C49A6C] dark:focus:ring-[#E0B98E]"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+                <select
+                  name="subject"
+                  className="w-full border border-[#E6D2B5] dark:border-[#3B2A25] bg-white dark:bg-[#2B1F1B] text-[#4B2E2A] dark:text-[#EADAC5] p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C49A6C] dark:focus:ring-[#E0B98E]"
+                  value={formData.subject}
+                  onChange={handleChange}
+                >
+                  <option value="">Select Subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="collaboration">Collaboration</option>
+                  <option value="feedback">Feedback</option>
+                </select>
+                <textarea
+                  name="message"
+                  placeholder="Your Message *"
+                  rows="5"
+                  className="w-full border border-[#E6D2B5] dark:border-[#3B2A25] bg-white dark:bg-[#2B1F1B] text-[#4B2E2A] dark:text-[#EADAC5] p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C49A6C] dark:focus:ring-[#E0B98E]"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                />
+                <button
+                  type="submit"
+                  className="w-full bg-[#4B2E2A] dark:bg-[#C49A6C] text-white dark:text-[#2B1F1B] p-3 rounded-lg hover:bg-[#6B4E42] dark:hover:bg-[#E0B98E] transition"
+                >
+                  Send Message
+                </button>
+              </form>
+              <div className="mt-6 bg-[#FFF8F0] dark:bg-[#1F1715] p-4 rounded-lg text-sm text-[#4B2E2A] dark:text-[#EADAC5]">
+                <p> You’ll hear back via the email you provided.</p>
+              </div>
+            </>
+          ) : (
+            <div className="flex flex-col items-center justify-center h-full text-center">
+              <h2 className="text-2xl font-bold text-[#4B2E2A] dark:text-[#EADAC5] mb-2">
+                Thanks for Reaching Out! ☕
+              </h2>
+              <p className="text-[#6B4E42] dark:text-[#C2A896]">
+                We’ll brew a reply and get back to you shortly.
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
     </section>
   );
-};
-
-export default Contact;
+}
