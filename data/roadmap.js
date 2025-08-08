@@ -24,4 +24,9 @@ export const roadmap = [
     description: "Start contributing to real-world projects.",
     path: "/roadmap/opensource",
   },
+  {
+    title: "Mobile Development",
+    description: "Build native and cross-platform mobile apps.",
+    path: "/roadmap/mobile-development",
+  },
 ];
