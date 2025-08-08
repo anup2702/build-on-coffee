@@ -11,53 +11,6 @@ const ProductsSection = () => {
   const navigate = useNavigate();
   const scrollRef = useRef(null);
 
- main
-  const products = [
-    {
-      id: 1,
-      name: 'Courses',
-      description: 'Curated CS courses with video tutorials, docs, and references.',
-      icon: BookOpen,
-      color: 'from-coffee-400 to-mocha-500',
-      bgColor: 'bg-coffee-50 dark:bg-coffee-900/20',
-      borderColor: 'border-coffee-200 dark:border-coffee-800',
-      hoverColor: 'group-hover:text-coffee-600 dark:group-hover:text-coffee-400',
-      route: '/courses'
-    },
-    {
-      id: 2,
-      name: 'Tools',
-      description: 'Discover and use the best developer tools for productivity.',
-      icon: Wrench,
-      color: 'from-latte-400 to-coffee-500',
-      bgColor: 'bg-latte-50 dark:bg-latte-900/20',
-      borderColor: 'border-latte-200 dark:border-latte-800',
-      hoverColor: 'group-hover:text-latte-600 dark:group-hover:text-latte-400',
-      route: '/tools'
-    },
-    {
-      id: 3,
-      name: 'SnapFolio',
-      description: 'Generate your developer portfolio instantly. Try SnapFolio now!',
-      icon: User,
-      color: 'from-mocha-400 to-coffee-500',
-      bgColor: 'bg-mocha-50 dark:bg-mocha-900/20',
-      borderColor: 'border-mocha-200 dark:border-mocha-800',
-      hoverColor: 'group-hover:text-mocha-600 dark:group-hover:text-mocha-400',
-      route: 'https://snapfolio.vercel.app',
-      external: true
-    },
-    {
-      id: 4,
-      name: 'Certificates',
-      description: 'Browse top courses from leading platforms and earn certificates to showcase your skills.',
-      icon: Award,
-      color: 'from-coffee-400 to-latte-500',
-      bgColor: 'bg-coffee-50 dark:bg-coffee-900/20',
-      borderColor: 'border-coffee-200 dark:border-coffee-800',
-      hoverColor: 'group-hover:text-coffee-600 dark:group-hover:text-coffee-400',
-      route: '/free-certificates'
-
   const scroll = (direction) => {
     const container = scrollRef.current;
     if (container?.children?.length) {
@@ -66,7 +19,6 @@ const ProductsSection = () => {
         left: direction === "left" ? -cardWidth : cardWidth,
         behavior: "smooth",
       });
- main
     }
   };
 

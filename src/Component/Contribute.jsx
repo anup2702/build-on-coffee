@@ -94,14 +94,14 @@ const [contributors, setContributors] = useState([]);
   };
 
   return (
-            <div className="min-h-screen bg-gradient-to-br from-slate-50 via-coffee-50 to-mocha-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-gray-900 dark:bg-none">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8 dark:bg-gray-900 dark:bg-none">
       <div className="max-w-7xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-8 sm:p-10 lg:p-12 border border-white/20 dark:bg-gray-900/90 dark:border-gray-800">
         {/* Page Title */}
         <div className="text-center mb-12 sm:mb-16">
-                      <h1 className="text-5xl font-extrabold bg-gradient-to-r from-gray-900 via-coffee-800 to-mocha-900 bg-clip-text text-transparent mb-4 dark:bg-gradient-to-r dark:text-white">
+          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent mb-4 dark:bg-gradient-to-r dark:text-white">
             Contribute to BuildOnCoffee
           </h1>
-                      <div className="w-24 h-1 bg-gradient-to-r from-coffee-500 to-mocha-600 mx-auto rounded-full dark:bg-gradient-to-r dark:from-coffee-400 dark:to-mocha-500"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full dark:bg-gradient-to-r dark:from-blue-400 dark:to-indigo-500"></div>
         </div>
 
         {/* Two Column Layout */}
@@ -109,7 +109,7 @@ const [contributors, setContributors] = useState([]);
           {/* How to Contribute */}
           <section>
             <div className="flex items-center mb-8">
-              <div className="w-12 h-12 bg-gradient-to-r from-coffee-500 to-mocha-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -124,7 +124,7 @@ const [contributors, setContributors] = useState([]);
                   />
                 </svg>
               </div>
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent dark:bg-gradient-to-r dark:from-coffee-200 dark:to-mocha-200">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent dark:bg-gradient-to-r dark:from-blue-200 dark:to-indigo-200">
                 How You Can Contribute
               </h2>
             </div>
@@ -137,11 +137,11 @@ const [contributors, setContributors] = useState([]);
                   onClick={() => toggleContent(index)}
                 >
                   <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-blue-200 dark:bg-gray-900 dark:border-gray-700">
-                    <div className="w-10 h-10 bg-gradient-to-r from-coffee-500 to-mocha-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
                       {item.step}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-medium text-gray-900 group-hover:text-coffee-700 transition-colors dark:text-white dark:group-hover:text-coffee-300">
+                      <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-700 transition-colors dark:text-white dark:group-hover:text-blue-300">
                         {item.title}
                       </h3>
                       {openIndex === index && (
@@ -193,7 +193,7 @@ const [contributors, setContributors] = useState([]);
           {/* Top Contributors */}
           <section>
             <div className="flex items-center mb-8">
-              <div className="w-12 h-12 bg-gradient-to-r from-coffee-500 to-mocha-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
