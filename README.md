@@ -16,7 +16,7 @@ BuildOnCoffee is an open-source platform for discovering the best developer tool
    ```
 2. **Add .env file**
 ```bash
-VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
+   VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
 ```
 3. **Install dependencies:**
    ```bash
