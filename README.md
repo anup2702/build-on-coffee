@@ -14,15 +14,19 @@ BuildOnCoffee is an open-source platform for discovering the best developer tool
    git clone https://github.com/your-repo/build-on-coffee.git
    cd build-on-coffee
    ```
-2. **Install dependencies:**
+2. **Add .env file**
+   ```bash
+   VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
+   ```
+3. **Install dependencies:**
    ```bash
    npm install
    ```
-3. **Run the development server:**
+4. **Run the development server:**
    ```bash
    npm run dev
    ```
-4. **Open your browser:**
+5. **Open your browser:**
    Visit [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
 
 ## Contributing
