@@ -25,6 +25,18 @@ export const products = [
   },
   {
     id: 3,
+    name: "Learning Paths",
+    description:
+      "Structured multi-week journeys with daily/weekly milestones and progress tracking.",
+    icon: Route,
+    color: "from-emerald-500 to-teal-500",
+    bgColor: "bg-emerald-50 dark:bg-emerald-900/20",
+    borderColor: "border-emerald-200 dark:border-emerald-800",
+    hoverColor: "group-hover:text-emerald-600 dark:group-hover:text-emerald-400",
+    route: "/paths",
+  },
+  {
+    id: 4,
     name: "SnapFolio",
     description:
       "Generate your developer portfolio instantly. Try SnapFolio now!",
@@ -37,7 +49,7 @@ export const products = [
     external: true,
   },
   {
-    id: 4,
+    id: 5,
     name: "Certificates",
     description:
       "Browse top courses from leading platforms and earn certificates to showcase your skills.",
@@ -49,7 +61,7 @@ export const products = [
     route: "/free-certificates",
   },
    {
-  id: 5,
+  id: 6,
   name: "Glossary",
   description:
     "A collection of essential tech terms explained simply – perfect for beginners and experts alike.",
@@ -62,7 +74,7 @@ export const products = [
 },
 
   {
-    id: 6,
+    id: 7,
     name: "Documentation",
     description:
       "Explore official docs for frameworks, languages, databases, cloud and more.",
@@ -74,7 +86,7 @@ export const products = [
     route: "/documentation",
   },
   {
-    id: 7,
+    id: 8,
     name: "Roadmaps",
     description:
       "Explore structured learning paths with videos, resources, and topic breakdowns for various tech domains.",
