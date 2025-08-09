@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { courses } from "../../data/courses";
 import ToolCard from "./ToolCard";
 import Notification from "./Notification";
+import Hearts from "./Hearts";
 
 const CoursesList = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const CoursesList = () => {
     const diffInDays = (now - dateAdded) / (1000 * 60 * 60 * 24);
     return diffInDays <= 7;
   });
+
 
   return (
     <>
@@ -43,9 +45,11 @@ const CoursesList = () => {
             <ToolCard
               key={i}
               {...course}
+              courses={course}
               dateAdded={course.dateAdded}
               onClick={() => navigate(`/courses/${course.slug}`)}
             />
+              
           ))}
         </div>
       </section>

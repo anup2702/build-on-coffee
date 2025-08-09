@@ -81,7 +81,7 @@ const HeroSection = () => {
     />
   </div>
 
-  {/* Main Content */}
+  {/*   Content */}
   <motion.div
     className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-8 text-center"
     variants={containerVariants}
@@ -89,8 +89,8 @@ const HeroSection = () => {
     animate="visible"
   >
 
- main
-          {/* Main Title */}
+  
+          {/*   Title */}
                      <motion.h1
              variants={itemVariants}
              className="text-4xl md:text-6xl font-black leading-tight"
@@ -133,7 +133,7 @@ const HeroSection = () => {
         <span className="font-bold">Building the future, one cup at a time</span>
         <Zap className="w-3 h-3" />
       </motion.div>
- main
+  
 
       {/* Title */}
       <motion.h1
@@ -148,7 +148,7 @@ const HeroSection = () => {
       </motion.h1>
     </motion.div>
 
- main
+  
         {/* CTA Buttons */}
                  <motion.div
            variants={itemVariants}
@@ -196,7 +196,7 @@ const HeroSection = () => {
       Join our vibrant community of passionate developers. Learn cutting-edge technologies,
       discover powerful tools, and build amazing projects together with fellow coffee enthusiasts.
     </motion.p>
- main
+  
 
     {/* CTA Buttons */}
     <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4 mb-12">

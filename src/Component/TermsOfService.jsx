@@ -100,7 +100,7 @@ const TermsOfService = () => {
   };
 
   return (
- main
+  
     <section className="max-w-4xl mx-auto px-6 py-12 text-gray-800 dark:text-gray-200">
       <h1 className="text-5xl font-bold mb-6 text-center">
         <span className="bg-gradient-to-r from-coffee-600 via-latte-400 to-mocha-500 bg-clip-text text-transparent">
@@ -201,7 +201,7 @@ const TermsOfService = () => {
         </div>
       </div>
 
-      {/* main content starts */}
+      {/*   content starts */}
       <div className="space-y-8">
         {sections.map((section, index) => {
           const TypeIcon = getTypeIcon(section.type)
@@ -318,7 +318,8 @@ const TermsOfService = () => {
         </div>
       </div>
 
- main
+  
+    </section>
     </section>
   )
 }

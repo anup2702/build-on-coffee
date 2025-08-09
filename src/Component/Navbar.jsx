@@ -124,13 +124,13 @@ const Navbar = ({ scrollRefs }) => {
                   onClick={() => navigate(item.to)}
                   className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 group overflow-hidden ${
                     location.pathname === item.to
-main
+ 
                       ? 'text-coffee-600 dark:text-coffee-400 bg-coffee-50/80 dark:bg-coffee-900/30 border border-coffee-200/60 dark:border-coffee-700/60 shadow-sm'
                       : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200/40 dark:hover:border-gray-700/40'
 
                       ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/60 dark:border-blue-700/60 shadow-sm"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200/40 dark:hover:border-gray-700/40"
- main
+  
                   }`}
                   whileHover={{ y: -1 }}
                   whileTap={{ scale: 0.96 }}

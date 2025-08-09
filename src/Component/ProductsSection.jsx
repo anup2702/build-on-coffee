@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
-import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { BookOpen,Wrench,User,Award,ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { products } from "../../data/products";
 
 const ProductsSection = () => {
@@ -11,7 +11,7 @@ const ProductsSection = () => {
   const navigate = useNavigate();
   const scrollRef = useRef(null);
 
- main
+   
   const products = [
     {
       id: 1,
@@ -57,6 +57,8 @@ const ProductsSection = () => {
       borderColor: 'border-coffee-200 dark:border-coffee-800',
       hoverColor: 'group-hover:text-coffee-600 dark:group-hover:text-coffee-400',
       route: '/free-certificates'
+    },
+  ]
 
   const scroll = (direction) => {
     const container = scrollRef.current;
@@ -66,7 +68,7 @@ const ProductsSection = () => {
         left: direction === "left" ? -cardWidth : cardWidth,
         behavior: "smooth",
       });
- main
+   
     }
   };
 

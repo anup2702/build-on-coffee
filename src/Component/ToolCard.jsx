@@ -1,6 +1,9 @@
 import React from 'react';
 import isNewItem from "../utils/isNewItem"; // ✅ import utility
 
+// import { Heart } from "lucide-react";
+import  {Hearts}  from './Hearts';
+
 const ToolCard = ({
   name,
   description,
@@ -9,10 +12,14 @@ const ToolCard = ({
   youtube,
   references = [],
   docs,
+  courses,
   onClick,
   selected,
-  dateAdded // ✅ accept dateAdded as prop
+  dateAdded, // ✅ accept dateAdded as prop,
+  // favorites,
+  // toggleFavorite
 }) => (
+
   <div
     className={`relative border rounded-xl p-4 shadow-lg transition-all bg-white dark:bg-gray-800 flex flex-col items-start group cursor-pointer ${
       selected ? 'ring-2 ring-black dark:ring-gray-300' : 'hover:shadow-2xl hover:bg-gray-100 dark:hover:bg-gray-700'
@@ -41,6 +48,17 @@ const ToolCard = ({
         {name}
       </h3>
     </div>
+
+
+
+
+    {/* <div> */}
+    <Hearts
+                  courseId={courses.name}
+                />
+
+    {/* CTA Button */}
+    {/* </div> */}
 
     {/* Description */}
     <p className="text-gray-600 dark:text-gray-300 mt-1 group-hover:text-gray-800 dark:group-hover:text-gray-100 transition-colors text-left mb-2">
@@ -122,7 +140,7 @@ const ToolCard = ({
       </div>
     )}
 
-    {/* CTA Button */}
+    
     {link && (
       <a
         href={link}

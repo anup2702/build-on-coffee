@@ -72,7 +72,7 @@ const JoinCommunity = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
- main
+  
           <motion.div
             className="inline-block p-4 bg-gradient-to-r from-coffee-100/50 to-mocha-100/50 dark:from-coffee-600/20 dark:to-mocha-600/20 rounded-2xl backdrop-blur-sm border border-black/5 dark:border-white/10 mb-6"
             whileHover={{ scale: 1.05 }}
@@ -90,10 +90,10 @@ const JoinCommunity = () => {
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Join Our Growing Community
-
+            </h2>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Join Our Developer Community
- main
+  
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Be part of a thriving network of developers. Learn, share, build — together.
@@ -105,7 +105,7 @@ const JoinCommunity = () => {
             const Icon = social.icon;
             return (
               <motion.div
- main
+  
                 className="inline-block p-3 bg-gradient-to-r from-coffee-500 to-mocha-500 rounded-xl mb-4"
                 whileHover={{ rotate: 10, scale: 1.1 }}
 
@@ -113,7 +113,7 @@ const JoinCommunity = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
- main
+  
               >
                 <div className="flex items-center gap-4 p-6 bg-white/80 dark:bg-white/5 backdrop-blur-sm rounded-xl border border-black/5 dark:border-white/10 hover:bg-white dark:hover:bg-white/10 hover:border-black/10 dark:hover:border-white/20 transition-all duration-300">
                   <div className={`p-3 bg-gradient-to-r ${social.color} rounded-lg flex items-center justify-center`}>
@@ -137,7 +137,7 @@ const JoinCommunity = () => {
           })}
         </div>
 
- main
+  
                 <motion.button
                   type="submit"
                   className="w-full py-3 bg-gradient-to-r from-coffee-600 to-mocha-500 text-white font-semibold rounded-lg hover:from-coffee-700 hover:to-mocha-600 transition-all duration-300 flex items-center justify-center space-x-2 group"
@@ -147,14 +147,14 @@ const JoinCommunity = () => {
                   <span>Subscribe Now</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </motion.button>
-              </form>
+              </div>
             ) : (
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {communityStats.map((stat, index) => {
             const Icon = stat.icon;
             return (
- main
+  
               <motion.div
                 key={index}
                 className={`text-center p-4 bg-white/80 dark:bg-white/5 backdrop-blur-sm rounded-xl border border-black/5 dark:border-white/10 ${
@@ -178,8 +178,8 @@ const JoinCommunity = () => {
             );
           })}
         </div>
-      </div>
-    </section>
+      </section>
+    
   );
 };
 
