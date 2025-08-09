@@ -65,11 +65,24 @@ const App = () => {
   };
 
   return (
-    <AuthProvider>
-      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-        <Navbar scrollRefs={scrollRefs} />
-        <main className="flex-1 pt-20">
-          <Routes>
+        
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+      <Navbar scrollRefs={scrollRefs} />
+      <main className="flex-1 pt-20">
+      <AuthProvider>
+        <Routes>
+          {/* ✅ Auth Routes */}
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+        
+
+  
+      
+
+      
+    
+           
+    
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
@@ -109,9 +122,9 @@ const App = () => {
         </div>
         <Footer />
       
+    </AuthProvider>
         </main>
    </div> 
-    </AuthProvider>
    
   );
 };
