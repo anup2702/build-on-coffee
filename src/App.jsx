@@ -41,6 +41,7 @@ import SystemDesignRoadmap from "./Component/Roadmaps/SystemDesignRoadmap";
 import MobileDevRoadmap from "./Component/Roadmaps/MobileDevRoadmap";
 import PathsLanding from "./Component/Paths/PathsLanding";
 import PathDetail from "./Component/Paths/PathDetail";
+import BlockChainRoadmap from "./Component/Roadmaps/BlockChainRoadmap";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -101,6 +102,7 @@ const App = () => {
             <Route path="/roadmap/system-design" element={<SystemDesignRoadmap />} />
             <Route path="/roadmap/devops" element={<DevOpsRoadmap />} />
             <Route path="/roadmap/mobile-development" element={<MobileDevRoadmap />} />
+            <Route path="/roadmap/blockchain" element={<BlockChainRoadmap />} />
             <Route path="/paths" element={<PathsLanding />} />
             <Route path="/paths/:slug" element={<PathDetail />} />
             <Route path="/learn/tools" element={<LearnTools />} />
