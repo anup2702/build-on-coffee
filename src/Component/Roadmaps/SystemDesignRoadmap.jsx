@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CheckCircle, ChevronDown, ChevronUp } from "lucide-react";
-import { devOpsSteps } from "../../../data/devOpsRoadmap";
+import { systemDesignRoadmap } from "../../../data/systemDesignRoadmap";
 import { ListChecks, FileText, Video } from "lucide-react";
 
 const extractYouTubeID = (url) => {
@@ -10,12 +10,12 @@ const extractYouTubeID = (url) => {
   return match ? match[1] : null;
 };
 
-const DevOpsRoadmap = () => {
+const SystemDesignRoadmap = () => {
   const [openStep, setOpenStep] = useState(null);
   const [completed, setCompleted] = useState([]);
 
   useEffect(() => {
-    const storedCompleted = localStorage.getItem("completedDevOpsSteps");
+    const storedCompleted = localStorage.getItem("completedSystemDesignSteps");
     if (storedCompleted) {
       setCompleted(JSON.parse(storedCompleted));
     }
@@ -30,17 +30,20 @@ const DevOpsRoadmap = () => {
       ? completed.filter((i) => i !== index)
       : [...completed, index];
     setCompleted(newCompleted);
-    localStorage.setItem("completedDevOpsSteps", JSON.stringify(newCompleted));
+    localStorage.setItem(
+      "completedSystemDesignSteps",
+      JSON.stringify(newCompleted)
+    );
   };
 
   return (
     <section className="mx-auto py-20 px-6 md:px-16 animate-fade-in dark:bg-gray-900 min-h-screen">
       <h2 className="text-4xl font-extrabold text-center mb-12 text-gradient">
-        DevOps Roadmap for Placements
+        System Design Roadmap for Placements
       </h2>
 
       <div className="space-y-6">
-        {devOpsSteps.map((step, index) => (
+        {systemDesignRoadmap.map((step, index) => (
           <div
             key={index}
             className="bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-xl shadow transition p-6"
@@ -157,4 +160,4 @@ const DevOpsRoadmap = () => {
   );
 };
 
-export default DevOpsRoadmap;
+export default SystemDesignRoadmap;

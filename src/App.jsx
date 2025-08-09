@@ -36,6 +36,9 @@ import OpenSourceRoadmap from "./Component/Roadmaps/OpenSourceRoadmap";
 import WebDevRoadmap from "./Component/Roadmaps/WebDevRoadmap";
 import DevOpsRoadmap from "./Component/Roadmaps/DevOpsRoadmap";
 import Glossary from "./Component/Glossary/Glossary";
+import Documentation from "./Component/Documentation";
+import SystemDesignRoadmap from "./Component/Roadmaps/SystemDesignRoadmap";
+import MobileDevRoadmap from "./Component/Roadmaps/MobileDevRoadmap";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -62,58 +65,28 @@ const App = () => {
   };
 
   return (
-        <>
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-      <Navbar scrollRefs={scrollRefs} />
-      <main className="flex-1 pt-20">
-      <AuthProvider>
-        <Routes>
-          {/* ✅ Auth Routes */}
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
-          <Route path="/about" element={<About /> }/>
-          <Route path="/contact" element={<Contact />} />
-
-
-          {/* ✅ Protected Routes */}
-          <Route
-            path="/contribute"
-            element={
-              <ProtectedRoute>
-                <Contribute />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/courses/:slug"
-            element={
-              <ProtectedRoute>
-                <CoursePage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/tools"
-            element={
-              <ProtectedRoute>
-                <ToolsList />
-              </ProtectedRoute>
-            }
-          />
-
-         
-          <Route path="/courses" element={<CoursesList />} />
-          <Route path="/learn/tools" element={<ProtectedRoute><LearnTools /></ProtectedRoute>} />
-          <Route path="/free-certificates" element={<ProtectedRoute><FreeCertificateCourses /></ProtectedRoute>} />
-          <Route path="/privacy-policy" element={<ProtectedRoute><PrivacyPolicy /></ProtectedRoute>} />
-          <Route path="/terms-of-service" element={<ProtectedRoute><TermsOfService /></ProtectedRoute>} />
-        
-      
-
-      
-    
-           
+    <AuthProvider>
+      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+        <Navbar scrollRefs={scrollRefs} />
+        <main className="flex-1 pt-20">
+          <Routes>
+            <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/contribute" element={<Contribute />} />
+            <Route path="/courses" element={<CoursesList />} />
+            <Route path="/courses/:slug" element={<CoursePage />} />
+            <Route path="/tools" element={<ToolsList />} />
+            <Route path="/glossary" element={<Glossary />} />   
+            <Route path="/documentation" element={<Documentation />} />
+            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/roadmap/dsa" element={<DsaRoadmap />} />
+            <Route path="/roadmap/opensource" element={<OpenSourceRoadmap />} />
+            <Route path="/roadmap/web-development" element={<WebDevRoadmap />} />
+            <Route path="/roadmap/system-design" element={<SystemDesignRoadmap />} />
+            <Route path="/roadmap/devops" element={<DevOpsRoadmap />} />
+            <Route path="/roadmap/mobile-development" element={<MobileDevRoadmap />} />
+            <Route path="/learn/tools" element={<LearnTools />} />
             <Route
               path="/free-certificates"
               element={<FreeCertificateCourses />}
@@ -136,10 +109,10 @@ const App = () => {
         </div>
         <Footer />
       
-    </AuthProvider>
         </main>
    </div> 
-   </>
+    </AuthProvider>
+   
   );
 };
 

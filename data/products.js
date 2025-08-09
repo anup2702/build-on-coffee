@@ -63,6 +63,18 @@ export const products = [
 
   {
     id: 6,
+    name: "Documentation",
+    description:
+      "Explore official docs for frameworks, languages, databases, cloud and more.",
+    icon: BookOpen,
+    color: "from-sky-500 to-cyan-500",
+    bgColor: "bg-sky-50 dark:bg-sky-900/20",
+    borderColor: "border-sky-200 dark:border-sky-800",
+    hoverColor: "group-hover:text-sky-600 dark:group-hover:text-sky-400",
+    route: "/documentation",
+  },
+  {
+    id: 7,
     name: "Roadmaps",
     description:
       "Explore structured learning paths with videos, resources, and topic breakdowns for various tech domains.",
@@ -72,5 +84,5 @@ export const products = [
     borderColor: "border-pink-200 dark:border-pink-800",
     hoverColor: "group-hover:text-pink-600 dark:group-hover:text-pink-400",
     route: "/roadmap",
-  },
+  }
 ];

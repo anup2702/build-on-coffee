@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CheckCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { openSourceSteps } from "../../../data/openSourceJourney";
 import { ListChecks, FileText, Video } from "lucide-react";
@@ -14,13 +14,25 @@ const OpenSourceRoadmap = () => {
   const [openStep, setOpenStep] = useState(null);
   const [completed, setCompleted] = useState([]);
 
+  useEffect(() => {
+    const storedCompleted = localStorage.getItem("completedOpenSourceSteps");
+    if (storedCompleted) {
+      setCompleted(JSON.parse(storedCompleted));
+    }
+  }, []);
+
   const toggleStep = (index) => {
     setOpenStep(openStep === index ? null : index);
   };
 
   const toggleComplete = (index) => {
-    setCompleted((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    const newCompleted = completed.includes(index)
+      ? completed.filter((i) => i !== index)
+      : [...completed, index];
+    setCompleted(newCompleted);
+    localStorage.setItem(
+      "completedOpenSourceSteps",
+      JSON.stringify(newCompleted)
     );
   };
 
