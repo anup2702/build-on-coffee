@@ -41,6 +41,7 @@ import SystemDesignRoadmap from "./Component/Roadmaps/SystemDesignRoadmap";
 import MobileDevRoadmap from "./Component/Roadmaps/MobileDevRoadmap";
 import PathsLanding from "./Component/Paths/PathsLanding";
 import PathDetail from "./Component/Paths/PathDetail";
+import Team from "./Component/Team";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -81,11 +82,12 @@ const App = () => {
   
       
 
-      
     
            
     
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
+            <Route path="/team" element={<Team />} />
+
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/contribute" element={<Contribute />} />

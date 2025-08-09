@@ -13,6 +13,7 @@ import {
   GitBranch,
   Award,
   Wrench,
+  Users,
 } from "lucide-react";
 
 //Clerk imports for Auth
@@ -36,15 +37,15 @@ const Navbar = ({ scrollRefs }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const navItems = [
+ const navItems = [
   { id: "home", to: "/", label: "Home", icon: Home },
   { id: "about", to: "/about", label: "About", icon: Info },
   { id: "contact", to: "/contact", label: "Contact", icon: Mail },
   { id: "contribute", to: "/contribute", label: "Contribute", icon: GitBranch },
   { id: "tools", to: "/tools", label: "Tools", icon: Wrench },
-  { id: "profile", to: "/profile", label: "Profile", icon: User }, // ✅ Fix applied here
+  { id: "team", to: "/team", label: "Team", icon: Users }, // 👈 new one
+  { id: "profile", to: "/profile", label: "Profile", icon: User },
 ];
-
 
   
 
