@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Github } from "lucide-react";
+import { useTheme } from "./context/ThemeContext"; // import your theme hook
 
 export default function Team() {
   const [view, setView] = useState("contributors"); // Default to contributors
+  const { isDark } = useTheme();
 
   const interns = [
     {
@@ -28,11 +30,22 @@ export default function Team() {
   const data = view === "interns" ? interns : contributors;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-orange-50 to-amber-100 py-10">
+    <div
+      className={`min-h-screen py-10 ${
+        isDark
+          ? "bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-200"
+          : "bg-gradient-to-b from-amber-50 via-orange-50 to-amber-100 text-gray-900"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-4">
-        
         {/* Heading */}
-        <h1 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-red-700 via-orange-500 to-amber-600 bg-clip-text text-transparent">
+        <h1
+          className={`text-4xl font-bold text-center mb-8 bg-clip-text text-transparent ${
+            isDark
+              ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400"
+              : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600"
+          }`}
+        >
           Meet the {view === "interns" ? "Interns" : "Contributors"}
         </h1>
 
@@ -40,19 +53,29 @@ export default function Team() {
         <div className="flex justify-center space-x-4 mb-8">
           <button
             onClick={() => setView("interns")}
-            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 
-              ${view === "interns"
-                ? "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600 text-white shadow-lg"
-                : "bg-white text-red-700 border border-red-300 hover:bg-orange-100"}`}
+            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
+              view === "interns"
+                ? isDark
+                  ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400 text-white shadow-lg"
+                  : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600 text-white shadow-lg"
+                : isDark
+                ? "bg-gray-700 text-blue-400 border border-gray-600 hover:bg-gray-600"
+                : "bg-white text-red-700 border border-red-300 hover:bg-orange-100"
+            }`}
           >
             Interns
           </button>
           <button
             onClick={() => setView("contributors")}
-            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 
-              ${view === "contributors"
-                ? "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600 text-white shadow-lg"
-                : "bg-white text-red-700 border border-red-300 hover:bg-orange-100"}`}
+            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
+              view === "contributors"
+                ? isDark
+                  ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400 text-white shadow-lg"
+                  : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600 text-white shadow-lg"
+                : isDark
+                ? "bg-gray-700 text-blue-400 border border-gray-600 hover:bg-gray-600"
+                : "bg-white text-red-700 border border-red-300 hover:bg-orange-100"
+            }`}
           >
             Contributors
           </button>
@@ -72,12 +95,19 @@ export default function Team() {
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden group relative border-2 border-transparent hover:border-gradient-to-r hover:from-red-700 hover:via-orange-500 hover:to-amber-600 transition-all duration-300"
+                  className={`rounded-lg shadow-lg overflow-hidden group relative border-2 border-transparent transition-all duration-300
+                    ${
+                      isDark
+                        ? "bg-gray-800 hover:border-gradient-to-r hover:from-blue-400 hover:via-teal-400 hover:to-blue-400"
+                        : "bg-white hover:border-gradient-to-r hover:from-red-700 hover:via-orange-500 hover:to-amber-600"
+                    }`}
                 >
                   <div className="relative">
                     <img
                       src={person.image}
-                      alt={`${person.name} - ${view === "interns" ? person.role : person.skill}`}
+                      alt={`${person.name} - ${
+                        view === "interns" ? person.role : person.skill
+                      }`}
                       className="w-full h-64 object-cover"
                     />
                     {/* Hover overlay */}
@@ -90,10 +120,16 @@ export default function Team() {
                     </div>
                   </div>
                   <div className="p-6 text-center">
-                    <h3 className="text-xl font-semibold bg-gradient-to-r from-red-700 via-orange-500 to-amber-600 bg-clip-text text-transparent">
+                    <h3
+                      className={`text-xl font-semibold bg-clip-text text-transparent ${
+                        isDark
+                          ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400"
+                          : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600"
+                      }`}
+                    >
                       {person.name}
                     </h3>
-                    <p className="text-red-700">
+                    <p className={isDark ? "text-blue-300" : "text-red-700"}>
                       {view === "interns" ? person.role : person.skill}
                     </p>
                   </div>
