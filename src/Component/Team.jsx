@@ -79,7 +79,7 @@ export default function Team() {
       : "bg-gradient-to-r from-red-900 via-red-800 to-rose-900"
   }`}
 >
-  Meet Team BuildOnCoffee
+  Meet Our Team BuildOnCoffee
 </h1>
 
         <h1
