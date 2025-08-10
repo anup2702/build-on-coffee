@@ -42,7 +42,7 @@ import MobileDevRoadmap from "./Component/Roadmaps/MobileDevRoadmap";
 import PathsLanding from "./Component/Paths/PathsLanding";
 import PathDetail from "./Component/Paths/PathDetail";
 import Team from "./Component/Team";
-
+import BlockChainRoadmap from "./Component/Roadmaps/BlockChainRoadmap";
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
   return (
