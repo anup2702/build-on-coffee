@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Github } from "lucide-react";
-import { useTheme } from "./context/ThemeContext"; // import your theme hook
+import { useTheme } from "./context/ThemeContext";
 
 export default function Team() {
-  const [view, setView] = useState("contributors"); // Default to contributors
   const { isDark } = useTheme();
 
   const interns = [
     {
       name: "Agrita Sofia",
-      role: "Graphic Designer Intern",
       image:
         "https://media.licdn.com/dms/image/v2/D4D03AQH4jZRvs_kkAw/profile-displayphoto-crop_800_800/B4DZfLPVHfGUAQ-/0/1751461483942?e=1757548800&v=beta&t=PiwPpoGV-GHNvKTLUk0QiQsPo1KojkO7V1JtSWze1EM",
       linkedIn: "https://www.linkedin.com/in/agritsasofia/",
@@ -18,16 +16,51 @@ export default function Team() {
   ];
 
   const contributors = [
-    { name: "Anup Kumar", skill: "Full Stack Developer", image: "https://avatars.githubusercontent.com/u/97333000?v=4", github: "https://github.com/anup2702" },
-    { name: "Akshay Kumar", skill: "AI, Machine Learning, and Cybersecurity", image: "https://avatars.githubusercontent.com/u/82256067?v=4", github: "https://github.com/akshay0611" },
-    { name: "Harshita Gupta", skill: "Backend Developer", image: "https://avatars.githubusercontent.com/u/110281535?v=4", github: "https://github.com/hershiee" },
-    { name: "Aansh Malhotra", skill: "Full Stack Developer", image: "https://avatars.githubusercontent.com/u/178574389?v=4", github: "https://github.com/21aansh06" },
-    { name: "Avantika", skill: "Fresher Software Engineer", image: "https://avatars.githubusercontent.com/u/144206149?v=4", github: "https://github.com/Avanti2023" },
-    { name: "Sagar Chavan", skill: "AI and Machine Learning Enthusiast", image: "https://avatars.githubusercontent.com/u/134862057?v=4", github: "https://github.com/sagarc123" },
-    { name: "Souvik Mukherjee", skill: "Full Stack Developer", image: "https://avatars.githubusercontent.com/u/129358938?v=4", github: "https://github.com/SouvikMukherjee199" },
+    {
+      name: "Anup Kumar",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQEf08fzs5zY1A/profile-displayphoto-shrink_800_800/B56ZVeYqyUHEAc-/0/1741045283255?e=1757548800&v=beta&t=DwUQ_TmsG5ur-iXCZxSNW8CAQcSsKtsjpLYDvwZijEs",
+      github: "https://github.com/anup2702",
+      linkedIn: "https://www.linkedin.com/in/anup001/",
+    },
+    {
+      name: "Akshay Kumar",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQH0WmRigmV2OQ/profile-displayphoto-shrink_800_800/B56ZfL5mkeH8Ak-/0/1751472567182?e=1757548800&v=beta&t=tDIV-jrcojX7Mc6K-iOMY_d2QQMcOg8FFtzMEqRIMvA",
+      github: "https://github.com/akshay0611",
+      linkedIn: "https://www.linkedin.com/in/akshaykumar0611/",
+    },
+    {
+      name: "Harshita Gupta",
+      image: "https://avatars.githubusercontent.com/u/110281535?v=4",
+      github: "https://github.com/hershiee",
+      linkedIn: "#",
+    },
+    {
+      name: "Aansh Malhotra",
+      image: "https://avatars.githubusercontent.com/u/178574389?v=4",
+      github: "https://github.com/21aansh06",
+      linkedIn: "https://www.linkedin.com/in/aansh-malhotra-a28423320/",
+    },
+    {
+      name: "Avantika",
+      image: "https://avatars.githubusercontent.com/u/144206149?v=4",
+      github: "https://github.com/Avanti2023",
+      linkedIn: "#",
+    },
+    {
+      name: "Sagar Chavan",
+      image: "https://avatars.githubusercontent.com/u/134862057?v=4",
+      github: "https://github.com/sagarc123",
+      linkedIn:"https://www.linkedin.com/in/sagar-chavan-a6937b194/",
+    },
+    {
+      name: "Souvik Mukherjee",
+      image: "https://media.licdn.com/dms/image/v2/D5635AQG9JPLK2vS3PA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1738065305869?e=1755439200&v=beta&t=wBsj9eFngV1AzxlUtj9LOS7SIBKcDpRYJAwuiyX-ahA",
+      github: "https://github.com/SouvikMukherjee199",
+      linkedIn: "https://www.linkedin.com/in/souvikmukherjee/",
+    },
   ];
 
-  const data = view === "interns" ? interns : contributors;
+  const cardSizeClasses = "w-48 h-56"; // smaller card size
 
   return (
     <div
@@ -39,6 +72,16 @@ export default function Team() {
     >
       <div className="max-w-6xl mx-auto px-4">
         {/* Heading */}
+<h1
+  className={`text-6xl font-extrabold text-center mb-10 bg-clip-text text-transparent ${
+    isDark
+      ? "bg-gradient-to-r from-red-800 via-red-900 to-red-950"
+      : "bg-gradient-to-r from-red-900 via-red-800 to-rose-900"
+  }`}
+>
+  Meet Team BuildOnCoffee
+</h1>
+
         <h1
           className={`text-4xl font-bold text-center mb-8 bg-clip-text text-transparent ${
             isDark
@@ -46,97 +89,115 @@ export default function Team() {
               : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600"
           }`}
         >
-          Meet the {view === "interns" ? "Interns" : "Contributors"}
+          Contributors
         </h1>
 
-        {/* Toggle buttons */}
-        <div className="flex justify-center space-x-4 mb-8">
-          <button
-            onClick={() => setView("interns")}
-            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-              view === "interns"
-                ? isDark
-                  ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400 text-white shadow-lg"
-                  : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600 text-white shadow-lg"
-                : isDark
-                ? "bg-gray-700 text-blue-400 border border-gray-600 hover:bg-gray-600"
-                : "bg-white text-red-700 border border-red-300 hover:bg-orange-100"
-            }`}
-          >
-            Interns
-          </button>
-          <button
-            onClick={() => setView("contributors")}
-            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-              view === "contributors"
-                ? isDark
-                  ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400 text-white shadow-lg"
-                  : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600 text-white shadow-lg"
-                : isDark
-                ? "bg-gray-700 text-blue-400 border border-gray-600 hover:bg-gray-600"
-                : "bg-white text-red-700 border border-red-300 hover:bg-orange-100"
-            }`}
-          >
-            Contributors
-          </button>
+        {/* Contributors Grid */}
+        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4 justify-center mb-16">
+          {contributors.map((person) => (
+            <motion.div
+              key={person.name}
+              whileHover={{ scale: 1.05 }}
+              className={`rounded-lg shadow-lg overflow-hidden group relative border-2 border-transparent transition-all duration-300 ${
+                isDark
+                  ? "bg-gray-800 hover:border-gradient-to-r hover:from-blue-400 hover:via-teal-400 hover:to-blue-400"
+                  : "bg-white hover:border-gradient-to-r hover:from-red-700 hover:via-orange-500 hover:to-amber-600"
+              } ${cardSizeClasses}`}
+            >
+              <img
+                src={person.image}
+                alt={person.name}
+                className="w-full h-36 object-cover"
+              />
+              <div className="p-4 text-center">
+                <h3
+                  className={`text-lg font-semibold bg-clip-text text-transparent mb-2 ${
+                    isDark
+                      ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400"
+                      : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600"
+                  }`}
+                >
+                  {person.name}
+                </h3>
+                {/* Icons */}
+                <div className="flex justify-center space-x-6 text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                  <a
+                    href={person.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${person.name} GitHub`}
+                    className="hover:text-gray-700 dark:hover:text-teal-400"
+                  >
+                    <Github size={24} />
+                  </a>
+                  <a
+                    href={person.linkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${person.name} LinkedIn`}
+                    className="hover:text-blue-600 dark:hover:text-blue-400"
+                  >
+                    <Linkedin size={24} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Cards */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {data.map((person) => {
-            const link = view === "interns" ? person.linkedIn : person.github;
-            return (
-              <a
-                key={person.name}
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className={`rounded-lg shadow-lg overflow-hidden group relative border-2 border-transparent transition-all duration-300
-                    ${
-                      isDark
-                        ? "bg-gray-800 hover:border-gradient-to-r hover:from-blue-400 hover:via-teal-400 hover:to-blue-400"
-                        : "bg-white hover:border-gradient-to-r hover:from-red-700 hover:via-orange-500 hover:to-amber-600"
-                    }`}
+        {/* Interns heading */}
+        <h1
+          className={`text-4xl font-bold text-center mb-8 bg-clip-text text-transparent ${
+            isDark
+              ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400"
+              : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600"
+          }`}
+        >
+          Interns
+        </h1>
+
+        {/* Interns Grid */}
+        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4 justify-center">
+          {interns.map((person) => (
+            <motion.div
+              key={person.name}
+              whileHover={{ scale: 1.05 }}
+              className={`rounded-lg shadow-lg overflow-hidden group relative border-2 border-transparent transition-all duration-300 ${
+                isDark
+                  ? "bg-gray-800 hover:border-gradient-to-r hover:from-blue-400 hover:via-teal-400 hover:to-blue-400"
+                  : "bg-white hover:border-gradient-to-r hover:from-red-700 hover:via-orange-500 hover:to-amber-600"
+              } ${cardSizeClasses}`}
+            >
+              <img
+                src={person.image}
+                alt={person.name}
+                className="w-full h-36 object-cover"
+              />
+              <div className="p-4 text-center">
+                <h3
+                  className={`text-lg font-semibold bg-clip-text text-transparent mb-2 ${
+                    isDark
+                      ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400"
+                      : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600"
+                  }`}
                 >
-                  <div className="relative">
-                    <img
-                      src={person.image}
-                      alt={`${person.name} - ${
-                        view === "interns" ? person.role : person.skill
-                      }`}
-                      className="w-full h-64 object-cover"
-                    />
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition z-10">
-                      {view === "interns" ? (
-                        <Linkedin size={40} className="text-white" />
-                      ) : (
-                        <Github size={40} className="text-white" />
-                      )}
-                    </div>
-                  </div>
-                  <div className="p-6 text-center">
-                    <h3
-                      className={`text-xl font-semibold bg-clip-text text-transparent ${
-                        isDark
-                          ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400"
-                          : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600"
-                      }`}
-                    >
-                      {person.name}
-                    </h3>
-                    <p className={isDark ? "text-blue-300" : "text-red-700"}>
-                      {view === "interns" ? person.role : person.skill}
-                    </p>
-                  </div>
-                </motion.div>
-              </a>
-            );
-          })}
+                  {person.name}
+                </h3>
+                {/* LinkedIn icon only */}
+                <div className="flex justify-center text-gray-500 hover:text-blue-600 dark:hover:text-blue-400">
+                  <a
+                    href={person.linkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${person.name} LinkedIn`}
+                    className="hover:text-blue-600 dark:hover:text-blue-400"
+                  >
+                    <Linkedin size={24} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
