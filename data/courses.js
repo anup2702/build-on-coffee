@@ -5,13 +5,16 @@ export const courses = [
     description: "Learn the fundamentals of data structures used in computer science.",
     details: "Covers arrays, linked lists, stacks, queues, trees, graphs, and more. Essential for technical interviews and efficient programming.",
     link: "https://www.geeksforgeeks.org/data-structures/",
-    image:'https://res.cloudinary.com/dwmpdbsej/image/upload/v1754068702/OIP__1_-removebg-preview_1_bozktc.png',
+    image: 'https://res.cloudinary.com/dwmpdbsej/image/upload/v1754068702/OIP__1_-removebg-preview_1_bozktc.png',
     youtube: "https://www.youtube.com/embed/RBSGKlAvoiM",
     references: [
       { label: "GeeksforGeeks Data Structures", url: "https://www.geeksforgeeks.org/data-structures/" },
       { label: "MIT 6.006", url: "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/" }
     ],
-    dateAdded: "2025-07-30"
+    dateAdded: "2025-07-30",
+    documents: [
+      { title: "Data Structures Overview", url: "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/" }
+    ]
   },
   {
     slug: "algorithms",
@@ -25,7 +28,10 @@ export const courses = [
       { label: "Khan Academy Algorithms", url: "https://www.khanacademy.org/computing/computer-science/algorithms" },
       { label: "Princeton Algorithms", url: "https://www.coursera.org/specializations/algorithms" }
     ],
-    dateAdded: "2025-07-31"  // add this
+    dateAdded: "2025-07-31",
+    documents: [
+      { title: "Algorithms Overview", url: "https://www.geeksforgeeks.org/dsa/introduction-to-algorithms/" }
+    ]
   },
   {
     slug: "operating-systems",
@@ -39,7 +45,10 @@ export const courses = [
       { label: "Udacity OS Course", url: "https://www.udacity.com/course/introduction-to-operating-systems--ud923" },
       { label: "OSTEP Book", url: "https://pages.cs.wisc.edu/~remzi/OSTEP/" }
     ],
-    dateAdded: "2025-07-28"
+    dateAdded: "2025-07-28",
+    documents: [
+      { title: "Operating Systems Overview", url: "https://www.geeksforgeeks.org/operating-systems/what-is-an-operating-system/" }
+    ]
   },
   {
     slug: "computer-networks",
@@ -53,7 +62,10 @@ export const courses = [
       { label: "Coursera Computer Networks", url: "https://www.coursera.org/learn/computer-networking" },
       { label: "Stanford Networking", url: "https://web.stanford.edu/class/cs144/" }
     ],
-    dateAdded: "2025-07-15" // older than 7 days, won't show badge
+    dateAdded: "2025-07-15",
+    documents: [
+      { title: "Computer Networks Overview", url: "https://www.geeksforgeeks.org/computer-science-fundamentals/what-is-computer-networking/" }
+    ]
   },
   {
     slug: "databases",
@@ -67,7 +79,10 @@ export const courses = [
       { label: "Coursera Databases", url: "https://www.coursera.org/learn/databases-intro" },
       { label: "Stanford DB Class", url: "https://web.stanford.edu/class/cs145/" }
     ],
-    dateAdded: "2025-07-29"
+    dateAdded: "2025-07-29",
+    documents: [
+      { title: "Databases Overview", url: "https://www.geeksforgeeks.org/dbms/what-is-database/" }
+    ]
   },
   {
     slug: "system-design",
@@ -81,6 +96,9 @@ export const courses = [
       { label: "System Design Primer", url: "https://github.com/donnemartin/system-design-primer" },
       { label: "Grokking System Design", url: "https://www.educative.io/courses/grokking-the-system-design-interview" }
     ],
-    dateAdded: "2025-07-20" // old
+    dateAdded: "2025-07-20",
+    documents: [
+      { title: "System Design Overview", url: "https://www.geeksforgeeks.org/system-design/what-is-system-design-learn-system-design/" }
+    ]
   }
 ];

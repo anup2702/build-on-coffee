@@ -39,16 +39,23 @@ const CourseDetailPanel = ({ course, activeTab, setActiveTab, onClose }) => (
         </div>
       )}
 
-      {activeTab === "docs" && course.docs && (
+      {activeTab === "docs" && course.documents && course.documents.length > 0 && (
         <div className="mb-6">
-          <a
-            href={course.docs}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition"
-          >
-            View Full Documentation →
-          </a>
+          {course.documents.map((doc, index) => (
+            <a
+              key={index}
+              href={doc.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-block px-4 py-2 rounded-full border text-sm font-medium transition-all duration-300 mb-2 ${
+                activeTab === "docs"
+                  ? "bg-white text-black shadow"
+                  : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+              }`}
+            >
+              {doc.title} →
+            </a>
+          ))}
         </div>
       )}
 
