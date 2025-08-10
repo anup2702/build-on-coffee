@@ -13,6 +13,7 @@ import {
   GitBranch,
   Award,
   Wrench,
+  Users,
 } from "lucide-react";
 
 //Clerk imports for Auth
@@ -36,15 +37,15 @@ const Navbar = ({ scrollRefs }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const navItems = [
+ const navItems = [
   { id: "home", to: "/", label: "Home", icon: Home },
   { id: "about", to: "/about", label: "About", icon: Info },
   { id: "contact", to: "/contact", label: "Contact", icon: Mail },
   { id: "contribute", to: "/contribute", label: "Contribute", icon: GitBranch },
   { id: "tools", to: "/tools", label: "Tools", icon: Wrench },
-  { id: "profile", to: "/profile", label: "Profile", icon: User }, // ✅ Fix applied here
+  { id: "team", to: "/team", label: "Team", icon: Users }, // 👈 new one
+  { id: "profile", to: "/profile", label: "Profile", icon: User },
 ];
-
 
   
 
@@ -288,6 +289,52 @@ const Navbar = ({ scrollRefs }) => {
             </div>
           </motion.div>
         )}
+        {/* Mobile Navigation */}
+        <motion.div
+          className={`md:hidden overflow-hidden ${
+            isMobileMenuOpen ? "max-h-96" : "max-h-0"
+          }`}
+          initial={false}
+          animate={{
+            height: isMobileMenuOpen ? "auto" : 0,
+            opacity: isMobileMenuOpen ? 1 : 0,
+          }}
+          transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+        >
+          <div className="py-6 px-2 space-y-1 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl mx-4 mb-4 border border-gray-200/30 dark:border-gray-700/30">
+            {navItems.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.button
+                  key={item.id}
+                  onClick={() => {
+                    navigate(item.to);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium transition-all duration-300 ${
+                    location.pathname === item.to
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/50 dark:border-blue-700/50"
+                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 hover:text-gray-900 dark:hover:text-gray-100"
+                  }`}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{
+                    opacity: isMobileMenuOpen ? 1 : 0,
+                    x: isMobileMenuOpen ? 0 : -20,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    delay: isMobileMenuOpen ? index * 0.1 : 0,
+                    ease: [0.23, 1, 0.32, 1],
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Icon className="h-5 w-5" />
+                  <span>{item.label}</span>
+                </motion.button>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </motion.header>
   );
