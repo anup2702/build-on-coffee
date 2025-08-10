@@ -33,5 +33,10 @@ export const roadmap = [
     title: "BLockchain",
     description: "Build native and cross-platform mobile apps.",
     path: "/roadmap/blockchain",
+  },
+  {
+    title: "Ai Ml Roadmap",
+    description: "Build native and cross-platform mobile apps.",
+    path: "/roadmap/ai-ml",
   }
 ];
