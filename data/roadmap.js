@@ -38,5 +38,10 @@ export const roadmap = [
     title: "Ai Ml Roadmap",
     description: "Build native and cross-platform mobile apps.",
     path: "/roadmap/ai-ml",
+  },
+  {
+    title: "Cybersecurity Roadmap",
+    description: "Explore the world of cybersecurity, from ethical hacking to network security.",
+    path: "/roadmap/cybersecurity",
   }
 ];
