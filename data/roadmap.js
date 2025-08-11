@@ -43,5 +43,10 @@ export const roadmap = [
     title: "Cybersecurity Roadmap",
     description: "Explore the world of cybersecurity, from ethical hacking to network security.",
     path: "/roadmap/cybersecurity",
+  },
+  {
+    title: "Cloud Computing",
+    description: "Master cloud platforms like AWS, Azure, and GCP.",
+    path: "/roadmap/cloud-computing",
   }
 ];

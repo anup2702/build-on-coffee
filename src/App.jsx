@@ -45,6 +45,7 @@ import BlockChainRoadmap from "./Component/Roadmaps/BlockChainRoadmap";
 
 import AiMlRoadmap from "./Component/Roadmaps/AiMlRoadmap";
 import CybersecurityRoadmap from "./Component/Roadmaps/CybersecurityRoadmap";
+import CloudComputingRoadmap from "./Component/Roadmaps/CloudComputingRoadmap";
 import Team from "./Component/Team";
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -110,6 +111,7 @@ const App = () => {
             <Route path="/roadmap/blockchain" element={<BlockChainRoadmap />} />
             <Route path="/roadmap/ai-ml" element={<AiMlRoadmap />} />
             <Route path="/roadmap/cybersecurity" element={<CybersecurityRoadmap />} />
+            <Route path="/roadmap/cloud-computing" element={<CloudComputingRoadmap />} />
             <Route path="/paths" element={<PathsLanding />} />
             <Route path="/paths/:slug" element={<PathDetail />} />
             <Route path="/learn/tools" element={<LearnTools />} />
