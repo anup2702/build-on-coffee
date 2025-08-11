@@ -48,5 +48,10 @@ export const roadmap = [
     title: "Cloud Computing",
     description: "Master cloud platforms like AWS, Azure, and GCP.",
     path: "/roadmap/cloud-computing",
+  },
+  {
+    title: "UI/UX Design",
+    description: "Design intuitive and engaging user interfaces and experiences.",
+    path: "/roadmap/ui-ux-design",
   }
 ];
