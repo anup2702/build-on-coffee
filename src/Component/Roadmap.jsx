@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Code, Terminal, GitMerge, Server, GitBranch , Network , Bot } from "lucide-react";
+import { Route, Code, Terminal, GitMerge, Server, GitBranch , Network , Bot, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import { roadmap } from "../../data/roadmap.js";
 import { Link } from "react-router-dom";
@@ -12,7 +12,8 @@ const iconMap = {
   "Open Source Journey": <GitBranch className="w-8 h-8 mb-4 text-yellow-500" />,
   "Mobile Development": <Code className="w-8 h-8 mb-4 text-teal-500" />,
   "BLockchain": <Network  className="w-8 h-8 mb-4 text-teal-500" />,
-  "Ai Ml Roadmap": <Bot  className="w-8 h-8 mb-4 text-cyan-500" />
+  "Ai Ml Roadmap": <Bot  className="w-8 h-8 mb-4 text-cyan-500" />,
+  "Cybersecurity Roadmap": <Shield className="w-8 h-8 mb-4 text-indigo-500" />
 };
 
 const Roadmap = () => {
