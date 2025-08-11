@@ -41,21 +41,19 @@ const CourseDetailPanel = ({ course, activeTab, setActiveTab, onClose }) => (
 
       {activeTab === "docs" && course.documents && course.documents.length > 0 && (
         <div className="mb-6">
-          {course.documents.map((doc, index) => (
-            <a
-              key={index}
-              href={doc.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-block px-4 py-2 rounded-full border text-sm font-medium transition-all duration-300 mb-2 ${
-                activeTab === "docs"
-                  ? "bg-white text-black shadow"
-                  : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-              }`}
-            >
-              {doc.title} →
-            </a>
-          ))}
+          <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+            {course.documents.map((doc, index) => (
+              <a
+                key={index}
+                href={doc.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-4 border rounded-full text-sm font-medium text-gray-800 bg-white shadow transition-all duration-300 hover:bg-gray-200"
+              >
+                {doc.title} →
+              </a>
+            ))}
+          </div>
         </div>
       )}
 

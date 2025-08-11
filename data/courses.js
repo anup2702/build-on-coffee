@@ -13,7 +13,10 @@ export const courses = [
     ],
     dateAdded: "2025-07-30",
     documents: [
-      { title: "Data Structures Overview", url: "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/" }
+      { title: "Data Structures Overview", url: "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/" },
+      { title: "Data Structures in Multiple Languages-1", url: "https://www.tutorialspoint.com/data_structures_algorithms/index.htm" },
+      { title: "Data Structures in Multiple Languages-2", url: "https://dev.to/khaledhosseini/data-structures-and-algorithms-for-multi-language-programmers-c-swift-python-java-c-javascript-alp" },
+      { title: "Data Structures Cheat Sheet", url: "https://www.clear.rice.edu/comp160/data_cheat.html" }
     ]
   },
   {
@@ -30,7 +33,9 @@ export const courses = [
     ],
     dateAdded: "2025-07-31",
     documents: [
-      { title: "Algorithms Overview", url: "https://www.geeksforgeeks.org/dsa/introduction-to-algorithms/" }
+      { title: "Algorithms Overview", url: "https://www.geeksforgeeks.org/dsa/introduction-to-algorithms/" },
+      { title: "Algorithms Visualizer", url: "https://visualgo.net/en" },
+      { title: "Algorithms Cheat Sheet", url: "https://algs4.cs.princeton.edu/cheatsheet/" }
     ]
   },
   {
@@ -47,7 +52,9 @@ export const courses = [
     ],
     dateAdded: "2025-07-28",
     documents: [
-      { title: "Operating Systems Overview", url: "https://www.geeksforgeeks.org/operating-systems/what-is-an-operating-system/" }
+      { title: "Operating Systems Overview", url: "https://www.geeksforgeeks.org/operating-systems/what-is-an-operating-system/" },
+      { title: "Operating Systems Notes", url: "https://prepinsta.com/operating-systems/" },
+      { title: "Operating Systems Cheat Sheet", url: "operating systems cheat sheet" }
     ]
   },
   {
@@ -64,7 +71,10 @@ export const courses = [
     ],
     dateAdded: "2025-07-15",
     documents: [
-      { title: "Computer Networks Overview", url: "https://www.geeksforgeeks.org/computer-science-fundamentals/what-is-computer-networking/" }
+      { title: "Computer Networks Overview", url: "https://www.geeksforgeeks.org/computer-science-fundamentals/what-is-computer-networking/" },
+      { title: "Computer Networks Notes", url: "https://www.geeksforgeeks.org/computer-networks/computer-network-tutorials/" },
+      { title: "Computer Networks Notes PDF", url: "https://www.vssut.ac.in/lecture_notes/lecture1423905560.pdf" },
+      { title: "Computer Networks Cheat Sheet", url: "https://www.geeksforgeeks.org/computer-networks/computer-network-cheat-sheet/" }
     ]
   },
   {
@@ -81,7 +91,16 @@ export const courses = [
     ],
     dateAdded: "2025-07-29",
     documents: [
-      { title: "Databases Overview", url: "https://www.geeksforgeeks.org/dbms/what-is-database/" }
+      { title: "Databases Overview", url: "https://www.geeksforgeeks.org/dbms/what-is-database/" },
+      { title: "DBMS Notes", url: "https://www.tutorialspoint.com/dbms/index.htm" },
+      { title: "DBMS Cheat Sheet", url: "https://www.almabetter.com/bytes/cheat-sheet/dbms-cheat-sheet" },
+      { title: "SQL Overview", url: "https://www.geeksforgeeks.org/sql/sql-tutorial/" },
+      { title: "SQL Notes - 1", url: "https://www.w3schools.com/sql/sql_intro.asp" },
+      { title: "SQL Notes - 2", url: "https://www.w3schools.com/sql/sql_intro.asp" },
+      { title: "SQL Cheat Sheet", url: "https://www.geeksforgeeks.org/sql/sql-cheat-sheet/" },
+      { title: "SQL Cheat Sheet PDF", url: "https://www.dbvis.com/wp-content/uploads/2024/04/SQL-Cheat-Sheet.pdf" },
+      { title: "NoSQL Overview", url: "https://www.geeksforgeeks.org/dbms/introduction-to-nosql/" },
+      { title: "NoSQL Notes", url: "https://www.mongodb.com/resources/basics/databases/nosql-explained" }
     ]
   },
   {
@@ -98,7 +117,9 @@ export const courses = [
     ],
     dateAdded: "2025-07-20",
     documents: [
-      { title: "System Design Overview", url: "https://www.geeksforgeeks.org/system-design/what-is-system-design-learn-system-design/" }
+      { title: "System Design Overview", url: "https://www.geeksforgeeks.org/system-design/what-is-system-design-learn-system-design/" },
+      { title: "System Design Notes", url: "https://takeuforward.org/system-design/complete-system-design-roadmap-with-videos-for-sdes" },
+      { title: "System Design Cheat Sheet", url: "https://medium.com/@shivambhadani_/system-design-for-beginners-everything-you-need-in-one-article-c74eb702540b" }
     ]
   }
 ];
