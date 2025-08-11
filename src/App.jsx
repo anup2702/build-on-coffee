@@ -43,6 +43,8 @@ import PathsLanding from "./Component/Paths/PathsLanding";
 import PathDetail from "./Component/Paths/PathDetail";
 import BlockChainRoadmap from "./Component/Roadmaps/BlockChainRoadmap";
 import Team from "./Component/Team";
+import ProjectIdeas from "./Component/ProjectIdeas";
+import ProjectIdeaDetail from "./Component/ProjectIdeaDetail";
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
   return (
@@ -88,6 +90,8 @@ const App = () => {
     
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/project-idea" element={<ProjectIdeas />} />
+            <Route path="/project-idea/:id" element={<ProjectIdeaDetail />} />
 
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

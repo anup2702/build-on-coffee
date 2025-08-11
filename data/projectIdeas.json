@@ -1,0 +1,433 @@
+[
+  {
+    "id": 1,
+    "level": "beginner",
+    "title": "Personal Portfolio Website",
+    "image": "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBvcnRmb2xpb3xlbnwwfHwwfHx8MA%3D%3D",
+    "overview": "Create a responsive portfolio website showcasing your projects, skills and contact info.",
+    "steps": [
+      "Set up a React (or plain HTML/CSS) project scaffold.",
+      "Create sections: Hero, About, Projects, Skills, Contact.",
+      "Use CSS (Tailwind or plain) to make it responsive.",
+      "Add links to GitHub, LinkedIn and downloadable resume.",
+      "Deploy to Netlify/Vercel/GitHub Pages."
+    ],
+    "techStack": ["HTML", "CSS", "JavaScript", "React (optional)", "Tailwind (optional)"]
+  },
+  {
+    "id": 2,
+    "level": "beginner",
+    "title": "To-do List App",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7a7b4a3b2d4f5c6e8b9a0c1d2e3f4a5b",
+    "overview": "A simple CRUD app to add, edit, mark complete, and delete tasks stored in localStorage.",
+    "steps": [
+      "Create UI for adding and listing tasks.",
+      "Implement add/edit/delete functionality.",
+      "Store tasks in localStorage for persistence.",
+      "Add filters (all/active/completed) and simple animations.",
+      "Optionally add drag-and-drop reordering."
+    ],
+    "techStack": ["HTML", "CSS", "JavaScript", "localStorage", "React (optional)"]
+  },
+  {
+    "id": 3,
+    "level": "beginner",
+    "title": "Weather App",
+    "image": "https://media.istockphoto.com/id/1301200293/photo/woman-outside-in-city-checking-weather-forecast-on-her-mobile-phone.webp?a=1&b=1&s=612x612&w=0&k=20&c=mmutg9o_1nhi9iA3AA1ADfsDj7XCT9HGKX93wN_jNeg=",
+    "overview": "Fetch current weather and 3-day forecast for a city using a public weather API.",
+    "steps": [
+      "Choose an API (OpenWeatherMap or WeatherAPI) and get an API key.",
+      "Build a search input that fetches weather for a city.",
+      "Display temperature, conditions, humidity, wind speed and an icon.",
+      "Show a small multi-day forecast section.",
+      "Add error handling for unknown cities and loading states."
+    ],
+    "techStack": ["HTML", "CSS", "JavaScript", "Fetch API", "React (optional)"]
+  },
+  {
+    "id": 4,
+    "level": "beginner",
+    "title": "Markdown Notes App",
+    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5b6a7c8d9e0f1a2b3c4d5e6f7a8b9c0d",
+    "overview": "A small app to create and preview markdown notes with save/load functionality.",
+    "steps": [
+      "Create a textarea input for markdown and a preview panel.",
+      "Use a markdown parser (marked or similar) to render HTML.",
+      "Allow saving notes to localStorage (or simple backend).",
+      "Implement delete and edit functionality.",
+      "Optionally add tag-based search and export to PDF."
+    ],
+    "techStack": ["HTML", "CSS", "JavaScript", "marked.js", "localStorage"]
+  },
+  {
+    "id": 5,
+    "level": "beginner",
+    "title": "Recipe Finder (API)",
+    "image": "https://plus.unsplash.com/premium_photo-1670895801174-8278045808f4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVjaXBlfGVufDB8fDB8fHww",
+    "overview": "Search recipes by ingredient using a public recipes API and show recipe details.",
+    "steps": [
+      "Pick a recipe API (Spoonacular or Edamam) and get an API key.",
+      "Build a search UI and fetch matching recipes.",
+      "Show recipe card with image, calories, and brief description.",
+      "Open a detail view with ingredients and steps.",
+      "Allow saving favorites to localStorage."
+    ],
+    "techStack": ["HTML", "CSS", "JavaScript", "Fetch API", "React (optional)"]
+  },
+  {
+    "id": 6,
+    "level": "beginner",
+    "title": "Random Quote Generator",
+    "image": "https://plus.unsplash.com/premium_photo-1674489620667-eaf4a0094996?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cXVvdGV8ZW58MHx8MHx8fDA%3D",
+    "steps": [
+      "Fetch a random quote from a public API or local JSON.",
+      "Display quote and author with a pleasant UI.",
+      "Add a button to get a new quote and a share-to-Twitter option.",
+      "Provide ability to save favorite quotes."
+    ],
+    "techStack": ["HTML", "CSS", "JavaScript", "Fetch API", "React (optional)"]
+  },
+  {
+    "id": 7,
+    "level": "beginner",
+    "title": "Color Palette Generator",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+    "overview": "Generate harmonious color palettes; copy HEX values and preview sample UI.",
+    "steps": [
+      "Create UI to generate palettes from a base color.",
+      "Apply color theory (complementary, triadic, analogous) algorithms.",
+      "Show color blocks with HEX and copy-to-clipboard.",
+      "Preview palette on sample UI components (buttons, cards)."
+    ],
+    "techStack": ["HTML", "CSS", "JavaScript", "tinycolor2 (optional)"]
+  },
+  {
+    "id": 8,
+    "level": "beginner",
+    "title": "Countdown Timer / Pomodoro",
+    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d",
+    "overview": "A simple countdown and Pomodoro timer with start/pause/reset and notifications.",
+    "steps": [
+      "Create timer UI and controls (start/pause/reset).",
+      "Implement state for minutes/seconds and tick updates.",
+      "Add notification or sound on completion.",
+      "Add presets for Pomodoro cycles and short/long breaks."
+    ],
+    "techStack": ["HTML", "CSS", "JavaScript", "React (optional)"]
+  },
+  {
+    "id": 9,
+    "level": "beginner",
+    "title": "Image Gallery with Lightbox",
+    "image": "https://images.unsplash.com/photo-1500051638674-ff996a0ec29e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2UlMjBnYWxsZXJ5fGVufDB8fDB8fHww",
+    "overview": "Display images in a responsive grid with a clickable lightbox to view full image.",
+    "steps": [
+      "Build a responsive masonry/grid gallery.",
+      "Open images in a modal/lightbox with navigation.",
+      "Add lazy-loading and simple transitions.",
+      "Allow uploading images locally (optional)."
+    ],
+    "techStack": ["HTML", "CSS", "JavaScript", "React (optional)"]
+  },
+  {
+    "id": 10,
+    "level": "beginner",
+    "title": "BMI Calculator",
+    "image": "https://images.unsplash.com/photo-1649877510851-10effb9a59b4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Ym1pJTIwY2FsY3VsYXRvcnxlbnwwfHwwfHx8MA%3D%3D",
+    "overview": "Simple BMI calculator with category and health tips based on BMI.",
+    "steps": [
+      "Create input form for height and weight.",
+      "Calculate BMI and show category (underweight/normal/overweight).",
+      "Display tips and simple recommendations.",
+      "Add unit toggle (metric/imperial)."
+    ],
+    "techStack": ["HTML", "CSS", "JavaScript", "React (optional)"]
+  },
+
+  {
+    "id": 11,
+    "level": "intermediate",
+    "title": "Expense Tracker with Auth",
+    "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+    "overview": "Track income & expenses with user authentication, categories, and charts.",
+    "steps": [
+      "Set up backend (Express/FastAPI) and DB (Mongo/Postgres).",
+      "Implement JWT authentication and user accounts.",
+      "Create CRUD endpoints for transactions and categories.",
+      "Show interactive charts (Chart.js / Recharts) and filters by date.",
+      "Allow CSV export and recurring transactions."
+    ],
+    "techStack": ["React", "Node.js/Express", "MongoDB/Postgres", "JWT", "Chart.js"]
+  },
+  {
+    "id": 12,
+    "level": "intermediate",
+    "title": "Real-time Chat App",
+    "image": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e",
+    "overview": "Real-time one-to-one and group chat with presence and typing indicators.",
+    "steps": [
+      "Backend with WebSocket (Socket.IO) or WebRTC signaling.",
+      "Implement rooms, message persistence (DB), and user presence.",
+      "Add typing indicators and read receipts.",
+      "Optimize with pagination and message search.",
+      "Add file/image sharing and push notifications (optional)."
+    ],
+    "techStack": ["React", "Node.js", "Socket.IO", "MongoDB/Postgres", "WebRTC (optional)"]
+  },
+  {
+    "id": 13,
+    "level": "intermediate",
+    "title": "E-commerce Store (MVP)",
+    "image": "https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZSUyMGNvbW1lcmNlfGVufDB8fDB8fHww",
+    "overview": "Small e-commerce platform with product listings, cart, checkout and admin panel.",
+    "steps": [
+      "Design product model and admin CRUD for products.",
+      "Implement cart logic and checkout flow.",
+      "Integrate payment gateway (Stripe) for payments.",
+      "Add user profiles, order history, and email receipts.",
+      "Create a basic admin dashboard for orders and inventory."
+    ],
+    "techStack": ["React", "Node.js/Express", "MongoDB/Postgres", "Stripe API"]
+  },
+  {
+    "id": 14,
+    "level": "intermediate",
+    "title": "Blog Platform with CMS",
+    "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a",
+    "overview": "A multi-user blog with rich editor, tagging, comments and admin moderation.",
+    "steps": [
+      "Implement rich-text editor (TipTap/Quill) and image uploads.",
+      "Create user roles (author, editor, admin) and moderation tools.",
+      "Enable tagging, categories, and SEO-friendly slugs.",
+      "Add comments with moderation and spam protection.",
+      "Add server-side rendering or incremental static regeneration for SEO (optional)."
+    ],
+    "techStack": ["React/Next.js", "Node.js", "MongoDB/Postgres", "TipTap/Quill"]
+  },
+  {
+    "id": 15,
+    "level": "intermediate",
+    "title": "Recipe Sharing Social App",
+    "image": "https://plus.unsplash.com/premium_photo-1661717466350-b5a0756a5c86?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVjaXBlJTIwc2hhcmluZ3xlbnwwfHwwfHx8MA%3D%3D",
+    "overview": "Users can post recipes, follow others, like/comment and save favorites.",
+    "steps": [
+      "Create user profiles and follow system.",
+      "Implement recipe posts with images and ingredients list.",
+      "Add search and filters (by cuisine, ingredients).",
+      "Implement likes, comments, and saved recipes.",
+      "Add notifications for follows and interactions."
+    ],
+    "techStack": ["React", "Node.js", "MongoDB", "Cloudinary (images)"]
+  },
+  {
+    "id": 16,
+    "level": "intermediate",
+    "title": "Collaborative Whiteboard",
+    "image": "https://images.unsplash.com/photo-1589739900869-082b93d8f224?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdoaXRlJTIwYm9hcmR8ZW58MHx8MHx8fDA%3D",
+    "overview": "Real-time drawing and notes sharing for teams with cursors and layers.",
+    "steps": [
+      "Use Canvas or SVG for drawing and implement drawing tools.",
+      "Sync drawing events via WebSocket (Socket.IO).",
+      "Add multi-user cursors and basic layer controls.",
+      "Implement save/load for boards and export to PNG/SVG."
+    ],
+    "techStack": ["React", "Socket.IO", "Canvas/SVG", "Node.js", "Redis (optional)"]
+  },
+  {
+    "id": 17,
+    "level": "intermediate",
+    "title": "Personal Finance Dashboard",
+    "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+    "overview": "Aggregate accounts, show budgets, and display predictive spending analytics.",
+    "steps": [
+      "Implement secure user auth and connect to mock bank APIs (or Plaid sandbox).",
+      "Aggregate transactions and categorize them automatically.",
+      "Create budget tracking and alerts for overspending.",
+      "Add predictive spending graphs and monthly forecasts."
+    ],
+    "techStack": ["React", "Node.js", "Postgres", "Chart.js", "Plaid (optional)"]
+  },
+  {
+    "id": 18,
+    "level": "intermediate",
+    "title": "Video Streaming Platform (MVP)",
+    "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a",
+    "overview": "Upload and stream videos with transcoding, thumbnails and basic analytics.",
+    "steps": [
+      "Handle uploads and store videos in cloud (S3 or similar).",
+      "Implement server-side transcoding or use a service.",
+      "Stream via adaptive bitrate or HLS for better compatibility.",
+      "Add channel pages, comments, and watch history analytics."
+    ],
+    "techStack": ["React", "Node.js", "AWS S3", "FFmpeg", "HLS"]
+  },
+  {
+    "id": 19,
+    "level": "intermediate",
+    "title": "Multi-tenant SaaS Boilerplate",
+    "image": "https://media.istockphoto.com/id/2189993075/photo/council-flats-in-poor-housing-estate-in-glasgow.webp?a=1&b=1&s=612x612&w=0&k=20&c=-ASWuB09Myufc3COpY7YKgsNsk1c4pFaoEfm9_i6hQk=",
+    "overview": "A base to build SaaS products including tenancy isolation, billing and admin.",
+    "steps": [
+      "Design tenancy model (schema-per-tenant or shared schema with tenant_id).",
+      "Integrate billing (Stripe) and feature flags per account.",
+      "Build admin dashboards and usage analytics.",
+      "Add onboarding flows and subscription management."
+    ],
+    "techStack": ["Node.js", "Postgres", "Stripe", "React", "Docker"]
+  },
+  {
+    "id": 20,
+    "level": "intermediate",
+    "title": "Search Engine for Documents",
+    "image": "https://images.unsplash.com/photo-1674027326254-88c960d8e561?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2VhcmNoJTIwZW5naW5lfGVufDB8fDB8fHww",
+    "overview": "Full-text search over uploaded documents with filters and ranking.",
+    "steps": [
+      "Set up file uploads and text extraction (PDF/Word).",
+      "Index documents into Elasticsearch or OpenSearch.",
+      "Build UI with filters, facets and relevancy tuning.",
+      "Add highlighting and pagination for results."
+    ],
+    "techStack": ["React", "Node.js", "Elasticsearch/OpenSearch", "Tika (for extraction)"]
+  },
+
+  {
+    "id": 21,
+    "level": "advanced",
+    "title": "Roommate Matching System (ML)",
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9b3a2c1d4e5f6a7b8c9d0e1f2a3b4c5d",
+    "overview": "End-to-end roommate matching using user surveys + ML model to predict compatibility.",
+    "steps": [
+      "Design user profile with categorical & continuous features.",
+      "Collect training data and engineer features.",
+      "Train a model (RandomForest/XGBoost) to predict match scores.",
+      "Build matching API, UI for suggested matches and feedback loop to retrain model."
+    ],
+    "techStack": ["React", "Python (scikit-learn/XGBoost)", "Flask/Express", "MongoDB/Postgres"]
+  },
+  {
+    "id": 22,
+    "level": "advanced",
+    "title": "AI-Powered Code Assistant",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7a7b4a3b2d4f5c6e8b9a0c1d2e3f4a5b",
+    "overview": "An assistant that suggests code completions, explanations and transformations using LLMs.",
+    "steps": [
+      "Integrate an LLM (OpenAI or similar) with safe prompt engineering.",
+      "Build editor UI with completions and explainers.",
+      "Add context window management and project-level indexing.",
+      "Implement caching, rate-limits and user settings."
+    ],
+    "techStack": ["React", "Node.js", "OpenAI (or other LLM)", "SQLite/Vector DB"]
+  },
+  {
+    "id": 23,
+    "level": "advanced",
+    "title": "Distributed Task Queue & Worker System",
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9b3a2c1d4e5f6a7b8c9d0e1f2a3b4c5d",
+    "overview": "Design a scalable background job system with retries, priorities and monitoring.",
+    "steps": [
+      "Design task schema and worker registration.",
+      "Implement queue broker (Redis/RabbitMQ) and worker processes.",
+      "Add retry/backoff, dead-letter queue and metrics.",
+      "Build monitoring UI and manage scaling."
+    ],
+    "techStack": ["Node.js/Python", "Redis/RabbitMQ", "Prometheus/Grafana", "Docker/Kubernetes"]
+  },
+  {
+    "id": 24,
+    "level": "advanced",
+    "title": "Realtime Collaborative Editor (Google Docs-like)",
+    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d",
+    "overview": "CRDT/OT-based multi-user document editing with conflict-free merges and presence.",
+    "steps": [
+      "Choose CRDT (Yjs/Automerge) or OT approach.",
+      "Build collaborative editor UI with cursors and presence.",
+      "Persist documents and handle offline edits syncing.",
+      "Add permissions, export, and version history."
+    ],
+    "techStack": ["React", "Yjs/Automerge", "WebSocket (WS)", "Node.js", "Postgres"]
+  },
+  {
+    "id": 25,
+    "level": "advanced",
+    "title": "End-to-end Encrypted Messaging",
+    "image": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e",
+    "overview": "Build a messaging app with client-side encryption and secure key exchange.",
+    "steps": [
+      "Design key-generation and secure key-exchange protocol (e.g., X3DH/Signal).",
+      "Encrypt messages client-side before sending.",
+      "Implement server purely as a message relay without access to plaintext.",
+      "Handle key rotation and message delivery receipts."
+    ],
+    "techStack": ["React Native/React", "WebCrypto", "Node.js", "Signal Protocol (concepts)"]
+  },
+  {
+    "id": 26,
+    "level": "advanced",
+    "title": "Large-scale Recommendation Engine",
+    "image": "https://plus.unsplash.com/premium_photo-1701113010522-5d7e58d333ec?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGFpJTIwbWx8ZW58MHx8MHx8fDA%3D",
+    "overview": "Build collaborative filtering + content-based recommenders with offline and online serving.",
+    "steps": [
+      "Prepare and process user-item interaction data.",
+      "Train CF models (ALS/Matrix Factorization) and content-based models (TF-IDF/Embeddings).",
+      "Create a scoring/serving layer for real-time recommendations.",
+      "Add A/B testing and monitoring for model drift."
+    ],
+    "techStack": ["Python", "Spark", "Postgres/BigQuery", "TensorFlow/PyTorch", "Redis"]
+  },
+  {
+    "id": 27,
+    "level": "advanced",
+    "title": "Autonomous Web Crawler & Scraper Platform",
+    "image": "https://plus.unsplash.com/premium_photo-1682689702541-492bebdf3cc6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGF1dG9ub21vdXN8ZW58MHx8MHx8fDA%3D",
+    "overview": "Scaleable web crawling pipeline with politeness, dedup, scheduling and extraction.",
+    "steps": [
+      "Implement scheduler, crawler workers, and deduplication layer.",
+      "Respect robots.txt and implement rate limiting.",
+      "Extract structured data and store to search/indexing system.",
+      "Monitor crawl health and scale workers as needed."
+    ],
+    "techStack": ["Python (Scrapy)", "Kafka/Redis", "Elasticsearch", "Docker/Kubernetes"]
+  },
+  {
+    "id": 28,
+    "level": "advanced",
+    "title": "Edge-powered Image Processing Service",
+    "image": "https://plus.unsplash.com/premium_photo-1698362819283-8a321d8cf2ab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2UlMjBwcm9jZXNzc2luZ3xlbnwwfHwwfHx8MA%3D%3D",
+    "overview": "Serverless/edge functions for image resizing, optimization and on-the-fly transformations.",
+    "steps": [
+      "Use edge functions (Cloudflare Workers, Vercel Edge) to process images.",
+      "Implement caching and CDN integration for performance.",
+      "Expose API for transformations and format conversions.",
+      "Add authentication and usage-based billing."
+    ],
+    "techStack": ["Cloudflare Workers/Vercel", "Sharp/FFmpeg", "S3/Cloud Storage", "CDN"]
+  },
+  {
+    "id": 29,
+    "level": "advanced",
+    "title": "Federated Learning Demo",
+    "image": "https://images.unsplash.com/photo-1610747632338-9f63d0fa841b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVhYXJuaW5nfGVufDB8fDB8fHww",
+    "overview": "Prototype federated learning across clients to train a shared model without centralizing raw data.",
+    "steps": [
+      "Set up a central aggregator and lightweight client training loops.",
+      "Implement secure aggregation and model updates.",
+      "Test on simple datasets and measure convergence.",
+      "Address privacy, communication cost and heterogeneity."
+    ],
+    "techStack": ["Python", "PyTorch/TensorFlow", "FL frameworks (Flower)"]
+  },
+  {
+    "id": 30,
+    "level": "advanced",
+    "title": "Quant Trading Backtester",
+    "image": "https://images.unsplash.com/photo-1586448910234-297fae7189e6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cXVhbnQlMjB0cmFkaW5nfGVufDB8fDB8fHww",
+    "overview": "Backtesting system for trading strategies with event-driven simulation and metrics.",
+    "steps": [
+      "Design an event-driven backtesting engine that simulates orders and fills.",
+      "Load historical data and implement common indicators.",
+      "Run strategy experiments, compute performance metrics and drawdowns.",
+      "Add a notebook interface for quick strategy prototyping."
+    ],
+    "techStack": ["Python", "Pandas", "Backtrader/Zipline", "Jupyter"]
+  }
+]
