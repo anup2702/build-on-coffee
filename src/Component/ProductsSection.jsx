@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Lightbulb } from "lucide-react";
 import { products } from "../../data/products";
 
 const ProductsSection = () => {
@@ -17,6 +17,24 @@ const ProductsSection = () => {
       navigate(product.route);
     }
   };
+
+  // Add the new "Project Ideas" card dynamically
+  const updatedProducts = [
+    ...products,
+    {
+      id: "project-ideas",
+      name: "Project Ideas",
+      description:
+        "Browse curated project ideas for beginner, intermediate, and advanced developers.",
+      icon: Lightbulb,
+      route: "/project-idea",
+      color: "from-yellow-400 to-orange-500",
+      borderColor: "border-yellow-400",
+      bgColor: "bg-yellow-50 dark:bg-yellow-900/20",
+      hoverColor: "group-hover:text-yellow-500",
+      external: false,
+    },
+  ];
 
   return (
     <section className="py-20 bg-white dark:bg-gray-900" ref={ref}>
@@ -44,7 +62,7 @@ const ProductsSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="flex flex-wrap justify-center gap-8">
-            {products.map((product, index) => {
+            {updatedProducts.map((product, index) => {
               const Icon = product.icon;
               return (
                 <motion.div
