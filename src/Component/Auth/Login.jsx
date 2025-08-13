@@ -1,5 +1,4 @@
-
-
+"use client";
 
 import React, { useState } from "react";
 import { useSignIn } from "@clerk/clerk-react";
@@ -19,6 +18,7 @@ const Login = () => {
     e.preventDefault();
     if (!isLoaded) return;
     setLoading(true);
+    setError("");
     try {
       const result = await signIn.create({ identifier: email, password });
       if (result.status === "complete") {
@@ -36,7 +36,16 @@ const Login = () => {
 
   const handleGoogleLogin = async () => {
     if (!isLoaded) return;
-    await signIn.authenticateWithRedirect({ strategy: "oauth_google", redirectUrl: "/" });
+    setLoading(true);
+    setError("");
+    try {
+      await signIn.authenticateWithRedirect({ strategy: "oauth_google", redirectUrl: "/" });
+    } catch (err) {
+      console.error("Error during Google sign-in:", err);
+      setError("Google sign-in failed");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -66,15 +75,22 @@ const Login = () => {
             className="w-full bg-black text-blue-500 py-2 rounded-xl flex items-center justify-center"
             disabled={loading}
           >
-            {loading ? <Loader2 className="animate-spin" /> : "Sign In"}
+            {loading ? <Loader2 className="animate-spin text-white" /> : "Sign In"}
           </button>
         </form>
         <div className="mt-6 text-center text-gray-500">or</div>
         <button
           onClick={handleGoogleLogin}
           className="mt-4 w-full flex items-center justify-center gap-3 border py-2 rounded-xl hover:bg-yellow-500"
+          disabled={loading}
         >
-          <FcGoogle className="text-xl text-black" /> Continue with Google
+          {loading ? (
+            <Loader2 className="animate-spin" size={20} />
+          ) : (
+            <>
+              <FcGoogle className="text-xl" /> Continue with Google
+            </>
+          )}
         </button>
         <p className="mt-6 text-center text-sm text-gray-600">
           Don’t have an account? <Link to ="/signup" className="text-blue-800 hover:underline">Sign up</Link>

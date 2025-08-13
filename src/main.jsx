@@ -16,17 +16,17 @@ if (!PUBLISHABLE_KEY) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-         <ClerkProvider publishableKey={PUBLISHABLE_KEY} navigate={(to) => navigate(to)}>
-    {/* <BrowserRouter> */}
-    <HashRouter>
+    {/* <HashRouter> */}
+    <BrowserRouter>
+         <ClerkProvider publishableKey={PUBLISHABLE_KEY} >
       
     <ScrollToTop/>
       <ThemeProvider>
         <App />
           
       </ThemeProvider>
-    </HashRouter>
-    {/* </BrowserRouter> */}
          </ClerkProvider>
-  </StrictMode>,
+    </BrowserRouter>
+    {/* </HashRouter> */}
+  </StrictMode>
 )

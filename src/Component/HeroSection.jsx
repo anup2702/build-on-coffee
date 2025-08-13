@@ -58,6 +58,9 @@ const HeroSection = () => {
     },
   };
 
+  // Create a motion-enabled Link component
+  const MotionLink = motion(Link);
+
   return (
         <section className={`relative py-16 flex items-center justify-center overflow-hidden transition-all duration-500 ${
   isDarkMode ? "bg-[#0f172a]" : "bg-[#f9fafb]"
@@ -131,14 +134,15 @@ const HeroSection = () => {
 
     {/* CTA Buttons */}
     <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-      <motion.a
+      <MotionLink
+        to="/tools"
         className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold text-white bg-[#1d4ed8] hover:bg-[#1e40af] transition"
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
       >
-        <Link to="/tools">Explore Tools</Link>
+        Explore Tools
         <ChevronRight className="w-4 h-4" />
-      </motion.a>
+      </MotionLink>
 
       <motion.a
         href="https://github.com/anup2702/build-on-coffee"
