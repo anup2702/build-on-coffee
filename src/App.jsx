@@ -50,6 +50,7 @@ import UiUxDesignRoadmap from "./Component/Roadmaps/UiUxDesignRoadmap";
 import Team from "./Component/Team";
 import ProjectIdeas from "./Component/ProjectIdeas";
 import ProjectIdeaDetail from "./Component/ProjectIdeaDetail";
+import ProjectGallery from "./Component/ProjectsGallery";
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
   return (
@@ -121,7 +122,8 @@ const App = () => {
             <Route path="/paths" element={<PathsLanding />} />
             <Route path="/paths/:slug" element={<PathDetail />} />
             <Route path="/learn/tools" element={<LearnTools />} />
-            <Route
+            <Route path="/projects" element={<ProjectGallery/>}/>
+           <Route
               path="/free-certificates"
               element={<FreeCertificateCourses />}
             />
