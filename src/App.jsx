@@ -24,6 +24,8 @@ import TermsOfService from "./Component/TermsOfService";
 import ProtectedRoute from "./Component/Auth/ProtectedRoute";
 import Login from "./Component/Auth/Login";
 import Signup from "./Component/Auth/Signup";
+import { Analytics } from "@vercel/analytics/react"
+
 
 // 🤖 ADD THIS: Chatbot Import
 import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
@@ -78,6 +80,8 @@ const App = () => {
         
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
       <Navbar scrollRefs={scrollRefs} />
+            <Analytics/>
+
       <main className="flex-1 pt-20">
       <AuthProvider>
         <Routes>
