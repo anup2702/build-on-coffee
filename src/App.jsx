@@ -52,6 +52,7 @@ import UiUxDesignRoadmap from "./Component/Roadmaps/UiUxDesignRoadmap";
 import Team from "./Component/Team";
 import ProjectIdeas from "./Component/ProjectIdeas";
 import ProjectIdeaDetail from "./Component/ProjectIdeaDetail";
+import SSOCallbackPage from "./Component/Auth/SSOCallbackPage";
 import ProjectGallery from "./Component/ProjectsGallery";
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -84,11 +85,12 @@ const App = () => {
             <Analytics/>
 
       <main className="flex-1 pt-20">
-      <AuthProvider>
+      
         <Routes>
           {/* ✅ Auth Routes */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/sso-callback" element={<SSOCallbackPage/>} />
         
 
   
@@ -148,8 +150,7 @@ const App = () => {
           <BuildOnCoffeeChatbot />
         </div>
         <Footer />
-      
-    </AuthProvider>
+     
         </main>
    </div> 
    
