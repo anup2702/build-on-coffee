@@ -1,4 +1,4 @@
-import { BookOpen, Wrench, User, Award, Route } from "lucide-react";
+import { BookOpen, Wrench, User, Award, Route, LayoutGrid } from "lucide-react";
 export const products = [
   {
     id: 1,
@@ -96,5 +96,21 @@ export const products = [
     borderColor: "border-pink-200 dark:border-pink-800",
     hoverColor: "group-hover:text-pink-600 dark:group-hover:text-pink-400",
     route: "/roadmap",
-  }
+  },
+{
+  id: 9,
+  name: "Projects Gallery",
+  description:
+    "Explore and share creative builds with rich details, visuals, and live demos to connect with like-minded developers.",
+  icon: LayoutGrid,
+  color: "from-emerald-500 to-green-500",
+  bgColor: "bg-emerald-50 dark:bg-emerald-900/20",
+  borderColor: "border-emerald-200 dark:border-emerald-800",
+  hoverColor: "group-hover:text-emerald-600 dark:group-hover:text-emerald-400",
+  route: "/projects",
+}
+
+
+
+
 ];

@@ -24,6 +24,8 @@ import TermsOfService from "./Component/TermsOfService";
 import ProtectedRoute from "./Component/Auth/ProtectedRoute";
 import Login from "./Component/Auth/Login";
 import Signup from "./Component/Auth/Signup";
+import { Analytics } from "@vercel/analytics/react"
+
 
 // 🤖 ADD THIS: Chatbot Import
 import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
@@ -51,6 +53,7 @@ import Team from "./Component/Team";
 import ProjectIdeas from "./Component/ProjectIdeas";
 import ProjectIdeaDetail from "./Component/ProjectIdeaDetail";
 import SSOCallbackPage from "./Component/Auth/SSOCallbackPage";
+import ProjectGallery from "./Component/ProjectsGallery";
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
   return (
@@ -79,6 +82,8 @@ const App = () => {
         
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
       <Navbar scrollRefs={scrollRefs} />
+            <Analytics/>
+
       <main className="flex-1 pt-20">
       
         <Routes>
@@ -123,7 +128,8 @@ const App = () => {
             <Route path="/paths" element={<PathsLanding />} />
             <Route path="/paths/:slug" element={<PathDetail />} />
             <Route path="/learn/tools" element={<LearnTools />} />
-            <Route
+            <Route path="/projects" element={<ProjectGallery/>}/>
+           <Route
               path="/free-certificates"
               element={<FreeCertificateCourses />}
             />
