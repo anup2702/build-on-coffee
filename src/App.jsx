@@ -25,6 +25,7 @@ import ProtectedRoute from "./Component/Auth/ProtectedRoute";
 import Login from "./Component/Auth/Login";
 import Signup from "./Component/Auth/Signup";
 import { Analytics } from "@vercel/analytics/react"
+import Testimonials from "./Component/Testimonials";
 
 
 // 🤖 ADD THIS: Chatbot Import
@@ -61,6 +62,7 @@ const Home = ({ scrollRefs }) => {
       <HeroSection communityRef={scrollRefs?.community} />
       <ProductsSection />
       <WhatWeDoDifferently ref={scrollRefs?.differently} />
+      <Testimonials />
       <JoinCommunity ref={scrollRefs?.community} />
     </>
   );
@@ -80,7 +82,7 @@ const App = () => {
 
   return (
         
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900 text-gray-900 dark:text-white transition-colors duration-300 font-sans">
       <Navbar scrollRefs={scrollRefs} />
             <Analytics/>
 
@@ -145,7 +147,7 @@ const App = () => {
               }
             />
           </Routes>
-        <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-2">
+        <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-3">
           <BackToTop />
           <BuildOnCoffeeChatbot />
         </div>
