@@ -1,6 +1,7 @@
 
-import React, { useRef } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { Routes, Route} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from "./Component/Navbar";
 import HeroSection from "./Component/HeroSection";
 import ToolCard from "./Component/ToolCard";
@@ -48,14 +49,88 @@ import CybersecurityRoadmap from "./Component/Roadmaps/CybersecurityRoadmap";
 import CloudComputingRoadmap from "./Component/Roadmaps/CloudComputingRoadmap";
 import UiUxDesignRoadmap from "./Component/Roadmaps/UiUxDesignRoadmap";
 import Team from "./Component/Team";
+//added a searchbar
 const Home = ({ scrollRefs }) => {
-  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Example data
+  const democourses = [
+    { id: 1, title: "JavaScript Basics", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { id: 2, title: "React for Beginners", link: "https://react.dev/" },
+    { id: 3, title: "Courses", link: "/courses" },
+    { id: 4, title: "Tools", link: "/tools"},
+    { id: 5, title: "Roadmaps", link: "/roadmap" },
+    { id: 6, title: "certification", link: "/free-certificates" },
+    { id: 7, title: "documents" , link: "/documentation"},
+
+  ];
+
+  const demotools = [
+    { id: 1, title: "SnapFolio Portfolio Builder", link: "https://snap-folio-chi.vercel.app/" },
+  ];
+
+  // ✅ Merge into one array
+  const allItems = [...democourses, ...demotools];
+
+  // ✅ Filter all items together
+  const filteredItems = allItems.filter((item) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
-      <HeroSection communityRef={scrollRefs?.community} />
-      <ProductsSection />
-      <WhatWeDoDifferently ref={scrollRefs?.differently} />
-      <JoinCommunity ref={scrollRefs?.community} />
+      {/* 🔎 Search Bar */}
+      <div className="max-w-2xl mx-auto px-4 py-6">
+        <input
+          type="text"
+          placeholder="Search courses, tools, etc..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full p-3 border rounded-lg shadow-sm"
+        />
+      </div>
+
+      {/* Normal sections */}
+      {!searchTerm && (
+        <>
+          <HeroSection communityRef={scrollRefs?.community} />
+          <ProductsSection />
+          <WhatWeDoDifferently ref={scrollRefs?.differently} />
+          <JoinCommunity ref={scrollRefs?.community} />
+        </>
+      )}
+
+      {/* Search Results */}
+      {searchTerm && (
+        <div className="max-w-2xl mx-auto px-4 py-6">
+          <h2 className="text-xl font-bold mb-2">Search Results</h2>
+
+          {filteredItems.length > 0 ? (
+            <ul>
+              {filteredItems.map((item) => (
+                <li key={item.id}>
+                  {item.link.startsWith("http") ? (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    <Link to={item.link} className="text-blue-600 hover:underline">
+                      {item.title}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-gray-500">No matching results</p>
+          )}
+        </div>
+      )}
     </>
   );
 };
@@ -82,15 +157,6 @@ const App = () => {
           {/* ✅ Auth Routes */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-        
-
-  
-      
-
-      
-    
-           
-    
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/team" element={<Team />} />
 
