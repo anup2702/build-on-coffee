@@ -12,12 +12,15 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.38.1",
     "@emailjs/browser": "^4.4.1",
+        "@vercel/analytics": "^1.5.0",
+
     "@tailwindcss/vite": "^4.1.11",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.526.0",
     "motion": "^12.23.12",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
     "react-router-dom": "^7.7.0",

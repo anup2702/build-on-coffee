@@ -5,13 +5,19 @@ export const courses = [
     description: "Learn the fundamentals of data structures used in computer science.",
     details: "Covers arrays, linked lists, stacks, queues, trees, graphs, and more. Essential for technical interviews and efficient programming.",
     link: "https://www.geeksforgeeks.org/data-structures/",
-    image:'https://res.cloudinary.com/dwmpdbsej/image/upload/v1754068702/OIP__1_-removebg-preview_1_bozktc.png',
+    image: 'https://res.cloudinary.com/dwmpdbsej/image/upload/v1754068702/OIP__1_-removebg-preview_1_bozktc.png',
     youtube: "https://www.youtube.com/embed/RBSGKlAvoiM",
     references: [
       { label: "GeeksforGeeks Data Structures", url: "https://www.geeksforgeeks.org/data-structures/" },
       { label: "MIT 6.006", url: "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/" }
     ],
-    dateAdded: "2025-07-30"
+    dateAdded: "2025-07-30",
+    documents: [
+      { title: "Data Structures Overview", url: "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/" },
+      { title: "Data Structures in Multiple Languages-1", url: "https://www.tutorialspoint.com/data_structures_algorithms/index.htm" },
+      { title: "Data Structures in Multiple Languages-2", url: "https://dev.to/khaledhosseini/data-structures-and-algorithms-for-multi-language-programmers-c-swift-python-java-c-javascript-alp" },
+      { title: "Data Structures Cheat Sheet", url: "https://www.clear.rice.edu/comp160/data_cheat.html" }
+    ]
   },
   {
     slug: "algorithms",
@@ -25,7 +31,12 @@ export const courses = [
       { label: "Khan Academy Algorithms", url: "https://www.khanacademy.org/computing/computer-science/algorithms" },
       { label: "Princeton Algorithms", url: "https://www.coursera.org/specializations/algorithms" }
     ],
-    dateAdded: "2025-07-31"  // add this
+    dateAdded: "2025-07-31",
+    documents: [
+      { title: "Algorithms Overview", url: "https://www.geeksforgeeks.org/dsa/introduction-to-algorithms/" },
+      { title: "Algorithms Visualizer", url: "https://visualgo.net/en" },
+      { title: "Algorithms Cheat Sheet", url: "https://algs4.cs.princeton.edu/cheatsheet/" }
+    ]
   },
   {
     slug: "operating-systems",
@@ -39,7 +50,12 @@ export const courses = [
       { label: "Udacity OS Course", url: "https://www.udacity.com/course/introduction-to-operating-systems--ud923" },
       { label: "OSTEP Book", url: "https://pages.cs.wisc.edu/~remzi/OSTEP/" }
     ],
-    dateAdded: "2025-07-28"
+    dateAdded: "2025-07-28",
+    documents: [
+      { title: "Operating Systems Overview", url: "https://www.geeksforgeeks.org/operating-systems/what-is-an-operating-system/" },
+      { title: "Operating Systems Notes", url: "https://prepinsta.com/operating-systems/" },
+      { title: "Operating Systems Cheat Sheet", url: "operating systems cheat sheet" }
+    ]
   },
   {
     slug: "computer-networks",
@@ -53,7 +69,13 @@ export const courses = [
       { label: "Coursera Computer Networks", url: "https://www.coursera.org/learn/computer-networking" },
       { label: "Stanford Networking", url: "https://web.stanford.edu/class/cs144/" }
     ],
-    dateAdded: "2025-07-15" // older than 7 days, won't show badge
+    dateAdded: "2025-07-15",
+    documents: [
+      { title: "Computer Networks Overview", url: "https://www.geeksforgeeks.org/computer-science-fundamentals/what-is-computer-networking/" },
+      { title: "Computer Networks Notes", url: "https://www.geeksforgeeks.org/computer-networks/computer-network-tutorials/" },
+      { title: "Computer Networks Notes PDF", url: "https://www.vssut.ac.in/lecture_notes/lecture1423905560.pdf" },
+      { title: "Computer Networks Cheat Sheet", url: "https://www.geeksforgeeks.org/computer-networks/computer-network-cheat-sheet/" }
+    ]
   },
   {
     slug: "databases",
@@ -67,7 +89,19 @@ export const courses = [
       { label: "Coursera Databases", url: "https://www.coursera.org/learn/databases-intro" },
       { label: "Stanford DB Class", url: "https://web.stanford.edu/class/cs145/" }
     ],
-    dateAdded: "2025-07-29"
+    dateAdded: "2025-07-29",
+    documents: [
+      { title: "Databases Overview", url: "https://www.geeksforgeeks.org/dbms/what-is-database/" },
+      { title: "DBMS Notes", url: "https://www.tutorialspoint.com/dbms/index.htm" },
+      { title: "DBMS Cheat Sheet", url: "https://www.almabetter.com/bytes/cheat-sheet/dbms-cheat-sheet" },
+      { title: "SQL Overview", url: "https://www.geeksforgeeks.org/sql/sql-tutorial/" },
+      { title: "SQL Notes - 1", url: "https://www.w3schools.com/sql/sql_intro.asp" },
+      { title: "SQL Notes - 2", url: "https://www.w3schools.com/sql/sql_intro.asp" },
+      { title: "SQL Cheat Sheet", url: "https://www.geeksforgeeks.org/sql/sql-cheat-sheet/" },
+      { title: "SQL Cheat Sheet PDF", url: "https://www.dbvis.com/wp-content/uploads/2024/04/SQL-Cheat-Sheet.pdf" },
+      { title: "NoSQL Overview", url: "https://www.geeksforgeeks.org/dbms/introduction-to-nosql/" },
+      { title: "NoSQL Notes", url: "https://www.mongodb.com/resources/basics/databases/nosql-explained" }
+    ]
   },
   {
     slug: "system-design",
@@ -81,6 +115,11 @@ export const courses = [
       { label: "System Design Primer", url: "https://github.com/donnemartin/system-design-primer" },
       { label: "Grokking System Design", url: "https://www.educative.io/courses/grokking-the-system-design-interview" }
     ],
-    dateAdded: "2025-07-20" // old
+    dateAdded: "2025-07-20",
+    documents: [
+      { title: "System Design Overview", url: "https://www.geeksforgeeks.org/system-design/what-is-system-design-learn-system-design/" },
+      { title: "System Design Notes", url: "https://takeuforward.org/system-design/complete-system-design-roadmap-with-videos-for-sdes" },
+      { title: "System Design Cheat Sheet", url: "https://medium.com/@shivambhadani_/system-design-for-beginners-everything-you-need-in-one-article-c74eb702540b" }
+    ]
   }
 ];

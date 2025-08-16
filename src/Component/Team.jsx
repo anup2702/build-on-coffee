@@ -1,7 +1,6 @@
-
 import React from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Github } from "lucide-react";
+import { Linkedin, Github, Users, Award } from "lucide-react";
 import { useTheme } from "./context/ThemeContext";
 
 export default function Team() {
@@ -18,8 +17,8 @@ export default function Team() {
     {
       name: "Apekshaa Yadav",
       role: "Graphic Designer Intern",
-      image: "https://via.placeholder.com/150", // placeholder
-      linkedIn: "#",
+      image: "apeksha.jpg",
+      linkedIn: "https://www.linkedin.com/in/apekshaa-yadav-80a093350",
     },
   ];
 
@@ -48,8 +47,7 @@ export default function Team() {
       name: "Aansh Malhotra",
       image: "https://avatars.githubusercontent.com/u/178574389?v=4",
       github: "https://github.com/21aansh06",
-      linkedIn:
-        "https://www.linkedin.com/in/aansh-malhotra-a28423320/",
+      linkedIn: "https://www.linkedin.com/in/aansh-malhotra-a28423320/",
     },
     {
       name: "Avantika",
@@ -61,8 +59,7 @@ export default function Team() {
       name: "Sagar Chavan",
       image: "https://avatars.githubusercontent.com/u/134862057?v=4",
       github: "https://github.com/sagarc123",
-      linkedIn:
-        "https://www.linkedin.com/in/sagar-chavan-a6937b194/",
+      linkedIn: "https://www.linkedin.com/in/sagar-chavan-a6937b194/",
     },
     {
       name: "Souvik Mukherjee",
@@ -73,122 +70,143 @@ export default function Team() {
     },
   ];
 
-  const cardSizeClasses = "w-48 h-60"; // slightly taller for role text
-
-  // Card component
   const TeamCard = ({ person, isContributor }) => (
     <motion.div
       key={person.name + (person.role || "")}
-      whileHover={{ scale: 1.05 }}
-      className={`rounded-lg shadow-lg overflow-hidden group relative border-2 border-transparent transition-all duration-300 ${
-        isDark
-          ? "bg-gray-800"
-          : "bg-white"
-      } ${cardSizeClasses}`}
+      whileHover={{ scale: 1.05, y: -8 }}
+      className={`flex flex-col items-center text-center rounded-2xl shadow-lg p-6 transition-all duration-300 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 hover:shadow-xl`}
     >
-      <img
-        src={person.image}
-        alt={person.name}
-        className="w-full h-36 object-cover"
-      />
-      <div className="p-4 text-center">
-        <h3
-          className={`text-lg font-semibold bg-clip-text text-transparent mb-1 ${
-            isDark
-              ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400"
-              : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600"
-          }`}
-        >
-          {person.name}
-        </h3>
-        {person.role && (
-          <p
-            className={`text-sm mb-2 ${
-              isDark ? "text-gray-400" : "text-gray-600"
-            }`}
-          >
-            {person.role}
-          </p>
+      <div className="relative mb-4">
+        <img
+          src={person.image}
+          alt={person.name}
+          className="w-20 h-20 rounded-2xl object-cover shadow-md"
+        />
+        {isContributor && (
+          <div className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+            Core
+          </div>
         )}
-        <div className="flex justify-center space-x-6 text-gray-500">
-          {isContributor && person.github && (
-            <a
-              href={person.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${person.name} GitHub`}
-              className="hover:text-gray-700 dark:hover:text-teal-400"
-            >
-              <Github size={24} />
-            </a>
-          )}
-          {person.linkedIn && (
-            <a
-              href={person.linkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${person.name} LinkedIn`}
-              className="hover:text-blue-600 dark:hover:text-blue-400"
-            >
-              <Linkedin size={24} />
-            </a>
-          )}
-        </div>
+      </div>
+      <h3 className="text-lg font-black text-gray-900 dark:text-white mb-2">
+        {person.name}
+      </h3>
+      {person.role && (
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 font-medium">
+          {person.role}
+        </p>
+      )}
+      <div className="flex gap-3 justify-center">
+        {isContributor && person.github && (
+          <a
+            href={person.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${person.name} GitHub`}
+            className="p-2 bg-gray-100 dark:bg-slate-700 rounded-xl hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors duration-300"
+          >
+            <Github size={18} className="text-gray-600 dark:text-gray-400" />
+          </a>
+        )}
+        {person.linkedIn && (
+          <a
+            href={person.linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${person.name} LinkedIn`}
+            className="p-2 bg-gray-100 dark:bg-slate-700 rounded-xl hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors duration-300"
+          >
+            <Linkedin size={18} className="text-gray-600 dark:text-gray-400" />
+          </a>
+        )}
       </div>
     </motion.div>
   );
 
   return (
-    <div
-      className={`min-h-screen py-10 ${
-        isDark
-          ? "bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-200"
-          : "bg-gradient-to-b from-amber-50 via-orange-50 to-amber-100 text-gray-900"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Main heading */}
-        <h1
-          className={`text-6xl font-extrabold text-center mb-10 bg-clip-text text-transparent ${
-            isDark
-              ? "bg-gradient-to-r from-red-800 via-red-900 to-red-950"
-              : "bg-gradient-to-r from-red-900 via-red-800 to-rose-900"
-          }`}
+    <div className="min-h-screen py-24 bg-white dark:bg-slate-900">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          Meet Team BuildOnCoffee
-        </h1>
+          <div className="inline-flex items-center gap-3 bg-blue-50 dark:bg-blue-900/20 px-6 py-3 rounded-full mb-8 border border-blue-200 dark:border-blue-800">
+            <Users className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+            <span className="text-sm font-semibold text-blue-800 dark:text-blue-200">Our Amazing Team</span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white">
+            Meet Team BuildOnCoffee
+          </h1>
+
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto font-light leading-relaxed">
+            A passionate group of developers, designers, and creators working together to build the future of developer tools and resources.
+          </p>
+        </motion.div>
 
         {/* Contributors */}
-        <h1
-          className={`text-4xl font-bold text-center mb-8 bg-clip-text text-transparent ${
-            isDark
-              ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400"
-              : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600"
-          }`}
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Contributors
-        </h1>
-        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4 justify-center mb-16">
-          {contributors.map((person) => (
-            <TeamCard key={person.name} person={person} isContributor />
-          ))}
-        </div>
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 bg-emerald-50 dark:bg-emerald-900/20 px-6 py-3 rounded-full mb-6 border border-emerald-200 dark:border-emerald-800">
+              <Award className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+              <span className="text-sm font-semibold text-emerald-800 dark:text-emerald-200">Core Contributors</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white">
+              Contributors
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {contributors.map((person, index) => (
+              <motion.div
+                key={person.name}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+              >
+                <TeamCard person={person} isContributor />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Interns */}
-        <h1
-          className={`text-4xl font-bold text-center mb-8 bg-clip-text text-transparent ${
-            isDark
-              ? "bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400"
-              : "bg-gradient-to-r from-red-700 via-orange-500 to-amber-600"
-          }`}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Interns
-        </h1>
-        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4 justify-center">
-          {interns.map((person) => (
-            <TeamCard key={person.name} person={person} />
-          ))}
-        </div>
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 bg-orange-50 dark:bg-orange-900/20 px-6 py-3 rounded-full mb-6 border border-orange-200 dark:border-orange-800">
+              <Users className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+              <span className="text-sm font-semibold text-orange-800 dark:text-orange-200">Growing Talent</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white">
+              Interns
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            {interns.map((person, index) => (
+              <motion.div
+                key={person.name}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+              >
+                <TeamCard person={person} />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -25,6 +25,9 @@ import TermsOfService from "./Component/TermsOfService";
 import ProtectedRoute from "./Component/Auth/ProtectedRoute";
 import Login from "./Component/Auth/Login";
 import Signup from "./Component/Auth/Signup";
+import { Analytics } from "@vercel/analytics/react"
+import Testimonials from "./Component/Testimonials";
+
 
 // 🤖 ADD THIS: Chatbot Import
 import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
@@ -50,10 +53,12 @@ import CloudComputingRoadmap from "./Component/Roadmaps/CloudComputingRoadmap";
 import UiUxDesignRoadmap from "./Component/Roadmaps/UiUxDesignRoadmap";
 import Team from "./Component/Team";
 //added a searchbar
+import ProjectIdeas from "./Component/ProjectIdeas";
+import ProjectIdeaDetail from "./Component/ProjectIdeaDetail";
+import SSOCallbackPage from "./Component/Auth/SSOCallbackPage";
+import ProjectGallery from "./Component/ProjectsGallery";
 const Home = ({ scrollRefs }) => {
   const [searchTerm, setSearchTerm] = useState("");
-
-  // Example data
   const democourses = [
     { id: 1, title: "JavaScript Basics", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
     { id: 2, title: "React for Beginners", link: "https://react.dev/" },
@@ -69,10 +74,10 @@ const Home = ({ scrollRefs }) => {
     { id: 1, title: "SnapFolio Portfolio Builder", link: "https://snap-folio-chi.vercel.app/" },
   ];
 
-  // ✅ Merge into one array
+  //Merge into one array
   const allItems = [...democourses, ...demotools];
 
-  // ✅ Filter all items together
+  // Filter all items together
   const filteredItems = allItems.filter((item) =>
     item.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -92,11 +97,12 @@ const Home = ({ scrollRefs }) => {
 
       {/* Normal sections */}
       {!searchTerm && (
-        <>
-          <HeroSection communityRef={scrollRefs?.community} />
-          <ProductsSection />
-          <WhatWeDoDifferently ref={scrollRefs?.differently} />
-          <JoinCommunity ref={scrollRefs?.community} />
+    <>
+      <HeroSection communityRef={scrollRefs?.community} />
+      <ProductsSection />
+      <WhatWeDoDifferently ref={scrollRefs?.differently} />
+      <Testimonials />
+      <JoinCommunity ref={scrollRefs?.community} />
         </>
       )}
 
@@ -149,16 +155,22 @@ const App = () => {
 
   return (
         
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900 text-gray-900 dark:text-white transition-colors duration-300 font-sans">
       <Navbar scrollRefs={scrollRefs} />
+            <Analytics/>
+
       <main className="flex-1 pt-20">
-      <AuthProvider>
+      
         <Routes>
           {/* ✅ Auth Routes */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+
+          <Route path="/sso-callback" element={<SSOCallbackPage/>} />
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/project-idea" element={<ProjectIdeas />} />
+            <Route path="/project-idea/:id" element={<ProjectIdeaDetail />} />
 
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
@@ -183,7 +195,8 @@ const App = () => {
             <Route path="/paths" element={<PathsLanding />} />
             <Route path="/paths/:slug" element={<PathDetail />} />
             <Route path="/learn/tools" element={<LearnTools />} />
-            <Route
+            <Route path="/projects" element={<ProjectGallery/>}/>
+           <Route
               path="/free-certificates"
               element={<FreeCertificateCourses />}
             />
@@ -199,13 +212,12 @@ const App = () => {
               }
             />
           </Routes>
-        <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-2">
+        <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-3">
           <BackToTop />
           <BuildOnCoffeeChatbot />
         </div>
         <Footer />
-      
-    </AuthProvider>
+     
         </main>
    </div> 
    
