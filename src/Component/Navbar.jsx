@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Search } from "lucide-react";
 import {
   Coffee,
   Menu,
@@ -32,6 +33,8 @@ import { useTheme } from "./context/ThemeContext";
 const Navbar = ({ scrollRefs }) => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const { isDark, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);

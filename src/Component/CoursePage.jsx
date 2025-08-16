@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { courses } from "../../data/courses";
 import CourseDetailPanel from "./CourseDetailPanel";
 
 const CoursePage = () => {
