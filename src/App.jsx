@@ -59,6 +59,8 @@ import SSOCallbackPage from "./Component/Auth/SSOCallbackPage";
 import ProjectGallery from "./Component/ProjectsGallery";
 const Home = ({ scrollRefs }) => {
   const [searchTerm, setSearchTerm] = useState("");
+
+  // Example data
   const democourses = [
     { id: 1, title: "JavaScript Basics", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
     { id: 2, title: "React for Beginners", link: "https://react.dev/" },
@@ -74,7 +76,7 @@ const Home = ({ scrollRefs }) => {
     { id: 1, title: "SnapFolio Portfolio Builder", link: "https://snap-folio-chi.vercel.app/" },
   ];
 
-  //Merge into one array
+  // ✅ Merge into one array
   const allItems = [...democourses, ...demotools];
 
   // Filter all items together
@@ -165,8 +167,15 @@ const App = () => {
           {/* ✅ Auth Routes */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+        
 
-          <Route path="/sso-callback" element={<SSOCallbackPage/>} />
+  
+      
+
+      
+    
+           
+    
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/team" element={<Team />} />
             <Route path="/project-idea" element={<ProjectIdeas />} />
