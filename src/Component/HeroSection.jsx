@@ -53,6 +53,12 @@ const HeroSection = () => {
     <section className={`relative min-h-screen flex items-center justify-center overflow-hidden transition-all duration-500 ${
       isDarkMode ? "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" : "bg-gradient-to-br from-gray-50 via-white to-blue-50"
     }`}>
+      <div>
+
+     
+
+
+    </div>
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
