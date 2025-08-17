@@ -55,11 +55,6 @@ import ProjectIdeas from "./Component/ProjectIdeas";
 import ProjectIdeaDetail from "./Component/ProjectIdeaDetail";
 import SSOCallbackPage from "./Component/Auth/SSOCallbackPage";
 import ProjectGallery from "./Component/ProjectsGallery";
-import CoffeeBreak from "./Component/CoffeeBreak";
-import Challenges1Case from "./Component/Challenges1Case";
-import Challenges2Case from "./Component/Challenges2Case";
-import Challenges3Case from "./Component/Challenges3Case";
-import Challenges4Case from "./Component/Challenges4Case";
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
   return (
@@ -110,16 +105,11 @@ const App = () => {
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/team" element={<Team />} />
             <Route path="/project-idea" element={<ProjectIdeas />} />
-            <Route path="/coffeebreak" element={<CoffeeBreak />} />
             <Route path="/project-idea/:id" element={<ProjectIdeaDetail />} />
 
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/contribute" element={<Contribute />} />
-            <Route path="/challenges1" element={<Challenges1Case/>} />
-            <Route path="/challenges2" element={<Challenges2Case/>} />
-            <Route path="/challenges3" element={<Challenges3Case/>} />
-            <Route path="/challenges4" element={<Challenges4Case/>} />
             <Route path="/courses" element={<CoursesList />} />
             <Route path="/courses/:slug" element={<CoursePage />} />
             <Route path="/tools" element={<ToolsList />} />

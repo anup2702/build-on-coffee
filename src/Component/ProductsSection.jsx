@@ -4,7 +4,6 @@ import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 import { ExternalLink, Lightbulb } from "lucide-react";
 import { products } from "../../data/products";
-// import { challenges } from "../../data/challenges";
 
 const ProductsSection = () => {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
@@ -36,7 +35,6 @@ const ProductsSection = () => {
       external: false,
     },
   ];
-    
 
   return (
     <section className="py-24 bg-white dark:bg-slate-900" ref={ref}>
