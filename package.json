@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.38.1",
+    "@clerk/nextjs": "^6.31.1",
     "@emailjs/browser": "^4.4.1",
-        "@vercel/analytics": "^1.5.0",
-
     "@tailwindcss/vite": "^4.1.11",
+    "@vercel/analytics": "^1.5.0",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.526.0",
     "motion": "^12.23.12",

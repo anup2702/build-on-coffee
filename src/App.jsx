@@ -55,6 +55,7 @@ import ProjectIdeas from "./Component/ProjectIdeas";
 import ProjectIdeaDetail from "./Component/ProjectIdeaDetail";
 import SSOCallbackPage from "./Component/Auth/SSOCallbackPage";
 import ProjectGallery from "./Component/ProjectsGallery";
+import InterviewQuestions from "./Component/Interview Questions/InterviewQuestions";
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
   return (
@@ -136,6 +137,7 @@ const App = () => {
               element={<FreeCertificateCourses />}
             />
               <Route path="/glossary" element={<Glossary />} />   
+              <Route path= "/InterviewQuestions" element={<InterviewQuestions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route
