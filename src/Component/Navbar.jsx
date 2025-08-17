@@ -41,7 +41,6 @@ const Navbar = ({ scrollRefs }) => {
   { id: "home", to: "/", label: "Home", icon: Home },
   { id: "team", to: "/team", label: "Team", icon: Users },
   { id: "profile", to: "/profile", label: "Profile", icon: User },
-   { id: "coffeebreak", to: "/coffeebreak", label: "coffeebreak☕", icon: User },
 ];
 
   const topLinks = [{ key: "community", label: "Join our community" }];
