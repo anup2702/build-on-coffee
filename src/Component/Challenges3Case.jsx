@@ -107,7 +107,7 @@ function Challenges3Case() {
           value={customCode}
           onChange={(e) => setCustomCode(e.target.value)}
           rows="8"
-          className="w-full p-4 font-mono border border-gray-300 rounded-lg bg-gray-50 shadow focus:ring-2 focus:ring-indigo-300 focus:outline-none resize-none"
+          className="w-full p-4 text-[black] font-mono border border-gray-300 rounded-lg bg-gray-50 shadow focus:ring-2 focus:ring-indigo-300 focus:outline-none resize-none"
         />
       </div>
 
