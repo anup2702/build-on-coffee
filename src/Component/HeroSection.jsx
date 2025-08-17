@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Users, Code2, Stars, ChevronRight, Coffee, Sparkles, ArrowRight, Zap } from "lucide-react";
 import { useTheme } from './context/ThemeContext';
 import { Link } from "react-router-dom";
-import TargetCursor from './TargetCursor';
 
 const HeroSection = () => {
   const { isDark } = useTheme();
@@ -56,13 +55,7 @@ const HeroSection = () => {
     }`}>
       <div>
 
-      <TargetCursor 
-
-        spinDuration={2}
-
-        hideDefaultCursor={true}
-
-      />
+     
 
 
     </div>

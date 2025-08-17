@@ -78,7 +78,7 @@ function Challenges3Case() {
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
           placeholder="e.g., 6"
-          className="w-full px-4 py-2 border border-gray-300 rounded-md shadow focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+          className="w-full px-4 py-2 border text-[black] border-gray-300 rounded-md shadow focus:ring-2 focus:ring-indigo-400 focus:outline-none"
         />
         <button
           onClick={handleRun}
