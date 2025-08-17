@@ -108,8 +108,20 @@ export const products = [
   borderColor: "border-teal-200 dark:border-teal-800",
   hoverColor: "group-hover:text-teal-600 dark:group-hover:text-teal-400",
   route: "/projects",
-}
+},
 
+{
+  id: 11,
+  name: "Interview Questions",
+  description:
+    "Curated set of DSA, System Design, CS Fundamentals, and Behavioral questions with structured answers.",
+  icon: BookOpen, 
+  color: "bg-green-500",
+  bgColor: "bg-green-50 dark:bg-green-900/10",
+  borderColor: "border-green-200 dark:border-green-800",
+  hoverColor: "group-hover:text-green-600 dark:group-hover:text-green-400",
+  route: "/InterviewQuestions",
+},
 
 
 
