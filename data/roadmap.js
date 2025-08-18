@@ -34,4 +34,29 @@ export const roadmap = [
     description: "Build native and cross-platform mobile apps.",
     path: "/roadmap/mobile-development",
   },
+  {
+    title: "BLockchain",
+    description: "Build native and cross-platform mobile apps.",
+    path: "/roadmap/blockchain",
+  },
+  {
+    title: "Ai Ml Roadmap",
+    description: "Build native and cross-platform mobile apps.",
+    path: "/roadmap/ai-ml",
+  },
+  {
+    title: "Cybersecurity Roadmap",
+    description: "Explore the world of cybersecurity, from ethical hacking to network security.",
+    path: "/roadmap/cybersecurity",
+  },
+  {
+    title: "Cloud Computing",
+    description: "Master cloud platforms like AWS, Azure, and GCP.",
+    path: "/roadmap/cloud-computing",
+  },
+  {
+    title: "UI/UX Design",
+    description: "Design intuitive and engaging user interfaces and experiences.",
+    path: "/roadmap/ui-ux-design",
+  }
 ];

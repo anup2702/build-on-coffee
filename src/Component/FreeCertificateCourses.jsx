@@ -1,99 +1,146 @@
 import { freeCertificateCourses } from '../../data/freeCertificateCourses';
 import { motion } from "framer-motion";
+import { Award, Star, Clock, Users } from "lucide-react";
 
 const FreeCertificateCourses = () => {
-  const floatingVariants = {
-    animate: {
-      y: [0, -10, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  const pulseVariants = {
-    animate: {
-      scale: [1, 1.05, 1],
-      opacity: [0.7, 1, 0.7],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
-
   return (
-    <section className="mx-auto py-16 px-10 text-center animate-fade-in dark:bg-gray-900 min-h-screen">
-      <h2
-        className="inline-block text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-600 via-cyan-400 to-purple-500 bg-clip-text text-transparent"
-      >
-        Courses with Free Certificates
-      </h2>
-
-      <div className="flex justify-center mb-8">
-        <p
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs shadow-lg border backdrop-blur-lg font-bold bg-blue-100/80 text-blue-600 border-blue-200/50 dark:bg-blue-500/20 dark:text-blue-300 dark:border-blue-400/30"
+    <div className="min-h-screen py-24 bg-white dark:bg-slate-900">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Page Header */}
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          Explore high-quality courses that offer free certificates upon completion.
-        </p>
-      </div>
+          <div className="inline-flex items-center gap-3 bg-blue-50 dark:bg-blue-900/20 px-6 py-3 rounded-full mb-8 border border-blue-200 dark:border-blue-800">
+            <Award className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+            <span className="text-sm font-semibold text-blue-800 dark:text-blue-200">Free Certificates</span>
+          </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {freeCertificateCourses.map((course, i) => (
-          <motion.div
-            key={i}
-            className="relative p-6 rounded-xl border transition-all duration-300 flex flex-col items-center justify-between h-full bg-white/80 border-gray-700 hover:bg-blue-50 dark:bg-gray-800 dark:border-blue-700 dark:hover:bg-gray-700"
-            whileHover={{ scale: 1.05, y: -2 }}
-            variants={floatingVariants}
-            animate="animate"
-            transition={{ delay: i * 0.2 }}
-          >
-            <motion.img
-              src={course.image}
-              alt={`Logo of ${course.name}`}
-              className="w-16 h-16 object-contain rounded-xl mb-4"
-              whileHover={{ scale: 1.05, y: -2 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            />
+          <h1 className="text-5xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white">
+            Courses with Free Certificates
+          </h1>
 
-            <motion.h3
-              className="text-xl font-black mb-2 text-center text-gray-900 dark:text-white"
-              variants={pulseVariants}
-              animate="animate"
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto font-light leading-relaxed">
+            Explore high-quality courses that offer free certificates upon completion. 
+            Build your skills and earn credentials to showcase your expertise.
+          </p>
+        </motion.div>
+
+        {/* Stats Section */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div className="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-200 dark:border-blue-800">
+            <Award className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-3" />
+            <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">{freeCertificateCourses.length}</div>
+            <div className="text-gray-600 dark:text-gray-300 font-medium">Total Courses</div>
+          </div>
+          
+          <div className="text-center p-6 bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800">
+            <Star className="w-8 h-8 text-emerald-600 dark:text-emerald-400 mx-auto mb-3" />
+            <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">100%</div>
+            <div className="text-gray-600 dark:text-gray-300 font-medium">Free Certificates</div>
+          </div>
+          
+          <div className="text-center p-6 bg-orange-50 dark:bg-orange-900/20 rounded-2xl border border-orange-200 dark:border-orange-800">
+            <Users className="w-8 h-8 text-orange-600 dark:text-orange-400 mx-auto mb-3" />
+            <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">Top</div>
+            <div className="text-gray-600 dark:text-gray-300 font-medium">Platforms</div>
+          </div>
+        </motion.div>
+
+        {/* Course Grid */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          {freeCertificateCourses.map((course, i) => (
+            <motion.div
+              key={i}
+              className="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 border-2 border-gray-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-400/50 transition-all duration-300 shadow-sm hover:shadow-xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
+              whileHover={{ y: -8, scale: 1.02 }}
             >
-              {course.name}
-            </motion.h3>
+              {/* Course Image */}
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-gray-50 dark:bg-slate-700 rounded-2xl p-4 flex items-center justify-center">
+                  <img
+                    src={course.image}
+                    alt={`Logo of ${course.name}`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
 
-            <p
-              className="text-sm font-medium text-center mb-2 text-gray-600 dark:text-gray-400"
-            >
-              {course.description}
+              {/* Course Title */}
+              <h3 className="text-2xl font-black mb-4 text-center text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                {course.name}
+              </h3>
+
+              {/* Course Description */}
+              <p className="text-gray-600 dark:text-gray-300 text-center mb-6 leading-relaxed">
+                {course.description}
+              </p>
+
+              {/* Certificate Badge */}
+              <div className="text-center mb-6">
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 rounded-full text-sm font-semibold border border-emerald-200 dark:border-emerald-800">
+                  <Award className="w-4 h-4" />
+                  {course.certificate}
+                </span>
+              </div>
+
+              {/* CTA Button */}
+              <div className="text-center">
+                <a
+                  href={course.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl group/btn"
+                >
+                  <span>View Course</span>
+                  <Clock className="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Call to Action */}
+        <motion.div
+          className="text-center mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="bg-gray-50 dark:bg-slate-800/50 p-12 rounded-2xl border border-gray-200 dark:border-slate-700">
+            <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-4">
+              Ready to Start Learning?
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+              Choose a course that matches your interests and start building your skills today. 
+              All courses are completely free and include certificates upon completion.
             </p>
-
-            <span
-              className="text-xs font-semibold text-green-700 dark:text-green-300"
-            >
-              {course.certificate}
-            </span>
-
-            
-            <div className="flex-grow" />
-
             <a
-              href={course.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 px-4 py-2 rounded-xl font-semibold transition-all duration-200 bg-black text-white hover:bg-gray-800 dark:bg-blue-600 dark:text-white dark:hover:bg-blue-500"
+              href="#top"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl group"
             >
-              View Course
+              <span>Browse All Courses</span>
+              <Star className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
             </a>
-          </motion.div>
-        ))}
+          </div>
+        </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -28,7 +28,7 @@ We appreciate **all types of contributions** — code, design, documentation, su
 7.  **Open a Pull Request**
     -   Go to your fork on GitHub and click "New Pull Request".
     -   Fill in a clear title and description.
-
+ 
 ---
 
 ## Code Style
