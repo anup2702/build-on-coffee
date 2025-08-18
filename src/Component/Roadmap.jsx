@@ -5,6 +5,14 @@ import { roadmap } from "../../data/roadmap.js";
 import { Link } from "react-router-dom";
 
 const iconMap = {
+
+  "DSA for Placements": <Code className="w-8 h-8 mb-4 text-blue-500" />,
+  "Web Development": <Server className="w-8 h-8 mb-4 text-green-500" />,
+  "DevOps": <Terminal className="w-8 h-8 mb-4 text-red-500" />,
+  "System Design": <GitMerge className="w-8 h-8 mb-4 text-purple-500" />,
+  "Open Source Journey": <GitBranch className="w-8 h-8 mb-4 text-yellow-500" />,
+  "Mobile Development": <Code className="w-8 h-8 mb-4 text-teal-500" />,
+  "Data Science & Analytics": <Route className="w-8 h-8 mb-4 text-orange-500" />,
   "DSA for Placements": <Code className="w-8 h-8 text-blue-500" />,
   "Web Development": <Server className="w-8 h-8 text-green-500" />,
   "DevOps": <Terminal className="w-8 h-8 text-red-500" />,
