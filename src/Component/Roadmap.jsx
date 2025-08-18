@@ -11,6 +11,7 @@ const iconMap = {
   "System Design": <GitMerge className="w-8 h-8 mb-4 text-purple-500" />,
   "Open Source Journey": <GitBranch className="w-8 h-8 mb-4 text-yellow-500" />,
   "Mobile Development": <Code className="w-8 h-8 mb-4 text-teal-500" />,
+  "Data Science & Analytics": <Route className="w-8 h-8 mb-4 text-orange-500" />,
 };
 
 const Roadmap = () => {

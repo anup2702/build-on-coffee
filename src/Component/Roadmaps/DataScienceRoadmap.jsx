@@ -91,9 +91,9 @@ const DataScienceRoadmap = () => {
                       <FileText className="w-5 h-5 mr-2 mt-1" /> Recommended
                       Resources:
                     </h4>
-                    <ul className="list-disc space-y-2 pl-5 text-md">
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2 text-md list-disc max-w-3xl">
                       {step.resources.map((res, idx) => (
-                        <li key={idx}>
+                        <li key={idx} className="pl-4">
                           <a
                             href={res.link}
                             target="_blank"

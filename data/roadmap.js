@@ -15,6 +15,11 @@ export const roadmap = [
     path: "/roadmap/devops",
   },
   {
+    title: "Data Science & Analytics",
+    description: "Data analysis, visualization and machine learning. ",
+    path : "/roadmap/data-science",
+  },
+  {
     title: "System Design",
     description: "Scalable architecture for real-world systems.",
     path: "/roadmap/system-design",
