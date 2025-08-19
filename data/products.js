@@ -122,7 +122,16 @@ export const products = [
   hoverColor: "group-hover:text-green-600 dark:group-hover:text-green-400",
   route: "/InterviewQuestions",
 },
-
-
-
+{
+    id: 12,
+    name: "Quizzes",
+    description:
+      "Test your knowledge with interactive quizzes across DSA, Web Development, and more.",
+    icon: BookOpen, // you can swap to another icon if you prefer
+    color: "bg-red-500",
+    bgColor: "bg-red-50 dark:bg-red-900/10",
+    borderColor: "border-red-200 dark:border-red-800",
+    hoverColor: "group-hover:text-red-600 dark:group-hover:text-red-400",
+    route: "/quiz",
+  },
 ];
