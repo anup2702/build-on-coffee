@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
@@ -19,7 +19,14 @@ const getProgress = (slug, milestones) => {
 const PathsLanding = () => {
   const [query, setQuery] = useState("");
   const [level, setLevel] = useState("");
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  // show loader for a short time (simulate fetch)
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1200); // 1.2s
+    return () => clearTimeout(timer);
+  }, []);
 
   const levels = useMemo(() => ["Beginner", "Intermediate", "Advanced"], []);
 
@@ -32,6 +39,14 @@ const PathsLanding = () => {
       return matchesName && matchesLevel;
     });
   }, [query, level]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-[70vh]">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   return (
     <section className="py-16 animate-fade-in">

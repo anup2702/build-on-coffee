@@ -5,7 +5,6 @@ import { roadmap } from "../../data/roadmap.js";
 import { Link } from "react-router-dom";
 
 const iconMap = {
-
   "DSA for Placements": <Code className="w-8 h-8 mb-4 text-blue-500" />,
   "Web Development": <Server className="w-8 h-8 mb-4 text-green-500" />,
   "DevOps": <Terminal className="w-8 h-8 mb-4 text-red-500" />,
@@ -13,17 +12,12 @@ const iconMap = {
   "Open Source Journey": <GitBranch className="w-8 h-8 mb-4 text-yellow-500" />,
   "Mobile Development": <Code className="w-8 h-8 mb-4 text-teal-500" />,
   "Data Science & Analytics": <Route className="w-8 h-8 mb-4 text-orange-500" />,
-  "DSA for Placements": <Code className="w-8 h-8 text-blue-500" />,
-  "Web Development": <Server className="w-8 h-8 text-green-500" />,
-  "DevOps": <Terminal className="w-8 h-8 text-red-500" />,
-  "System Design": <GitMerge className="w-8 h-8 text-purple-500" />,
-  "Open Source Journey": <GitBranch className="w-8 h-8 text-yellow-500" />,
-  "Mobile Development": <Code className="w-8 h-8 text-teal-500" />,
-  "BLockchain": <Network className="w-8 h-8 text-teal-500" />,
-  "Ai Ml Roadmap": <Bot className="w-8 h-8 text-cyan-500" />,
-  "Cybersecurity Roadmap": <Shield className="w-8 h-8 text-indigo-500" />,
-  "Cloud Computing": <Cloud className="w-8 h-8 text-blue-400" />,
-  "UI/UX Design": <Palette className="w-8 h-8 text-pink-500" />
+  "Blockchain": <Network className="w-8 h-8 mb-4 text-teal-500" />, // fixed typo "BLockchain"
+  "AI/ML Roadmap": <Bot className="w-8 h-8 mb-4 text-cyan-500" />, // capitalized properly
+  "Cybersecurity Roadmap": <Shield className="w-8 h-8 mb-4 text-indigo-500" />,
+  "Cloud Computing": <Cloud className="w-8 h-8 mb-4 text-blue-400" />,
+  "UI/UX Design": <Palette className="w-8 h-8 mb-4 text-pink-500" />
+
 };
 
 const Roadmap = () => {
