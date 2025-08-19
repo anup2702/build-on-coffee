@@ -56,6 +56,8 @@ import SSOCallbackPage from "./Component/Auth/SSOCallbackPage";
 import ProjectGallery from "./Component/ProjectsGallery";
 import InterviewQuestions from "./Component/Interview Questions/InterviewQuestions";
 
+import Weeklytask from "./Component/Weeklytask";
+
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
   return (
@@ -97,6 +99,8 @@ const App = () => {
           <Route path="/team" element={<Team />} />
           <Route path="/project-idea" element={<ProjectIdeas />} />
           <Route path="/project-idea/:id" element={<ProjectIdeaDetail />} />
+
+          <Route path="/weeklytask" element={<Weeklytask />} />
 
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

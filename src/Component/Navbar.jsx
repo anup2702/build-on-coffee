@@ -25,6 +25,7 @@ import {
 } from "@clerk/clerk-react";
 import {
   User,
+  Clipboard,
   Route,
 } from "lucide-react";
 import { useTheme } from "./context/ThemeContext";
@@ -40,6 +41,7 @@ const Navbar = ({ scrollRefs }) => {
  const navItems = [
   { id: "home", to: "/", label: "Home", icon: Home },
   { id: "team", to: "/team", label: "Team", icon: Users },
+  { id: "weeklytask", to: "/weeklytask", label: "Weekly Task", icon: Clipboard },
   { id: "profile", to: "/profile", label: "Profile", icon: User },
 ];
 
