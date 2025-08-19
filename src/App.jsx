@@ -23,7 +23,7 @@ import TermsOfService from "./Component/TermsOfService";
 import ProtectedRoute from "./Component/Auth/ProtectedRoute";
 import Login from "./Component/Auth/Login";
 import Signup from "./Component/Auth/Signup";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import Testimonials from "./Component/Testimonials";
 
 // 🤖 ADD THIS: Chatbot Import
@@ -40,8 +40,8 @@ import Glossary from "./Component/Glossary/Glossary";
 import Documentation from "./Component/Documentation";
 import SystemDesignRoadmap from "./Component/Roadmaps/SystemDesignRoadmap";
 import MobileDevRoadmap from "./Component/Roadmaps/MobileDevRoadmap";
-import DataScienceRoadmap from "./Component/Roadmaps/DataScienceRoadmap";   // ✅ kept from feature branch
-import PathsLanding from "./Component/Paths/PathsLanding";                  // ✅ kept from main
+import DataScienceRoadmap from "./Component/Roadmaps/DataScienceRoadmap"; // ✅ kept from feature branch
+import PathsLanding from "./Component/Paths/PathsLanding"; // ✅ kept from main
 import PathDetail from "./Component/Paths/PathDetail";
 import BlockChainRoadmap from "./Component/Roadmaps/BlockChainRoadmap";
 
@@ -55,6 +55,7 @@ import ProjectIdeaDetail from "./Component/ProjectIdeaDetail";
 import SSOCallbackPage from "./Component/Auth/SSOCallbackPage";
 import ProjectGallery from "./Component/ProjectsGallery";
 import InterviewQuestions from "./Component/Interview Questions/InterviewQuestions";
+import Quiz from "./Component/Quiz";
 
 const Home = ({ scrollRefs }) => {
   const navigate = useNavigate();
@@ -107,19 +108,35 @@ const App = () => {
           <Route path="/glossary" element={<Glossary />} />
           <Route path="/documentation" element={<Documentation />} />
           <Route path="/roadmap" element={<Roadmap />} />
+          <Route path="/quiz" element={<Quiz />} />
 
           {/* ✅ Roadmaps */}
           <Route path="/roadmap/dsa" element={<DsaRoadmap />} />
           <Route path="/roadmap/opensource" element={<OpenSourceRoadmap />} />
           <Route path="/roadmap/web-development" element={<WebDevRoadmap />} />
-          <Route path="/roadmap/system-design" element={<SystemDesignRoadmap />} />
+          <Route
+            path="/roadmap/system-design"
+            element={<SystemDesignRoadmap />}
+          />
           <Route path="/roadmap/devops" element={<DevOpsRoadmap />} />
-          <Route path="/roadmap/mobile-development" element={<MobileDevRoadmap />} />
-          <Route path="/roadmap/data-science" element={<DataScienceRoadmap />} />
+          <Route
+            path="/roadmap/mobile-development"
+            element={<MobileDevRoadmap />}
+          />
+          <Route
+            path="/roadmap/data-science"
+            element={<DataScienceRoadmap />}
+          />
           <Route path="/roadmap/blockchain" element={<BlockChainRoadmap />} />
           <Route path="/roadmap/ai-ml" element={<AiMlRoadmap />} />
-          <Route path="/roadmap/cybersecurity" element={<CybersecurityRoadmap />} />
-          <Route path="/roadmap/cloud-computing" element={<CloudComputingRoadmap />} />
+          <Route
+            path="/roadmap/cybersecurity"
+            element={<CybersecurityRoadmap />}
+          />
+          <Route
+            path="/roadmap/cloud-computing"
+            element={<CloudComputingRoadmap />}
+          />
           <Route path="/roadmap/ui-ux-design" element={<UiUxDesignRoadmap />} />
 
           {/* ✅ Paths */}
@@ -128,7 +145,10 @@ const App = () => {
 
           <Route path="/learn/tools" element={<LearnTools />} />
           <Route path="/projects" element={<ProjectGallery />} />
-          <Route path="/free-certificates" element={<FreeCertificateCourses />} />
+          <Route
+            path="/free-certificates"
+            element={<FreeCertificateCourses />}
+          />
           <Route path="/InterviewQuestions" element={<InterviewQuestions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
