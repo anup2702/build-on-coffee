@@ -5,6 +5,7 @@ import HeroSection from "./Component/HeroSection";
 import ToolCard from "./Component/ToolCard";
 import Footer from "./Component/Footer";
 import WhatWeDoDifferently from "./Component/WhatWeDoDifferently";
+import PortfolioSpotlight from "./Component/PortfolioSpotlight";
 import BackToTop from "./Component/BackToTop";
 import About from "./Component/About";
 import Contact from "./Component/Contact";
@@ -66,6 +67,7 @@ const Home = ({ scrollRefs }) => {
       <HeroSection communityRef={scrollRefs?.community} />
       <ProductsSection />
       <WhatWeDoDifferently ref={scrollRefs?.differently} />
+      <PortfolioSpotlight />
       <Testimonials />
       <JoinCommunity ref={scrollRefs?.community} />
     </>
