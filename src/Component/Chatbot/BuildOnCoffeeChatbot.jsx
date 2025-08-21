@@ -11,6 +11,7 @@ import {
   ChevronDown,
   Bot,
   User,
+  AlertCircle,
 } from "lucide-react";
 
 const BuildOnCoffeeChatbot = () => {
@@ -19,10 +20,14 @@ const BuildOnCoffeeChatbot = () => {
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
+  const [isOnline, setIsOnline] = useState(true);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Sample knowledge base for BuildOnCoffee
+  // API Configuration
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+
+  // Fallback knowledge base for offline mode
   const knowledgeBase = {
     courses: {
       "data structures":
@@ -81,6 +86,7 @@ const BuildOnCoffeeChatbot = () => {
       setMessages([initialMessage]);
       setSuggestions(quickSuggestions.slice(0, 3));
     }
+    checkAPIHealth();
   }, []);
 
   useEffect(() => {
@@ -93,35 +99,41 @@ const BuildOnCoffeeChatbot = () => {
     }
   }, [isOpen]);
 
+  const checkAPIHealth = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/health`);
+      setIsOnline(response.ok);
+    } catch (error) {
+      setIsOnline(false);
+    }
+  };
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const generateResponse = (userMessage) => {
+  // Fallback response generator for offline mode
+  const generateFallbackResponse = (userMessage) => {
     const message = userMessage.toLowerCase();
 
-    // Check for course-related queries
     for (const [course, info] of Object.entries(knowledgeBase.courses)) {
       if (message.includes(course)) {
         return `📚 ${info} You can find detailed tutorials and resources in our Learn section!`;
       }
     }
 
-    // Check for tool-related queries
     for (const [tool, info] of Object.entries(knowledgeBase.tools)) {
       if (message.includes(tool)) {
         return `🔧 ${info} Check out our Tools section for more developer resources!`;
       }
     }
 
-    // Check for general queries
     for (const [keyword, info] of Object.entries(knowledgeBase.general)) {
       if (message.includes(keyword)) {
         return `💡 ${info}`;
       }
     }
 
-    // Pattern matching for common questions
     if (
       message.includes("course") ||
       message.includes("learn") ||
@@ -138,12 +150,43 @@ const BuildOnCoffeeChatbot = () => {
       return "🚀 I'd love to help! You can:\n• Explore our Learn section for CS courses\n• Check out Tools for developer resources\n• Contribute to our open-source project\n• Browse topics like Data Structures, Algorithms, or System Design\n\nWhat sounds most interesting to you?";
     }
 
-    if (message.includes("coffee") || message.includes("☕")) {
-      return "☕ Great choice! At BuildOnCoffee, we believe the best code is written with a good cup of coffee. While I can't brew coffee, I can definitely help you brew some knowledge! What would you like to learn today?";
-    }
-
-    // Default response with suggestions
     return "🤔 I'm not sure about that specific question, but I can help you with:\n• Finding courses and learning resources\n• Recommending developer tools\n• Information about contributing to the project\n• Guidance on CS topics\n\nTry asking me about Data Structures, System Design, or our available tools!";
+  };
+
+  // Get AI response from OpenAI via backend
+  const getAIResponse = async (userMessage) => {
+    try {
+      // Prepare conversation history for context
+      const conversationHistory = messages
+        .slice(-10) // Last 10 messages for context
+        .map((msg) => ({
+          role: msg.sender === "user" ? "user" : "assistant",
+          content: msg.text,
+        }));
+
+      const response = await fetch(`${API_BASE_URL}/api/chat`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: userMessage,
+          conversationHistory,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        return data.response;
+      } else {
+        throw new Error(data.error || "API request failed");
+      }
+    } catch (error) {
+      console.error("API Error:", error);
+      setIsOnline(false);
+      return generateFallbackResponse(userMessage);
+    }
   };
 
   const handleSendMessage = async (messageText = inputValue) => {
@@ -160,24 +203,42 @@ const BuildOnCoffeeChatbot = () => {
     setInputValue("");
     setIsTyping(true);
 
-    // Update suggestions based on user input
+    // Update suggestions
     const newSuggestions = quickSuggestions
       .filter((s) => !s.toLowerCase().includes(messageText.toLowerCase()))
       .slice(0, 3);
     setSuggestions(newSuggestions);
 
-    // Simulate AI thinking time
-    setTimeout(() => {
+    try {
+      let responseText;
+
+      if (isOnline) {
+        responseText = await getAIResponse(messageText);
+      } else {
+        // Use fallback for offline mode
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
+        responseText = generateFallbackResponse(messageText);
+      }
+
       const botResponse = {
         id: Date.now() + 1,
-        text: generateResponse(messageText),
+        text: responseText,
         sender: "bot",
         timestamp: new Date(),
       };
 
       setMessages((prev) => [...prev, botResponse]);
-      setIsTyping(false);
-    }, 1000 + Math.random() * 1000);
+    } catch (error) {
+      const errorResponse = {
+        id: Date.now() + 1,
+        text: "Sorry, I'm having trouble responding right now. You can explore our courses in Data Structures, Algorithms, and System Design, or check out our developer tools section!",
+        sender: "bot",
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, errorResponse]);
+    }
+
+    setIsTyping(false);
   };
 
   const handleKeyPress = (e) => {
@@ -197,7 +258,7 @@ const BuildOnCoffeeChatbot = () => {
   return (
     <>
       {/* Floating Chat Button */}
-      <div className="z-50">
+      <div className="fixed bottom-6 right-6 z-50">
         {!isOpen && (
           <button
             onClick={() => setIsOpen(true)}
@@ -217,11 +278,17 @@ const BuildOnCoffeeChatbot = () => {
             <div className="flex items-center space-x-3">
               <div className="relative">
                 <Coffee className="w-8 h-8" />
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
+                <div
+                  className={`absolute -top-1 -right-1 w-3 h-3 rounded-full border-2 border-white ${
+                    isOnline ? "bg-green-400" : "bg-red-400"
+                  }`}
+                ></div>
               </div>
               <div>
                 <h3 className="font-semibold text-lg">BuildOnCoffee AI</h3>
-                <p className="text-xs opacity-90">Your CS Learning Assistant</p>
+                <p className="text-xs opacity-90">
+                  {isOnline ? "Powered by Gemini" : "Offline Mode"}
+                </p>
               </div>
             </div>
             <button
@@ -232,6 +299,18 @@ const BuildOnCoffeeChatbot = () => {
               <X className="w-5 h-5" />
             </button>
           </div>
+
+          {/* Connection Status Banner */}
+          {!isOnline && (
+            <div className="bg-yellow-100 dark:bg-yellow-900 border-b border-yellow-200 dark:border-yellow-700 p-2">
+              <div className="flex items-center space-x-2 text-yellow-800 dark:text-yellow-200">
+                <AlertCircle className="w-4 h-4" />
+                <span className="text-xs">
+                  Using offline mode - responses may be limited
+                </span>
+              </div>
+            </div>
+          )}
 
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-900">
@@ -354,7 +433,10 @@ const BuildOnCoffeeChatbot = () => {
               </div>
             </div>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center">
-              Powered by BuildOnCoffee AI • Press Enter to send
+              {isOnline
+                ? "Powered by BuildOnCoffee AI & Gemini"
+                : "Running in offline mode"}{" "}
+              • Press Enter to send
             </p>
           </div>
         </div>
