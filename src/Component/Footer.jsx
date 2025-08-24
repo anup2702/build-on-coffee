@@ -159,7 +159,7 @@ const Footer = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.7 }}
           >
-            © 2025 BuildOnCoffee. All rights reserved.
+            © {new Date().getFullYear()} BuildOnCoffee. All rights reserved.
           </motion.div>
         </div>
       </div>

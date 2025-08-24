@@ -189,6 +189,20 @@ const BuildOnCoffeeChatbot = () => {
     }
   };
 
+  // Add personalized recommendation logic after AI response
+  const getPersonalizedRecommendations = (userProfile) => {
+  // Example: Recommend courses based on user's bookmarked courses and favorite tools
+  if (!userProfile) return [];
+  const recommendations = [];
+  if (userProfile.bookmarkedCourses && userProfile.bookmarkedCourses.length > 0) {
+    recommendations.push(`Based on your interest in ${userProfile.bookmarkedCourses.map(c => c.name).join(", ")}, you might enjoy our advanced tutorials and project ideas!`);
+  }
+  if (userProfile.favoriteTools && userProfile.favoriteTools.length > 0) {
+    recommendations.push(`Since you like ${userProfile.favoriteTools.map(t => t.name).join(", ")}, check out our latest tool integrations and guides.`);
+  }
+  return recommendations;
+};
+
   const handleSendMessage = async (messageText = inputValue) => {
     if (!messageText.trim()) return;
 
@@ -200,7 +214,6 @@ const BuildOnCoffeeChatbot = () => {
     };
 
     setMessages((prev) => [...prev, userMessage]);
-    setInputValue("");
     setIsTyping(true);
 
     // Update suggestions
