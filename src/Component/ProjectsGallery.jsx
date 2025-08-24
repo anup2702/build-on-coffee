@@ -210,7 +210,7 @@ export default function ProjectGallery() {
                                         className="p-3 bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl transition-all duration-300 hover:bg-gray-200 dark:hover:bg-slate-600 group/link">
                                         <ExternalLink size={20} className="group-hover/link:scale-110 transition-transform duration-300" />
                                     </a>
-                                </div>
+                                 </div>
                             </motion.div>
                         );
                     })}
