@@ -5,40 +5,27 @@ import { useInView } from "react-intersection-observer";
 
 const contributors = [
   {
-    name: "Anup Kumar",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5603AQEf08fzs5zY1A/profile-displayphoto-shrink_800_800/B56ZVeYqyUHEAc-/0/1741045283255?e=1757548800&v=beta&t=DwUQ_TmsG5ur-iXCZxSNW8CAQcSsKtsjpLYDvwZijEs",
-    github: "https://github.com/anup2702",
-    linkedIn: "https://www.linkedin.com/in/anup001/",
-    bio: "Full-Stack Developer | Building sleek & scalable apps",
-    portfolioLink: "https://snapfolio.example.com/anup2702",
+    name: "Sanika Satappa Patil",
+    image: "https://avatars.githubusercontent.com/u/176334299?v=4",
+    github: "https://github.com/Sanika-Patil27",
+    linkedIn: "https://www.linkedin.com/in/sanika-patil-b96144252",
+    bio: "Full-Stack Developer, Data Analyst",
+    portfolioLink: "https://github.com/Sanika-Patil27/Portfolio",
     portfolioScreenshot:
       "https://img.freepik.com/free-vector/letter-w-logo-ring-wedding-logo-business-branding-template-designs-inspiration-isolated-white-background_384344-1313.jpg?semt=ais_hybrid&w=740",
-  },
-  {
-    name: "Akshay Kumar",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5603AQH0WmRigmV2OQ/profile-displayphoto-shrink_800_800/B56ZfL5mkeH8Ak-/0/1751472567182?e=1757548800&v=beta&t=tDIV-jrcojX7Mc6K-iOMY_d2QQMcOg8FFtzMEqRIMvA",
-    github: "https://github.com/akshay0611",
-    linkedIn: "https://www.linkedin.com/in/akshaykumar0611/",
-    bio: "Passionate about AI & Web Development",
-    portfolioLink: "https://snapfolio.example.com/akshay0611",
-    portfolioScreenshot:
-      "https://img.freepik.com/free-vector/letter-w-logo-ring-wedding-logo-business-branding-template-designs-inspiration-isolated-white-background_384344-1313.jpg?semt=ais_hybrid&w=740",
-  },
-  {
-    name: "Harshita Gupta",
-    image: "https://avatars.githubusercontent.com/u/110281535?v=4",
-    github: "https://github.com/hershiee",
-    linkedIn: "#",
-    bio: "Frontend Developer | Love building UI/UX",
-    portfolioLink: "https://snapfolio.example.com/hershiee",
-    portfolioScreenshot:
-      "https://img.freepik.com/free-vector/letter-w-logo-ring-wedding-logo-business-branding-template-designs-inspiration-isolated-white-background_384344-1313.jpg?semt=ais_hybrid&w=740",
+    projects: [
+      {
+        name: "Breast Cancer Prediction",
+        description:
+          "Developed a web app for early breast cancer detection using ML, implementing probability-based predictions to classify tumors as benign or malignant accurately",
+        github: "https://github.com/Sanika-Patil27/Breast-Cancer-Detection",
+        liveLink: "https://breast-cancer-detection-tamz2wkkldjo4ue7g6sxpw.streamlit.app/",
+      },
+    ],
   },
 ];
 
-// ✅ Helper function: calculate current week
+// Helper function: calculate current week
 function getWeekNumber() {
   const now = new Date();
   const start = new Date(now.getFullYear(), 0, 1);
@@ -75,7 +62,7 @@ const PortfolioSpotlight = () => {
 
         {/* Spotlight Card */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white/80 dark:bg-slate-800/80 rounded-2xl p-10 border border-gray-200/50 dark:border-slate-700/50 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-500"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start bg-white/80 dark:bg-slate-800/80 rounded-2xl p-10 border border-gray-200/50 dark:border-slate-700/50 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-500"
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -128,18 +115,74 @@ const PortfolioSpotlight = () => {
             </div>
           </div>
 
-          {/* Portfolio Screenshot */}
+          {/* Projects Section */}
           <motion.div
-            className="relative rounded-xl overflow-hidden px-5"
+            className="relative rounded-xl overflow-hidden px-5 space-y-6"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <img
-              src={spotlightUser.portfolioScreenshot}
-              alt="Portfolio Screenshot"
-              className="w-full object-cover rounded-xl"
-            />
+            {spotlightUser.projects && spotlightUser.projects.length > 0 ? (
+              spotlightUser.projects.map((project, idx) => (
+                <div
+                  key={idx}
+                  className="p-5 bg-white/80 dark:bg-slate-800/80 rounded-xl shadow-md"
+                >
+                  <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    {project.name}
+                  </h4>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex gap-4">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition transform hover:scale-110"
+                      >
+                        <img
+                          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                          alt="GitHub"
+                          className="w-8 h-8"
+                        />
+                      </a>
+                    )}
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition transform hover:scale-110"
+                      >
+                        <img
+                          src="https://cdn-icons-png.flaticon.com/512/841/841364.png"
+                          alt="Live Project"
+                          className="w-8 h-8"
+                        />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))
+            ) : (
+              <a
+                href={spotlightUser.portfolioLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+              >
+                <img
+                  src={
+                    spotlightUser.portfolioScreenshot ||
+                    "https://via.placeholder.com/600x400?text=Portfolio+Preview"
+                  }
+                  alt={`${spotlightUser.name} Portfolio`}
+                  className="w-full object-cover rounded-xl shadow-md transition-transform duration-500 group-hover:scale-105"
+                />
+              </a>
+            )}
           </motion.div>
         </motion.div>
       </div>
