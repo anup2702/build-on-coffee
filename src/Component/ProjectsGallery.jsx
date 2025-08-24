@@ -5,19 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function ProjectsGallery() {
-  const [showReviewModal, setShowReviewModal] = useState(false);
-  const [reviewText, setReviewText] = useState("");
-  const [reviewEmoji, setReviewEmoji] = useState("");
-  const [reviewRating, setReviewRating] = useState(0);
   const [showCollabModal, setShowCollabModal] = useState(false);
-
-  function handleReviewSubmit(e) {
-    e.preventDefault();
-    setShowReviewModal(false);
-    setReviewText("");
-    setReviewEmoji("");
-    setReviewRating(0);
-  }
 
   return (
     <div className="min-h-screen py-24 bg-white dark:bg-slate-900">
@@ -77,26 +65,6 @@ export default function ProjectsGallery() {
                   <ExternalLink size={20} className="group-hover/link:scale-110 transition-transform duration-300" />
                 </a>
               </div>
-              {/* Peer Review Section */}
-              <div className="mt-8 p-4 bg-gray-50 dark:bg-slate-900/30 rounded-xl border border-gray-200 dark:border-slate-700">
-                <h4 className="text-lg font-bold mb-2 text-blue-700 dark:text-blue-300">Peer Reviews</h4>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="font-bold text-yellow-500 text-xl">{project.averageRating || 4.8}</span>
-                  <span className="text-gray-600 dark:text-gray-300">/ 5.0</span>
-                  <span className="ml-2 text-sm text-gray-500">({project.reviewCount || 23} reviews)</span>
-                </div>
-                <button className="mb-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition" onClick={()=>window.open('https://forms.gle/HyvM61KMqHLcthEXA','_blank')}>Review Project (Google Form)</button>
-                <form className="mb-2" onSubmit={e=>{e.preventDefault();alert('Mock review submitted!')}}>
-                  <textarea className="w-full p-2 rounded border border-gray-300 mb-2" placeholder="Optional feedback (mock, not stored)" />
-                  <button type="submit" className="px-3 py-1 bg-emerald-500 text-white rounded">Submit Feedback</button>
-                </form>
-                <div className="mt-2">
-                  <div className="font-semibold text-gray-700 dark:text-gray-200 mb-1">Sample Reviews:</div>
-                  <div className="bg-white dark:bg-slate-800 rounded p-2 mb-1 text-sm">Anabelle: "Loved the project! Super helpful and well documented."</div>
-                  <div className="bg-white dark:bg-slate-800 rounded p-2 mb-1 text-sm">Ariana Grande: "Great idea, but could use more examples."</div>
-                </div>
-              </div>
-              {/* End Peer Review Section */}
             </motion.div>
           ))}
         </motion.div>
@@ -112,41 +80,6 @@ export default function ProjectsGallery() {
           </div>
         </motion.div>
       </div>
-      {/* Review Modal */}
-      {showReviewModal && (
-        <div style={{position: 'fixed',top:0,left:0,width:'100vw',height:'100vh',background:'rgba(0,0,0,0.4)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:999}}>
-          <div style={{background:'#fff',borderRadius:'16px',padding:'2rem',minWidth:'350px',boxShadow:'0 4px 24px rgba(0,0,0,0.2)'}}>
-            <h3 style={{marginBottom:'1rem'}}>Peer Review</h3>
-            <form onSubmit={handleReviewSubmit}>
-              <label style={{fontWeight:'bold'}}>Your Rating:</label>
-              <div style={{margin:'0.5rem 0'}}>
-                {[1,2,3,4,5].map(star => (
-                  <span key={star} style={{fontSize:'2rem',color:star<=reviewRating?'#FFD700':'#ccc',cursor:'pointer'}} onClick={()=>setReviewRating(star)}>★</span>
-                ))}
-              </div>
-              <label style={{fontWeight:'bold'}}>Pick your emoji:</label>
-              <div style={{margin:'0.5rem 0',fontSize:'2rem'}}>
-                {['😀','😎','🤩','🥳','👍'].map(emoji => (
-                  <span key={emoji} style={{cursor:'pointer',marginRight:'0.5rem',border:emoji===reviewEmoji?'2px solid #ff8c00':'none',borderRadius:'50%',background:emoji===reviewEmoji?'#ffe066':'none',transition:'background 0.3s'}} onClick={()=>setReviewEmoji(emoji)}>{emoji}</span>
-                ))}
-              </div>
-              <label style={{fontWeight:'bold'}}>Your Feedback:</label>
-              <textarea value={reviewText} onChange={e=>setReviewText(e.target.value)} style={{width:'100%',minHeight:'60px',marginBottom:'1rem',borderRadius:'8px',border:'1px solid #eee',padding:'0.5rem'}} placeholder="Share your thoughts..." />
-              <button type="submit" style={{background:'#ff0080',color:'#fff',border:'none',borderRadius:'12px',padding:'0.5rem 1.2rem',fontWeight:'bold',cursor:'pointer'}}>Submit Review</button>
-              <button type="button" style={{marginLeft:'1rem',background:'#eee',color:'#333',border:'none',borderRadius:'12px',padding:'0.5rem 1.2rem',fontWeight:'bold',cursor:'pointer'}} onClick={()=>setShowReviewModal(false)}>Cancel</button>
-            </form>
-            <div style={{marginTop:'2rem'}}>
-              <h4 style={{marginBottom:'0.5rem'}}>Sample Reviews</h4>
-              <div style={{background:'#f9f9f9',borderRadius:'8px',padding:'1rem',marginBottom:'0.5rem'}}>
-                <strong>Anabelle</strong>: "Loved the project! Super helpful and well documented."
-              </div>
-              <div style={{background:'#f9f9f9',borderRadius:'8px',padding:'1rem',marginBottom:'0.5rem'}}>
-                <strong>Ariana Grande</strong>: "Great idea, but could use more examples."
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
