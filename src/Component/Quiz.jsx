@@ -24,6 +24,7 @@ const Quiz = () => {
   const [showResult, setShowResult] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const [checked, setChecked] = useState(false);
+  const [badges, setBadges] = useState([]);
 
   const startQuiz = (quizName) => {
     setSelectedQuiz(quizName);
@@ -50,6 +51,10 @@ const Quiz = () => {
       setChecked(false);
     } else {
       setShowResult(true);
+      // Award badge for high score
+      if ((score + (selectedOption === quizData[currentQuestion].answer ? 1 : 0)) >= Math.ceil(quizData.length * 0.9)) {
+        setBadges([...badges, 'Quiz Master']);
+      }
     }
   };
 
@@ -138,7 +143,7 @@ const Quiz = () => {
               <div
                 className="bg-blue-500 h-2 rounded-full transition-all"
                 style={{
-                  width: `${checked ? ((currentQuestion + 1) / quizData.length) * 100 : (currentQuestion / quizData.length) * 100}%`,
+                  width: `${((currentQuestion + (checked ? 1 : 0)) / quizData.length) * 100}%`,
                 }}
               />
             </div>
@@ -182,6 +187,8 @@ const Quiz = () => {
                 </button>
               )}
               {checked && (
+                // Button logic for quiz actions is implemented in the Quiz component
+                
                 <button
                   onClick={handleNext}
                   className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold"
@@ -213,6 +220,16 @@ const Quiz = () => {
             >
               Back to Quizzes
             </button>
+            {showResult && badges.length > 0 && (
+              <div className="mb-4">
+                <span className="text-lg font-bold">Badges Earned:</span>
+                <div className="flex gap-2 justify-center mt-2">
+                  {badges.map((badge, i) => (
+                    <span key={i} className="px-3 py-1 bg-yellow-200 rounded-full text-yellow-900 font-semibold">{badge}</span>
+                  ))}
+                </div>
+              </div>
+            )}
           </motion.div>
         )}
       </div>

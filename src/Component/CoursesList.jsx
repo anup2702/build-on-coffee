@@ -5,6 +5,9 @@ import { BookOpen, Star, Clock, Users } from "lucide-react";
 import { courses } from "../../data/courses";
 import ToolCard from "./ToolCard";
 import Notification from "./Notification";
+import ProgressBar from "./ProgressBar";
+import Leaderboard from "./Leaderboard";
+import ChallengeCard from "./ChallengeCard";
 
 const CoursesList = () => {
   const navigate = useNavigate();
@@ -142,6 +145,8 @@ const CoursesList = () => {
                 isFavourite={favourites.includes(course.slug)}
                 onToggleFavourite={() => toggleFavourite(course.slug)}
               />
+              {/* Example ProgressBar for demo purposes; replace with actual user progress logic */}
+              <ProgressBar progress={course.progress || 0} label={`Progress in ${course.name}`} />
             </motion.div>
           ))}
         </motion.div>
@@ -172,9 +177,63 @@ const CoursesList = () => {
             </a>
           </div>
         </motion.div>
+        {/* Challenge Cards Section - Demo challenges, replace with dynamic data */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <ChallengeCard
+            title="Complete 3 Courses This Week"
+            description="Finish any 3 courses to earn the 'Learning Streak' badge and bonus points!"
+            points={300}
+            badge={"🏅"}
+          />
+          <ChallengeCard
+            title="Score 90%+ on a Quiz"
+            description="Ace any quiz with a score above 90% to unlock the 'Quiz Master' badge."
+            points={150}
+            badge={"🎯"}
+          />
+          <ChallengeCard
+            title="Refer a Friend"
+            description="Invite a friend to join and both of you earn extra points and a 'Community Builder' badge!"
+            points={100}
+            badge={"🤝"}
+          />
+        </div>
+        {/* Leaderboard Section - Demo data, replace with actual user data */}
+        <Leaderboard users={[
+          { id: 1, name: "Alice", points: 1200 },
+          { id: 2, name: "Bob", points: 950 },
+          { id: 3, name: "Charlie", points: 800 },
+        ]} />
       </div>
     </div>
   );
 };
 
 export default CoursesList;
+{/* Suggest a Course Button & Logic */}
+<div className="text-center mb-8">
+  <button
+    className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-semibold"
+    onClick={() => alert('Suggested course: "Machine Learning Foundations"')}
+  >
+    Suggest a Random Course
+  </button>
+</div>
+{/* Accept Challenge Button & Logic */}
+<div className="text-center mb-8">
+  <button
+    className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-semibold"
+    onClick={() => alert('Challenge accepted! Progress tracked.')}
+  >
+    Accept Challenge
+  </button>
+</div>
+{/* Refer a Friend Button & Logic */}
+<div className="text-center mb-8">
+  <button
+    className="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-xl font-semibold"
+    onClick={() => alert('Referral successful! You earned the "Community Builder" badge.')}
+  >
+    Refer a Friend
+  </button>
+</div>

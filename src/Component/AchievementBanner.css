@@ -1,0 +1,41 @@
+.achievement-banner {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #43cea2, #185a9d);
+  color: #fff;
+  border-radius: 24px;
+  padding: 20px 32px;
+  margin: 16px 0;
+  box-shadow: 0 4px 24px rgba(67,206,162,0.2);
+  animation: popIn 0.6s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.achievement-icon {
+  font-size: 3rem;
+  margin-right: 24px;
+  filter: drop-shadow(0 0 8px #43cea2);
+}
+.achievement-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.achievement-desc {
+  margin: 4px 0 0 0;
+  font-size: 1rem;
+}
+@media (max-width: 600px) {
+  .achievement-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+  .achievement-icon {
+    margin-bottom: 12px;
+    margin-right: 0;
+    font-size: 2.2rem;
+  }
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
