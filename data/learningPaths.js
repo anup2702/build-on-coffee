@@ -126,5 +126,76 @@ export const learningPaths = [
       link: "/roadmap/devops"
     }
   ]
+},
+  {
+  slug: "system-design-scalability-path",
+  title: "System Design & Scalability",
+  duration: "60 Days",
+  level: "Advanced",
+  description:
+    "An advanced 60-day path to mastering system design, scalability, and distributed systems. This guide focuses on core principles, architectural trade-offs, and real-world case studies to prepare learners for designing resilient, scalable, and high-performance applications.",
+  milestones: [
+    {
+      id: "w1-concepts",
+      label: "Weeks 1-2: Core System Design Concepts",
+      details: [
+        "Understand scalability, reliability, availability, and maintainability.",
+        "Learn about CAP Theorem, Consistency models, and ACID vs BASE trade-offs.",
+        "Key design principles: load balancing, caching, replication, sharding, partitioning.",
+        "Hands-on: Design a URL shortener (focus on fundamentals like hashing, storage, and scaling)."
+      ],
+      link: "/roadmap/system-design"
+    },
+    {
+      id: "w2-design",
+      label: "Weeks 3-4: High-Level System Architecture",
+      details: [
+        "Monoliths vs microservices vs serverless architectures.",
+        "Event-driven vs request-driven systems.",
+        "Messaging queues and pub/sub (Kafka, RabbitMQ, AWS SQS).",
+        "API Gateways, CDN usage, and edge caching.",
+        "Hands-on: Design a scalable chat system (covering message flow, persistence, and real-time delivery)."
+      ],
+      link: "/roadmap/system-design"
+    },
+    {
+      id: "w3-components",
+      label: "Weeks 5-6: Deep Dive into System Components",
+      details: [
+        "Databases: SQL vs NoSQL, NewSQL, distributed transactions.",
+        "Storage systems: block, object, file storage in distributed environments.",
+        "Caching strategies (LRU, LFU, write-through vs write-back).",
+        "Consensus algorithms (Paxos, Raft, ZAB) and leader election.",
+        "Monitoring, logging, and alerting for large-scale systems.",
+        "Hands-on: Design a scalable video streaming platform (covering storage, CDN, transcoding, delivery)."
+      ],
+      link: "/roadmap/system-design"
+    },
+    {
+      id: "w4-case-studies",
+      label: "Weeks 7-8: Real-World Case Studies & Trade-offs",
+      details: [
+        "Study architectures of Google, Netflix, Uber, Amazon, and Twitter.",
+        "Trade-offs between latency, throughput, cost, and complexity.",
+        "Scalability bottlenecks: how to detect and resolve them.",
+        "Disaster recovery & fault tolerance strategies.",
+        "Hands-on: Analyze and improve the architecture of an existing system (e.g., scaling a blogging platform)."
+      ],
+      link: "/roadmap/system-design"
+    },
+    {
+      id: "proj-4",
+      label: "Final Project: Design a Scalable E-commerce Platform",
+      details: [
+        "Requirements gathering and defining non-functional requirements (scale, latency, fault-tolerance).",
+        "High-level design including API gateway, catalog service, cart, payments, inventory management.",
+        "Database design: relational + NoSQL hybrid model for scale.",
+        "Use caching, search indexing, and load balancing for performance.",
+        "Add monitoring, observability, and disaster recovery strategy.",
+        "Prepare a full architectural diagram with trade-off documentation."
+      ],
+      link: "/roadmap/system-design"
+    }
+  ]
 }
 ];
