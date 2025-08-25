@@ -1,0 +1,67 @@
+.leaderboard-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: linear-gradient(90deg, #f0fdfa 0%, #e0e7ff 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 16px rgba(60, 60, 120, 0.08);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.leaderboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #6366f1;
+  margin-bottom: 1.5rem;
+}
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 1px 6px rgba(60, 60, 120, 0.04);
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+.leaderboard-item.first-place {
+  background: linear-gradient(90deg, #fbbf24 0%, #fde68a 100%);
+  font-weight: 700;
+  color: #b45309;
+}
+.leaderboard-rank {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6366f1;
+}
+.leaderboard-name {
+  flex: 1;
+  margin: 0 1rem;
+  text-align: left;
+  font-weight: 500;
+  color: #374151;
+}
+.leaderboard-points {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #06b6d4;
+}
+@media (max-width: 600px) {
+  .leaderboard-container {
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+  }
+  .leaderboard-title {
+    font-size: 1.3rem;
+  }
+  .leaderboard-item {
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+}

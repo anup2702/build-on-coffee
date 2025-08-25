@@ -1,0 +1,22 @@
+.badge-wow {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 32px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.badge-wow:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 32px 8px #FFD700;
+}
+@media (max-width: 600px) {
+  .badge-wow {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}

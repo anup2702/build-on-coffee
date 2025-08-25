@@ -26,7 +26,13 @@ export const AuthProvider = ({ children }) => {
     ],
     favoriteTools: [
       { id: 'snapfolio', name: 'SnapFolio' },
-    ]
+    ],
+    badges: ['Quiz Master', 'Community Builder'],
+    progress: {
+      'data-structures': 80,
+      'system-design': 40
+    },
+    challengesAccepted: ['Complete 3 Courses', 'Refer a Friend']
   });
 
   const [isAuthenticated, setIsAuthenticated] = useState(true);
