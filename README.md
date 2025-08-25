@@ -54,15 +54,31 @@ BuildOnCoffee is a modern, community-driven platform designed to accelerate your
    ```
 
 3. **Environment Setup:**
-   Create a `.env` file in the root directory:
+   To run this project locally, you need to configure environment variables.
+
+   1-Create a `.env` file in the root directory of the project:
+
    ```env
-   VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+      VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
    ```
 
-4. **Start development server:**
+   2-🔑 Get your Clerk Publishable Key from the Clerk (http):
+
+       1. Sign up at [Clerk](https://clerk.com).  
+       2. Create a new project.  
+       3. Copy the **Publishable Key** from the Clerk dashboard.  
+       4. Paste it into the `.env` file. 
+
+
+   3- After adding the .env file, restart your dev server:
+
    ```bash
-   npm run dev
-   ```
+       npm run dev
+   ```    
+
+4. **Start development server:**
+     npm run dev
+   
 
 5. **Open your browser:**
    Visit [http://localhost:5173](http://localhost:5173)
