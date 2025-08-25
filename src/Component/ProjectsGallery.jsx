@@ -83,30 +83,3 @@ export default function ProjectsGallery() {
     </div>
   );
 }
-
-// Remove the following block at the end of the file, which references 'projects' (undefined):
-//
-// {projects.map((project, idx) => (
-//   <div key={idx} className="project-card">
-//     {/* Existing project details */}
-//     <h3>{project.title}</h3>
-//     <p>{project.description}</p>
-//     {/* Project Progress Tracker */}
-//     <div className="progress-tracker">
-//       <h4>Progress</h4>
-//       <div className="progress-bar" style={{width: '100%', background: '#eee', borderRadius: '8px', height: '16px', marginBottom: '8px'}}>
-//         <div style={{width: `${project.progress || 0}%`, background: '#4caf50', height: '100%', borderRadius: '8px', transition: 'width 0.5s'}}></div>
-//       </div>
-//       <div style={{fontSize: '14px'}}>{project.progress || 0}% Complete</div>
-//       <ul style={{marginTop: '8px', paddingLeft: '18px'}}>
-//         {(project.milestones || []).map((milestone, mIdx) => (
-//           <li key={mIdx} style={{color: milestone.completed ? '#4caf50' : '#888'}}>
-//             {milestone.completed ? '✔️' : '⏳'} {milestone.name}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//     {/* End Progress Tracker */}
-//     {/* Existing buttons and features */}
-//   </div>
-// ))}
