@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { projectsData } from "../../data/projectsData";
 import { Github, Linkedin, ExternalLink, LayoutGrid, Star, Users } from "lucide-react";
 import { motion } from "framer-motion";
+
 import { Link } from "react-router-dom";
 
 export default function ProjectsGallery() {

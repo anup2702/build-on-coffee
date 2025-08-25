@@ -13,6 +13,25 @@ const CoursesList = () => {
   const navigate = useNavigate();
   const [showNotification, setShowNotification] = useState(true);
 
+  // --- NEW: favorites state from localStorage ---
+  const [favourites, setFavourites] = useState(() => {
+    const saved = localStorage.getItem("favorites");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  // Save to localStorage whenever favorites change
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favourites));
+  }, [favourites]);
+
+  const toggleFavourite = (slug) => {
+    setFavourites((prev) =>
+      prev.includes(slug)
+        ? prev.filter((item) => item !== slug)
+        : [...prev, slug]
+    );
+  };
+
   // Hide notification after 7s
   useEffect(() => {
     const timer = setTimeout(() => setShowNotification(false), 7000);
@@ -52,7 +71,9 @@ const CoursesList = () => {
         >
           <div className="inline-flex items-center gap-3 bg-blue-50 dark:bg-blue-900/20 px-6 py-3 rounded-full mb-8 border border-blue-200 dark:border-blue-800">
             <BookOpen className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-            <span className="text-sm font-semibold text-blue-800 dark:text-blue-200">Learning Resources</span>
+            <span className="text-sm font-semibold text-blue-800 dark:text-blue-200">
+              Learning Resources
+            </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-black mb-8 text-gray-900 dark:text-white">
@@ -60,7 +81,8 @@ const CoursesList = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto font-light leading-relaxed">
-            Explore our comprehensive collection of computer science courses designed to accelerate your learning journey.
+            Explore our comprehensive collection of computer science courses
+            designed to accelerate your learning journey.
           </p>
         </motion.div>
 
@@ -73,20 +95,32 @@ const CoursesList = () => {
         >
           <div className="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-200 dark:border-blue-800">
             <BookOpen className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-3" />
-            <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">{courses.length}</div>
-            <div className="text-gray-600 dark:text-gray-300 font-medium">Total Courses</div>
+            <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">
+              {courses.length}
+            </div>
+            <div className="text-gray-600 dark:text-gray-300 font-medium">
+              Total Courses
+            </div>
           </div>
-          
+
           <div className="text-center p-6 bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800">
             <Star className="w-8 h-8 text-emerald-600 dark:text-emerald-400 mx-auto mb-3" />
-            <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">{newCourses.length}</div>
-            <div className="text-gray-600 dark:text-gray-300 font-medium">New This Week</div>
+            <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">
+              {newCourses.length}
+            </div>
+            <div className="text-gray-600 dark:text-gray-300 font-medium">
+              New This Week
+            </div>
           </div>
-          
+
           <div className="text-center p-6 bg-orange-50 dark:bg-orange-900/20 rounded-2xl border border-orange-200 dark:border-orange-800">
             <Users className="w-8 h-8 text-orange-600 dark:text-orange-400 mx-auto mb-3" />
-            <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">Free</div>
-            <div className="text-gray-600 dark:text-gray-300 font-medium">All Courses</div>
+            <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">
+              Free
+            </div>
+            <div className="text-gray-600 dark:text-gray-300 font-medium">
+              All Courses
+            </div>
           </div>
         </motion.div>
 
@@ -108,6 +142,8 @@ const CoursesList = () => {
                 {...course}
                 dateAdded={course.dateAdded}
                 onClick={() => navigate(`/courses/${course.slug}`)}
+                isFavourite={favourites.includes(course.slug)}
+                onToggleFavourite={() => toggleFavourite(course.slug)}
               />
               {/* Example ProgressBar for demo purposes; replace with actual user progress logic */}
               <ProgressBar progress={course.progress || 0} label={`Progress in ${course.name}`} />
@@ -127,7 +163,8 @@ const CoursesList = () => {
               Can't Find What You're Looking For?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              We're constantly adding new courses. Let us know what topics you'd like to see covered!
+              We're constantly adding new courses. Let us know what topics you'd
+              like to see covered!
             </p>
             <a
               href="https://github.com/anup2702/build-on-coffee/issues"
