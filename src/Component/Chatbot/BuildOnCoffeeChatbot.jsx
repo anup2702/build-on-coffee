@@ -87,6 +87,7 @@ const BuildOnCoffeeChatbot = () => {
       setSuggestions(quickSuggestions.slice(0, 3));
     }
     checkAPIHealth();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -103,7 +104,7 @@ const BuildOnCoffeeChatbot = () => {
     try {
       const response = await fetch(`${API_BASE_URL}/api/health`);
       setIsOnline(response.ok);
-    } catch (error) {
+    } catch {
       setIsOnline(false);
     }
   };
@@ -228,7 +229,7 @@ const BuildOnCoffeeChatbot = () => {
       };
 
       setMessages((prev) => [...prev, botResponse]);
-    } catch (error) {
+    } catch {
       const errorResponse = {
         id: Date.now() + 1,
         text: "Sorry, I'm having trouble responding right now. You can explore our courses in Data Structures, Algorithms, and System Design, or check out our developer tools section!",
@@ -418,10 +419,10 @@ const BuildOnCoffeeChatbot = () => {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Ask me about courses, tools, or how to get started..."
-                  className="w-full p-3 pr-12 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm"
+                  placeholder="Search courses, tools, or topics..."
+                  className={`w-full p-3 pr-12 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm scrollbar-hide`}
                   rows="1"
-                  style={{ minHeight: "44px", maxHeight: "100px" }}
+                  style={{ minHeight: "44px", maxHeight: "100px", overflowY: inputValue.length > 80 ? 'auto' : 'hidden' }}
                 />
                 <button
                   onClick={() => handleSendMessage()}
