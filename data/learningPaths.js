@@ -275,5 +275,25 @@ export const learningPaths = [
       link: "/roadmap/mobile-development"
     }
   ]
-}
+} , 
+ {
+    id: "data-science",
+    slug: "data-science-30-days",
+    title: "Data Science in 30 Days",
+    duration: "30 Days",
+    level: "Intermediate",
+    description:
+      "A structured month-long plan to learn the foundations of statistics, Python for data science, and machine learning with a hands-on project and deployment.",
+    milestones: [
+      { id: "w1-stats", label: "Week 1: Statistics & Probability Foundations", link: "/roadmap/data-science" },
+      { id: "w1-python", label: "Week 1: Python for Data Science (NumPy, Pandas)", link: "/roadmap/data-science" },
+      { id: "w2-eda", label: "Week 2: Exploratory Data Analysis & Visualization", link: "/roadmap/data-science" },
+      { id: "w2-sklearn", label: "Week 2: Intro to Scikit-learn", link: "/roadmap/data-science" },
+      { id: "w3-ml-basics", label: "Week 3: Machine Learning Basics (Regression, Classification, Clustering)", link: "/roadmap/data-science" },
+      { id: "w3-ml-metrics", label: "Week 3: Model Evaluation & Metrics", link: "/roadmap/data-science" },
+      { id: "w4-ml-project", label: "Week 4: ML Project (Movie Recommender / Spam Classifier)", link: "/roadmap/data-science" },
+      { id: "w4-deployment", label: "Week 4: Deploy ML Models (Flask/FastAPI + Cloud)", link: "/roadmap/data-science" },
+      { id: "proj-1", label: "Capstone: End-to-End Data Science Project", link: "/roadmap/data-science" },
+    ],
+  },
 ];
