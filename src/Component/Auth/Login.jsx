@@ -49,15 +49,16 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-400 px-4">
-      <div className="w-full max-w-md bg-blue-400 p-8 rounded-2xl shadow-xl">
-        <h2 className="text-2xl font-semibold text-center mb-6">Sign in to your account</h2>
-        {error && <div className="text-red-500 text-sm mb-4 text-center">{error}</div>}
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 px-4">
+      <div className="w-full max-w-md bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+        <h2 className="text-3xl font-bold text-center mb-2 text-gray-900 dark:text-gray-100">Welcome Back!</h2>
+        <p className="text-center text-gray-600 dark:text-gray-400 mb-6">Sign in to continue your journey.</p>
+        {error && <div className="text-red-500 dark:text-red-400 text-sm mb-4 text-center p-2 bg-red-100 dark:bg-red-900/20 rounded-lg">{error}</div>}
         <form onSubmit={handleLogin} className="space-y-4">
           <input
             type="email"
-            placeholder="Email"
-            className="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring"
+            placeholder="Email Address"
+            className="input-modern"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -65,35 +66,39 @@ const Login = () => {
           <input
             type="password"
             placeholder="Password"
-            className="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring"
+            className="input-modern"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
           <button
             type="submit"
-            className="w-full bg-black text-blue-500 py-2 rounded-xl flex items-center justify-center"
+            className="w-full btn-primary flex items-center justify-center"
             disabled={loading}
           >
-            {loading ? <Loader2 className="animate-spin text-white" /> : "Sign In"}
+            {loading ? <Loader2 className="animate-spin" /> : "Sign In"}
           </button>
         </form>
-        <div className="mt-6 text-center text-gray-500">or</div>
+        <div className="mt-6 flex items-center justify-center">
+          <div className="flex-grow border-t border-gray-300 dark:border-gray-600"></div>
+          <span className="mx-4 text-sm text-gray-500 dark:text-gray-400">OR</span>
+          <div className="flex-grow border-t border-gray-300 dark:border-gray-600"></div>
+        </div>
         <button
           onClick={handleGoogleLogin}
-          className="mt-4 w-full flex items-center justify-center gap-3 border py-2 rounded-xl hover:bg-yellow-500"
+          className="mt-6 w-full flex items-center justify-center gap-3 btn-secondary"
           disabled={loading}
         >
           {loading ? (
             <Loader2 className="animate-spin" size={20} />
           ) : (
             <>
-              <FcGoogle className="text-xl" /> Continue with Google
+              <FcGoogle className="text-2xl" /> Continue with Google
             </>
           )}
         </button>
-        <p className="mt-6 text-center text-sm text-gray-600">
-          Don’t have an account? <Link to ="/signup" className="text-blue-800 hover:underline">Sign up</Link>
+        <p className="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
+          Don’t have an account? <Link to="/signup" className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">Sign up</Link>
         </p>
       </div>
     </div>
