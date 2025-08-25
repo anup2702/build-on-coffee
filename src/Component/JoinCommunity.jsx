@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useState } from 'react';
 import { Twitter, Youtube, Github, Linkedin, ChevronRight, Users } from 'lucide-react';
 
 const JoinCommunity = () => {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   const socialLinks = [
     {
@@ -80,22 +82,23 @@ const JoinCommunity = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 auto-rows-fr">
           {socialLinks.map((social, index) => {
             const Icon = social.icon;
             return (
               <motion.div
                 key={index}
+                className='h-full'
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="flex items-center gap-6 p-8 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl border-2 border-gray-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-700/80 hover:border-blue-500/50 dark:hover:border-blue-400/50 transition-all duration-300 shadow-sm hover:shadow-xl">
-                  <div className={`p-4 bg-gradient-to-r ${social.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+                <div className="flex items-center gap-6 p-8 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl border-2 border-gray-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-700/80 hover:border-blue-500/50 dark:hover:border-blue-400/50 transition-all duration-300 shadow-sm hover:shadow-xl h-full">
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0 bg-gradient-to-r ${social.color}`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 flex flex-col justify-center h-full">
                     <div className="flex items-center justify-between mb-3">
                       <h4 className="text-2xl font-black text-gray-900 dark:text-white">{social.name}</h4>
                       <div className="flex items-center space-x-3">
@@ -116,16 +119,28 @@ const JoinCommunity = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {communityStats.map((stat, index) => {
             const Icon = stat.icon;
+            const isSelected = selectedIndex === index;
+
             return (
               <motion.div
                 key={index}
-                className={`text-center p-8 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl border-2 border-gray-200/50 dark:border-slate-700/50 ${
-                  index === 0 ? 'ring-2 ring-blue-500/30 dark:ring-blue-400/40 shadow-lg' : 'shadow-sm hover:shadow-xl'
-                } transition-all duration-300`}
+                className={`text-center p-8 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl
+                    border-2 border-gray-200/50 dark:border-slate-700/50 transition-all duration-300
+                    cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30
+                    ${isSelected ? 'ring-2 ring-blue-500/30 dark:ring-blue-400/40 shadow-lg' : 'shadow-sm'}`}
                 initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 * index }}
                 whileHover={{ y: -4 }}
+                onClick={() => setSelectedIndex(index)}     
+                tabIndex={0}
+                role="button"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedIndex(index);
+                  }
+                }}
               >
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <Icon className="w-10 h-10 text-blue-500 dark:text-blue-400" />
