@@ -197,5 +197,83 @@ export const learningPaths = [
       link: "/roadmap/system-design"
     }
   ]
+},
+
+{
+  slug: "app-development-learning-path",
+  title: "App Development Learning Path",
+  duration: "60 Days",
+  level: "Intermediate",
+  description:
+    "A comprehensive 60-day structured guide to becoming a proficient app developer, covering both native and cross-platform development. This path takes you through UI/UX fundamentals, mobile frontend development, backend integration, advanced mobile features, and deployment to app stores. Designed for developers aiming to build real-world, production-ready mobile apps.",
+  milestones: [
+    {
+      id: "w1-2-ui-ux",
+      label: "Weeks 1-2: UI/UX and App Design Fundamentals",
+      details: [
+        "Understand the role of design in mobile applications.",
+        "Learn mobile-specific UI/UX design principles (touch-friendly, responsive layouts, accessibility).",
+        "Wireframing and prototyping with Figma or Sketch.",
+        "User flows, navigation patterns (tab bar, drawer, stack navigation).",
+        "Design systems and reusability in mobile UI.",
+        "Hands-on: Create a **wireframe and prototype** for a to-do list app."
+      ],
+      link: "/roadmap/ui-ux-design"
+    },
+    {
+      id: "w3-4-frontend",
+      label: "Weeks 3-4: Frontend Development (Cross-Platform with React Native/Flutter)",
+      details: [
+        "Set up a development environment (Expo for React Native, Flutter SDK).",
+        "Understand the widget/component model.",
+        "Build reusable UI components and responsive layouts.",
+        "Learn navigation libraries (React Navigation, Flutter Navigator).",
+        "State management strategies (Redux, Context API, Riverpod, Provider).",
+        "Error handling, form validation, and input management.",
+        "Hands-on: Build the **frontend of the to-do list app** with navigation, forms, and local state management."
+      ],
+      link: "/roadmap/mobile-development"
+    },
+    {
+      id: "w5-6-backend",
+      label: "Weeks 5-6: Backend Integration and APIs",
+      details: [
+        "REST APIs vs GraphQL: how apps communicate with servers.",
+        "Working with JSON data, parsing, and displaying results.",
+        "Connecting with backend services (Firebase, Supabase, or custom Node.js/Express backend).",
+        "Data persistence (SQLite, AsyncStorage, Hive).",
+        "Offline-first app design: caching and sync strategies.",
+        "Authentication & authorization (JWT, OAuth, Firebase Auth).",
+        "Hands-on: Integrate the **to-do app with Firebase/Supabase**, including user login and real-time data sync."
+      ],
+      link: "/roadmap/web-development"
+    },
+    {
+      id: "w7-8-advanced",
+      label: "Weeks 7-8: Advanced Topics and Deployment",
+      details: [
+        "Push notifications (Firebase Cloud Messaging / OneSignal).",
+        "Background tasks & app lifecycle management.",
+        "Accessing native device features: camera, GPS, file system.",
+        "App security best practices (secure storage, HTTPS, API keys).",
+        "Testing frameworks (Jest, Detox, Flutter Test).",
+        "Debugging tools and performance optimization (Flipper, DevTools).",
+        "App Store and Google Play guidelines, signing & publishing apps.",
+        "Hands-on: Add **push notifications + GPS feature** to the to-do app and deploy it to TestFlight/Play Store."
+      ],
+      link: "/roadmap/mobile-development"
+    },
+    {
+      id: "proj-5",
+      label: "Final Project: Build a Complete Mobile Application",
+      details: [
+        "Plan, design, and implement a **fully functional mobile app of your choice** (examples: recipe finder, personal finance tracker, mini social app).",
+        "Apply learned concepts: design system, API integration, authentication, notifications, and deployment.",
+        "Include full documentation and a presentation-ready project walkthrough.",
+        "Optional: Add extra features like dark mode, cloud storage, or real-time chat."
+      ],
+      link: "/roadmap/mobile-development"
+    }
+  ]
 }
 ];
