@@ -121,5 +121,24 @@ export const courses = [
       { title: "System Design Notes", url: "https://takeuforward.org/system-design/complete-system-design-roadmap-with-videos-for-sdes" },
       { title: "System Design Cheat Sheet", url: "https://medium.com/@shivambhadani_/system-design-for-beginners-everything-you-need-in-one-article-c74eb702540b" }
     ]
+  },
+  {
+    slug: "software-engineering",
+    name: "Software Engineering",
+    description: "Learn the principles and practices of software engineering.",
+    details: "Covers software development life cycle, agile methodologies, version control, testing, and more. Essential for building robust and maintainable software.",
+    link: "https://www.geeksforgeeks.org/software-engineering/",
+    image: "https://res.cloudinary.com/dwmpdbsej/image/upload/v1754070417/sd_xnm9zd.png",
+    youtube: "https://www.youtube.com/embed/uJpQlyT_CK4?si=mDoTT2Iu5TmpfqXT",
+    references: [
+      { label: "GeeksforGeeks Software Engineering", url: "https://www.geeksforgeeks.org/software-engineering/" },
+      { label: "Coursera Software Engineering", url: "https://www.coursera.org/specializations/software-engineering" }
+    ],
+    dateAdded: "2025-08-26",
+    documents: [
+      { title: "Software Engineering Overview", url: "https://www.geeksforgeeks.org/software-engineering/software-engineering-introduction-to-software-engineering/" },
+      { title: "Software Engineering Notes", url: "https://mrcet.com/downloads/digital_notes/CSE/III%20Year/Software%20Engineering.pdf" },
+      { title: "Software Engineering Cheat Sheet", url: "https://github.com/ljeng/cheat-sheet" }
+    ]
   }
 ];
