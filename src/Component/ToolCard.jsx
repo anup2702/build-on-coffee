@@ -149,15 +149,11 @@ const ToolCard = ({
 
     {/* CTA Button */}
     {link && (
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
+      <div
         className="mt-4 inline-block w-full text-center text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-6 py-4 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-        onClick={(e) => e.stopPropagation()}
       >
         Go to Course
-      </a>
+      </div>
     )}
   </div>
 );
