@@ -6,6 +6,7 @@ import htmlQuestions from "../../data/html";
 import cssQuestions from "../../data/css";
 import javascriptQuestions from "../../data/javascript.js";
 import reactQuestions from "../../data/react.js";
+import nodejsQuestions from "../../data/nodejs.js";
 
 const quizzes = {
   DSA: {
@@ -32,6 +33,11 @@ const quizzes = {
     questions: reactQuestions,
     icon: <Code className="w-8 h-8 text-sky-500" />,
     description: "Test your React knowledge from fundamentals to advanced topics.",
+  },
+  "Node.js": {
+    questions: nodejsQuestions,
+    icon: <Code className="w-8 h-8 text-green-500" />,
+    description: "Test your Node.js knowledge from core fundamentals to practical concepts.",
   },
 };
 
