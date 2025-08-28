@@ -57,6 +57,7 @@ import ProjectIdeaDetail from "./Component/ProjectIdeaDetail";
 import SSOCallbackPage from "./Component/Auth/SSOCallbackPage";
 import ProjectGallery from "./Component/ProjectsGallery";
 import InterviewQuestions from "./Component/Interview Questions/InterviewQuestions";
+import ComprehensiveDsaPath from "./Component/Roadmaps/ComprehensiveDsaPath";
 import Quiz from "./Component/Quiz";
 import Weeklytask from "./Component/Weeklytask";
 
@@ -135,7 +136,14 @@ const App = () => {
               path="/roadmap/data-science"
               element={<DataScienceRoadmap />}
             />
-            <Route path="/roadmap/data-analytics" element={<DataAnalyticsRoadmap />} />
+            <Route
+              path="/roadmap/comprehensive-dsa-path"
+              element={<ComprehensiveDsaPath />}
+            />
+            <Route
+              path="/roadmap/data-analytics"
+              element={<DataAnalyticsRoadmap />}
+            />
             <Route path="/roadmap/blockchain" element={<BlockChainRoadmap />} />
             <Route path="/roadmap/ai-ml" element={<AiMlRoadmap />} />
             <Route
