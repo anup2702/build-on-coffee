@@ -4,6 +4,11 @@ import { BookOpen, Code, CheckCircle } from "lucide-react";
 import dsaQuestions from "../../data/dsa";
 import htmlQuestions from "../../data/html";
 import cssQuestions from "../../data/css";
+import javascriptQuestions from "../../data/javascript.js";
+import reactQuestions from "../../data/react.js";
+import nodejsQuestions from "../../data/nodejs.js";
+import databaseQuestions from "../../data/database.js";
+import gitQuestions from "../../data/git.js";
 
 const quizzes = {
   DSA: {
@@ -20,6 +25,31 @@ const quizzes = {
     questions: cssQuestions,
     icon: <BookOpen className="w-8 h-8 text-red-500" />,
     description: "Test your CSS knowledge across all levels.",
+  },
+  JavaScript: {
+    questions: javascriptQuestions,
+    icon: <Code className="w-8 h-8 text-yellow-500" />,
+    description: "Test your JavaScript knowledge from basics to advanced concepts.",
+  },
+  React: {
+    questions: reactQuestions,
+    icon: <Code className="w-8 h-8 text-sky-500" />,
+    description: "Test your React knowledge from fundamentals to advanced topics.",
+  },
+  "Node.js": {
+    questions: nodejsQuestions,
+    icon: <Code className="w-8 h-8 text-green-500" />,
+    description: "Test your Node.js knowledge from core fundamentals to practical concepts.",
+  },
+  Database: {
+    questions: databaseQuestions,
+    icon: <BookOpen className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge of both SQL and NoSQL databases.",
+  },
+  "Git & GitHub": {
+    questions: gitQuestions,
+    icon: <Code className="w-8 h-8 text-orange-500" />,
+    description: "Test your practical version control concepts.",
   },
 };
 
