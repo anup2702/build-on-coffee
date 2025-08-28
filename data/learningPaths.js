@@ -296,4 +296,115 @@ export const learningPaths = [
       { id: "proj-1", label: "Capstone: End-to-End Data Science Project", link: "/roadmap/data-science" },
     ],
   },
+  {
+  slug: "data-analytics-learning-path",
+  title: "Data Analytics Learning Path",
+  duration: "45 Days",
+  level: "Intermediate",
+  description:
+    "A practical path to learn data cleaning, analysis, visualization, and storytelling using SQL, Excel, Python (Pandas, NumPy), and dashboards in Tableau/Power BI. Finish with mini-projects you can showcase.",
+  milestones: [
+    {
+      id: "w1-foundations",
+      label: "Week 1: Analytics Foundations & Excel Basics",
+      details: [
+        "Understand the analytics workflow: collect → clean → analyze → visualize → present.",
+        "Excel essentials: formulas, pivot tables, VLOOKUP/XLOOKUP, conditional formatting.",
+        "Data cleaning in Excel: remove duplicates, handle blanks, data validation.",
+        "Hands-on: Clean a sales CSV and build a pivot-based summary."
+      ],
+      link: "/roadmap/data-analytics"
+    },
+    {
+      id: "w2-sql-basics",
+      label: "Week 2: SQL Basics + Practice",
+      details: [
+        "SELECT, WHERE, ORDER BY, LIMIT/OFFSET.",
+        "Aggregations: COUNT, SUM, AVG, MIN, MAX with GROUP BY, HAVING.",
+        "Joins: INNER, LEFT, RIGHT, FULL; UNION vs UNION ALL.",
+        "Subqueries & CTEs.",
+        "Hands-on: Query a retail DB to find top products, repeat customers, and monthly revenue."
+      ],
+      link: "/roadmap/sql"
+    },
+    {
+      id: "w3-python-pandas-numpy",
+      label: "Week 3: Python for Data Analysis (Pandas, NumPy)",
+      details: [
+        "Reading data (CSV/Excel), DataFrames & Series.",
+        "Cleaning: missing values, outliers, type casting, datetime parsing.",
+        "Transforms: filtering, sorting, groupby, merge/join, apply.",
+        "NumPy arrays, vectorization, basic stats.",
+        "Hands-on: Build a monthly revenue table and cohort metrics with Pandas."
+      ],
+      link: "/roadmap/python-data"
+    },
+    {
+      id: "w4-visualization-python",
+      label: "Week 4: Visualization with Matplotlib & Seaborn",
+      details: [
+        "Plot types: line, bar, stacked bar, histogram, box, violin, scatter.",
+        "Layouts, annotations, and styling for readability.",
+        "EDA patterns: distributions, correlations, trend lines.",
+        "Hands-on: Create an EDA notebook with plots + insights narrative."
+      ],
+      link: "/roadmap/data-visualization"
+    },
+    {
+      id: "w5-bi-tools",
+      label: "Week 5: Tableau / Power BI Dashboards",
+      details: [
+        "Data modeling: relationships, measures, calculated fields/DAX.",
+        "Designing KPI dashboards (filters, slicers, drill-through).",
+        "Storytelling: layout, color, hierarchy, interactivity.",
+        "Hands-on: Build a Sales KPI dashboard with regional breakdown."
+      ],
+      link: "/roadmap/bi-tools"
+    },
+    {
+      id: "w6-storytelling",
+      label: "Week 6: Analytics Storytelling & Presentations",
+      details: [
+        "Define problem, hypothesis, and audience.",
+        "Convert analysis to decisions: metrics, benchmarks, and recommendations.",
+        "Create an executive summary and slide narrative.",
+        "Hands-on: Present findings from a chosen mini-project."
+      ],
+      link: "/roadmap/data-analytics"
+    },
+    {
+      id: "proj-1-sales-dashboard",
+      label: "Mini Project 1: Sales Dashboard (Tableau/Power BI)",
+      details: [
+        "Dataset: Retail sales (orders, customers, products, regions).",
+        "KPIs: Total Sales, Profit, AOV, YoY growth; Top products/regions.",
+        "Features: Date/region/product filters, drill-down by category.",
+        "Deliverable: Interactive dashboard + 1-page insight summary."
+      ],
+      link: "/projects/data-analytics"
+    },
+    {
+      id: "proj-2-covid-analysis",
+      label: "Mini Project 2: COVID-19 Data Analysis (Python)",
+      details: [
+        "Dataset: Public COVID-19 time-series.",
+        "Tasks: Clean & merge, compute rolling averages, growth rates.",
+        "Visuals: Cases over time, country comparison, correlation heatmap.",
+        "Deliverable: Jupyter notebook with plots and written insights."
+      ],
+      link: "/projects/data-analytics"
+    },
+    {
+      id: "proj-3-customer-insights",
+      label: "Mini Project 3 (Optional): Customer Insights (SQL + Python)",
+      details: [
+        "Dataset: E-commerce transactions.",
+        "Tasks: RFM segmentation in SQL; churn/retention tables in Pandas.",
+        "Visuals: Segment distribution, retention curves.",
+        "Deliverable: SQL scripts + notebook + short readme."
+      ],
+      link: "/projects/data-analytics"
+    }
+  ]
+},
 ];

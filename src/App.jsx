@@ -43,6 +43,7 @@ import Documentation from "./Component/Documentation";
 import SystemDesignRoadmap from "./Component/Roadmaps/SystemDesignRoadmap";
 import MobileDevRoadmap from "./Component/Roadmaps/MobileDevRoadmap";
 import DataScienceRoadmap from "./Component/Roadmaps/DataScienceRoadmap";
+import DataAnalyticsRoadmap from "./Component/Roadmaps/DataAnalyticsRoadmap";
 import PathsLanding from "./Component/Paths/PathsLanding";
 import PathDetail from "./Component/Paths/PathDetail";
 import BlockChainRoadmap from "./Component/Roadmaps/BlockChainRoadmap";
@@ -134,6 +135,7 @@ const App = () => {
               path="/roadmap/data-science"
               element={<DataScienceRoadmap />}
             />
+            <Route path="/roadmap/data-analytics" element={<DataAnalyticsRoadmap />} />
             <Route path="/roadmap/blockchain" element={<BlockChainRoadmap />} />
             <Route path="/roadmap/ai-ml" element={<AiMlRoadmap />} />
             <Route
