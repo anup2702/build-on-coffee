@@ -7,6 +7,7 @@ import cssQuestions from "../../data/css";
 import javascriptQuestions from "../../data/javascript.js";
 import reactQuestions from "../../data/react.js";
 import nodejsQuestions from "../../data/nodejs.js";
+import databaseQuestions from "../../data/database.js";
 
 const quizzes = {
   DSA: {
@@ -38,6 +39,11 @@ const quizzes = {
     questions: nodejsQuestions,
     icon: <Code className="w-8 h-8 text-green-500" />,
     description: "Test your Node.js knowledge from core fundamentals to practical concepts.",
+  },
+  Database: {
+    questions: databaseQuestions,
+    icon: <BookOpen className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge of both SQL and NoSQL databases.",
   },
 };
 
