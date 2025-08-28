@@ -7,7 +7,7 @@ const TABS = [
 ];
 
 const CourseDetailPanel = ({ course, activeTab, setActiveTab, onClose }) => (
-  <div className="w-full border rounded-xl shadow-xl p-6 bg-white h-auto md:h-[600px] overflow-y-auto flex flex-col transition-all duration-300">
+  <div className="w-full border rounded-xl shadow-xl p-6 bg-white dark:bg-gray-800 h-auto md:h-[600px] overflow-y-auto flex flex-col transition-all duration-300">
     <div className="flex justify-center md:justify-start gap-2 mb-6">
       {TABS.map(tab => (
         <button
@@ -15,8 +15,8 @@ const CourseDetailPanel = ({ course, activeTab, setActiveTab, onClose }) => (
           onClick={() => setActiveTab(tab.key)}
           className={`px-4 py-2 rounded-full border text-sm font-medium transition-all duration-300 ${
             activeTab === tab.key
-              ? "bg-black text-white shadow"
-              : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+              ? "bg-black text-white dark:bg-white dark:text-black shadow"
+              : "bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
           }`}
         >
           {tab.label}
@@ -48,7 +48,7 @@ const CourseDetailPanel = ({ course, activeTab, setActiveTab, onClose }) => (
                 href={doc.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-4 border rounded-full text-sm font-medium text-gray-800 bg-white shadow transition-all duration-300 hover:bg-gray-200"
+                className="inline-block px-6 py-4 border rounded-full text-sm font-medium text-gray-800 bg-white dark:text-gray-200 dark:bg-gray-700 shadow transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-600"
               >
                 {doc.title} →
               </a>
@@ -58,7 +58,7 @@ const CourseDetailPanel = ({ course, activeTab, setActiveTab, onClose }) => (
       )}
 
       {activeTab === "questions" && (
-        <div className="text-gray-600 text-center md:text-left">
+        <div className="text-gray-600 dark:text-gray-400 text-center md:text-left">
           <p className="text-lg">Questions content coming soon...</p>
         </div>
       )}
@@ -66,7 +66,7 @@ const CourseDetailPanel = ({ course, activeTab, setActiveTab, onClose }) => (
 
     <button
       onClick={onClose}
-      className="mt-6 text-sm text-gray-500 hover:text-black underline self-end transition"
+      className="mt-6 text-sm text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white underline self-end transition"
     >
       Close Panel
     </button>
