@@ -1,30 +1,41 @@
 // client/src/components/Tools/LearnTools.jsx
 import { useState, useEffect } from "react";
 import { tutorialData } from "../../../data/tutorialData.js";
-import learnToolsList from "../../../data/learnToolsList.js";
+
+const getAssetUrl = (path) => {
+  return new URL(path, import.meta.url).href;
+};
 
 const LearnTools = () => {
-  const [selectedCategory, setSelectedCategory] = useState(Object.keys(tutorialData)[0]);
+  const [selectedCategory, setSelectedCategory] = useState(
+    Object.keys(tutorialData)[0]
+  );
   const [selectedTool, setSelectedTool] = useState(null);
 
   // Get the list of tools for the selected category
   const toolsInCategory = tutorialData[selectedCategory]?.tools || [];
-  
+
   // Set the first tool as selected by default when category changes
   useEffect(() => {
-    if (toolsInCategory.length > 0 && !selectedTool) {
+    if (toolsInCategory.length > 0) {
       setSelectedTool(toolsInCategory[0].name);
+    } else {
+      setSelectedTool(null);
     }
-  }, [selectedCategory, toolsInCategory, selectedTool]);
+  }, [selectedCategory, toolsInCategory]);
 
   // Get the currently selected tool's data
-  const currentTool = toolsInCategory.find(tool => tool.name === selectedTool);
+  const currentTool = toolsInCategory.find(
+    (tool) => tool.name === selectedTool
+  );
 
   return (
     <div className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
       {/* Category Selection */}
       <div className="bg-gray-50 p-4 border-b">
-        <h2 className="text-lg font-semibold mb-3 text-gray-800">Select Category</h2>
+        <h2 className="text-lg font-semibold mb-3 text-gray-800">
+          Select Category
+        </h2>
         <div className="flex flex-wrap gap-2">
           {Object.keys(tutorialData).map((category) => (
             <button
@@ -32,8 +43,8 @@ const LearnTools = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 selectedCategory === category
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               {category}
@@ -55,17 +66,19 @@ const LearnTools = () => {
                 onClick={() => setSelectedTool(tool.name)}
                 className={`w-full text-left px-3 py-2 rounded-md transition-colors flex items-center ${
                   selectedTool === tool.name
-                    ? 'bg-blue-100 text-blue-700 font-medium'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    ? "bg-blue-100 text-blue-700 font-medium"
+                    : "text-gray-700 hover:bg-gray-100"
                 }`}
               >
-                <img 
-                  src={tool.logo} 
+                <img
+                  src={getAssetUrl(tool.logo)}
                   alt={tool.name}
                   className="w-5 h-5 mr-2 rounded-sm"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = '/src/assets/default-tool-logo.svg';
+                    e.target.src = getAssetUrl(
+                      "/src/assets/default-tool-logo.svg"
+                    );
                   }}
                 />
                 {tool.name}
@@ -79,36 +92,40 @@ const LearnTools = () => {
           {currentTool ? (
             <>
               <div className="flex items-center mb-6">
-                <img 
-                  src={currentTool.logo} 
+                <img
+                  src={getAssetUrl(currentTool.logo)}
                   alt={currentTool.name}
                   className="w-10 h-10 mr-3 rounded"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = '/src/assets/default-tool-logo.svg';
+                    e.target.src = getAssetUrl(
+                      "/src/assets/default-tool-logo.svg"
+                    );
                   }}
                 />
                 <h2 className="text-2xl font-bold text-gray-800">
                   {currentTool.name} Tutorials
                 </h2>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {currentTool.tutorials.map((tutorial, idx) => (
-                  <div 
-                    key={idx} 
+                  <div
+                    key={idx}
                     className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
                   >
                     <div className="aspect-video bg-gray-100">
-                      {tutorial.link.includes('youtube.com') || tutorial.link.includes('youtu.be') ? (
+                      {tutorial.link.includes("youtube.com") ||
+                      tutorial.link.includes("youtu.be") ? (
                         <iframe
                           src={`https://www.youtube.com/embed/${
-                            tutorial.link.includes('youtube.com') 
-                              ? new URL(tutorial.link).searchParams.get('v')
-                              : tutorial.link.split('youtu.be/')[1].split('?')[0]
+                            tutorial.link.includes("v=")
+                              ? new URL(tutorial.link).searchParams.get("v")
+                              : tutorial.link.split("/").pop().split("?")[0]
                           }`}
                           title={tutorial.title}
                           frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
                           className="w-full h-full"
                         />
@@ -119,7 +136,9 @@ const LearnTools = () => {
                       )}
                     </div>
                     <div className="p-4">
-                      <h3 className="font-medium text-gray-900 mb-2">{tutorial.title}</h3>
+                      <h3 className="font-medium text-gray-900 mb-2">
+                        {tutorial.title}
+                      </h3>
                       <a
                         href={tutorial.link}
                         target="_blank"
