@@ -4,6 +4,7 @@ import { BookOpen, Code, CheckCircle } from "lucide-react";
 import dsaQuestions from "../../data/dsa";
 import htmlQuestions from "../../data/html";
 import cssQuestions from "../../data/css";
+import javascriptQuestions from "../../data/javascript.js";
 
 const quizzes = {
   DSA: {
@@ -20,6 +21,11 @@ const quizzes = {
     questions: cssQuestions,
     icon: <BookOpen className="w-8 h-8 text-red-500" />,
     description: "Test your CSS knowledge across all levels.",
+  },
+  JavaScript: {
+    questions: javascriptQuestions,
+    icon: <Code className="w-8 h-8 text-yellow-500" />,
+    description: "Test your JavaScript knowledge from basics to advanced concepts.",
   },
 };
 
