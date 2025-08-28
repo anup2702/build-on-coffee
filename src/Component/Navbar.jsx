@@ -40,6 +40,8 @@ const Navbar = ({ scrollRefs }) => {
 
  const navItems = [
   { id: "home", to: "/", label: "Home", icon: Home },
+   { id: "services", label: "Services", icon: Wrench, type: "scroll" },
+  { id: "testimonials", label: "Testimonials", icon: Award, type: "scroll" },
   { id: "team", to: "/team", label: "Team", icon: Users },
   { id: "weeklytask", to: "/weeklytask", label: "Weekly Task", icon: Clipboard },
   { id: "profile", to: "/profile", label: "Profile", icon: User },
@@ -168,6 +170,14 @@ const Navbar = ({ scrollRefs }) => {
           <nav className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => {
               const Icon = item.icon;
+               const handleClick = (e) => {
+    if (item.type === "scroll") {
+      e.preventDefault();
+      handleScroll(item.id)(e); 
+    } else if (item.to) {
+      navigate(item.to);
+    }
+  };
               return (
                 <motion.button
                   key={item.id}

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ExternalLink, Lightbulb } from "lucide-react";
 import { products } from "../../data/products";
 
-const ProductsSection = () => {
+const ProductsSection = ({ scrollRefs }) => {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const navigate = useNavigate();
@@ -37,7 +37,13 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white dark:bg-slate-900" ref={ref}>
+    <section
+  ref={scrollRefs?.services}
+  id="services"
+  className="py-24 bg-white dark:bg-slate-900"
+>
+
+
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Heading */}
         <motion.div

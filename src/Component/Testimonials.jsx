@@ -59,9 +59,14 @@ const testimonials = [
   }
 ];
 
-const Testimonials = () => {
+const Testimonials = ({ scrollRefs }) => {
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
+   <section
+  ref={scrollRefs?.testimonials}   
+  id="testimonials"                
+  className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden"
+>
+
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
         <motion.div

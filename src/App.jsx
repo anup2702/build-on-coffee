@@ -60,29 +60,34 @@ import Quiz from "./Component/Quiz";
 import Weeklytask from "./Component/Weeklytask";
 
 const Home = ({ scrollRefs }) => {
-  const navigate = useNavigate();
   return (
     <>
       <HeroSection communityRef={scrollRefs?.community} />
-      <ProductsSection />
+      <ProductsSection scrollRefs={scrollRefs} />
+
       <WhatWeDoDifferently ref={scrollRefs?.differently} />
       <PortfolioSpotlight />
-      <Testimonials />
+      <Testimonials ref={scrollRefs?.testimonials} />
       <JoinCommunity ref={scrollRefs?.community} />
     </>
   );
 };
+
 
 const App = () => {
   const differentlyRef = useRef(null);
   const learnRef = useRef(null);
   const toolsRef = useRef(null);
   const communityRef = useRef(null);
+  const servicesRef = useRef(null);
+const testimonialsRef = useRef(null);
   const scrollRefs = {
     differently: differentlyRef,
     learn: learnRef,
     tools: toolsRef,
     community: communityRef,
+    services: servicesRef,
+    testimonials: testimonialsRef,
   };
 
   return (
