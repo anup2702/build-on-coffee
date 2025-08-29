@@ -67,6 +67,23 @@ const InterviewQuestionsData = [
   { id: 58, category: "CS Fundamentals", difficulty: "Medium", question: "Explain multithreading vs multiprocessing.", answer: "Multithreading = shared memory within process. Multiprocessing = independent processes." },
   { id: 59, category: "CS Fundamentals", difficulty: "Hard", question: "Explain consensus algorithms (like Paxos/Raft).", answer: "Used in distributed systems to agree on a single value despite failures." },
   { id: 60, category: "CS Fundamentals", difficulty: "Easy", question: "What’s an API?", answer: "Application Programming Interface – set of rules to interact with software components." },
+
+  // ---------------- React ----------------
+{id: 61 , category : "React" , difficulty: "Easy" , question: "What is JSX in react?" , answer: "JSX is a syntax extension that lets you write HTML-like code inside JavaScript."},
+{id: 67 , category : "React" , difficulty: "Hard" , question: "How does React’s Virtual DOM improve performance?" , answer: "It compares old vs new UI and only updates the changed parts in the real DOM."},
+{id: 62 , category : "React" , difficulty: "Easy" , question: "What are React components?" , answer: "Building blocks of UI. Two types: Functional (with hooks) and Class (with lifecycle)."},
+{id: 70 , category : "React" , difficulty: "Medium" , question: "What is the difference between useMemo and useCallback?" , answer: "useMemo memoizes a value, useCallback memoizes a function."},
+{id: 63 , category : "React" , difficulty: "Easy" , question: "How do you add styling in React?" , answer: "Using CSS files, inline styles, or libraries like Tailwind."},
+{id: 71 , category : "React" , difficulty: "Hard" , question: "What are React keys and why are they important?" , answer: "Keys help React identify list items efficiently for re-rendering."},
+{id: 64 , category : "React" , difficulty: "Medium" , question: "What does useState do?" , answer: "It stores and updates values in a functional component."},
+{id: 65 , category : "React" , difficulty: "Medium" , question: "What does useEffect do?" , answer: "Runs code after render, like fetching data or updating the DOM."},
+{id: 72 , category : "React" , difficulty: "Easy" , question: "What is the role of index.js in a React app?" , answer: "It’s the entry file that renders the root component into the DOM."},
+{id: 68 , category : "React" , difficulty: "Hard" , question: "What is React reconciliation?" , answer: "The process React uses to figure out the minimal changes needed to update the DOM."},
+{id: 73 , category : "React" , difficulty: "Medium" , question: "What is React Router used for?" , answer: "To enable navigation between different pages without reloading."},
+{id: 66 , category : "React" , difficulty: "Medium" , question: "What are props?" , answer: "Props are inputs passed from a parent to a child component."},
+{id: 69 , category : "React" , difficulty: "Hard" , question: "Difference between controlled and uncontrolled components?" , answer: "Controlled: React manages input state , Uncontrolled: DOM manages input state via ref."},
+{id: 74 , category : "React" , difficulty: "Easy" , question: "What is create-react-app?" , answer: "A tool that sets up a new React project with all configs pre-built."}
+
 ];
 
 export default InterviewQuestionsData;
