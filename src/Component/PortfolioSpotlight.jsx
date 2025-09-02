@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 const contributors = [
   {
     name: "Shamik Das",
-    image: "https://avatars.githubusercontent.com/u/176334299?v=4",
+    image: "https://shamikdasau.github.io/Portfolio/profile.jpg",
     github: "https://github.com/ShamikDasAU",
     linkedIn: "https://www.linkedin.com/in/shamik-das-379347359",
     bio: "B. Tech CSE Student ( 1st year )",
