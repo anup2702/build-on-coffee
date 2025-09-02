@@ -5,22 +5,22 @@ import { useInView } from "react-intersection-observer";
 
 const contributors = [
   {
-    name: "Sanika Satappa Patil",
+    name: "Shamik Das",
     image: "https://avatars.githubusercontent.com/u/176334299?v=4",
-    github: "https://github.com/Sanika-Patil27",
-    linkedIn: "https://www.linkedin.com/in/sanika-patil-b96144252",
-    bio: "Full-Stack Developer, Data Analyst",
-    portfolioLink: "https://github.com/Sanika-Patil27/Portfolio",
+    github: "https://github.com/ShamikDasAU",
+    linkedIn: "https://www.linkedin.com/in/shamik-das-379347359",
+    bio: "B. Tech CSE Student ( 1st year )",
+    portfolioLink: "https://shamikdasau.github.io/Portfolio",
     portfolioScreenshot:
       "https://img.freepik.com/free-vector/letter-w-logo-ring-wedding-logo-business-branding-template-designs-inspiration-isolated-white-background_384344-1313.jpg?semt=ais_hybrid&w=740",
-    projects: [
-      {
-        name: "Breast Cancer Prediction",
-        description:
-          "Developed a web app for early breast cancer detection using ML, implementing probability-based predictions to classify tumors as benign or malignant accurately",
-        github: "https://github.com/Sanika-Patil27/Breast-Cancer-Detection",
-        liveLink: "https://breast-cancer-detection-tamz2wkkldjo4ue7g6sxpw.streamlit.app/",
-      },
+    // projects: [
+    //   {
+    //     name: "Breast Cancer Prediction",
+    //     description:
+    //       "Developed a web app for early breast cancer detection using ML, implementing probability-based predictions to classify tumors as benign or malignant accurately",
+    //     github: "https://github.com/Sanika-Patil27/Breast-Cancer-Detection",
+    //     liveLink: "https://breast-cancer-detection-tamz2wkkldjo4ue7g6sxpw.streamlit.app/",
+    //   },
     ],
   },
 ];
