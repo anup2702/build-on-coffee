@@ -21,7 +21,7 @@ const contributors = [
     //     github: "https://github.com/Sanika-Patil27/Breast-Cancer-Detection",
     //     liveLink: "https://breast-cancer-detection-tamz2wkkldjo4ue7g6sxpw.streamlit.app/",
     //   },
-    ],
+  // ],
   },
 ];
 
