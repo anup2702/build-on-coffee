@@ -181,7 +181,13 @@ const Navbar = ({ scrollRefs }) => {
               return (
                 <motion.button
                   key={item.id}
-                  onClick={() => navigate(item.to)}
+                 onClick={(e) => {
+    if (item.type === "scroll") {
+      handleScroll(item.id)(e); 
+    } else if (item.to) {
+      navigate(item.to); 
+    }
+  }}
                   className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 group overflow-hidden ${
                     location.pathname === item.to
                       ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/60 dark:border-blue-700/60 shadow-sm"
@@ -255,7 +261,7 @@ const Navbar = ({ scrollRefs }) => {
 
             {/* Mobile Menu Toggle */}
             <motion.button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+    onClick={() => setIsMobileMenuOpen((prev) => !prev)}
               className="md:hidden p-3 rounded-xl bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-400 hover:bg-gray-100/80 dark:hover:bg-gray-700/80 transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm shadow-sm"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -289,10 +295,16 @@ const Navbar = ({ scrollRefs }) => {
                 return (
                   <React.Fragment key={item.id}>
                     <motion.button
-                      onClick={() => {
-                        navigate(item.to);
-                        setIsMobileMenuOpen(false);
-                      }}
+                      key={item.id}
+      onClick={(e) => {
+        if (item.type === "scroll") {
+          e.preventDefault();
+          handleScroll(item.id)(e);
+        } else if (item.to) {
+          navigate(item.to);
+        }
+        setIsMobileMenuOpen(false); 
+      }}
                       className={`w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium transition-all duration-300 ${
                         location.pathname === item.to
                           ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/50 dark:border-blue-700/50"

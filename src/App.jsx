@@ -63,7 +63,7 @@ const Home = ({ scrollRefs }) => {
   return (
     <>
       <HeroSection communityRef={scrollRefs?.community} />
-      <ProductsSection scrollRefs={scrollRefs} />
+      <ProductsSection ref={scrollRefs?.services} />
 
       <WhatWeDoDifferently ref={scrollRefs?.differently} />
       <PortfolioSpotlight />
@@ -103,6 +103,7 @@ const testimonialsRef = useRef(null);
             <Route path="/login" element={<Login />} />
             <Route path="/sso-callback" element={<SSOCallbackPage />} />
 
+            <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/team" element={<Team />} />
             <Route path="/project-idea" element={<ProjectIdeas />} />
