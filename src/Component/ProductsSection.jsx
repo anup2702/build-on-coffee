@@ -1,14 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react"; 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 import { ExternalLink, Lightbulb } from "lucide-react";
 import { products } from "../../data/products";
 
-const ProductsSection = () => {
-  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+const ProductsSection = forwardRef((props, ref) => {
+  const { inView, ref: inViewRef } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const navigate = useNavigate();
+
+  // merge both refs (scrollRef + inViewRef)
+  const setRefs = (el) => {
+    if (ref) {
+      ref.current = el; // assign scroll ref
+    }
+    inViewRef(el); // assign inView ref
+  };
 
   const handleProductClick = (product) => {
     if (product.external) {
@@ -36,8 +48,9 @@ const ProductsSection = () => {
     },
   ];
 
+  // ✅ Only ONE return here
   return (
-    <section className="py-24 bg-white dark:bg-slate-900" ref={ref}>
+    <section className="py-24 bg-white dark:bg-slate-900" ref={setRefs}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Heading */}
         <motion.div
@@ -55,7 +68,7 @@ const ProductsSection = () => {
           </p>
         </motion.div>
 
-        {/* Product cards in grid - 3 cards per row */}
+        {/* Product cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -70,7 +83,10 @@ const ProductsSection = () => {
                   className={`group relative overflow-hidden rounded-2xl p-8 cursor-pointer border-2 ${product.borderColor} ${product.bgColor} hover:shadow-xl transition-all duration-300 card-hover bg-white dark:bg-slate-800`}
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.3 + index * 0.1,
+                  }}
                   whileHover={{
                     y: -8,
                     scale: 1.02,
@@ -83,9 +99,7 @@ const ProductsSection = () => {
                 >
                   {/* Icon */}
                   <div className="flex justify-center mb-8">
-                    <div
-                      className={`p-6 rounded-2xl ${product.color} shadow-lg`}
-                    >
+                    <div className={`p-6 rounded-2xl ${product.color} shadow-lg`}>
                       <Icon className="w-12 h-12 text-white" />
                     </div>
                   </div>
@@ -100,6 +114,7 @@ const ProductsSection = () => {
                     <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed text-lg">
                       {product.description}
                     </p>
+
                     <motion.button
                       className={`inline-flex items-center space-x-3 px-6 py-3 rounded-xl font-semibold text-lg transition-all duration-300 ${product.color} text-white hover:shadow-lg shadow-md`}
                       whileHover={{ scale: 1.05 }}
@@ -110,7 +125,7 @@ const ProductsSection = () => {
                     </motion.button>
                   </div>
 
-                  {/* Subtle hover effect */}
+                  {/* Hover overlay */}
                   <motion.div
                     className={`absolute inset-0 rounded-2xl ${product.color} opacity-0`}
                     initial={false}
@@ -127,6 +142,6 @@ const ProductsSection = () => {
       </div>
     </section>
   );
-};
+});
 
 export default ProductsSection;

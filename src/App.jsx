@@ -62,29 +62,34 @@ import Quiz from "./Component/Quiz";
 import Weeklytask from "./Component/Weeklytask";
 
 const Home = ({ scrollRefs }) => {
-  const navigate = useNavigate();
   return (
     <>
       <HeroSection communityRef={scrollRefs?.community} />
-      <ProductsSection />
+      <ProductsSection ref={scrollRefs?.services} />
+
       <WhatWeDoDifferently ref={scrollRefs?.differently} />
       <PortfolioSpotlight />
-      <Testimonials />
+      <Testimonials ref={scrollRefs?.testimonials} />
       <JoinCommunity ref={scrollRefs?.community} />
     </>
   );
 };
+
 
 const App = () => {
   const differentlyRef = useRef(null);
   const learnRef = useRef(null);
   const toolsRef = useRef(null);
   const communityRef = useRef(null);
+  const servicesRef = useRef(null);
+const testimonialsRef = useRef(null);
   const scrollRefs = {
     differently: differentlyRef,
     learn: learnRef,
     tools: toolsRef,
     community: communityRef,
+    services: servicesRef,
+    testimonials: testimonialsRef,
   };
 
   return (
@@ -100,6 +105,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/sso-callback" element={<SSOCallbackPage />} />
 
+            <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/team" element={<Team />} />
             <Route path="/project-idea" element={<ProjectIdeas />} />
