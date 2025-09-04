@@ -1,22 +1,135 @@
 // interviewQuestions.js
 const InterviewQuestionsData = [
   // ---------------- DSA ----------------
-  { id: 1, category: "DSA", difficulty: "Easy", question: "Reverse a linked list?", answer: "Use iterative method with three pointers (prev, curr, next) or recursion to reverse links." },
-  { id: 2, category: "DSA", difficulty: "Medium", question: "Detect a cycle in a linked list?", answer: "Use Floyd’s cycle-finding algorithm (slow and fast pointers). If they meet, a cycle exists." },
-  { id: 3, category: "DSA", difficulty: "Medium", question: "Find the longest substring without repeating characters?", answer: "Use sliding window technique with a hash set to track visited characters." },
-  { id: 4, category: "DSA", difficulty: "Hard", question: "Implement LRU Cache?", answer: "Use HashMap + Doubly Linked List for O(1) access, insertion, and eviction." },
-  { id: 5, category: "DSA", difficulty: "Easy", question: "Check if a string is a palindrome?", answer: "Compare characters from start and end moving towards the center." },
-  { id: 6, category: "DSA", difficulty: "Hard", question: "Find the median of two sorted arrays?", answer: "Use binary search partitioning technique in O(log(min(m,n)))." },
-  { id: 7, category: "DSA", difficulty: "Medium", question: "Implement a min stack?", answer: "Maintain two stacks: one for values and one for minimums at each level." },
-  { id: 8, category: "DSA", difficulty: "Hard", question: "Find kth largest element in an array?", answer: "Use Quickselect (average O(n)) or a Min Heap of size k." },
-  { id: 31, category: "DSA", difficulty: "Easy", question: "Find the maximum depth of a binary tree?", answer: "Use DFS (recursion) to compute max(leftDepth, rightDepth) + 1." },
-  { id: 32, category: "DSA", difficulty: "Medium", question: "Merge two sorted linked lists?", answer: "Use two pointers and build a new list by comparing node values." },
-  { id: 33, category: "DSA", difficulty: "Medium", question: "Find the majority element in an array?", answer: "Use Boyer–Moore Voting Algorithm in O(n)." },
-  { id: 34, category: "DSA", difficulty: "Hard", question: "Implement Trie (Prefix Tree)?", answer: "Use nested hash maps or nodes with 26 children for fast prefix queries." },
-  { id: 35, category: "DSA", difficulty: "Hard", question: "Solve the N-Queens problem?", answer: "Use backtracking with column/diagonal checks." },
-  { id: 36, category: "DSA", difficulty: "Medium", question: "Check if two binary trees are identical?", answer: "Use recursion: compare root, then left and right subtrees." },
-  { id: 37, category: "DSA", difficulty: "Easy", question: "Find the missing number in an array from 1 to n?", answer: "Use sum formula n(n+1)/2 - sum(arr) or XOR method." },
-  { id: 38, category: "DSA", difficulty: "Hard", question: "Implement a topological sort?", answer: "Use DFS or Kahn’s algorithm (BFS with indegree tracking)." },
+  {
+    "id": 1,
+    "category": "DSA",
+    "difficulty": "Easy",
+    "question": "Reverse a linked list?",
+    "answer": "Use iterative method with three pointers (prev, curr, next) or recursion to reverse links.",
+    "leetcode_url": "https://leetcode.com/problems/reverse-linked-list/"
+  },
+  {
+    "id": 2,
+    "category": "DSA",
+    "difficulty": "Medium",
+    "question": "Detect a cycle in a linked list?",
+    "answer": "Use Floyd’s cycle-finding algorithm (slow and fast pointers). If they meet, a cycle exists.",
+    "leetcode_url": "https://leetcode.com/problems/linked-list-cycle/"
+  },
+  {
+    "id": 3,
+    "category": "DSA",
+    "difficulty": "Medium",
+    "question": "Find the longest substring without repeating characters?",
+    "answer": "Use sliding window technique with a hash set to track visited characters.",
+    "leetcode_url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+  },
+  {
+    "id": 4,
+    "category": "DSA",
+    "difficulty": "Hard",
+    "question": "Implement LRU Cache?",
+    "answer": "Use HashMap + Doubly Linked List for O(1) access, insertion, and eviction.",
+    "leetcode_url": "https://leetcode.com/problems/lru-cache/"
+  },
+  {
+    "id": 5,
+    "category": "DSA",
+    "difficulty": "Easy",
+    "question": "Check if a string is a palindrome?",
+    "answer": "Compare characters from start and end moving towards the center.",
+    "leetcode_url": "https://leetcode.com/problems/valid-palindrome/"
+  },
+  {
+    "id": 6,
+    "category": "DSA",
+    "difficulty": "Hard",
+    "question": "Find the median of two sorted arrays?",
+    "answer": "Use binary search partitioning technique in O(log(min(m,n))).",
+    "leetcode_url": "https://leetcode.com/problems/median-of-two-sorted-arrays/"
+  },
+  {
+    "id": 7,
+    "category": "DSA",
+    "difficulty": "Medium",
+    "question": "Implement a min stack?",
+    "answer": "Maintain two stacks: one for values and one for minimums at each level.",
+    "leetcode_url": "https://leetcode.com/problems/min-stack/"
+  },
+  {
+    "id": 8,
+    "category": "DSA",
+    "difficulty": "Hard",
+    "question": "Find kth largest element in an array?",
+    "answer": "Use Quickselect (average O(n)) or a Min Heap of size k.",
+    "leetcode_url": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
+  },
+  {
+    "id": 31,
+    "category": "DSA",
+    "difficulty": "Easy",
+    "question": "Find the maximum depth of a binary tree?",
+    "answer": "Use DFS (recursion) to compute max(leftDepth, rightDepth) + 1.",
+    "leetcode_url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
+  },
+  {
+    "id": 32,
+    "category": "DSA",
+    "difficulty": "Medium",
+    "question": "Merge two sorted linked lists?",
+    "answer": "Use two pointers and build a new list by comparing node values.",
+    "leetcode_url": "https://leetcode.com/problems/merge-two-sorted-lists/"
+  },
+  {
+    "id": 33,
+    "category": "DSA",
+    "difficulty": "Medium",
+    "question": "Find the majority element in an array?",
+    "answer": "Use Boyer–Moore Voting Algorithm in O(n).",
+    "leetcode_url": "https://leetcode.com/problems/majority-element/"
+  },
+  {
+    "id": 34,
+    "category": "DSA",
+    "difficulty": "Hard",
+    "question": "Implement Trie (Prefix Tree)?",
+    "answer": "Use nested hash maps or nodes with 26 children for fast prefix queries.",
+    "leetcode_url": "https://leetcode.com/problems/implement-trie-prefix-tree/"
+  },
+  {
+    "id": 35,
+    "category": "DSA",
+    "difficulty": "Hard",
+    "question": "Solve the N-Queens problem?",
+    "answer": "Use backtracking with column/diagonal checks.",
+    "leetcode_url": "https://leetcode.com/problems/n-queens/"
+  },
+  {
+    "id": 36,
+    "category": "DSA",
+    "difficulty": "Medium",
+    "question": "Check if two binary trees are identical?",
+    "answer": "Use recursion: compare root, then left and right subtrees.",
+    "leetcode_url": "https://leetcode.com/problems/same-tree/"
+  },
+  {
+    "id": 37,
+    "category": "DSA",
+    "difficulty": "Easy",
+    "question": "Find the missing number in an array from 1 to n?",
+    "answer": "Use sum formula n(n+1)/2 - sum(arr) or XOR method.",
+    "leetcode_url": "https://leetcode.com/problems/missing-number/"
+  },
+  {
+    "id": 38,
+    "category": "DSA",
+    "difficulty": "Hard",
+    "question": "Implement a topological sort?",
+    "answer": "Use DFS or Kahn’s algorithm (BFS with indegree tracking).",
+    "leetcode_url": "https://leetcode.com/problem-list/topological-sort/"
+  }
+,
 
   // ---------------- System Design ----------------
   { id: 9, category: "System Design", difficulty: "Medium", question: "Design a URL shortener?", answer: "Use base62 encoding, hashing, database (SQL/NoSQL), caching, and handle collisions." },
