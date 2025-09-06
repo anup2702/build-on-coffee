@@ -1,69 +1,72 @@
-import React, { useState } from "react";
-import { BookOpen, ChevronUp, ChevronDown } from "lucide-react";
-import interviewQuestionsData from "../../../data/InterviewQuestions";
+import React from "react";
+import { Link } from "react-router-dom";
+import { BookOpen, ExternalLink } from "lucide-react";
+import interviewSubjects from "../../../data/InterviewQuestions";
+
+const Card = ({ subject }) => {
+  const Icon = subject.icon;
+
+ 
+  if (subject.external && subject.link) {
+    return (
+      <a
+        href={subject.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group p-6 border rounded-2xl shadow-sm bg-gray-100 dark:bg-[#1e293b] hover:shadow-lg hover:border-blue-500 transition flex flex-col gap-3"
+      >
+        <div className="flex items-center gap-4">
+          <Icon className="w-10 h-10 text-blue-600 dark:text-blue-400" />
+          <h2 className="text-lg font-semibold">{subject.name}</h2>
+        </div>
+        <p className="text-sm text-gray-600 dark:text-gray-300">{subject.description}</p>
+        <div className="flex items-center justify-end text-blue-600 dark:text-blue-400">
+          <span className="mr-1 text-sm">Open</span>
+          <ExternalLink className="w-4 h-4" />
+        </div>
+      </a>
+    );
+  }
+
+ 
+  return (
+    <Link
+      to={subject.path || "#"}
+      className="group p-6 border rounded-2xl shadow-sm bg-gray-100 dark:bg-[#1e293b] hover:shadow-lg hover:border-blue-500 transition flex flex-col gap-3"
+    >
+      <div className="flex items-center gap-4">
+        <Icon className="w-10 h-10 text-blue-600 dark:text-blue-400" />
+        <h2 className="text-lg font-semibold">{subject.name}</h2>
+      </div>
+      <p className="text-sm text-gray-600 dark:text-gray-300">{subject.description}</p>
+      <div className="flex items-center justify-end text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition">
+        <span className="mr-1 text-sm">Open</span>
+        <ExternalLink className="w-4 h-4" />
+      </div>
+    </Link>
+  );
+};
 
 const InterviewQuestions = () => {
-  const [expanded, setExpanded] = useState(null);
-
-
-  const toggleExpand = (id) => {
-    setExpanded(expanded === id ? null : id);
-  };
-
   return (
-    <div className="max-w-4xl mx-auto p-4">
-      <div className="flex items-center justify-center gap-4 mb-5">
+    <div className="max-w-6xl mx-auto p-6">
+      {/* Header */}
+      <div className="flex items-center justify-center gap-3 mb-6">
         <BookOpen className="w-10 h-10 text-blue-800 dark:text-blue-500" />
-        <h1 className="text-3xl font-extrabold text-center text-gradient mb-2">Interview Questions</h1>
+        <h1 className="text-3xl font-extrabold text-center text-gradient">
+          Interview Questions
+        </h1>
       </div>
-      <p className="text-gray-600 mb-6 text-center text-2xl">
-        Explore categorized interview questions with structured answers.
+
+      <p className="text-gray-600 mb-8 text-center text-lg">
+        Pick a subject to explore curated interview questions and practice sets.
       </p>
 
-      <div className="space-y-4">
-        {Array.isArray(interviewQuestionsData) &&
-          interviewQuestionsData.length > 0 ? (
-          interviewQuestionsData.map((q) => (
-            <div
-              key={q.id}
-              className="border rounded-xl shadow-sm  bg-gray-100 dark:bg-[#1e293b] overflow-hidden dark:hover:bg-[#334155] dark:hover:border-[#38bdf8]"
-            >
-              <div
-                className="flex justify-between items-center p-4 cursor-pointer"
-                onClick={() => toggleExpand(q.id)}
-              >
-                <div>
-                  <p className="font-semibold">{q.question}</p>
-                  <div className="flex gap-2 text-xs text-gray-500 mt-1">
-                    <span className="px-2 py-0.5 border rounded-full">
-                      {q.category}
-                    </span>
-                    <span className="px-2 py-0.5 border rounded-full">
-                      {q.difficulty}
-                    </span>
-
-                    {q.leetcode_url && (
-                      <div className="flex justify-end">
-                        <a href={q.leetcode_url} className="text-blue-500 hover:underline text-base">Leetcode</a>
-                      </div>
-                    )}
-
-                  </div>
-                </div>
-                {expanded === q.id ? (
-                  <ChevronUp className="w-5 h-5 text-gray-600" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-gray-600" />
-                )}
-              </div>
-              {expanded === q.id && (
-                <div className="p-4  bg-gray-100 dark:bg-[#1e293b] text-sm border-t">{q.answer}</div>
-              )}
-            </div>
-          ))
-        ) : (
-          <p className="text-red-500">⚠️ No questions found. Check your import.</p>
-        )}
+      {/* Subject cards grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {interviewSubjects.map((subject) => (
+          <Card key={subject.id} subject={subject} />
+        ))}
       </div>
     </div>
   );

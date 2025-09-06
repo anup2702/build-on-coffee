@@ -1,202 +1,52 @@
-// interviewQuestions.js
-const InterviewQuestionsData = [
-  // ---------------- DSA ----------------
-  {
-    "id": 1,
-    "category": "DSA",
-    "difficulty": "Easy",
-    "question": "Reverse a linked list?",
-    "answer": "Use iterative method with three pointers (prev, curr, next) or recursion to reverse links.",
-    "leetcode_url": "https://leetcode.com/problems/reverse-linked-list/"
-  },
-  {
-    "id": 2,
-    "category": "DSA",
-    "difficulty": "Medium",
-    "question": "Detect a cycle in a linked list?",
-    "answer": "Use Floyd’s cycle-finding algorithm (slow and fast pointers). If they meet, a cycle exists.",
-    "leetcode_url": "https://leetcode.com/problems/linked-list-cycle/"
-  },
-  {
-    "id": 3,
-    "category": "DSA",
-    "difficulty": "Medium",
-    "question": "Find the longest substring without repeating characters?",
-    "answer": "Use sliding window technique with a hash set to track visited characters.",
-    "leetcode_url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
-  },
-  {
-    "id": 4,
-    "category": "DSA",
-    "difficulty": "Hard",
-    "question": "Implement LRU Cache?",
-    "answer": "Use HashMap + Doubly Linked List for O(1) access, insertion, and eviction.",
-    "leetcode_url": "https://leetcode.com/problems/lru-cache/"
-  },
-  {
-    "id": 5,
-    "category": "DSA",
-    "difficulty": "Easy",
-    "question": "Check if a string is a palindrome?",
-    "answer": "Compare characters from start and end moving towards the center.",
-    "leetcode_url": "https://leetcode.com/problems/valid-palindrome/"
-  },
-  {
-    "id": 6,
-    "category": "DSA",
-    "difficulty": "Hard",
-    "question": "Find the median of two sorted arrays?",
-    "answer": "Use binary search partitioning technique in O(log(min(m,n))).",
-    "leetcode_url": "https://leetcode.com/problems/median-of-two-sorted-arrays/"
-  },
-  {
-    "id": 7,
-    "category": "DSA",
-    "difficulty": "Medium",
-    "question": "Implement a min stack?",
-    "answer": "Maintain two stacks: one for values and one for minimums at each level.",
-    "leetcode_url": "https://leetcode.com/problems/min-stack/"
-  },
-  {
-    "id": 8,
-    "category": "DSA",
-    "difficulty": "Hard",
-    "question": "Find kth largest element in an array?",
-    "answer": "Use Quickselect (average O(n)) or a Min Heap of size k.",
-    "leetcode_url": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
-  },
-  {
-    "id": 31,
-    "category": "DSA",
-    "difficulty": "Easy",
-    "question": "Find the maximum depth of a binary tree?",
-    "answer": "Use DFS (recursion) to compute max(leftDepth, rightDepth) + 1.",
-    "leetcode_url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
-  },
-  {
-    "id": 32,
-    "category": "DSA",
-    "difficulty": "Medium",
-    "question": "Merge two sorted linked lists?",
-    "answer": "Use two pointers and build a new list by comparing node values.",
-    "leetcode_url": "https://leetcode.com/problems/merge-two-sorted-lists/"
-  },
-  {
-    "id": 33,
-    "category": "DSA",
-    "difficulty": "Medium",
-    "question": "Find the majority element in an array?",
-    "answer": "Use Boyer–Moore Voting Algorithm in O(n).",
-    "leetcode_url": "https://leetcode.com/problems/majority-element/"
-  },
-  {
-    "id": 34,
-    "category": "DSA",
-    "difficulty": "Hard",
-    "question": "Implement Trie (Prefix Tree)?",
-    "answer": "Use nested hash maps or nodes with 26 children for fast prefix queries.",
-    "leetcode_url": "https://leetcode.com/problems/implement-trie-prefix-tree/"
-  },
-  {
-    "id": 35,
-    "category": "DSA",
-    "difficulty": "Hard",
-    "question": "Solve the N-Queens problem?",
-    "answer": "Use backtracking with column/diagonal checks.",
-    "leetcode_url": "https://leetcode.com/problems/n-queens/"
-  },
-  {
-    "id": 36,
-    "category": "DSA",
-    "difficulty": "Medium",
-    "question": "Check if two binary trees are identical?",
-    "answer": "Use recursion: compare root, then left and right subtrees.",
-    "leetcode_url": "https://leetcode.com/problems/same-tree/"
-  },
-  {
-    "id": 37,
-    "category": "DSA",
-    "difficulty": "Easy",
-    "question": "Find the missing number in an array from 1 to n?",
-    "answer": "Use sum formula n(n+1)/2 - sum(arr) or XOR method.",
-    "leetcode_url": "https://leetcode.com/problems/missing-number/"
-  },
-  {
-    "id": 38,
-    "category": "DSA",
-    "difficulty": "Hard",
-    "question": "Implement a topological sort?",
-    "answer": "Use DFS or Kahn’s algorithm (BFS with indegree tracking).",
-    "leetcode_url": "https://leetcode.com/problem-list/topological-sort/"
-  }
-,
+import { Layers, Database, Cpu, Globe, Code, Server } from "lucide-react";
 
-  // ---------------- System Design ----------------
-  { id: 9, category: "System Design", difficulty: "Medium", question: "Design a URL shortener?", answer: "Use base62 encoding, hashing, database (SQL/NoSQL), caching, and handle collisions." },
-  { id: 10, category: "System Design", difficulty: "Hard", question: "Design Twitter (timeline + tweets)?", answer: "Discuss sharding, fan-out on write/read, caching, load balancing, and queues for scalability." },
-  { id: 11, category: "System Design", difficulty: "Medium", question: "How would you design a chat application?", answer: "Use WebSockets for real-time messaging, partition users into chat servers, ensure delivery via queues." },
-  { id: 12, category: "System Design", difficulty: "Hard", question: "Design an online code editor like LeetCode?", answer: "Explain sandboxing for code execution, worker queues, scaling, and storage for submissions." },
-  { id: 13, category: "System Design", difficulty: "Easy", question: "What’s load balancing? Why is it important?", answer: "Distributes traffic across servers to improve performance, reliability, and availability." },
-  { id: 14, category: "System Design", difficulty: "Medium", question: "Design a recommendation system?", answer: "Discuss collaborative filtering, content-based filtering, ML models, caching, and scalability." },
-  { id: 39, category: "System Design", difficulty: "Medium", question: "Design an e-commerce checkout system?", answer: "Discuss inventory management, payments, order DB, queues, and scalability." },
-  { id: 40, category: "System Design", difficulty: "Hard", question: "Design Netflix (video streaming service)?", answer: "Cover CDN, video encoding, recommendation, distributed storage, and caching." },
-  { id: 41, category: "System Design", difficulty: "Easy", question: "What is caching and where to use it?", answer: "Storing frequently accessed data in-memory (Redis, Memcached) to reduce latency." },
-  { id: 42, category: "System Design", difficulty: "Medium", question: "Design a ride-sharing app (like Uber)?", answer: "Explain real-time location tracking, matching algorithms, and scaling drivers/riders." },
-  { id: 43, category: "System Design", difficulty: "Hard", question: "Design Instagram (photo sharing + feed)?", answer: "Cover media storage (S3/CDN), feed generation, caching, sharding, scaling." },
-  { id: 44, category: "System Design", difficulty: "Medium", question: "Design a notification system?", answer: "Use message queues, push services, user preference management, retry logic." },
+const interviewSubjects = [
+  {
+    id: 1,
+    name: "Data Structures & Algorithms",
+    icon: Layers,
+    description: "Arrays, strings, trees, graphs, DP, greedy, and more.",
+    link: "https://www.geeksforgeeks.org/dsa/top-100-data-structure-and-algorithms-dsa-interview-questions-topic-wise/",
+    external: true,
+    
+  },
+  {
+    id: 2,
+    name: "DBMS",
+    icon: Database,
+    description: "SQL, normalization, indexing, transactions, ACID/BASE.",
+    link: "https://www.geeksforgeeks.org/dbms/commonly-asked-dbms-interview-questions/",
+    external: true,
 
-  // ---------------- Behavioral ----------------
-  { id: 15, category: "Behavioral", difficulty: "Easy", question: "Tell me about yourself.", answer: "Give a structured summary: education, key experiences, skills, and current goals." },
-  { id: 16, category: "Behavioral", difficulty: "Easy", question: "Describe a time you handled conflict in a team.", answer: "Use STAR: Situation, Task, Action, Result. Show empathy and resolution." },
-  { id: 17, category: "Behavioral", difficulty: "Medium", question: "What’s your biggest weakness?", answer: "Pick a genuine weakness, explain how you’re addressing it, and show improvement." },
-  { id: 18, category: "Behavioral", difficulty: "Medium", question: "Tell me about a failure you experienced.", answer: "Share a specific story, what went wrong, what you learned, and how you improved." },
-  { id: 19, category: "Behavioral", difficulty: "Easy", question: "Why do you want to join this company?", answer: "Connect company values/projects with your skills and long-term goals." },
-  { id: 20, category: "Behavioral", difficulty: "Medium", question: "How do you prioritize tasks under pressure?", answer: "Explain using frameworks (Eisenhower Matrix, deadlines, dependencies) and staying adaptable." },
-  { id: 45, category: "Behavioral", difficulty: "Easy", question: "What motivates you?", answer: "Discuss intrinsic motivators (growth, learning, impact) aligned with role." },
-  { id: 46, category: "Behavioral", difficulty: "Medium", question: "Tell me about a project you’re most proud of.", answer: "Use STAR format: highlight impact, challenges, and results." },
-  { id: 47, category: "Behavioral", difficulty: "Medium", question: "Describe a time you led a team.", answer: "Highlight leadership, decision-making, and outcomes." },
-  { id: 48, category: "Behavioral", difficulty: "Easy", question: "How do you handle feedback?", answer: "Be open, show examples of improvement from past feedback." },
-  { id: 49, category: "Behavioral", difficulty: "Medium", question: "Describe a situation where you solved a tough problem.", answer: "Explain thought process, creativity, and persistence." },
-  { id: 50, category: "Behavioral", difficulty: "Easy", question: "Where do you see yourself in 5 years?", answer: "Talk about growth, leadership, and alignment with company vision." },
+  },
+  {
+    id: 3,
+    name: "Operating System",
+    icon: Cpu,
+    description: "Processes, threads, scheduling, memory, deadlocks.",
+    link: "https://www.geeksforgeeks.org/operating-systems/operating-systems-interview-questions/",
+    external: true,
 
-  // ---------------- CS Fundamentals ----------------
-  { id: 21, category: "CS Fundamentals", difficulty: "Easy", question: "What’s the difference between process and thread?", answer: "Process = independent execution with memory space. Thread = lightweight unit within a process." },
-  { id: 22, category: "CS Fundamentals", difficulty: "Medium", question: "Explain database normalization.", answer: "Organizing data to reduce redundancy. Normal forms: 1NF, 2NF, 3NF, BCNF." },
-  { id: 23, category: "CS Fundamentals", difficulty: "Medium", question: "What’s ACID in databases?", answer: "Atomicity, Consistency, Isolation, Durability – properties ensuring reliable transactions." },
-  { id: 24, category: "CS Fundamentals", difficulty: "Hard", question: "Explain CAP theorem.", answer: "A distributed system can provide at most 2 of: Consistency, Availability, Partition tolerance." },
-  { id: 25, category: "CS Fundamentals", difficulty: "Hard", question: "What’s the difference between TCP and UDP?", answer: "TCP = reliable, connection-oriented. UDP = faster, connectionless, no guaranteed delivery." },
-  { id: 26, category: "CS Fundamentals", difficulty: "Medium", question: "Explain deadlock.", answer: "Occurs when processes wait indefinitely on each other’s resources. Prevent via ordering, detection, recovery." },
-  { id: 27, category: "CS Fundamentals", difficulty: "Medium", question: "What’s a race condition?", answer: "When multiple threads access shared data simultaneously, causing unpredictable results." },
-  { id: 28, category: "CS Fundamentals", difficulty: "Easy", question: "What’s the difference between stack and queue?", answer: "Stack = LIFO. Queue = FIFO." },
-  { id: 29, category: "CS Fundamentals", difficulty: "Hard", question: "Explain how hashing works in hash tables.", answer: "Maps keys to indices using a hash function. Handle collisions via chaining or open addressing." },
-  { id: 30, category: "CS Fundamentals", difficulty: "Medium", question: "What’s virtual memory?", answer: "Technique where OS uses disk space as RAM extension, providing isolation and efficient memory usage." },
-  { id: 51, category: "CS Fundamentals", difficulty: "Easy", question: "What’s the difference between compiler and interpreter?", answer: "Compiler translates full code before execution, interpreter runs line by line." },
-  { id: 52, category: "CS Fundamentals", difficulty: "Medium", question: "Explain paging vs segmentation in memory management.", answer: "Paging = fixed-size blocks, segmentation = variable-sized logical divisions." },
-  { id: 53, category: "CS Fundamentals", difficulty: "Hard", question: "How does garbage collection work in Java?", answer: "Tracks unused objects, reclaims memory using algorithms like Mark-Sweep." },
-  { id: 54, category: "CS Fundamentals", difficulty: "Medium", question: "Explain B-trees and why they’re used in databases.", answer: "Balanced tree structure for indexing, minimizing disk I/O." },
-  { id: 55, category: "CS Fundamentals", difficulty: "Easy", question: "Difference between relational and non-relational databases?", answer: "Relational = structured with SQL. Non-relational = flexible schemas (NoSQL)." },
-  { id: 56, category: "CS Fundamentals", difficulty: "Medium", question: "Explain DNS and how it works.", answer: "Domain Name System maps domain names to IP addresses using recursive queries." },
-  { id: 57, category: "CS Fundamentals", difficulty: "Hard", question: "What happens when you type a URL in the browser?", answer: "Covers DNS lookup, TCP handshake, SSL, HTTP request/response, rendering pipeline." },
-  { id: 58, category: "CS Fundamentals", difficulty: "Medium", question: "Explain multithreading vs multiprocessing.", answer: "Multithreading = shared memory within process. Multiprocessing = independent processes." },
-  { id: 59, category: "CS Fundamentals", difficulty: "Hard", question: "Explain consensus algorithms (like Paxos/Raft).", answer: "Used in distributed systems to agree on a single value despite failures." },
-  { id: 60, category: "CS Fundamentals", difficulty: "Easy", question: "What’s an API?", answer: "Application Programming Interface – set of rules to interact with software components." },
-
-  // ---------------- React ----------------
-{id: 61 , category : "React" , difficulty: "Easy" , question: "What is JSX in react?" , answer: "JSX is a syntax extension that lets you write HTML-like code inside JavaScript."},
-{id: 67 , category : "React" , difficulty: "Hard" , question: "How does React’s Virtual DOM improve performance?" , answer: "It compares old vs new UI and only updates the changed parts in the real DOM."},
-{id: 62 , category : "React" , difficulty: "Easy" , question: "What are React components?" , answer: "Building blocks of UI. Two types: Functional (with hooks) and Class (with lifecycle)."},
-{id: 70 , category : "React" , difficulty: "Medium" , question: "What is the difference between useMemo and useCallback?" , answer: "useMemo memoizes a value, useCallback memoizes a function."},
-{id: 63 , category : "React" , difficulty: "Easy" , question: "How do you add styling in React?" , answer: "Using CSS files, inline styles, or libraries like Tailwind."},
-{id: 71 , category : "React" , difficulty: "Hard" , question: "What are React keys and why are they important?" , answer: "Keys help React identify list items efficiently for re-rendering."},
-{id: 64 , category : "React" , difficulty: "Medium" , question: "What does useState do?" , answer: "It stores and updates values in a functional component."},
-{id: 65 , category : "React" , difficulty: "Medium" , question: "What does useEffect do?" , answer: "Runs code after render, like fetching data or updating the DOM."},
-{id: 72 , category : "React" , difficulty: "Easy" , question: "What is the role of index.js in a React app?" , answer: "It’s the entry file that renders the root component into the DOM."},
-{id: 68 , category : "React" , difficulty: "Hard" , question: "What is React reconciliation?" , answer: "The process React uses to figure out the minimal changes needed to update the DOM."},
-{id: 73 , category : "React" , difficulty: "Medium" , question: "What is React Router used for?" , answer: "To enable navigation between different pages without reloading."},
-{id: 66 , category : "React" , difficulty: "Medium" , question: "What are props?" , answer: "Props are inputs passed from a parent to a child component."},
-{id: 69 , category : "React" , difficulty: "Hard" , question: "Difference between controlled and uncontrolled components?" , answer: "Controlled: React manages input state , Uncontrolled: DOM manages input state via ref."},
-{id: 74 , category : "React" , difficulty: "Easy" , question: "What is create-react-app?" , answer: "A tool that sets up a new React project with all configs pre-built."}
-
+  },
+  {
+    id: 4,
+    name: "Computer Networks",
+    icon: Globe,
+    description: "OSI/TCP models, routing, HTTP/HTTPS, DNS, TCP/UDP.",
+    link: "https://www.geeksforgeeks.org/blogs/networking-interview-questions/",
+    external: true,
+   
+  },
+ 
+  {
+    id: 5,
+    name: "System Design",
+    icon: Server,
+    description: "Scalability, caching, sharding, queues, consistency.",
+    link: "https://www.geeksforgeeks.org/system-design/top-10-system-design-interview-questions-and-answers/",
+    external: true,
+  
+  },
 ];
 
-export default InterviewQuestionsData;
+export default interviewSubjects;
