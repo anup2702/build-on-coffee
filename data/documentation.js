@@ -195,4 +195,18 @@ export const documentationItems = [
     logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Unofficial_JavaScript_logo_2.svg",
     categories: ["Language", "Frontend", "Backend"],
   },
+  {
+    name:"HTML5",
+    description:"MDN HTML5 documentation",
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    logo: "https://images.icon-icons.com/171/PNG/512/html5_23329.png",
+    categories: ["Frontend"],
+  },
+  {
+    name:"CSS3",
+    description:"MDN CSS3 documentation",
+    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    logo: "https://static.cdnlogo.com/logos/c/18/css.svg",
+    categories: ["Frontend","CSS"],
+  },
 ];
