@@ -9,6 +9,7 @@ import reactQuestions from "../../data/react.js";
 import nodejsQuestions from "../../data/nodejs.js";
 import databaseQuestions from "../../data/database.js";
 import gitQuestions from "../../data/git.js";
+import { databaseQuiz } from "../../data/databaseQuiz.js";
 
 const quizzes = {
   DSA: {
@@ -50,6 +51,11 @@ const quizzes = {
     questions: gitQuestions,
     icon: <Code className="w-8 h-8 text-orange-500" />,
     description: "Test your practical version control concepts.",
+  },
+  "Database": {
+    questions: databaseQuiz.questions,
+    icon: <BookOpen className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge of both SQL and NoSQL databases.",
   },
 };
 
