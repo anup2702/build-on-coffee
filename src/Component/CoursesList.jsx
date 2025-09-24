@@ -133,20 +133,27 @@ const CoursesList = () => {
         >
           {courses.map((course, i) => (
             <motion.div
+              className="flex flex-col h-full"
               key={i}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
             >
-              <ToolCard
+              <div className="flex-grow">
+                <ToolCard
+                className= 'min-h-[480px]'
                 {...course}
                 dateAdded={course.dateAdded}
                 onClick={() => navigate(`/courses/${course.slug}`)}
                 isFavourite={favourites.includes(course.slug)}
                 onToggleFavourite={() => toggleFavourite(course.slug)}
-              />
+               />
+              </div>
+              
               {/* Example ProgressBar for demo purposes; replace with actual user progress logic */}
-              <ProgressBar progress={course.progress || 0} label={`Progress in ${course.name}`} />
+              <div>
+                 <ProgressBar progress={course.progress || 0} label={`Progress in ${course.name}`} />
+              </div>  
             </motion.div>
           ))}
         </motion.div>
