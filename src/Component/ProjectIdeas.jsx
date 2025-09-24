@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"; 
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Lightbulb, Star, Users, ArrowRight } from "lucide-react";
@@ -121,6 +121,10 @@ export default function ProjectIdeas() {
                 <h3 className="text-2xl font-black mb-4 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {idea.title}
                 </h3>
+
+                <p className="text-gray-600 dark:text-gray-400 mb-6 text-base font-light">
+                  {idea.description}
+                </p>
 
                 {/* CTA Button */}
                 <div className="flex items-center justify-between">
