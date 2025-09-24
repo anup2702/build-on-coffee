@@ -64,7 +64,7 @@ const FreeCertificateCourses = () => {
           {freeCertificateCourses.map((course, i) => (
             <motion.div
               key={i}
-              className="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 border-2 border-gray-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-400/50 transition-all duration-300 shadow-sm hover:shadow-xl"
+              className="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 border-2 border-gray-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-400/50 transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
@@ -82,6 +82,7 @@ const FreeCertificateCourses = () => {
               </div>
 
               {/* Course Title */}
+              <div className="flex-grow flex flex-col justify-between">
               <h3 className="text-2xl font-black mb-4 text-center text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {course.name}
               </h3>
@@ -98,9 +99,10 @@ const FreeCertificateCourses = () => {
                   {course.certificate}
                 </span>
               </div>
+              </div>
 
               {/* CTA Button */}
-              <div className="text-center">
+              <div className="text-center mt-auto">
                 <a
                   href={course.link}
                   target="_blank"
