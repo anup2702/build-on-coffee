@@ -4,8 +4,8 @@ import { motion, spring } from "framer-motion";
 import { tutorialData } from '../../data/tutorialData.js';
 
 // Component for individual tool items
-const ToolItem = ({ tool }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const ToolItem = ({ tool,isExpanded, onClick }) => {
+  // const [isExpanded, setIsExpanded] = useState(false);
 
   // Extracts the YouTube video ID from a URL.
   const getYouTubeVideoId = (url) => {
@@ -38,7 +38,7 @@ const ToolItem = ({ tool }) => {
       {/* Tool Header */}
       <div
         className="flex items-center justify-between w-full cursor-pointer"
-        onClick={() => setIsExpanded(!isExpanded)}
+        onClick={onClick}
       >
         <div className="flex items-center">
           <img 
@@ -108,6 +108,11 @@ const ToolItem = ({ tool }) => {
 // Component for category sections
 const CategorySection = ({ category, tools }) => {
   const [isExpanded, setIsExpanded] = useState(true);
+  const [expandedToolIndex, setExpandedToolIndex] = useState(null); // Track which tool is open
+
+  const toggleTool = (index) => {
+    setExpandedToolIndex(prevIndex => (prevIndex === index ? null : index));
+  };
 
   return (
     <div className="mb-8">
@@ -141,7 +146,11 @@ const CategorySection = ({ category, tools }) => {
       {isExpanded && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {tools.map((tool, index) => (
-            <ToolItem key={`${tool.name}-${index}`} tool={tool} />
+            <ToolItem 
+            key={`${tool.name}-${index}`}
+            tool={tool}
+            isExpanded={expandedToolIndex === index}
+            onClick={() => toggleTool(index)} />
           ))}
         </div>
       )}
@@ -180,3 +189,6 @@ const ToolsList = () => {
 };
 
 export default ToolsList;
+
+
+
