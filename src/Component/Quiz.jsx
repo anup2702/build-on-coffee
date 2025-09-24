@@ -9,6 +9,7 @@ import reactQuestions from "../../data/react.js";
 import nodejsQuestions from "../../data/nodejs.js";
 import databaseQuestions from "../../data/database.js";
 import gitQuestions from "../../data/git.js";
+import javaQuestions from "../../data/java.js";
 
 const quizzes = {
   DSA: {
@@ -30,6 +31,11 @@ const quizzes = {
     questions: javascriptQuestions,
     icon: <Code className="w-8 h-8 text-yellow-500" />,
     description: "Test your JavaScript knowledge from basics to advanced concepts.",
+  },
+  Java: {
+    questions: javaQuestions,
+    icon: <Code className="w-8 h-8 text-indigo-700" />,
+    description: "Test your Java knowledge from basics to advanced concepts.",
   },
   React: {
     questions: reactQuestions,
