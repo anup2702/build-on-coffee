@@ -9,7 +9,9 @@ import reactQuestions from "../../data/react.js";
 import nodejsQuestions from "../../data/nodejs.js";
 import databaseQuestions from "../../data/database.js";
 import gitQuestions from "../../data/git.js";
+import { nextjsQuiz } from "../../data/nextjsQuiz.js";
 import javaQuestions from "../../data/java.js";
+
 
 const quizzes = {
   DSA: {
@@ -56,6 +58,11 @@ const quizzes = {
     questions: gitQuestions,
     icon: <Code className="w-8 h-8 text-orange-500" />,
     description: "Test your practical version control concepts.",
+  },
+  "Next.js": {
+    questions: nextjsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-black" />,
+    description: "Test your knowledge of the React framework for production.",
   },
 };
 
