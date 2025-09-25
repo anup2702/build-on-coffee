@@ -10,6 +10,7 @@ import nodejsQuestions from "../../data/nodejs.js";
 import databaseQuestions from "../../data/database.js";
 import gitQuestions from "../../data/git.js";
 import javaQuestions from "../../data/java.js";
+import cloudNativeConceptsQuestions from "../../data/cloudNativeConcepts.js";
 
 const quizzes = {
   DSA: {
@@ -56,6 +57,11 @@ const quizzes = {
     questions: gitQuestions,
     icon: <Code className="w-8 h-8 text-orange-500" />,
     description: "Test your practical version control concepts.",
+  },
+  "Cloud-Native Concepts": {
+    questions: cloudNativeConceptsQuestions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your knowledge of cloud-native concepts.",
   },
 };
 
