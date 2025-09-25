@@ -10,6 +10,7 @@ import nodejsQuestions from "../../data/nodejs.js";
 import databaseQuestions from "../../data/database.js";
 import gitQuestions from "../../data/git.js";
 import javaQuestions from "../../data/java.js";
+import iacQuestions from "../../data/iac.js";
 
 const quizzes = {
   DSA: {
@@ -56,6 +57,11 @@ const quizzes = {
     questions: gitQuestions,
     icon: <Code className="w-8 h-8 text-orange-500" />,
     description: "Test your practical version control concepts.",
+  },
+  "Infrastructure as Code (IaC)": {
+    questions: iacQuestions,
+    icon: <Code className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge of Infrastructure as Code.",
   },
 };
 
