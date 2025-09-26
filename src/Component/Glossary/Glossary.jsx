@@ -58,10 +58,10 @@ const Glossary = () => {
             visibleTerms.map((item, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-[#1e293b] rounded-xl p-6 shadow-lg border border-gray-200 dark:border-[#334155] hover:border-blue-500 dark:hover:border-[#38bdf8] transition"
+                className="bg-white dark:bg-[#1e293b] rounded-xl p-6 shadow-lg border border-gray-200 dark:border-[#334155] hover:border-blue-500 dark:hover:border-[#38bdf8] transition h-full flex flex-col"
               >
                 <h2 className="text-xl font-semibold text-blue-600 dark:text-[#38bdf8]">{item.term}</h2>
-                <p className="text-gray-700 dark:text-gray-300 mt-2">{item.definition}</p>
+                <p className="text-gray-700 dark:text-gray-300 mt-2 flex-grow">{item.definition}</p>
                 {item.category && (
                   <span className="inline-block mt-3 text-sm text-amber-600 dark:text-amber-400 font-medium bg-amber-100 dark:bg-slate-700 px-2 py-1 rounded">
                     {item.category}
