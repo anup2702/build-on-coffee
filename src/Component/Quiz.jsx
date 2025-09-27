@@ -10,6 +10,7 @@ import nodejsQuestions from "../../data/nodejs.js";
 import databaseQuestions from "../../data/database.js";
 import gitQuestions from "../../data/git.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
+import { pythonQuiz } from "../../data/pythonQuiz.js";
 import javaQuestions from "../../data/java.js";
 
 
@@ -59,10 +60,17 @@ const quizzes = {
     icon: <Code className="w-8 h-8 text-orange-500" />,
     description: "Test your practical version control concepts.",
   },
+
   "Accessibility & Performance": {
     questions: accessibilityAndPerformanceQuiz.questions,
     icon: <Code className="w-8 h-8 text-purple-500" />,
     description: "Test your knowledge on web accessibility and performance.",
+
+  "Python" : {
+    questions: pythonQuiz.questions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your Python basics knowledge.",
+
   },
 };
 
