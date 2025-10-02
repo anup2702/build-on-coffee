@@ -29,6 +29,9 @@ import { pythonQuiz } from "../../data/pythonQuiz.js";
 
 
 import javaQuestions from "../../data/java.js";
+
+import cloudNativeConceptsQuestions from "../../data/cloudNativeConcepts.js";
+
 import iacQuestions from "../../data/iac.js";
 
 
@@ -37,6 +40,7 @@ import kubernetesQuestions from "../../data/kubernetes.js";
 import containersDockerQuestions from "../../data/containersDocker.js";
 
 import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
+
 
 
 
@@ -87,6 +91,12 @@ const quizzes = {
     icon: <Code className="w-8 h-8 text-orange-500" />,
     description: "Test your practical version control concepts.",
   },
+
+  "Cloud-Native Concepts": {
+    questions: cloudNativeConceptsQuestions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your knowledge of cloud-native concepts.",
+
 
   "Infrastructure as Code (IaC)": {
     questions: iacQuestions,
@@ -168,6 +178,7 @@ const quizzes = {
     description: "Test your Python basics knowledge.",
 
   },
+
 
 
 
