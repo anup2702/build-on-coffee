@@ -10,6 +10,9 @@ import nodejsQuestions from "../../data/nodejs.js";
 import databaseQuestions from "../../data/database.js";
 import gitQuestions from "../../data/git.js";
 
+import { typescriptQuiz } from "../../data/typescriptQuiz.js";
+
+
 
 import { expressjsQuiz } from "../../data/expressjsQuiz.js";
 
@@ -19,6 +22,7 @@ import { nextjsQuiz } from "../../data/nextjsQuiz.js";
 import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
+
 
 import javaQuestions from "../../data/java.js";
 
@@ -70,6 +74,12 @@ const quizzes = {
     description: "Test your practical version control concepts.",
   },
 
+  "TypeScript": {
+    questions: typescriptQuiz.questions,
+    icon: <Code className="w-8 h-8 text-blue-600" />,
+    description: "Test your knowledge of the typed superset of JavaScript.",
+
+
 
   "Express.js": {
     questions: expressjsQuiz.questions,
@@ -89,7 +99,7 @@ const quizzes = {
     description: "Test your knowledge of the utility-first CSS framework.",
 
 
-=======
+
 
   },
 
@@ -108,6 +118,7 @@ const quizzes = {
     description: "Test your Python basics knowledge.",
 
   },
+
 
 
   },
