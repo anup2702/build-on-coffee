@@ -10,6 +10,9 @@ import nodejsQuestions from "../../data/nodejs.js";
 import databaseQuestions from "../../data/database.js";
 import gitQuestions from "../../data/git.js";
 
+import { databaseQuiz } from "../../data/databaseQuiz.js";
+
+
 import { typescriptQuiz } from "../../data/typescriptQuiz.js";
 
 
@@ -22,6 +25,7 @@ import { nextjsQuiz } from "../../data/nextjsQuiz.js";
 import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
+
 
 
 import javaQuestions from "../../data/java.js";
@@ -74,6 +78,12 @@ const quizzes = {
     description: "Test your practical version control concepts.",
   },
 
+  "Database": {
+    questions: databaseQuiz.questions,
+    icon: <BookOpen className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge of both SQL and NoSQL databases.",
+
+
   "TypeScript": {
     questions: typescriptQuiz.questions,
     icon: <Code className="w-8 h-8 text-blue-600" />,
@@ -118,6 +128,7 @@ const quizzes = {
     description: "Test your Python basics knowledge.",
 
   },
+
 
 
 
