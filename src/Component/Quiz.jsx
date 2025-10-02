@@ -29,11 +29,14 @@ import { pythonQuiz } from "../../data/pythonQuiz.js";
 
 
 import javaQuestions from "../../data/java.js";
+
+
 import kubernetesQuestions from "../../data/kubernetes.js";
 
 import containersDockerQuestions from "../../data/containersDocker.js";
 
 import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
+
 
 
 
@@ -83,6 +86,12 @@ const quizzes = {
     icon: <Code className="w-8 h-8 text-orange-500" />,
     description: "Test your practical version control concepts.",
   },
+
+  "CI/CD Pipelines": {
+    questions: ciCdPipelinesQuestions,
+    icon: <Code className="w-8 h-8 text-green-500" />,
+    description: "Test your knowledge of CI/CD pipelines.",
+
 
   Kubernetes: {
     questions: kubernetesQuestions,
@@ -152,6 +161,7 @@ const quizzes = {
     description: "Test your Python basics knowledge.",
 
   },
+
 
 
 
