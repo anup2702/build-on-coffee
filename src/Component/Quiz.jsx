@@ -29,6 +29,7 @@ import { pythonQuiz } from "../../data/pythonQuiz.js";
 
 
 import javaQuestions from "../../data/java.js";
+import kubernetesQuestions from "../../data/kubernetes.js";
 
 import containersDockerQuestions from "../../data/containersDocker.js";
 
@@ -82,6 +83,12 @@ const quizzes = {
     icon: <Code className="w-8 h-8 text-orange-500" />,
     description: "Test your practical version control concepts.",
   },
+
+  Kubernetes: {
+    questions: kubernetesQuestions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your knowledge of Kubernetes.",
+
 
   "Containers & Docker": {
     questions: containersDockerQuestions,
@@ -145,6 +152,7 @@ const quizzes = {
     description: "Test your Python basics knowledge.",
 
   },
+
 
 
 
