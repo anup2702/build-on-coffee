@@ -9,8 +9,36 @@ import reactQuestions from "../../data/react.js";
 import nodejsQuestions from "../../data/nodejs.js";
 import databaseQuestions from "../../data/database.js";
 import gitQuestions from "../../data/git.js";
+
+import { databaseQuiz } from "../../data/databaseQuiz.js";
+
+
+import { typescriptQuiz } from "../../data/typescriptQuiz.js";
+
+
+
+import { expressjsQuiz } from "../../data/expressjsQuiz.js";
+
+import { nextjsQuiz } from "../../data/nextjsQuiz.js";
+
+
+import { tailwindQuiz } from "../../data/tailwindQuiz.js";
+import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
+import { pythonQuiz } from "../../data/pythonQuiz.js";
+
+
+
 import javaQuestions from "../../data/java.js";
-import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
+
+
+import kubernetesQuestions from "../../data/kubernetes.js";
+
+import containersDockerQuestions from "../../data/containersDocker.js";
+
+import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
+
+
+
 
 const quizzes = {
   DSA: {
@@ -58,10 +86,89 @@ const quizzes = {
     icon: <Code className="w-8 h-8 text-orange-500" />,
     description: "Test your practical version control concepts.",
   },
+
   "CI/CD Pipelines": {
     questions: ciCdPipelinesQuestions,
     icon: <Code className="w-8 h-8 text-green-500" />,
     description: "Test your knowledge of CI/CD pipelines.",
+
+
+  Kubernetes: {
+    questions: kubernetesQuestions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your knowledge of Kubernetes.",
+
+
+  "Containers & Docker": {
+    questions: containersDockerQuestions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your knowledge of containers and Docker.",
+
+
+  "Cloud Fundamentals": {
+    questions: cloudFundamentalsQuestions,
+    icon: <BookOpen className="w-8 h-8 text-blue-400" />,
+    description: "Test your knowledge of fundamental cloud concepts.",
+
+
+  "Database": {
+    questions: databaseQuiz.questions,
+    icon: <BookOpen className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge of both SQL and NoSQL databases.",
+
+
+  "TypeScript": {
+    questions: typescriptQuiz.questions,
+    icon: <Code className="w-8 h-8 text-blue-600" />,
+    description: "Test your knowledge of the typed superset of JavaScript.",
+
+
+
+  "Express.js": {
+    questions: expressjsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-gray-500" />,
+    description: "Test your knowledge of the Node.js web application framework.",
+
+  "Next.js": {
+    questions: nextjsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-black" />,
+    description: "Test your knowledge of the React framework for production.",
+
+  },
+
+  "Tailwind CSS": {
+    questions: tailwindQuiz.questions,
+    icon: <Code className="w-8 h-8 text-teal-500" />,
+    description: "Test your knowledge of the utility-first CSS framework.",
+
+
+
+
+  },
+
+  "Accessibility & Performance": {
+    questions: accessibilityAndPerformanceQuiz.questions,
+    icon: <Code className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge on web accessibility and performance.",
+  },
+
+
+
+
+  "Python" : {
+    questions: pythonQuiz.questions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your Python basics knowledge.",
+
+  },
+
+
+
+
+
+
+
+
   },
 };
 
