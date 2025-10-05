@@ -95,7 +95,7 @@ const PathsLanding = () => {
             return (
               <motion.div
                 key={p.slug}
-                className="border border-gray-200 dark:border-gray-800 rounded-2xl p-6 bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition cursor-pointer"
+                className="border border-gray-200 dark:border-gray-800 rounded-2xl p-6 bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition cursor-pointer flex flex-col justify-between"
                 whileHover={{ y: -4 }}
                 onClick={() => navigate(`/paths/${p.slug}`)}
               >
@@ -109,7 +109,7 @@ const PathsLanding = () => {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-3 mt-4 text-sm text-gray-600 dark:text-gray-300">
+                <div className="flex items-center gap-3 mt-4 text-sm text-gray-600 dark:text-gray-300 border">
                   <span>{p.duration}</span>
                   <span>•</span>
                   <span>
@@ -124,7 +124,7 @@ const PathsLanding = () => {
                   />
                 </div>
 
-                <div className="mt-4 text-blue-600 dark:text-blue-400 text-sm font-medium">View details →</div>
+                <div className="mt-6 text-blue-600 dark:text-blue-400 text-sm font-medium self-start">View details →</div>
               </motion.div>
             );
           })}
