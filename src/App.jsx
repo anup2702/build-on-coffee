@@ -104,6 +104,7 @@ const testimonialsRef = useRef(null);
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/sso-callback" element={<SSOCallbackPage />} />
+            <Route path="/auth/callback" element={<SSOCallbackPage />} />
 
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />

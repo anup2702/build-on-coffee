@@ -10,7 +10,13 @@ const SSOCallbackPage = () => {
     // Handle the OAuth callback from Supabase
     const handleAuthCallback = async () => {
       try {
+        console.log("Handling OAuth callback...");
+        
+        // Get the session from the URL hash
         const { data, error } = await supabase.auth.getSession();
+        
+        console.log("Session data:", data);
+        console.log("Session error:", error);
         
         if (error) {
           console.error("Error handling auth callback:", error);
@@ -19,19 +25,24 @@ const SSOCallbackPage = () => {
         }
 
         if (data.session) {
+          console.log("User authenticated, redirecting to profile");
           // User is authenticated, redirect to profile
-          navigate("/profile");
+          navigate("/profile", { replace: true });
         } else {
+          console.log("No session found, redirecting to login");
           // No session, redirect to login
-          navigate("/login");
+          navigate("/login", { replace: true });
         }
       } catch (err) {
         console.error("Error in auth callback:", err);
-        navigate("/login");
+        navigate("/login", { replace: true });
       }
     };
 
-    handleAuthCallback();
+    // Add a small delay to ensure the URL is processed
+    const timer = setTimeout(handleAuthCallback, 100);
+    
+    return () => clearTimeout(timer);
   }, [navigate]);
 
   return (
