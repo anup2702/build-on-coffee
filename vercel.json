@@ -2,7 +2,11 @@
   "rewrites": [
     {
       "source": "/auth/callback",
-      "destination": "/sso-callback"
+      "destination": "/index.html"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [

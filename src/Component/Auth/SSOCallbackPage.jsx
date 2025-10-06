@@ -11,9 +11,10 @@ const SSOCallbackPage = () => {
     const handleAuthCallback = async () => {
       try {
         console.log("Handling OAuth callback...");
+        console.log("Current URL:", window.location.href);
         
         // Wait for Supabase to process the URL hash
-        await new Promise(resolve => setTimeout(resolve, 500));
+        await new Promise(resolve => setTimeout(resolve, 1000));
         
         // Get the session from the URL hash
         const { data, error } = await supabase.auth.getSession();
