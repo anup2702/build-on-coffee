@@ -14,58 +14,56 @@ import {
   Award,
   Wrench,
   Users,
+  Shield,
 } from "lucide-react";
 
-//Clerk imports for Auth
-import {
-  SignedIn,
-  SignedOut,
-  UserButton,
-  SignOutButton,
-} from "@clerk/clerk-react";
 import {
   User,
   Clipboard,
   Route,
+  LogOut,
 } from "lucide-react";
 import { useTheme } from "./context/ThemeContext";
+import { useAuth } from "../lib/useAuth";
 
 const Navbar = ({ scrollRefs }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { isDark, toggleTheme } = useTheme();
+  const { user, logout, isAuthenticated, loading } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-
  const navItems = [
   { id: "home", to: "/", label: "Home", icon: Home },
-   { id: "services", label: "Services", icon: Wrench, type: "scroll" },
-  { id: "testimonials", label: "Testimonials", icon: Award, type: "scroll" },
+   { id: "services", label: "Products", icon: Wrench, type: "scroll" },
   { id: "team", to: "/team", label: "Team", icon: Users },
-  { id: "weeklytask", to: "/weeklytask", label: "Weekly Task", icon: Clipboard },
-  { id: "profile", to: "/profile", label: "Profile", icon: User },
+  { id: "verify", to: "/verify-certificate", label: "Verify Certificate", icon: Shield },
 ];
 
   const topLinks = [{ key: "community", label: "Join our community" }];
 
-  const handleScroll = (key) => {
-    return (e) => {
+  // Updated navigation handler to support different types
+  const handleNavClick = (item) => {
+    if (item.type === "scroll") {
+      // Handle scroll navigation
       if (
         location.pathname === "/" &&
         scrollRefs &&
-        scrollRefs[key] &&
-        scrollRefs[key].current
+        scrollRefs[item.id] &&
+        scrollRefs[item.id].current
       ) {
-        e.preventDefault();
-        scrollRefs[key].current.scrollIntoView({ behavior: "smooth" });
+        scrollRefs[item.id].current.scrollIntoView({ behavior: "smooth" });
       } else {
         navigate("/", { replace: false });
         setTimeout(() => {
-          scrollRefs?.[key]?.current?.scrollIntoView({ behavior: "smooth" });
+          scrollRefs?.[item.id]?.current?.scrollIntoView({ behavior: "smooth" });
         }, 100);
       }
-    };
+    } else if (item.to) {
+      // Handle regular navigation
+      navigate(item.to);
+    }
   };
 
   useEffect(() => {
@@ -170,24 +168,10 @@ const Navbar = ({ scrollRefs }) => {
           <nav className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => {
               const Icon = item.icon;
-               const handleClick = (e) => {
-    if (item.type === "scroll") {
-      e.preventDefault();
-      handleScroll(item.id)(e); 
-    } else if (item.to) {
-      navigate(item.to);
-    }
-  };
               return (
                 <motion.button
                   key={item.id}
-                 onClick={(e) => {
-    if (item.type === "scroll") {
-      handleScroll(item.id)(e); 
-    } else if (item.to) {
-      navigate(item.to); 
-    }
-  }}
+                  onClick={() => handleNavClick(item)}
                   className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 group overflow-hidden ${
                     location.pathname === item.to
                       ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/60 dark:border-blue-700/60 shadow-sm"
@@ -218,17 +202,42 @@ const Navbar = ({ scrollRefs }) => {
 
           {/* Right Actions */}
           <div className="flex items-center space-x-3">
-            {/* 👤 Clerk User Controls */}
-            <SignedIn>
+            {/* 👤 Supabase User Controls */}
+            {isAuthenticated && user ? (
               <div className="hidden md:flex items-center gap-3">
-                <SignOutButton signOutCallback={() => navigate("/login")}>
-                  <button className="px-4 py-2 text-sm font-medium text-white bg-red-500 hover:bg-red-600 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md">
-                    Sign Out
-                  </button>
-                </SignOutButton>
-                <UserButton afterSignOutUrl="/login" />
+                <button 
+                  onClick={logout}
+                  className="px-4 py-2 text-sm font-medium text-white bg-red-500 hover:bg-red-600 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  Sign Out
+                </button>
+                <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-700 rounded-xl">
+                  {user.user_metadata?.avatar_url ? (
+                    <img 
+                      src={user.user_metadata.avatar_url} 
+                      alt="Profile" 
+                      className="w-8 h-8 rounded-full object-cover" 
+                    />
+                  ) : (
+                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                      <User className="w-4 h-4 text-white" />
+                    </div>
+                  )}
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    {user.user_metadata?.full_name || user.email?.split('@')[0]}
+                  </span>
+                </div>
               </div>
-            </SignedIn>
+            ) : (
+              <div className="hidden md:flex items-center gap-3">
+                <button 
+                  onClick={() => navigate("/login")}
+                  className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  Sign In
+                </button>
+              </div>
+            )}
 
             {/* Theme Toggle */}
             <motion.button
@@ -296,15 +305,10 @@ const Navbar = ({ scrollRefs }) => {
                   <React.Fragment key={item.id}>
                     <motion.button
                       key={item.id}
-      onClick={(e) => {
-        if (item.type === "scroll") {
-          e.preventDefault();
-          handleScroll(item.id)(e);
-        } else if (item.to) {
-          navigate(item.to);
-        }
-        setIsMobileMenuOpen(false); 
-      }}
+                      onClick={() => {
+                        handleNavClick(item);
+                        setIsMobileMenuOpen(false);
+                      }}
                       className={`w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium transition-all duration-300 ${
                         location.pathname === item.to
                           ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/50 dark:border-blue-700/50"
@@ -323,26 +327,37 @@ const Navbar = ({ scrollRefs }) => {
                       <span>{item.label}</span>
                     </motion.button>
 
-                    {/* 👇 Sign Out Button only on Mobile, rendered ONCE after all menu items */}
+                    {/* 👇 Auth Buttons only on Mobile, rendered ONCE after all menu items */}
                     {index === navItems.length - 1 && (
-                      <SignedIn>
-                        <motion.div
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{
-                            duration: 0.3,
-                            delay: (index + 1) * 0.1,
-                          }}
-                        >
-                          <SignOutButton
-                            signOutCallback={() => navigate("/login")}
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.3,
+                          delay: (index + 1) * 0.1,
+                        }}
+                        className="mt-4 space-y-2"
+                      >
+                        {isAuthenticated && user ? (
+                          <button 
+                            onClick={logout}
+                            className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-red-600 hover:text-white hover:bg-red-500/80 transition-all duration-300 border border-red-200/30 dark:border-red-700/30 dark:hover:bg-red-600/80"
                           >
-                            <button className="w-full flex items-center space-x-3 px-4 py-3.5 mt-2 rounded-xl font-medium text-red-600 hover:text-white hover:bg-red-500/80 transition-all duration-300 border border-red-200/30 dark:border-red-700/30 dark:hover:bg-red-600/80">
-                              <span>Sign Out</span>
-                            </button>
-                          </SignOutButton>
-                        </motion.div>
-                      </SignedIn>
+                            <LogOut className="w-5 h-5" />
+                            <span>Sign Out</span>
+                          </button>
+                        ) : (
+                          <button 
+                            onClick={() => {
+                              navigate("/login");
+                              setIsMobileMenuOpen(false);
+                            }}
+                            className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300"
+                          >
+                            <span>Sign In</span>
+                          </button>
+                        )}
+                      </motion.div>
                     )}
                   </React.Fragment>
                 );

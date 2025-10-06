@@ -1,21 +1,38 @@
 import React from 'react';
-import { useUser, SignOutButton } from '@clerk/clerk-react';
-import { User, Mail, Shield, GitPullRequest, AlertCircle, GitCommit, Bookmark, Wrench, BookOpen } from 'lucide-react';
+import { User, Mail, Shield, GitPullRequest, AlertCircle, GitCommit, Bookmark, Wrench, BookOpen, LogOut } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Badge from "./Badge";
 import AchievementBanner from "./AchievementBanner";
-import { useAuth } from './context/AuthContext';
+import { useAuth } from '../lib/useAuth';
 
 const Profile = () => {
-  const { isLoaded, user: clerkUser } = useUser();
-  const { user } = useAuth();
+  const { user, logout, loading } = useAuth();
 
-  if (!isLoaded) {
-    return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600 dark:text-gray-400">Loading...</p>
+        </div>
+      </div>
+    );
   }
 
   if (!user) {
-    return <div>You are not signed in.</div>;
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-gray-600 dark:text-gray-400 mb-4">You are not signed in.</p>
+          <Link 
+            to="/login" 
+            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Sign In
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   // Placeholder data for demonstration
@@ -39,19 +56,19 @@ const Profile = () => {
         {/* User Info Section */}
         <div className="flex flex-col items-center text-center">
           <div className="w-24 h-24 rounded-full flex items-center justify-center mb-4">
-            {user.imageUrl ? (
-              <img src={user.imageUrl} alt="User Profile" className="rounded-full w-24 h-24 object-cover" />
+            {user.user_metadata?.avatar_url ? (
+              <img src={user.user_metadata.avatar_url} alt="User Profile" className="rounded-full w-24 h-24 object-cover" />
             ) : (
               <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center">
                 <User className="w-12 h-12 text-white" />
               </div>
             )}
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{user.fullName}</h2>
-          <p className="text-gray-500 dark:text-gray-400 mt-1">{user.primaryEmailAddress?.emailAddress}</p>
-          <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">
-            Provider: {user.externalAccounts?.[0]?.providerName || 'Email/Password'}
-          </p>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+            {user.user_metadata?.full_name || user.user_metadata?.name || user.email?.split('@')[0]}
+          </h2>
+          <p className="text-gray-500 dark:text-gray-400 mt-1">{user.email}</p>
+          
         </div>
 
         {/* Contribution Stats */}

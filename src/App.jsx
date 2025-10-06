@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import Navbar from "./Component/Navbar";
 import HeroSection from "./Component/HeroSection";
 import ToolCard from "./Component/ToolCard";
@@ -60,6 +59,7 @@ import InterviewQuestions from "./Component/Interview Questions/InterviewQuestio
 import ComprehensiveDsaPath from "./Component/Roadmaps/ComprehensiveDsaPath";
 import Quiz from "./Component/Quiz";
 import Weeklytask from "./Component/Weeklytask";
+import CertificateVerificationPage from "./Component/CertificateVerificationPage";
 
 const Home = ({ scrollRefs }) => {
   return (
@@ -179,6 +179,7 @@ const testimonialsRef = useRef(null);
               path="/InterviewQuestions"
               element={<InterviewQuestions />}
             />
+            <Route path="/verify-certificate" element={<CertificateVerificationPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route
