@@ -10,12 +10,29 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     // Get initial session
     const getInitialSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (session) {
-        setUser(session.user);
-        setIsAuthenticated(true);
+      try {
+        const { data: { session }, error } = await supabase.auth.getSession();
+        
+        if (error) {
+          console.error("Error getting initial session:", error);
+          setLoading(false);
+          return;
+        }
+        
+        if (session) {
+          console.log("Initial session found:", session.user);
+          setUser(session.user);
+          setIsAuthenticated(true);
+        } else {
+          console.log("No initial session found");
+          setUser(null);
+          setIsAuthenticated(false);
+        }
+      } catch (err) {
+        console.error("Error in getInitialSession:", err);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     };
 
     getInitialSession();
@@ -39,14 +56,29 @@ export const AuthProvider = ({ children }) => {
 
 
   const signInWithGoogle = async () => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: `${window.location.origin}/profile`,
-      },
-    });
-    if (error) throw error;
-    return data;
+    try {
+      console.log("Initiating Google OAuth...");
+      console.log("Redirect URL:", `${window.location.origin}/auth/callback`);
+      
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}/auth/callback`,
+        },
+      });
+      
+      console.log("OAuth response:", { data, error });
+      
+      if (error) {
+        console.error("OAuth error:", error);
+        throw error;
+      }
+      
+      return data;
+    } catch (err) {
+      console.error("Error in signInWithGoogle:", err);
+      throw err;
+    }
   };
 
   const logout = async () => {

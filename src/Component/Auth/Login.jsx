@@ -13,10 +13,12 @@ const Login = () => {
     setLoading(true);
     setError("");
     try {
-      await signInWithGoogle();
+      console.log("Starting Google sign-in...");
+      const result = await signInWithGoogle();
+      console.log("Google sign-in result:", result);
     } catch (err) {
       console.error("Error during Google sign-in:", err);
-      setError("Google sign-in failed");
+      setError("Google sign-in failed. Please try again.");
       setLoading(false);
     }
   };

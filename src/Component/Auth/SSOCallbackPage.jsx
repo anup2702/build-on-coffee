@@ -12,6 +12,9 @@ const SSOCallbackPage = () => {
       try {
         console.log("Handling OAuth callback...");
         
+        // Wait for Supabase to process the URL hash
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
         // Get the session from the URL hash
         const { data, error } = await supabase.auth.getSession();
         
@@ -20,7 +23,7 @@ const SSOCallbackPage = () => {
         
         if (error) {
           console.error("Error handling auth callback:", error);
-          navigate("/login");
+          navigate("/login", { replace: true });
           return;
         }
 
@@ -39,10 +42,7 @@ const SSOCallbackPage = () => {
       }
     };
 
-    // Add a small delay to ensure the URL is processed
-    const timer = setTimeout(handleAuthCallback, 100);
-    
-    return () => clearTimeout(timer);
+    handleAuthCallback();
   }, [navigate]);
 
   return (

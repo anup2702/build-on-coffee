@@ -191,6 +191,14 @@ const testimonialsRef = useRef(null);
                 </ProtectedRoute>
               }
             />
+            <Route
+              path="/profile/*"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
 
           {/* 🚀 Fixed Bottom Components */}
