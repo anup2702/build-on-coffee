@@ -25,6 +25,7 @@ import { nextjsQuiz } from "../../data/nextjsQuiz.js";
 import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
+import { webAPIsQuiz } from "../../data/webAPIsQuiz.js";
 import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 import { webSecurityBasicsQuiz } from "../../data/webSecurityBasicsQuiz.js";
 
@@ -167,10 +168,17 @@ const quizzes = {
     icon: <Code className="w-8 h-8 text-blue-500" />,
     description: "Test your Python basics knowledge.",
   },
+
+  "Web APIs" : {
+    questions: webAPIsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-orange-500" />,
+    description: "Test your Web APIs knowledge.",
+
   "Web Security Basics": {
     questions: webSecurityBasicsQuiz.questions,
     icon: <Code className="w-8 h-8 text-red-500" />,
     description: "Test your knowledge of web security fundamentals.",
+
   },
 };
 
