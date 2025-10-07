@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; 
 import { motion } from "framer-motion";
 import { BookOpen, Code, CheckCircle } from "lucide-react";
 import dsaQuestions from "../../data/dsa";
@@ -26,6 +26,7 @@ import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
 import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
+import { webSecurityBasicsQuiz } from "../../data/webSecurityBasicsQuiz.js";
 
 
 
@@ -165,6 +166,11 @@ const quizzes = {
     questions: pythonQuiz.questions,
     icon: <Code className="w-8 h-8 text-blue-500" />,
     description: "Test your Python basics knowledge.",
+  },
+  "Web Security Basics": {
+    questions: webSecurityBasicsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of web security fundamentals.",
   },
 };
 
