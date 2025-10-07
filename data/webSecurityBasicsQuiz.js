@@ -202,7 +202,7 @@ export const webSecurityBasicsQuiz = {
     ],
     advanced: [
       {
-        question: "What is a Zero-Day vulnerability?",
+        question: "What is a Zero-Day vulnerability?", 
         options: [
           "A security flaw that is known to the software vendor but has not been patched yet",
           "A vulnerability that has been patched",
