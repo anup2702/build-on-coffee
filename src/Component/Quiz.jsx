@@ -25,6 +25,7 @@ import { nextjsQuiz } from "../../data/nextjsQuiz.js";
 import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
+import { stateManagementQuiz } from "../../data/stateManagementQuiz.js";
 import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 
 
@@ -165,6 +166,11 @@ const quizzes = {
     questions: pythonQuiz.questions,
     icon: <Code className="w-8 h-8 text-blue-500" />,
     description: "Test your Python basics knowledge.",
+  },
+  "State Management": {
+    questions: stateManagementQuiz.questions,
+    icon: <Code className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge of state management concepts.",
   },
 };
 
