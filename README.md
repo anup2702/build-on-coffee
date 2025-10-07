@@ -12,10 +12,14 @@
 - <a href="#project-insights"> Project Insights </a>
 - <a href="#demo"> Live Demo </a>
 - <a href="#features">Features</a>
+- <a href="#getting-started"> Getting Started </a>
 - <a href="#highlights">UI/UX Highlights</a> 
 - <a href="#technology-stack"> Technology Stack </a>
-- <a href="#getting-started"> Getting Started </a>
-- <a href="#roadmap-enhancements">  </a>
+- <a href="#pages-features">Pages & Features</a>
+- <a href="#database-schema">Database Schema</a>
+- <a href="#contribution-guidelines">Contribution Guidelines</a>
+- <a href="environment-variables">Environment Variables</a>
+- <a href="recent-updates">Recent Updates</a>
 - <a href="#acknowledgments">Acknowledgments</a>
 - <a href="#support">Support</a>
 - <a href="#how-to-contribute">How to Contribute</a>
@@ -88,8 +92,7 @@ Experience build-on-coffee live here:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<h2 id="demo">🚀 Live Demo</h2>
-## ✨ Features
+<h2 id="features">✨ Features</h2>
 
 ### 🎓 **Learning Resources**
 - **Comprehensive Courses**: Data Structures, Algorithms, Operating Systems, Networks, Databases, System Design
@@ -275,8 +278,7 @@ Experience build-on-coffee live here:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<h2 id="demo">🚀 Live Demo</h2>
-## 📱 Pages & Features
+<h2 id="pages-features">📱 Pages & Features</h2>
 
 ### **Landing Page**
 - Hero section with animated background elements
@@ -312,8 +314,7 @@ Experience build-on-coffee live here:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<h2 id="demo">🚀 Live Demo</h2>
-## 🗄️ Database Schema
+<h2 id="database-schema">🗄️ Database Schema</h2>
 
 ### **Certificates Table**
 
@@ -342,8 +343,7 @@ CREATE TABLE certificates (
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<h2 id="demo">🚀 Live Demo</h2>
-## Contribution Guidelines 📑
+<h2 id="contribution-guidelines">Contribution Guidelines 📑</h2>
 
 We welcome contributions from developers of all skill levels! Here's how you can help:
 
@@ -376,8 +376,7 @@ We welcome contributions from developers of all skill levels! Here's how you can
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<h2 id="demo">🚀 Live Demo</h2>
-## 🔧 Environment Variables
+<h2 id="environment-variables">🔧 Environment Variables</h2>
 
 Create a `.env` file in your project root with these variables:
 
@@ -392,8 +391,7 @@ NODE_ENV=development
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<h2 id="demo">🚀 Live Demo</h2>
-## 🎯 Recent Updates
+<h2 id="recent-updates">🎯 Recent Updates</h2>
 
 ### **v2.0.0 - Major Update**
 - ✅ **Google OAuth Authentication** - Replaced Clerk with Supabase + Google OAuth
@@ -426,7 +424,6 @@ Your insights are invaluable to us. Reach out to us team for any inquiries, feed
 - Thanks to all contributors of this project 
 - Special shoutout to **GirlScript Summer of Code (GSSoC’25)** for the amazing community and support!
 - Built with dedication, collaboration, and lots of chai
-
 - **Community Contributors**: All the amazing developers who contribute
 - **Open Source Tools**: React, Vite, Tailwind CSS, Supabase, and other libraries
 - **Design Inspiration**: Modern web design trends and best practices
