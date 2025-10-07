@@ -25,6 +25,7 @@ import { nextjsQuiz } from "../../data/nextjsQuiz.js";
 import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
+import { designPatternsQuiz } from "../../data/designPatternsQuiz.js";
 import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 
 
@@ -166,6 +167,11 @@ const quizzes = {
     icon: <Code className="w-8 h-8 text-blue-500" />,
     description: "Test your Python basics knowledge.",
   },
+  "Design Patterns": {
+    questions: designPatternsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge of Design Patterns in JavaScript & React.",
+  }
 };
 
 const levels = ["beginner", "intermediate", "advanced"];
