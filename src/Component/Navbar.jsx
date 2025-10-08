@@ -34,12 +34,12 @@ const Navbar = ({ scrollRefs }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
- const navItems = [
-  { id: "home", to: "/", label: "Home", icon: Home },
-   { id: "services", label: "Products", icon: Wrench, type: "scroll" },
-  { id: "team", to: "/team", label: "Team", icon: Users },
-  { id: "verify", to: "/verify-certificate", label: "Verify Certificate", icon: Shield },
-];
+  const navItems = [
+    { id: "home", to: "/", label: "Home", icon: Home },
+    { id: "services", label: "Products", icon: Wrench, type: "scroll" },
+    { id: "team", to: "/team", label: "Team", icon: Users },
+    { id: "verify", to: "/verify-certificate", label: "Verify Certificate", icon: Shield },
+  ];
 
   const topLinks = [{ key: "community", label: "Join our community" }];
 
@@ -79,9 +79,8 @@ const Navbar = ({ scrollRefs }) => {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out transform ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      } glass border-b border-white/20 dark:border-gray-700/30`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out transform ${isVisible ? "translate-y-0" : "-translate-y-full"
+        } glass border-b border-white/20 dark:border-gray-700/30`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
@@ -105,24 +104,24 @@ const Navbar = ({ scrollRefs }) => {
                 {/* Animated steam effect */}
                 <motion.div
                   className="absolute -top-2 -right-1 w-2 h-2 bg-blue-400/60 rounded-full"
-                  animate={{ 
+                  animate={{
                     y: [-2, -8, -2],
                     opacity: [0.6, 0, 0.6]
                   }}
-                  transition={{ 
-                    duration: 2, 
+                  transition={{
+                    duration: 2,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
                 />
                 <motion.div
                   className="absolute -top-1 -right-2 w-1.5 h-1.5 bg-cyan-400/60 rounded-full"
-                  animate={{ 
+                  animate={{
                     y: [-1, -6, -1],
                     opacity: [0.6, 0, 0.6]
                   }}
-                  transition={{ 
-                    duration: 2.5, 
+                  transition={{
+                    duration: 2.5,
                     repeat: Infinity,
                     ease: "easeInOut",
                     delay: 0.5
@@ -132,29 +131,29 @@ const Navbar = ({ scrollRefs }) => {
               {/* Glow effect */}
               <motion.div
                 className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 blur-xl"
-                animate={{ 
+                animate={{
                   opacity: [0.3, 0.6, 0.3]
                 }}
-                transition={{ 
-                  duration: 3, 
+                transition={{
+                  duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
               />
             </div>
             <div className="flex flex-col">
-              <motion.span 
+              <motion.span
                 className="text-2xl font-black text-gradient"
-                whileHover={{ 
+                whileHover={{
                   backgroundPosition: "right center"
                 }}
                 transition={{ duration: 0.5 }}
               >
                 BuildOnCoffee
               </motion.span>
-              <motion.span 
+              <motion.span
                 className="text-xs text-gray-500 dark:text-gray-400 -mt-1 font-medium tracking-wide"
-                whileHover={{ 
+                whileHover={{
                   color: "rgb(59 130 246)"
                 }}
                 transition={{ duration: 0.3 }}
@@ -172,11 +171,10 @@ const Navbar = ({ scrollRefs }) => {
                 <motion.button
                   key={item.id}
                   onClick={() => handleNavClick(item)}
-                  className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 group overflow-hidden ${
-                    location.pathname === item.to
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/60 dark:border-blue-700/60 shadow-sm"
-                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200/40 dark:hover:border-gray-700/40"
-                  }`}
+                  className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 group overflow-hidden ${location.pathname === item.to
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/60 dark:border-blue-700/60 shadow-sm"
+                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200/40 dark:hover:border-gray-700/40"
+                    }`}
                   whileHover={{ y: -1 }}
                   whileTap={{ scale: 0.96 }}
                 >
@@ -205,7 +203,7 @@ const Navbar = ({ scrollRefs }) => {
             {/* 👤 Supabase User Controls */}
             {isAuthenticated && user ? (
               <div className="hidden md:flex items-center gap-3">
-                <button 
+                <button
                   onClick={logout}
                   className="px-4 py-2 text-sm font-medium text-white bg-red-500 hover:bg-red-600 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md"
                 >
@@ -213,10 +211,10 @@ const Navbar = ({ scrollRefs }) => {
                 </button>
                 <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-700 rounded-xl">
                   {user.user_metadata?.avatar_url ? (
-                    <img 
-                      src={user.user_metadata.avatar_url} 
-                      alt="Profile" 
-                      className="w-8 h-8 rounded-full object-cover" 
+                    <img
+                      src={user.user_metadata.avatar_url}
+                      alt="Profile"
+                      className="w-8 h-8 rounded-full object-cover"
                     />
                   ) : (
                     <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
@@ -230,7 +228,7 @@ const Navbar = ({ scrollRefs }) => {
               </div>
             ) : (
               <div className="hidden md:flex items-center gap-3">
-                <button 
+                <button
                   onClick={() => navigate("/login")}
                   className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md"
                 >
@@ -270,7 +268,7 @@ const Navbar = ({ scrollRefs }) => {
 
             {/* Mobile Menu Toggle */}
             <motion.button
-    onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
               className="md:hidden p-3 rounded-xl bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-400 hover:bg-gray-100/80 dark:hover:bg-gray-700/80 transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm shadow-sm"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -309,11 +307,10 @@ const Navbar = ({ scrollRefs }) => {
                         handleNavClick(item);
                         setIsMobileMenuOpen(false);
                       }}
-                      className={`w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium transition-all duration-300 ${
-                        location.pathname === item.to
-                          ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/50 dark:border-blue-700/50"
-                          : "text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 hover:text-gray-900 dark:hover:text-gray-100"
-                      }`}
+                      className={`w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium transition-all duration-300 ${location.pathname === item.to
+                        ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/50 dark:border-blue-700/50"
+                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 hover:text-gray-900 dark:hover:text-gray-100"
+                        }`}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{
@@ -339,7 +336,7 @@ const Navbar = ({ scrollRefs }) => {
                         className="mt-4 space-y-2"
                       >
                         {isAuthenticated && user ? (
-                          <button 
+                          <button
                             onClick={logout}
                             className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-red-600 hover:text-white hover:bg-red-500/80 transition-all duration-300 border border-red-200/30 dark:border-red-700/30 dark:hover:bg-red-600/80"
                           >
@@ -347,7 +344,7 @@ const Navbar = ({ scrollRefs }) => {
                             <span>Sign Out</span>
                           </button>
                         ) : (
-                          <button 
+                          <button
                             onClick={() => {
                               navigate("/login");
                               setIsMobileMenuOpen(false);
