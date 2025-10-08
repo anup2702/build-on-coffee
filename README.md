@@ -6,9 +6,14 @@
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
+<h2> Project Description </h2>
+
+> **BuildOnCoffee is a modern, community-driven platform designed to accelerate your development journey. Discover curated learning resources, powerful tools, and connect with fellow developers in a beautifully crafted environment.**
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
 <h3>📖 Table of Contents</h3> 
 
-- <a href="#overview"> Overview </a>
 - <a href="#project-insights"> Project Insights </a>
 - <a href="#demo"> Live Demo </a>
 - <a href="#features">Features</a>
@@ -32,12 +37,6 @@
 - <a href="#stargazers">Stargazers</a>
 - <a href="#forkers">Forkers</a>
 - <a href="#project-admin">Project Admin</a>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<h2 id="overview">🔍 Overview</h2>
-
-> **BuildOnCoffee is a modern, community-driven platform designed to accelerate your development journey. Discover curated learning resources, powerful tools, and connect with fellow developers in a beautifully crafted environment.**
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
