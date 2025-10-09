@@ -12,23 +12,27 @@ import gitQuestions from "../../data/git.js";
 
 import { databaseQuiz } from "../../data/databaseQuiz.js";
 
-
 import { typescriptQuiz } from "../../data/typescriptQuiz.js";
-
-
 
 import { expressjsQuiz } from "../../data/expressjsQuiz.js";
 
 import { nextjsQuiz } from "../../data/nextjsQuiz.js";
 
-
 import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
+
 import { stateManagementQuiz } from "../../data/stateManagementQuiz.js";
 import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 
 
+
+import { designPatternsQuiz } from "../../data/designPatternsQuiz.js";
+
+import { webAPIsQuiz } from "../../data/webAPIsQuiz.js";
+
+import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
+import { webSecurityBasicsQuiz } from "../../data/webSecurityBasicsQuiz.js";
 
 import javaQuestions from "../../data/java.js";
 
@@ -36,16 +40,11 @@ import cloudNativeConceptsQuestions from "../../data/cloudNativeConcepts.js";
 
 import iacQuestions from "../../data/iac.js";
 
-
 import kubernetesQuestions from "../../data/kubernetes.js";
 
 import containersDockerQuestions from "../../data/containersDocker.js";
 
 import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
-
-
-
-
 
 const quizzes = {
   DSA: {
@@ -66,7 +65,8 @@ const quizzes = {
   JavaScript: {
     questions: javascriptQuestions,
     icon: <Code className="w-8 h-8 text-yellow-500" />,
-    description: "Test your JavaScript knowledge from basics to advanced concepts.",
+    description:
+      "Test your JavaScript knowledge from basics to advanced concepts.",
   },
   Java: {
     questions: javaQuestions,
@@ -76,14 +76,16 @@ const quizzes = {
   React: {
     questions: reactQuestions,
     icon: <Code className="w-8 h-8 text-sky-500" />,
-    description: "Test your React knowledge from fundamentals to advanced topics.",
+    description:
+      "Test your React knowledge from fundamentals to advanced topics.",
   },
   "Node.js": {
     questions: nodejsQuestions,
     icon: <Code className="w-8 h-8 text-green-500" />,
-    description: "Test your Node.js knowledge from core fundamentals to practical concepts.",
+    description:
+      "Test your Node.js knowledge from core fundamentals to practical concepts.",
   },
-  
+
   "Git & GitHub": {
     questions: gitQuestions,
     icon: <Code className="w-8 h-8 text-orange-500" />,
@@ -126,13 +128,13 @@ const quizzes = {
     description: "Test your knowledge of fundamental cloud concepts.",
   },
 
-  "Database": {
+  Database: {
     questions: databaseQuiz.questions,
     icon: <BookOpen className="w-8 h-8 text-purple-500" />,
     description: "Test your knowledge of both SQL and NoSQL databases.",
   },
 
-  "TypeScript": {
+  TypeScript: {
     questions: typescriptQuiz.questions,
     icon: <Code className="w-8 h-8 text-blue-600" />,
     description: "Test your knowledge of the typed superset of JavaScript.",
@@ -141,7 +143,8 @@ const quizzes = {
   "Express.js": {
     questions: expressjsQuiz.questions,
     icon: <Code className="w-8 h-8 text-gray-500" />,
-    description: "Test your knowledge of the Node.js web application framework.",
+    description:
+      "Test your knowledge of the Node.js web application framework.",
   },
 
   "Next.js": {
@@ -162,15 +165,36 @@ const quizzes = {
     description: "Test your knowledge on web accessibility and performance.",
   },
 
-  "Python" : {
+  Python: {
     questions: pythonQuiz.questions,
     icon: <Code className="w-8 h-8 text-blue-500" />,
     description: "Test your Python basics knowledge.",
   },
+
   "State Management": {
     questions: stateManagementQuiz.questions,
     icon: <Code className="w-8 h-8 text-purple-500" />,
     description: "Test your knowledge of state management concepts.",
+
+
+  "Design Patterns": {
+    questions: designPatternsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-purple-500" />,
+    description:
+      "Test your knowledge of Design Patterns in JavaScript & React.",
+  },
+
+  "Web APIs": {
+    questions: webAPIsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-orange-500" />,
+    description: "Test your Web APIs knowledge.",
+
+    "Web Security Basics": {
+      questions: webSecurityBasicsQuiz.questions,
+      icon: <Code className="w-8 h-8 text-red-500" />,
+      description: "Test your knowledge of web security fundamentals.",
+    },
+
   },
 };
 
@@ -337,7 +361,10 @@ const Quiz = () => {
               <div
                 className="bg-blue-500 h-2 rounded-full transition-all"
                 style={{
-                  width: `${((currentQuestion + (checked ? 1 : 0)) / quizData.length) * 100}%`,
+                  width: `${
+                    ((currentQuestion + (checked ? 1 : 0)) / quizData.length) *
+                    100
+                  }%`,
                 }}
               />
             </div>
@@ -350,7 +377,8 @@ const Quiz = () => {
               {quizData[currentQuestion].options.map((option, i) => {
                 let bgClass = "border";
                 if (checked) {
-                  if (option === quizData[currentQuestion].answer) bgClass = "bg-emerald-500";
+                  if (option === quizData[currentQuestion].answer)
+                    bgClass = "bg-emerald-500";
                   else if (option === selectedOption) bgClass = "bg-red-500";
                 } else if (option === selectedOption) {
                   bgClass = "bg-blue-100 dark:bg-slate-700 border-blue-300";
@@ -397,7 +425,9 @@ const Quiz = () => {
             {quizCompletion[selectedQuiz] ? (
               <>
                 <h2 className="text-3xl font-bold mb-4">Quiz Completed! 🎉</h2>
-                <p className="text-lg mb-6">You have successfully passed all levels.</p>
+                <p className="text-lg mb-6">
+                  You have successfully passed all levels.
+                </p>
               </>
             ) : (
               <>
@@ -406,7 +436,8 @@ const Quiz = () => {
                   Your Score: {score} / {quizData.length}
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  You need a score of {MIN_CUTOFF} or higher to pass this level. Keep practicing! 💪
+                  You need a score of {MIN_CUTOFF} or higher to pass this level.
+                  Keep practicing! 💪
                 </p>
               </>
             )}
