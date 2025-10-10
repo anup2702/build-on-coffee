@@ -27,6 +27,7 @@ import kubernetesQuestions from "../../data/kubernetes.js";
 import containersDockerQuestions from "../../data/containersDocker.js";
 import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
 import { authenticationAndAuthorizationQuiz } from "../../data/authenticationAndAuthorizationQuiz.js";
+import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
 
 const quizzes = {
   DSA: {
@@ -175,6 +176,11 @@ const quizzes = {
     questions: authenticationAndAuthorizationQuiz.questions,
     icon: <Code className="w-8 h-8 text-red-500" />,
     description: "Test your knowledge of authentication & authorization.",
+  },
+  "REST vs GraphQL": {
+    questions: restVsGraphQLQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of REST vs GraphQL.",
   },
 };
 
