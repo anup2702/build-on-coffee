@@ -28,7 +28,7 @@ import containersDockerQuestions from "../../data/containersDocker.js";
 import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
 import { authenticationAndAuthorizationQuiz } from "../../data/authenticationAndAuthorizationQuiz.js";
 import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
-import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js"; 
+import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";  
 
 const quizzes = {
   DSA: {
