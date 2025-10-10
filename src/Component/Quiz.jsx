@@ -35,6 +35,7 @@ import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQui
 import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";
 import { serverlessComputingQuiz } from "../../data/serverlessComputingQuiz.js";  
 import { networkingFundamentalsQuiz } from "../../data/networkingFundamentalsQuiz.js";
+import { algorithmsAndProblemSolvingQuiz } from "../../data/algorithmsAndProblemSolvingQuiz.js";
 
 const quizzes = {
   DSA: {
@@ -222,6 +223,11 @@ const quizzes = {
     questions: networkingFundamentalsQuiz.questions,
     icon: <Code className="w-8 h-8 text-purple-500" />,
     description: "Test your knowledge of networking fundamentals.",
+  },
+  "Algorithms & Problem Solving": {
+    questions: algorithmsAndProblemSolvingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of algorithms and problem solving.",
   },
 };
 
