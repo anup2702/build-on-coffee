@@ -32,7 +32,8 @@ import { microservicesArchitectureQuiz } from "../../data/microservicesArchitect
 import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
 import { cachingQuiz } from "../../data/cachingQuiz.js";
 import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";
-import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";  
+import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";
+import { serverlessComputingQuiz } from "../../data/serverlessComputingQuiz.js";  
 
 const quizzes = {
   DSA: {
@@ -210,6 +211,11 @@ const quizzes = {
     questions: monitoringAndLoggingQuiz.questions,
     icon: <Code className="w-8 h-8 text-yellow-500" />,
     description: "Test your knowledge of monitoring and logging.",
+  },
+  "Serverless Computing": {
+    questions: serverlessComputingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-orange-500" />,
+    description: "Test your knowledge of serverless computing.",
   },
 };
 
