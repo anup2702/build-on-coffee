@@ -1,5 +1,5 @@
 export const microservicesArchitectureQuiz = {
-  title: "Microservices Architecture Quiz",
+  title: "Microservices Architecture Quiz", 
   questions: {
     beginner: [
       {
