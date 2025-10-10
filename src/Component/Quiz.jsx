@@ -9,37 +9,24 @@ import reactQuestions from "../../data/react.js";
 import nodejsQuestions from "../../data/nodejs.js";
 import databaseQuestions from "../../data/database.js";
 import gitQuestions from "../../data/git.js";
-
 import { databaseQuiz } from "../../data/databaseQuiz.js";
-
 import { typescriptQuiz } from "../../data/typescriptQuiz.js";
-
 import { expressjsQuiz } from "../../data/expressjsQuiz.js";
-
 import { nextjsQuiz } from "../../data/nextjsQuiz.js";
-
 import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
-
 import { designPatternsQuiz } from "../../data/designPatternsQuiz.js";
-
 import { webAPIsQuiz } from "../../data/webAPIsQuiz.js";
-
 import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 import { webSecurityBasicsQuiz } from "../../data/webSecurityBasicsQuiz.js";
-
 import javaQuestions from "../../data/java.js";
-
 import cloudNativeConceptsQuestions from "../../data/cloudNativeConcepts.js";
-
 import iacQuestions from "../../data/iac.js";
-
 import kubernetesQuestions from "../../data/kubernetes.js";
-
 import containersDockerQuestions from "../../data/containersDocker.js";
-
 import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
+import { authenticationAndAuthorizationQuiz } from "../../data/authenticationAndAuthorizationQuiz.js";
 
 const quizzes = {
   DSA: {
@@ -183,6 +170,11 @@ const quizzes = {
       icon: <Code className="w-8 h-8 text-red-500" />,
       description: "Test your knowledge of web security fundamentals.",
     },
+  },
+  "Authentication & Authorization": {
+    questions: authenticationAndAuthorizationQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of authentication & authorization.",
   },
 };
 
