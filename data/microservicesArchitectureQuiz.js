@@ -1,4 +1,4 @@
-export const microservicesArchitectureQuiz = { 
+export const microservicesArchitectureQuiz = {  
   title: "Microservices Architecture Quiz", 
   questions: {
     beginner: [
