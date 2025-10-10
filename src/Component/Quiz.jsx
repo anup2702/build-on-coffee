@@ -31,7 +31,8 @@ import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
 import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
 import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
 import { cachingQuiz } from "../../data/cachingQuiz.js";
-import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";  
+import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";
+import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";  
 
 const quizzes = {
   DSA: {
@@ -169,12 +170,11 @@ const quizzes = {
     questions: webAPIsQuiz.questions,
     icon: <Code className="w-8 h-8 text-orange-500" />,
     description: "Test your Web APIs knowledge.",
-
-    "Web Security Basics": {
-      questions: webSecurityBasicsQuiz.questions,
-      icon: <Code className="w-8 h-8 text-red-500" />,
-      description: "Test your knowledge of web security fundamentals.",
-    },
+  },
+  "Web Security Basics": {
+    questions: webSecurityBasicsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of web security fundamentals.",
   },
   "Authentication & Authorization": {
     questions: authenticationAndAuthorizationQuiz.questions,
@@ -205,6 +205,11 @@ const quizzes = {
     questions: linuxAndShellScriptingQuiz.questions,
     icon: <Code className="w-8 h-8 text-gray-500" />,
     description: "Test your knowledge of Linux and shell scripting.",
+  },
+  "Monitoring & Logging": {
+    questions: monitoringAndLoggingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-yellow-500" />,
+    description: "Test your knowledge of monitoring and logging.",
   },
 };
 
