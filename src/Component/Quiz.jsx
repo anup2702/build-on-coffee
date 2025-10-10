@@ -28,6 +28,7 @@ import containersDockerQuestions from "../../data/containersDocker.js";
 import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
 import { authenticationAndAuthorizationQuiz } from "../../data/authenticationAndAuthorizationQuiz.js";
 import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
+import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
 
 const quizzes = {
   DSA: {
@@ -181,6 +182,11 @@ const quizzes = {
     questions: restVsGraphQLQuiz.questions,
     icon: <Code className="w-8 h-8 text-red-500" />,
     description: "Test your knowledge of REST vs GraphQL.",
+  },
+  "Microservices Architecture": {
+    questions: microservicesArchitectureQuiz.questions,
+    icon: <Code className="w-8 h-8 text-cyan-500" />,
+    description: "Test your knowledge of microservices architecture.",
   },
 };
 
