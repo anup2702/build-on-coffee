@@ -29,7 +29,8 @@ import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
 import { authenticationAndAuthorizationQuiz } from "../../data/authenticationAndAuthorizationQuiz.js";
 import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
 import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
-import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";  
+import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
+import { cachingQuiz } from "../../data/cachingQuiz.js";  
 
 const quizzes = {
   DSA: {
@@ -193,6 +194,11 @@ const quizzes = {
     questions: databaseOptimizationAndIndexingQuiz.questions,
     icon: <Code className="w-8 h-8 text-green-500" />,
     description: "Test your knowledge of database optimization and indexing.",
+  },
+  "Caching": {
+    questions: cachingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your knowledge of caching concepts.",
   },
 };
 
