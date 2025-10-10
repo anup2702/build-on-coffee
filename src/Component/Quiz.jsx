@@ -187,7 +187,7 @@ const quizzes = {
     questions: microservicesArchitectureQuiz.questions,
     icon: <Code className="w-8 h-8 text-cyan-500" />,
     description: "Test your knowledge of microservices architecture.",
-  },
+  }, 
 };
 
 const levels = ["beginner", "intermediate", "advanced"];
