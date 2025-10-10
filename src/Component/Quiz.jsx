@@ -30,7 +30,8 @@ import { authenticationAndAuthorizationQuiz } from "../../data/authenticationAnd
 import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
 import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
 import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
-import { cachingQuiz } from "../../data/cachingQuiz.js";  
+import { cachingQuiz } from "../../data/cachingQuiz.js";
+import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";  
 
 const quizzes = {
   DSA: {
@@ -199,6 +200,11 @@ const quizzes = {
     questions: cachingQuiz.questions,
     icon: <Code className="w-8 h-8 text-blue-500" />,
     description: "Test your knowledge of caching concepts.",
+  },
+  "Linux & Shell Scripting": {
+    questions: linuxAndShellScriptingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-gray-500" />,
+    description: "Test your knowledge of Linux and shell scripting.",
   },
 };
 
