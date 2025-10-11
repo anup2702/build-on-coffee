@@ -95,7 +95,9 @@ const PathsLanding = () => {
             return (
               <motion.div
                 key={p.slug}
-                className="border border-gray-200 dark:border-gray-800 rounded-2xl p-6 bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition cursor-pointer flex flex-col justify-between"
+                className="border border-gray-200 dark:border-gray-800 rounded-2xl p-6 bg-white dark:bg-gray-900 shadow-sm cursor-pointer flex flex-col justify-between
+             transition-all duration-300 ease-in-out 
+             hover:border-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] dark:hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
                 whileHover={{ y: -4 }}
                 onClick={() => navigate(`/paths/${p.slug}`)}
               >
