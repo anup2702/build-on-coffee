@@ -34,7 +34,7 @@ export default function ProjectIdeas() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto font-light leading-relaxed">
-            Discover curated project ideas for developers of all skill levels. 
+            Discover curated project ideas for developers of all skill levels.
             Build something amazing and showcase your skills.
           </p>
         </motion.div>
@@ -51,13 +51,13 @@ export default function ProjectIdeas() {
             <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">{projectIdeas.length}</div>
             <div className="text-gray-600 dark:text-gray-300 font-medium">Total Ideas</div>
           </div>
-          
+
           <div className="text-center p-6 bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800">
             <Star className="w-8 h-8 text-emerald-600 dark:text-emerald-400 mx-auto mb-3" />
             <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">3</div>
             <div className="text-gray-600 dark:text-gray-300 font-medium">Skill Levels</div>
           </div>
-          
+
           <div className="text-center p-6 bg-orange-50 dark:bg-orange-900/20 rounded-2xl border border-orange-200 dark:border-orange-800">
             <Users className="w-8 h-8 text-orange-600 dark:text-orange-400 mx-auto mb-3" />
             <div className="text-2xl font-black text-gray-900 dark:text-white mb-1">Community</div>
@@ -78,11 +78,10 @@ export default function ProjectIdeas() {
               <button
                 key={lvl}
                 onClick={() => setLevel(lvl)}
-                className={`px-8 py-4 rounded-2xl font-semibold capitalize text-lg transition-all duration-300 border-2 ${
-                  isActive
+                className={`px-8 py-4 rounded-2xl font-semibold capitalize text-lg transition-all duration-300 border-2 ${isActive
                     ? "bg-blue-600 text-white border-blue-600 shadow-lg"
                     : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-700"
-                }`}
+                  }`}
               >
                 {lvl}
               </button>
@@ -100,7 +99,8 @@ export default function ProjectIdeas() {
           {filtered.map((idea, i) => (
             <motion.div
               key={idea.id}
-              className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border-2 border-gray-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-400/50 transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer"
+              className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border-2 border-gray-200 dark:border-slate-700 
+  hover:border-blue-500/50 dark:hover:border-blue-400/50 transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer flex flex-col"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 + i * 0.1 }}
@@ -117,18 +117,18 @@ export default function ProjectIdeas() {
               </div>
 
               {/* Project Content */}
-              <div className="p-8">
+              <div className="p-6 flex flex-col h-full">
                 <h3 className="text-2xl font-black mb-4 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {idea.title}
                 </h3>
 
                 {/* CTA Button */}
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mt-auto">
                   <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold border border-blue-200 dark:border-blue-800">
                     <Star className="w-4 h-4" />
                     {level}
                   </span>
-                  
+
                   <button className="inline-flex items-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl group/btn">
                     <span>Know More</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
@@ -151,7 +151,7 @@ export default function ProjectIdeas() {
               Ready to Build Something Amazing?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Choose a project idea that matches your skill level and interests. 
+              Choose a project idea that matches your skill level and interests.
               Start building today and add it to your portfolio!
             </p>
             <a
