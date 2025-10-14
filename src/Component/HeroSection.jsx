@@ -146,40 +146,54 @@ const HeroSection = () => {
         </motion.div>
 
         {/* Stats */}
-        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {[
-            { icon: <Users className="w-8 h-8" />, number: "10K+", label: "Active Developers" },
-            { icon: <Code2 className="w-8 h-8" />, number: "50+", label: "Tools & Resources" },
-            { icon: <Stars className="w-8 h-8" />, number: "100+", label: "Learning Paths" },
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              className={`relative p-8 rounded-2xl border ${
-                isDarkMode
-                  ? "bg-slate-800/50 border-slate-700/50 backdrop-blur-sm"
-                  : "bg-white/80 border-gray-200/50 backdrop-blur-sm"
-              }`}
-              whileHover={{ scale: 1.02, y: -4 }}
-              variants={floatingVariants}
-              animate="animate"
-            >
-              <div className={`w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4 ${
-                isDarkMode 
-                  ? "bg-blue-500/20 text-blue-400" 
-                  : "bg-blue-50 text-blue-600"
-              }`}>
-                {stat.icon}
-              </div>
-              <h3 className={`text-3xl font-black mb-2 ${isDarkMode ? "text-white" : "text-gray-900"}`}>
-                {stat.number}
-              </h3>
-              <p className={`text-base font-medium ${isDarkMode ? "text-slate-400" : "text-gray-600"}`}>
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
+<motion.div
+  variants={itemVariants}
+  className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"
+>
+  {[
+    { icon: <Users className="w-8 h-8" />, number: "10K+", label: "Active Developers" },
+    { icon: <Code2 className="w-8 h-8" />, number: "50+", label: "Tools & Resources" },
+    { icon: <Stars className="w-8 h-8" />, number: "100+", label: "Learning Paths" },
+  ].map((stat, index) => (
+    <motion.div
+      key={index}
+      className={`relative p-8 rounded-2xl border transition-all duration-300 ${
+        isDarkMode
+          ? "bg-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:border-blue-500/70 hover:shadow-[0_0_25px_rgba(59,130,246,0.35)]"
+          : "bg-white/80 border-gray-200/50 backdrop-blur-sm hover:border-blue-400/70 hover:shadow-[0_0_25px_rgba(37,99,235,0.25)]"
+      }`}
+      whileHover={{ scale: 1.05, y: -6 }}
+      transition={{ type: "spring", stiffness: 300, damping: 18 }}
+      variants={floatingVariants}
+      animate="animate"
+    >
+      <div
+        className={`w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4 transition-colors duration-300 ${
+          isDarkMode
+            ? "bg-blue-500/20 text-blue-400 hover:bg-blue-500/30"
+            : "bg-blue-50 text-blue-600 hover:bg-blue-100"
+        }`}
+      >
+        {stat.icon}
+      </div>
+      <h3
+        className={`text-3xl font-black mb-2 transition-colors ${
+          isDarkMode ? "text-white" : "text-gray-900"
+        }`}
+      >
+        {stat.number}
+      </h3>
+      <p
+        className={`text-base font-medium transition-colors ${
+          isDarkMode ? "text-slate-400" : "text-gray-600"
+        }`}
+      >
+        {stat.label}
+      </p>
+    </motion.div>
+  ))}
+</motion.div>
+</motion.div>
     </section>
   );
 };

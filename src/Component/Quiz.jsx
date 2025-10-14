@@ -31,7 +31,7 @@ import { designPatternsQuiz } from "../../data/designPatternsQuiz.js";
 
 import { webAPIsQuiz } from "../../data/webAPIsQuiz.js";
 
-import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
+// import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 import { webSecurityBasicsQuiz } from "../../data/webSecurityBasicsQuiz.js";
 
 import javaQuestions from "../../data/java.js";
@@ -196,7 +196,8 @@ const quizzes = {
     },
 
   },
-};
+}
+ };
 
 const levels = ["beginner", "intermediate", "advanced"];
 const MIN_CUTOFF = 7; // 70% min cutoff score

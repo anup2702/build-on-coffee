@@ -340,30 +340,62 @@ const Navbar = ({ scrollRefs }) => {
                         className="mt-4 space-y-2"
                       >
                         {isAuthenticated && user ? (
-                          <div className="space-y-2">
-                            <Link
-                              to="/profile"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 transition-all duration-300"
-                            >
-                              <User className="w-5 h-5" />
-                              <span>Profile</span>
-                            </Link>
-                            <button 
-                              onClick={() => { logout(); setIsMobileMenuOpen(false); }}
-                              className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-red-600 hover:text-white hover:bg-red-500/80 transition-all duration-300 border border-red-200/30 dark:border-red-700/30 dark:hover:bg-red-600/80"
-                            >
-                              <LogOut className="w-5 h-5" />
-                              <span>Sign Out</span>
-                            </button>
-                          </div>
-                          <button
-                            onClick={logout}
-                            className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-red-600 hover:text-white hover:bg-red-500/80 transition-all duration-300 border border-red-200/30 dark:border-red-700/30 dark:hover:bg-red-600/80"
-                          >
-                            <LogOut className="w-5 h-5" />
-                            <span>Sign Out</span>
-                          </button>
+                          // <div className="space-y-2">
+                          //   <Link
+                          //     to="/profile"
+                          //     onClick={() => setIsMobileMenuOpen(false)}
+                          //     className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 transition-all duration-300"
+                          //   >
+                          //     <User className="w-5 h-5" />
+                          //     <span>Profile</span>
+                          //   </Link>
+                          //   <button 
+                          //     onClick={() => { logout(); setIsMobileMenuOpen(false); }}
+                          //     className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-red-600 hover:text-white hover:bg-red-500/80 transition-all duration-300 border border-red-200/30 dark:border-red-700/30 dark:hover:bg-red-600/80"
+                          //   >
+                          //     <LogOut className="w-5 h-5" />
+                          //     <span>Sign Out</span>
+                          //   </button>
+                          // </div>
+                          // <button
+                          //   onClick={logout}
+                          //   className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-red-600 hover:text-white hover:bg-red-500/80 transition-all duration-300 border border-red-200/30 dark:border-red-700/30 dark:hover:bg-red-600/80"
+                          //  > <LogOut className="w-5 h-5" />
+                          //   <span>Sign Out</span>
+                          // </button>
+
+                          // ... beginning of your ternary operator ? (
+<>
+  <div className="space-y-2">
+    <Link
+      to="/profile"
+      onClick={() => setIsMobileMenuOpen(false)}
+      className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 transition-all duration-300"
+    >
+      <User className="w-5 h-5" />
+      <span>Profile</span>
+    </Link>
+    
+    {/* This is the first Sign Out button inside the div */}
+    <button 
+      onClick={() => { logout(); setIsMobileMenuOpen(false); }}
+      className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-red-600 hover:text-white hover:bg-red-500/80 transition-all duration-300 border border-red-200/30 dark:border-red-700/30 dark:hover:bg-red-600/80"
+    >
+      <LogOut className="w-5 h-5" />
+      <span>Sign Out</span>
+    </button>
+  </div>
+  
+  {/* This is the second, adjacent Sign Out button that was causing the error */}
+  <button
+    onClick={logout}
+    className="w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl font-medium text-red-600 hover:text-white hover:bg-red-500/80 transition-all duration-300 border border-red-200/30 dark:border-red-700/30 dark:hover:bg-red-600/80"
+    > 
+    <LogOut className="w-5 h-5" />
+    <span>Sign Out</span>
+  </button>
+</>
+// ) : ( ... rest of your ternary operator
                         ) : (
                           <button
                             onClick={() => {
