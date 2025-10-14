@@ -16,3 +16,4 @@ createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </StrictMode>
 );
+// (debug helpers removed)

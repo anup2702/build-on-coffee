@@ -25,7 +25,8 @@ const BuildOnCoffeeChatbot = () => {
   const inputRef = useRef(null);
 
   // API Configuration
-  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+  // If VITE_API_URL is not provided, default to empty string and run in offline/fallback mode
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "";
 
   // Fallback knowledge base for offline mode
   const knowledgeBase = {
@@ -101,6 +102,12 @@ const BuildOnCoffeeChatbot = () => {
   }, [isOpen]);
 
   const checkAPIHealth = async () => {
+    // If no API URL is configured, avoid trying to reach localhost and run in offline mode
+    if (!API_BASE_URL) {
+      setIsOnline(false);
+      return;
+    }
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/health`);
       setIsOnline(response.ok);
