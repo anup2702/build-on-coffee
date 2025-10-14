@@ -17,6 +17,8 @@ import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
 
+
+import { responsiveDesignQuiz } from "../../data/responsiveDesignQuiz.js";
 import { stateManagementQuiz } from "../../data/stateManagementQuiz.js";
 import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 
@@ -168,6 +170,11 @@ const quizzes = {
     description: "Test your Python basics knowledge.",
   },
 
+
+  "Responsive Design" : {
+    questions: responsiveDesignQuiz.questions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your knowledge of responsive web design.",
   "State Management": {
     questions: stateManagementQuiz.questions,
     icon: <Code className="w-8 h-8 text-purple-500" />,
@@ -235,6 +242,13 @@ const quizzes = {
     questions: networkingFundamentalsQuiz.questions,
     icon: <Code className="w-8 h-8 text-purple-500" />,
     description: "Test your knowledge of networking fundamentals.",
+
+    "Web Security Basics": {
+      questions: webSecurityBasicsQuiz.questions,
+      icon: <Code className="w-8 h-8 text-red-500" />,
+      description: "Test your knowledge of web security fundamentals.",
+    },
+
   },
   "Algorithms & Problem Solving": {
     questions: algorithmsAndProblemSolvingQuiz.questions,
