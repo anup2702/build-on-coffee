@@ -92,10 +92,13 @@ const Documentation = () => {
           {filtered.map((item) => (
             <motion.div
               key={item.name}
-              className="relative border border-gray-200 dark:border-gray-800 rounded-2xl p-5 bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition-all flex flex-col"
+              className="relative rounded-2xl p-5 bg-white dark:bg-gray-900 shadow-sm transition-all flex flex-col 
+             border border-gray-200 dark:border-gray-800 
+             hover:border-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] 
+             duration-300 ease-in-out"
               whileHover={{ y: -4 }}
             >
-              <div className="flex items-center gap-4 mb-3">
+              <div className="flex items-center gap-4 mb-3 ">
                 {item.logo && (
                   <img src={item.logo} alt={item.name} className="w-12 h-12 object-contain rounded" />
                 )}
