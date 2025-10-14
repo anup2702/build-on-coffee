@@ -9,15 +9,10 @@ import reactQuestions from "../../data/react.js";
 import nodejsQuestions from "../../data/nodejs.js";
 import databaseQuestions from "../../data/database.js";
 import gitQuestions from "../../data/git.js";
-
 import { databaseQuiz } from "../../data/databaseQuiz.js";
-
 import { typescriptQuiz } from "../../data/typescriptQuiz.js";
-
 import { expressjsQuiz } from "../../data/expressjsQuiz.js";
-
 import { nextjsQuiz } from "../../data/nextjsQuiz.js";
-
 import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
@@ -28,23 +23,24 @@ import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 
 
 import { designPatternsQuiz } from "../../data/designPatternsQuiz.js";
-
 import { webAPIsQuiz } from "../../data/webAPIsQuiz.js";
-
 import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 import { webSecurityBasicsQuiz } from "../../data/webSecurityBasicsQuiz.js";
-
 import javaQuestions from "../../data/java.js";
-
 import cloudNativeConceptsQuestions from "../../data/cloudNativeConcepts.js";
-
 import iacQuestions from "../../data/iac.js";
-
 import kubernetesQuestions from "../../data/kubernetes.js";
-
 import containersDockerQuestions from "../../data/containersDocker.js";
-
 import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
+import { authenticationAndAuthorizationQuiz } from "../../data/authenticationAndAuthorizationQuiz.js";
+import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
+import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
+import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
+import { cachingQuiz } from "../../data/cachingQuiz.js";
+import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";
+import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";
+import { serverlessComputingQuiz } from "../../data/serverlessComputingQuiz.js";  
+import { networkingFundamentalsQuiz } from "../../data/networkingFundamentalsQuiz.js";
 
 const quizzes = {
   DSA: {
@@ -188,6 +184,56 @@ const quizzes = {
     questions: webAPIsQuiz.questions,
     icon: <Code className="w-8 h-8 text-orange-500" />,
     description: "Test your Web APIs knowledge.",
+  },
+  "Web Security Basics": {
+    questions: webSecurityBasicsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of web security fundamentals.",
+  },
+  "Authentication & Authorization": {
+    questions: authenticationAndAuthorizationQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of authentication & authorization.",
+  },
+  "REST vs GraphQL": {
+    questions: restVsGraphQLQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of REST vs GraphQL.",
+  },
+  "Microservices Architecture": {
+    questions: microservicesArchitectureQuiz.questions,
+    icon: <Code className="w-8 h-8 text-cyan-500" />,
+    description: "Test your knowledge of microservices architecture.",
+  }, 
+  "Database Optimization & Indexing": {
+    questions: databaseOptimizationAndIndexingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-green-500" />,
+    description: "Test your knowledge of database optimization and indexing.",
+  },
+  "Caching": {
+    questions: cachingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your knowledge of caching concepts.",
+  },
+  "Linux & Shell Scripting": {
+    questions: linuxAndShellScriptingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-gray-500" />,
+    description: "Test your knowledge of Linux and shell scripting.",
+  },
+  "Monitoring & Logging": {
+    questions: monitoringAndLoggingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-yellow-500" />,
+    description: "Test your knowledge of monitoring and logging.",
+  },
+  "Serverless Computing": {
+    questions: serverlessComputingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-orange-500" />,
+    description: "Test your knowledge of serverless computing.",
+  },
+  "Networking Fundamentals": {
+    questions: networkingFundamentalsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge of networking fundamentals.",
 
     "Web Security Basics": {
       questions: webSecurityBasicsQuiz.questions,
