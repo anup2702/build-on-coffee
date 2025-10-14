@@ -23,6 +23,7 @@ import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerf
 import { pythonQuiz } from "../../data/pythonQuiz.js";
 
 import { responsiveDesignQuiz } from "../../data/responsiveDesignQuiz.js";
+import { stateManagementQuiz } from "../../data/stateManagementQuiz.js";
 import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 
 
@@ -175,6 +176,10 @@ const quizzes = {
     questions: responsiveDesignQuiz.questions,
     icon: <Code className="w-8 h-8 text-blue-500" />,
     description: "Test your knowledge of responsive web design.",
+  "State Management": {
+    questions: stateManagementQuiz.questions,
+    icon: <Code className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge of state management concepts.",
 
 
   "Design Patterns": {
@@ -375,19 +380,22 @@ const Quiz = () => {
 
             <div className="space-y-4">
               {quizData[currentQuestion].options.map((option, i) => {
-                let bgClass = "border";
+                let bgClass = "border border-gray-300 dark:border-slate-600";
+                let hoverClass = "hover:bg-blue-50 dark:hover:bg-slate-700";
                 if (checked) {
                   if (option === quizData[currentQuestion].answer)
                     bgClass = "bg-emerald-500";
                   else if (option === selectedOption) bgClass = "bg-red-500";
+                  hoverClass = ""; //disabled hover effect
                 } else if (option === selectedOption) {
-                  bgClass = "bg-blue-100 dark:bg-slate-700 border-blue-300";
+                  bgClass = "bg-blue-400 border-blue-500";
+                  hoverClass = ""; //disabled hover effect
                 }
                 return (
                   <button
                     key={i}
                     onClick={() => !checked && setSelectedOption(option)}
-                    className={`block w-full rounded-xl px-4 py-3 transition ${bgClass}`}
+                    className={`block w-full rounded-xl px-4 py-3 transition duration-200 ${bgClass} ${hoverClass} cursor-pointer`}
                   >
                     {option}
                   </button>
@@ -400,7 +408,7 @@ const Quiz = () => {
                 <button
                   onClick={handleCheck}
                   disabled={selectedOption === null}
-                  className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-semibold disabled:opacity-50"
+                  className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-semibold disabled:opacity-50 cursor-pointer"
                 >
                   Check
                 </button>
@@ -408,7 +416,7 @@ const Quiz = () => {
               {checked && (
                 <button
                   onClick={handleNext}
-                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold"
+                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold cursor-pointer"
                 >
                   Next
                 </button>
