@@ -1,130 +1,171 @@
-# Contributor Covenant Code of Conduct
+# ☕ Contributor Covenant Code of Conduct  
 
-## Our Pledge
+![Contributors Welcome](https://img.shields.io/badge/Contributors-Welcome-brightgreen?style=for-the-badge)  
+![Open Source Love](https://badgen.net/badge/Open%20Source/Love/red?icon=github)  
+![Built with ❤️](https://img.shields.io/badge/Built%20with-%E2%9D%A4%EF%B8%8F-blueviolet?style=flat-square)  
+![Coffee Powered](https://img.shields.io/badge/Coffee-Powered%20Community-brown?style=flat-square&logo=buymeacoffee)  
 
-We as members, contributors, and leaders pledge to make participation in our
-community a harassment-free experience for everyone, regardless of age, body
-size, visible or invisible disability, ethnicity, sex characteristics, gender
-identity and expression, level of experience, education, socio-economic status,
-nationality, personal appearance, race, religion, or sexual identity
-and orientation.
+---
 
-We pledge to act and interact in ways that contribute to an open, welcoming,
-diverse, inclusive, and healthy community.
+## ☀️ Our Pledge  
 
-## Our Standards
+We as members, contributors, and leaders pledge to make participation in our  
+community a harassment-free experience for everyone, regardless of age, body  
+size, visible or invisible disability, ethnicity, sex characteristics, gender  
+identity and expression, level of experience, education, socio-economic status,  
+nationality, personal appearance, race, religion, or sexual identity  
+and orientation.  
 
-Examples of behavior that contributes to a positive environment for our
-community include:
+We pledge to act and interact in ways that contribute to an open, welcoming,  
+diverse, inclusive, and healthy community. 🤝  
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes,
-  and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the
-  overall community
+![Community](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnFsZXlsZ2hnNmQ1bDB6YWplNnd0YzlybzlnaTlrMDIzMjdlMm9xNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qgQUggAC3Pfv687qPC/giphy.gif)  
 
-Examples of unacceptable behavior include:
+---
 
-* The use of sexualized language or imagery, and sexual attention or
-  advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email
-  address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+## 🌱 Our Standards  
 
-## Enforcement Responsibilities
+Examples of behavior that contributes to a positive environment for our  
+community include:  
 
-Community leaders are responsible for clarifying and enforcing our standards of
-acceptable behavior and will take appropriate and fair corrective action in
-response to any behavior that they deem inappropriate, threatening, offensive,
-or harmful.
+* 💬 Demonstrating empathy and kindness toward other people  
+* 💡 Being respectful of differing opinions, viewpoints, and experiences  
+* 🤝 Giving and gracefully accepting constructive feedback  
+* 🙏 Accepting responsibility and apologizing to those affected by our mistakes,  
+  and learning from the experience  
+* 🌍 Focusing on what is best not just for us as individuals, but for the  
+  overall community  
 
-Community leaders have the right and responsibility to remove, edit, or reject
-comments, commits, code, wiki edits, issues, and other contributions that are
-not aligned to this Code of Conduct, and will communicate reasons for moderation
-decisions when appropriate.
+Examples of unacceptable behavior include:  
 
-## Scope
+* 🚫 The use of sexualized language or imagery, and sexual attention or  
+  advances of any kind  
+* ❌ Trolling, insulting or derogatory comments, and personal or political attacks  
+* ⚠️ Public or private harassment  
+* 🔒 Publishing others' private information, such as a physical or email  
+  address, without their explicit permission  
+* 💣 Other conduct which could reasonably be considered inappropriate in a  
+  professional setting  
 
-This Code of Conduct applies within all community spaces, and also applies when
-an individual is officially representing the community in public spaces.
-Examples of representing our community include using an official e-mail address,
-posting via an official social media account, or acting as an appointed
-representative at an online or offline event.
+![Respect](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnFsZXlsZ2hnNmQ1bDB6YWplNnd0YzlybzlnaTlrMDIzMjdlMm9xNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/L1R1tvI9svkIWwpVYr/giphy.gif)  
 
-## Enforcement
+---
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
+## 🧭 Enforcement Responsibilities  
 
-anupkumar445a@gmail.com
+Community leaders are responsible for clarifying and enforcing our standards of  
+acceptable behavior and will take appropriate and fair corrective action in  
+response to any behavior that they deem inappropriate, threatening, offensive,  
+or harmful.  
 
-All complaints will be reviewed and investigated promptly and fairly.
+Community leaders have the right and responsibility to remove, edit, or reject  
+comments, commits, code, wiki edits, issues, and other contributions that are  
+not aligned to this Code of Conduct, and will communicate reasons for moderation  
+decisions when appropriate. ☕  
 
-All community leaders are obligated to respect the privacy and security of the
-reporter of any incident.
+---
 
-## Enforcement Guidelines
+## 🌐 Scope  
 
-Community leaders will follow these Community Impact Guidelines in determining
-the consequences for any action they deem in violation of this Code of Conduct:
+This Code of Conduct applies within all community spaces, and also applies when  
+an individual is officially representing the community in public spaces.  
+Examples of representing our community include using an official e-mail address,  
+posting via an official social media account, or acting as an appointed  
+representative at an online or offline event.  
 
-### 1. Correction
+![Together](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnFsZXlsZ2hnNmQ1bDB6YWplNnd0YzlybzlnaTlrMDIzMjdlMm9xNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/L1R1tvI9svkIWwpVYr/giphy.gif)  
 
-**Community Impact**: Use of inappropriate language or other behavior deemed
-unprofessional or unwelcome in the community.
+---
 
-**Consequence**: A private, written warning from community leaders, providing
-clarity around the nature of the violation and an explanation of why the
-behavior was inappropriate. A public apology may be requested.
+## 🚨 Enforcement  
 
-### 2. Warning
+Instances of abusive, harassing, or otherwise unacceptable behavior may be  
+reported to the community leaders responsible for enforcement at:  
 
-**Community Impact**: A violation through a single incident or series
-of actions.
+📧 **anupkumar445a@gmail.com**  
 
-**Consequence**: A warning with consequences for continued behavior. No
-interaction with the people involved, including unsolicited interaction with
-those enforcing the Code of Conduct, for a specified period of time. This
-includes avoiding interactions in community spaces as well as external channels
-like social media. Violating these terms may lead to a temporary or
-permanent ban.
+All complaints will be reviewed and investigated promptly and fairly.  
 
-### 3. Temporary Ban
+All community leaders are obligated to respect the privacy and security of the  
+reporter of any incident.  
 
-**Community Impact**: A serious violation of community standards, including
-sustained inappropriate behavior.
+![SafeSpace](https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Mm0xd3BzMXVnNGdxY3psc241eXRycGtiZXpsOGVnNXBxMmE5bG1vaCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/gXr3j6YAClXFfZABn5/giphy.gif)  
 
-**Consequence**: A temporary ban from any sort of interaction or public
-communication with the community for a specified period of time. No public or
-private interaction with the people involved, including unsolicited interaction
-with those enforcing the Code of Conduct, is allowed during this period.
-Violating these terms may lead to a permanent ban.
+---
 
-### 4. Permanent Ban
+## 🧩 Enforcement Guidelines  
 
-**Community Impact**: Demonstrating a pattern of violation of community
-standards, including sustained inappropriate behavior,  harassment of an
-individual, or aggression toward or disparagement of classes of individuals.
+Community leaders will follow these Community Impact Guidelines in determining  
+the consequences for any action they deem in violation of this Code of Conduct:  
 
-**Consequence**: A permanent ban from any sort of public interaction within
-the community.
+### 1️⃣ Correction  
 
-## Attribution
+**Community Impact**: Use of inappropriate language or other behavior deemed  
+unprofessional or unwelcome in the community.  
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage],
-version 2.0, available at
-https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
+**Consequence**: A private, written warning from community leaders, providing  
+clarity around the nature of the violation and an explanation of why the  
+behavior was inappropriate. A public apology may be requested.  
 
-Community Impact Guidelines were inspired by [Mozilla's code of conduct
-enforcement ladder](https://github.com/mozilla/diversity).
+---
 
-[homepage]: https://www.contributor-covenant.org
+### 2️⃣ Warning  
 
-For answers to common questions about this code of conduct, see the FAQ at
-https://www.contributor-covenant.org/faq. Translations are available at
-https://www.contributor-covenant.org/translations.
+**Community Impact**: A violation through a single incident or series  
+of actions.  
+
+**Consequence**: A warning with consequences for continued behavior. No  
+interaction with the people involved, including unsolicited interaction with  
+those enforcing the Code of Conduct, for a specified period of time. This  
+includes avoiding interactions in community spaces as well as external channels  
+like social media. Violating these terms may lead to a temporary or  
+permanent ban.  
+
+---
+
+### 3️⃣ Temporary Ban  
+
+**Community Impact**: A serious violation of community standards, including  
+sustained inappropriate behavior.  
+
+**Consequence**: A temporary ban from any sort of interaction or public  
+communication with the community for a specified period of time. No public or  
+private interaction with the people involved, including unsolicited interaction  
+with those enforcing the Code of Conduct, is allowed during this period.  
+Violating these terms may lead to a permanent ban.  
+
+---
+
+### 4️⃣ Permanent Ban  
+
+**Community Impact**: Demonstrating a pattern of violation of community  
+standards, including sustained inappropriate behavior, harassment of an  
+individual, or aggression toward or disparagement of classes of individuals.  
+
+**Consequence**: A permanent ban from any sort of public interaction within  
+the community.  
+
+![BanHammer](https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YXJ2Y2lmcWRsdGozanlvNnYzYTdpazM0cjFjMzhuMnk4ZXoxa3g2YiZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/u2pmTWUi0MXjyrMaVj/giphy.gif)  
+
+---
+
+## 🪶 Attribution  
+
+This Code of Conduct is adapted from the [Contributor Covenant][homepage],  
+version 2.0, available at  
+👉 https://www.contributor-covenant.org/version/2/0/code_of_conduct.html  
+
+Community Impact Guidelines were inspired by  
+[Mozilla's Code of Conduct Enforcement Ladder](https://github.com/mozilla/diversity).  
+
+[homepage]: https://www.contributor-covenant.org  
+
+For answers to common questions about this code of conduct, see the FAQ at  
+👉 https://www.contributor-covenant.org/faq  
+Translations are available at  
+👉 https://www.contributor-covenant.org/translations.  
+
+---
+
+☕ **Together, we build and grow — one respectful line of code at a time.** 💻💫  
+![CoffeeCode](https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YzF6dDlzcHZ5a2ljN3J6MXVpZjhiNGR3OHVvdjd3MHByemxzZDU0eCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/SWoSkN6DxTszqIKEqv/giphy.gif)
