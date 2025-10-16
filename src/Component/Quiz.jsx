@@ -36,6 +36,7 @@ import containersDockerQuestions from "../../data/containersDocker.js";
 import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
 import { authenticationAndAuthorizationQuiz } from "../../data/authenticationAndAuthorizationQuiz.js";
 import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
+import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";  
 import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
 import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
 import { cachingQuiz } from "../../data/cachingQuiz.js";
@@ -272,6 +273,11 @@ const quizzes = {
     icon: <Code className="w-8 h-8 text-red-500" />,
     description: "Test your knowledge of REST vs GraphQL.",
   },
+  "Microservices Architecture": {
+    questions: microservicesArchitectureQuiz.questions,
+    icon: <Code className="w-8 h-8 text-cyan-500" />,
+    description: "Test your knowledge of microservices architecture.",
+  }, 
 };
 
 const levels = ["beginner", "intermediate", "advanced"];
