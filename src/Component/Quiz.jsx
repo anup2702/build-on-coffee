@@ -17,6 +17,8 @@ import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
 
+
+import { responsiveDesignQuiz } from "../../data/responsiveDesignQuiz.js";
 import { stateManagementQuiz } from "../../data/stateManagementQuiz.js";
 import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 
@@ -39,6 +41,18 @@ import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimiza
 import { cachingQuiz } from "../../data/cachingQuiz.js";
 import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";
 import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";  
+import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";  
+import { cachingQuiz } from "../../data/cachingQuiz.js";  
+import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";  
+import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";  
+import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
+import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
+import { cachingQuiz } from "../../data/cachingQuiz.js";
+import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";
+import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";
+import { serverlessComputingQuiz } from "../../data/serverlessComputingQuiz.js";  
+import { networkingFundamentalsQuiz } from "../../data/networkingFundamentalsQuiz.js";
+import { algorithmsAndProblemSolvingQuiz } from "../../data/algorithmsAndProblemSolvingQuiz.js";
 
 const quizzes = {
   DSA: {
@@ -165,6 +179,11 @@ const quizzes = {
     description: "Test your Python basics knowledge.",
   },
 
+
+  "Responsive Design" : {
+    questions: responsiveDesignQuiz.questions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your knowledge of responsive web design.",
   "State Management": {
     questions: stateManagementQuiz.questions,
     icon: <Code className="w-8 h-8 text-purple-500" />,
@@ -222,6 +241,16 @@ const quizzes = {
     questions: monitoringAndLoggingQuiz.questions,
     icon: <Code className="w-8 h-8 text-yellow-500" />,
     description: "Test your knowledge of monitoring and logging.",
+  },
+  "Serverless Computing": {
+    questions: serverlessComputingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-orange-500" />,
+    description: "Test your knowledge of serverless computing.",
+  },
+  "Networking Fundamentals": {
+    questions: networkingFundamentalsQuiz.questions,
+    icon: <Code className="w-8 h-8 text-purple-500" />,
+    description: "Test your knowledge of networking fundamentals.",
 
     "Web Security Basics": {
       questions: webSecurityBasicsQuiz.questions,
@@ -229,6 +258,48 @@ const quizzes = {
       description: "Test your knowledge of web security fundamentals.",
     },
 
+  },
+  "Algorithms & Problem Solving": {
+    questions: algorithmsAndProblemSolvingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of algorithms and problem solving.",
+
+    "Web Security Basics": {
+      questions: webSecurityBasicsQuiz.questions,
+      icon: <Code className="w-8 h-8 text-red-500" />,
+      description: "Test your knowledge of web security fundamentals.",
+    },
+
+  },
+  "Authentication & Authorization": {
+    questions: authenticationAndAuthorizationQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of authentication & authorization.",
+  },
+  "REST vs GraphQL": {
+    questions: restVsGraphQLQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of REST vs GraphQL.",
+  },
+  "Microservices Architecture": {
+    questions: microservicesArchitectureQuiz.questions,
+    icon: <Code className="w-8 h-8 text-cyan-500" />,
+    description: "Test your knowledge of microservices architecture.",
+  }, 
+  "Database Optimization & Indexing": {
+    questions: databaseOptimizationAndIndexingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-green-500" />,
+    description: "Test your knowledge of database optimization and indexing.",
+  },
+  "Caching": {
+    questions: cachingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-blue-500" />,
+    description: "Test your knowledge of caching concepts.",
+  },
+  "Linux & Shell Scripting": {
+    questions: linuxAndShellScriptingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-gray-500" />,
+    description: "Test your knowledge of Linux and shell scripting.",
   },
 };
 
