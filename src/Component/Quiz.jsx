@@ -40,6 +40,8 @@ import { microservicesArchitectureQuiz } from "../../data/microservicesArchitect
 import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
 import { cachingQuiz } from "../../data/cachingQuiz.js";
 import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";
+import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";
+import { serverlessComputingQuiz } from "../../data/serverlessComputingQuiz.js";  
 import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";  
 import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";  
 import { cachingQuiz } from "../../data/cachingQuiz.js";  
