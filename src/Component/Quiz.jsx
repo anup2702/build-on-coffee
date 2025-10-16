@@ -39,6 +39,8 @@ import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
 import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
 import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
 import { cachingQuiz } from "../../data/cachingQuiz.js";
+import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";
+import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";  
 import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";  
 import { cachingQuiz } from "../../data/cachingQuiz.js";  
 import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";  
