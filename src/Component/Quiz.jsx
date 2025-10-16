@@ -262,6 +262,11 @@ const quizzes = {
     },
 
   },
+  "Authentication & Authorization": {
+    questions: authenticationAndAuthorizationQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of authentication & authorization.",
+  },
 };
 
 const levels = ["beginner", "intermediate", "advanced"];
