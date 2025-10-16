@@ -267,6 +267,11 @@ const quizzes = {
     icon: <Code className="w-8 h-8 text-red-500" />,
     description: "Test your knowledge of authentication & authorization.",
   },
+  "REST vs GraphQL": {
+    questions: restVsGraphQLQuiz.questions,
+    icon: <Code className="w-8 h-8 text-red-500" />,
+    description: "Test your knowledge of REST vs GraphQL.",
+  },
 };
 
 const levels = ["beginner", "intermediate", "advanced"];
