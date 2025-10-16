@@ -16,17 +16,11 @@ import { nextjsQuiz } from "../../data/nextjsQuiz.js";
 import { tailwindQuiz } from "../../data/tailwindQuiz.js";
 import { accessibilityAndPerformanceQuiz } from "../../data/accessibilityAndPerformanceQuiz.js";
 import { pythonQuiz } from "../../data/pythonQuiz.js";
-
-
 import { responsiveDesignQuiz } from "../../data/responsiveDesignQuiz.js";
 import { stateManagementQuiz } from "../../data/stateManagementQuiz.js";
 import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
-
-
-
 import { designPatternsQuiz } from "../../data/designPatternsQuiz.js";
 import { webAPIsQuiz } from "../../data/webAPIsQuiz.js";
-import ciCdPipelinesQuestions from "../../data/ciCdPipelines.js";
 import { webSecurityBasicsQuiz } from "../../data/webSecurityBasicsQuiz.js";
 import javaQuestions from "../../data/java.js";
 import cloudNativeConceptsQuestions from "../../data/cloudNativeConcepts.js";
@@ -41,7 +35,7 @@ import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimiza
 import { cachingQuiz } from "../../data/cachingQuiz.js";
 import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";
 import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";
-import { serverlessComputingQuiz } from "../../data/serverlessComputingQuiz.js";  
+import { serverlessComputingQuiz } from "../../data/serverlessComputingQuiz.js";
 import { networkingFundamentalsQuiz } from "../../data/networkingFundamentalsQuiz.js";
 import { algorithmsAndProblemSolvingQuiz } from "../../data/algorithmsAndProblemSolvingQuiz.js";
 
@@ -170,16 +164,17 @@ const quizzes = {
     description: "Test your Python basics knowledge.",
   },
 
-
-  "Responsive Design" : {
+  "Responsive Design": {
     questions: responsiveDesignQuiz.questions,
     icon: <Code className="w-8 h-8 text-blue-500" />,
     description: "Test your knowledge of responsive web design.",
+  },
+
   "State Management": {
     questions: stateManagementQuiz.questions,
     icon: <Code className="w-8 h-8 text-purple-500" />,
     description: "Test your knowledge of state management concepts.",
-
+  },
 
   "Design Patterns": {
     questions: designPatternsQuiz.questions,
@@ -212,13 +207,13 @@ const quizzes = {
     questions: microservicesArchitectureQuiz.questions,
     icon: <Code className="w-8 h-8 text-cyan-500" />,
     description: "Test your knowledge of microservices architecture.",
-  }, 
+  },
   "Database Optimization & Indexing": {
     questions: databaseOptimizationAndIndexingQuiz.questions,
     icon: <Code className="w-8 h-8 text-green-500" />,
     description: "Test your knowledge of database optimization and indexing.",
   },
-  "Caching": {
+  Caching: {
     questions: cachingQuiz.questions,
     icon: <Code className="w-8 h-8 text-blue-500" />,
     description: "Test your knowledge of caching concepts.",
@@ -248,8 +243,8 @@ const quizzes = {
       icon: <Code className="w-8 h-8 text-red-500" />,
       description: "Test your knowledge of web security fundamentals.",
     },
-
   },
+
   "Algorithms & Problem Solving": {
     questions: algorithmsAndProblemSolvingQuiz.questions,
     icon: <Code className="w-8 h-8 text-red-500" />,
@@ -260,7 +255,6 @@ const quizzes = {
       icon: <Code className="w-8 h-8 text-red-500" />,
       description: "Test your knowledge of web security fundamentals.",
     },
-
   },
 };
 
