@@ -36,6 +36,8 @@ import containersDockerQuestions from "../../data/containersDocker.js";
 import cloudFundamentalsQuestions from "../../data/cloudFundamentals.js";
 import { authenticationAndAuthorizationQuiz } from "../../data/authenticationAndAuthorizationQuiz.js";
 import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
+import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
+import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";  
 import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";  
 import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
 import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
@@ -278,6 +280,11 @@ const quizzes = {
     icon: <Code className="w-8 h-8 text-cyan-500" />,
     description: "Test your knowledge of microservices architecture.",
   }, 
+  "Database Optimization & Indexing": {
+    questions: databaseOptimizationAndIndexingQuiz.questions,
+    icon: <Code className="w-8 h-8 text-green-500" />,
+    description: "Test your knowledge of database optimization and indexing.",
+  },
 };
 
 const levels = ["beginner", "intermediate", "advanced"];
