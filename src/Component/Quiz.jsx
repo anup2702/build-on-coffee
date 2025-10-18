@@ -56,8 +56,7 @@ import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
 import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
 import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
 import { cachingQuiz } from "../../data/cachingQuiz.js";
-// Temporary: use fixed quiz data due to syntax issues in original file
-import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.fixed.js";
+import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";
 import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";
 import { serverlessComputingQuiz } from "../../data/serverlessComputingQuiz.js";
 import { networkingFundamentalsQuiz } from "../../data/networkingFundamentalsQuiz.js";
