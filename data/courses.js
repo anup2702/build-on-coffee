@@ -1,4 +1,120 @@
+/**
+ * Courses Data
+ * 
+ * Complete list of all available courses on the platform
+ */
+
 export const courses = [
+  // ========================================
+  // NEW: Foundational CS Journey Course
+  // ========================================
+  {
+    slug: "foundational-cs-journey",
+    name: "Foundational CS Journey",
+    description: "Master essential computer science concepts in 8 weeks with structured learning, hands-on projects, and quizzes.",
+    details: "A comprehensive 8-week journey through programming fundamentals, data structures, algorithms, databases, networking, and operating systems. Includes weekly quizzes, exercises, and a final capstone project.",
+    link: "/courses/foundational-cs-journey",
+    image: "https://res.cloudinary.com/dwmpdbsej/image/upload/v1754070417/sd_xnm9zd.png", // Replace with actual image
+    youtube: "https://www.youtube.com/embed/RBSGKlAvoiM", // Replace with course intro video
+    references: [
+      {
+        label: "Course Overview",
+        url: "/courses/foundational-cs-journey",
+      },
+      {
+        label: "CS50 - Harvard",
+        url: "https://cs50.harvard.edu/",
+      },
+      {
+        label: "The Odin Project",
+        url: "https://www.theodinproject.com/",
+      },
+    ],
+    dateAdded: "2025-01-20",
+    
+    // Course-specific structure
+    duration: "8 weeks",
+    level: "Beginner",
+    enrolledStudents: 0,
+    rating: 4.8,
+    
+    // Outline for CourseDetailPanel
+    outline: [
+      "Week 1-2: Programming Fundamentals - Variables, Loops, Functions, OOP Basics",
+      "Week 3-4: Data Structures - Arrays, Linked Lists, Stacks, Queues, Hash Tables",
+      "Week 5: Algorithms - Sorting, Searching, Recursion, Time Complexity",
+      "Week 6: Databases & SQL Basics - SQL Queries, Database Design, Normalization",
+      "Week 7: Computer Networks & OS Basics - OSI Model, TCP/IP, Processes, Memory",
+      "Week 8: Capstone Mini Project - Integrate all learned concepts",
+    ],
+    
+    // Documents for CourseDetailPanel
+    documents: [
+      {
+        title: "Week 1-2: Programming Fundamentals Resources",
+        url: "https://www.geeksforgeeks.org/python-programming-language/",
+      },
+      {
+        title: "Week 3-4: Data Structures Tutorial",
+        url: "https://www.geeksforgeeks.org/data-structures/",
+      },
+      {
+        title: "Week 5: Algorithms Visualizer",
+        url: "https://visualgo.net/",
+      },
+      {
+        title: "Week 6: SQL Tutorial",
+        url: "https://www.w3schools.com/sql/",
+      },
+      {
+        title: "Week 7: Computer Networks Notes",
+        url: "https://www.geeksforgeeks.org/computer-networks/computer-network-tutorials/",
+      },
+      {
+        title: "Week 7: Operating Systems Overview",
+        url: "https://www.geeksforgeeks.org/operating-systems/",
+      },
+      {
+        title: "Final Project: GitHub Project Ideas",
+        url: "https://github.com/topics/beginner-project",
+      },
+      {
+        title: "All Quizzes Available",
+        url: "/quiz",
+      },
+    ],
+    
+    // Labs/Exercises
+    labs: [
+      {
+        title: "Week 1-2: Programming Exercises",
+        url: "https://www.hackerrank.com/domains/python",
+      },
+      {
+        title: "Week 3-4: Data Structure Problems",
+        url: "https://leetcode.com/tag/data-structures/",
+      },
+      {
+        title: "Week 5: Algorithm Practice",
+        url: "https://leetcode.com/problemset/algorithms/",
+      },
+      {
+        title: "Week 6: SQL Practice",
+        url: "https://www.hackerrank.com/domains/sql",
+      },
+    ],
+    
+    // Mini Project
+    miniProject: {
+      title: "Student Information Management System",
+      description: "Build a complete student management system that demonstrates all concepts learned throughout the 8-week course. Features: Add/edit/delete students, search functionality, database integration, user authentication, and file I/O.",
+      url: "https://github.com/topics/student-management-system",
+    },
+  },
+
+  // ========================================
+  // Existing Courses (No Changes)
+  // ========================================
   {
     slug: "data-structures",
     name: "Data Structures",

@@ -1,4 +1,110 @@
+/**
+ * Learning Paths Data
+ * 
+ * Structured learning journeys for different career paths
+ */
+
 export const learningPaths = [
+  // ========================================
+  // NEW: Core CS Foundational Path
+  // ========================================
+  {
+    slug: "core-cs-fundamentals",
+    title: "Core CS Fundamentals (8 Weeks)",
+    duration: "8 Weeks",
+    level: "Beginner",
+    description:
+      "A complete foundational computer science journey covering programming, data structures, algorithms, databases, and system concepts with hands-on projects.",
+    milestones: [
+      {
+        id: "w1-2-programming",
+        label: "Weeks 1-2: Programming Fundamentals",
+        link: "/courses/foundational-cs-journey",
+        details: [
+          "Variables, Data Types, and Operators",
+          "Control Flow: Conditionals and Loops",
+          "Functions and Modular Programming",
+          "Object-Oriented Programming Basics",
+          "Mini Project: Contact Management System",
+        ],
+      },
+      {
+        id: "w3-4-data-structures",
+        label: "Weeks 3-4: Data Structures",
+        link: "/courses/foundational-cs-journey",
+        details: [
+          "Arrays and Dynamic Arrays",
+          "Linked Lists (Singly and Doubly)",
+          "Stacks and Queues",
+          "Hash Tables and Collision Resolution",
+          "Mini Project: Task Scheduler Application",
+        ],
+      },
+      {
+        id: "w5-algorithms",
+        label: "Week 5: Algorithms",
+        link: "/courses/foundational-cs-journey",
+        details: [
+          "Sorting Algorithms (Bubble, Merge, Quick)",
+          "Searching Algorithms (Linear, Binary)",
+          "Recursion and Base Cases",
+          "Time and Space Complexity Analysis",
+          "Mini Project: Algorithm Visualizer",
+        ],
+      },
+      {
+        id: "w6-databases",
+        label: "Week 6: Databases & SQL",
+        link: "/courses/foundational-cs-journey",
+        details: [
+          "Database Fundamentals and DBMS",
+          "SQL Queries (SELECT, INSERT, UPDATE, DELETE)",
+          "Joins and Relationships",
+          "Database Design and Normalization",
+          "Mini Project: Library Management Database",
+        ],
+      },
+      {
+        id: "w7-systems",
+        label: "Week 7: Networks & Operating Systems",
+        link: "/courses/foundational-cs-journey",
+        details: [
+          "Computer Networking Basics and OSI Model",
+          "TCP/IP and IP Addressing",
+          "Operating System Fundamentals",
+          "Process and Memory Management",
+          "Mini Project: System Monitor Dashboard",
+        ],
+      },
+      {
+        id: "w8-capstone",
+        label: "Week 8: Capstone Project",
+        link: "/courses/foundational-cs-journey",
+        details: [
+          "Integrate all learned concepts",
+          "Build Student Information Management System",
+          "Implement OOP, Data Structures, and Algorithms",
+          "Database design and SQL queries",
+          "Final presentation and documentation",
+        ],
+      },
+      {
+        id: "quizzes",
+        label: "Weekly Quizzes & Assessments",
+        link: "/quiz",
+        details: [
+          "6 comprehensive quizzes (175 questions total)",
+          "Progressive difficulty levels",
+          "70% passing score requirement",
+          "Final comprehensive assessment",
+        ],
+      },
+    ],
+  },
+
+  // ========================================
+  // Existing Learning Paths (No Changes)
+  // ========================================
   {
     slug: "frontend-developer-30-days",
     title: "Frontend Developer in 30 Days",
