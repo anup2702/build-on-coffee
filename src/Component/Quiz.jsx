@@ -62,6 +62,7 @@ import { serverlessComputingQuiz } from "../../data/serverlessComputingQuiz.js";
 import { networkingFundamentalsQuiz } from "../../data/networkingFundamentalsQuiz.js";
 import { algorithmsAndProblemSolvingQuiz } from "../../data/algorithmsAndProblemSolvingQuiz.js";
 import { mongoDBQuiz } from "../../data/mongoDBQuiz.js";
+import flutterQuiz from "../../data/flutterQuiz.js";
 
 // Constants
 const QUIZ_DIFFICULTY_LEVELS = ["beginner", "intermediate", "advanced"];
@@ -152,6 +153,15 @@ const QUIZ_CONFIGURATION = {
     questions: mongoDBQuiz.questions,
     icon: <Code className="w-8 h-8 text-green-600" />,
     description: "Test your MongoDB NoSQL database knowledge from basics to advanced.",
+  },
+  Flutter: {
+    questions: { 
+      beginner: flutterQuiz.slice(0, 10),
+      intermediate: flutterQuiz.slice(10, 20), 
+      advanced: flutterQuiz.slice(20, 30)
+    },
+    icon: <Code className="w-8 h-8 text-cyan-500" />,
+    description: "Test your Flutter mobile development knowledge from basics to advanced.",
   },
   TypeScript: {
     questions: typescriptQuiz.questions,
