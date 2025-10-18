@@ -173,7 +173,7 @@ const Navbar = ({ scrollRefs }) => {
                   onClick={() => handleNavClick(item)}
                   className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 group overflow-hidden ${location.pathname === item.to
                     ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/30 border border-blue-200/60 dark:border-blue-700/60 shadow-sm"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200/40 dark:hover:border-gray-700/40"
+                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200/40 dark:hover:border-gray-700/40 cursor-pointer"
                     }`}
                   whileHover={{ y: -1 }}
                   whileTap={{ scale: 0.96 }}
@@ -184,7 +184,7 @@ const Navbar = ({ scrollRefs }) => {
                   </span>
                   {location.pathname === item.to && (
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-xl"
+                      className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-xl cursor-pointer"
                       layoutId="activeBackground"
                       transition={{
                         type: "spring",
@@ -205,7 +205,7 @@ const Navbar = ({ scrollRefs }) => {
               <div className="hidden md:flex items-center gap-3">
                 <button
                   onClick={logout}
-                  className="px-4 py-2 text-sm font-medium text-white bg-red-500 hover:bg-red-600 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="px-4 py-2 text-sm font-medium text-white bg-red-500 hover:bg-red-600 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
                 >
                   Sign Out
                 </button>
@@ -234,7 +234,7 @@ const Navbar = ({ scrollRefs }) => {
               <div className="hidden md:flex items-center gap-3">
                 <button
                   onClick={() => navigate("/login")}
-                  className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
                 >
                   Sign In
                 </button>
@@ -248,7 +248,7 @@ const Navbar = ({ scrollRefs }) => {
                 e.stopPropagation();
                 toggleTheme();
               }}
-              className="relative p-3 rounded-xl bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-400 hover:bg-gray-100/80 dark:hover:bg-gray-700/80 transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm shadow-sm"
+              className="relative p-3 rounded-xl bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-400 hover:bg-gray-100/80 dark:hover:bg-gray-700/80 transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm shadow-sm cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="button"
@@ -340,6 +340,7 @@ const Navbar = ({ scrollRefs }) => {
                         className="mt-4 space-y-2"
                       >
                         {isAuthenticated && user ? (
+                           <>
                           <div className="space-y-2">
                             <Link
                               to="/profile"
@@ -364,6 +365,7 @@ const Navbar = ({ scrollRefs }) => {
                             <LogOut className="w-5 h-5" />
                             <span>Sign Out</span>
                           </button>
+                        </>
                         ) : (
                           <button
                             onClick={() => {
