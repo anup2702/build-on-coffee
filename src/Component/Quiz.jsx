@@ -247,6 +247,7 @@ const QUIZ_CONFIGURATION = {
     icon: <Code className="w-8 h-8 text-purple-500" />,
     description: "Test your knowledge of networking fundamentals.",
   },
+
   "Algorithms & Problem Solving": {
     questions: algorithmsAndProblemSolvingQuiz.questions,
     icon: <Code className="w-8 h-8 text-red-500" />,

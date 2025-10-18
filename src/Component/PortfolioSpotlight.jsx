@@ -13,15 +13,6 @@ const contributors = [
     portfolioLink: "https://shamikdasau.github.io/Portfolio",
     portfolioScreenshot:
       "https://img.freepik.com/free-vector/letter-w-logo-ring-wedding-logo-business-branding-template-designs-inspiration-isolated-white-background_384344-1313.jpg?semt=ais_hybrid&w=740",
-    // projects: [
-    //   {
-    //     name: "Breast Cancer Prediction",
-    //     description:
-    //       "Developed a web app for early breast cancer detection using ML, implementing probability-based predictions to classify tumors as benign or malignant accurately",
-    //     github: "https://github.com/Sanika-Patil27/Breast-Cancer-Detection",
-    //     liveLink: "https://breast-cancer-detection-tamz2wkkldjo4ue7g6sxpw.streamlit.app/",
-    //   },
-  // ],
   },
 ];
 
@@ -44,20 +35,34 @@ const PortfolioSpotlight = () => {
       className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        {/* Header */}
+        {/* Header with Button */}
         <motion.div
-          className="text-center mb-16"
+          className="flex flex-col md:flex-row md:items-center md:justify-between text-center md:text-left mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6">
-            Portfolio Spotlight
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-            Every week we showcase an outstanding developer portfolio from our
-            community. Here’s this week’s highlight ✨
-          </p>
+          <div>
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-4 md:mb-0">
+              Portfolio Spotlight
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
+              Every week we showcase an outstanding developer portfolio from our
+              community. Here’s this week’s highlight ✨
+            </p>
+          </div>
+
+          {/* New Button */}
+          <motion.a
+            href="https://github.com/anup2702/build-on-coffee"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 md:mt-0 inline-block px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Show your portfolio
+          </motion.a>
         </motion.div>
 
         {/* Spotlight Card */}
