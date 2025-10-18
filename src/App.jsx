@@ -26,6 +26,7 @@ import Login from "./Component/Auth/Login";
 import Signup from "./Component/Auth/Signup";
 import { Analytics } from "@vercel/analytics/react";
 import Testimonials from "./Component/Testimonials";
+import Feedback from "./Component/Feedback";
 
 // 🤖 Chatbot Import
 import BuildOnCoffeeChatbot from "./Component/Chatbot/BuildOnCoffeeChatbot";
@@ -82,7 +83,7 @@ const App = () => {
   const toolsRef = useRef(null);
   const communityRef = useRef(null);
   const servicesRef = useRef(null);
-const testimonialsRef = useRef(null);
+  const testimonialsRef = useRef(null);
   const scrollRefs = {
     differently: differentlyRef,
     learn: learnRef,
@@ -122,6 +123,7 @@ const testimonialsRef = useRef(null);
             <Route path="/documentation" element={<Documentation />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/quiz" element={<Quiz />} />
+            <Route path="/feedback" element={<Feedback />} />
 
             {/* ✅ Roadmaps */}
             <Route path="/roadmap/dsa" element={<DsaRoadmap />} />
