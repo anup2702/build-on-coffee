@@ -61,12 +61,14 @@ import Quiz from "./Component/Quiz";
 import Weeklytask from "./Component/Weeklytask";
 import CertificateVerificationPage from "./Component/CertificateVerificationPage";
 
+// ✅ NEW: Import AddProjectForm
+import AddProjectForm from "./Component/AddProjectForm";
+
 const Home = ({ scrollRefs }) => {
   return (
     <>
       <HeroSection communityRef={scrollRefs?.community} />
       <ProductsSection ref={scrollRefs?.services} />
-
       <WhatWeDoDifferently ref={scrollRefs?.differently} />
       <PortfolioSpotlight />
       <Testimonials ref={scrollRefs?.testimonials} />
@@ -75,14 +77,14 @@ const Home = ({ scrollRefs }) => {
   );
 };
 
-
 const App = () => {
   const differentlyRef = useRef(null);
   const learnRef = useRef(null);
   const toolsRef = useRef(null);
   const communityRef = useRef(null);
   const servicesRef = useRef(null);
-const testimonialsRef = useRef(null);
+  const testimonialsRef = useRef(null);
+  
   const scrollRefs = {
     differently: differentlyRef,
     learn: learnRef,
@@ -107,7 +109,6 @@ const testimonialsRef = useRef(null);
             <Route path="/auth/callback" element={<SSOCallbackPage />} />
 
             <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
-            <Route path="/" element={<Home scrollRefs={scrollRefs} />} />
             <Route path="/team" element={<Team />} />
             <Route path="/project-idea" element={<ProjectIdeas />} />
             <Route path="/project-idea/:id" element={<ProjectIdeaDetail />} />
@@ -126,63 +127,43 @@ const testimonialsRef = useRef(null);
             {/* ✅ Roadmaps */}
             <Route path="/roadmap/dsa" element={<DsaRoadmap />} />
             <Route path="/roadmap/opensource" element={<OpenSourceRoadmap />} />
-            <Route
-              path="/roadmap/web-development"
-              element={<WebDevRoadmap />}
-            />
-            <Route
-              path="/roadmap/system-design"
-              element={<SystemDesignRoadmap />}
-            />
+            <Route path="/roadmap/web-development" element={<WebDevRoadmap />} />
+            <Route path="/roadmap/system-design" element={<SystemDesignRoadmap />} />
             <Route path="/roadmap/devops" element={<DevOpsRoadmap />} />
-            <Route
-              path="/roadmap/mobile-development"
-              element={<MobileDevRoadmap />}
-            />
-            <Route
-              path="/roadmap/data-science"
-              element={<DataScienceRoadmap />}
-            />
-            <Route
-              path="/roadmap/comprehensive-dsa-path"
-              element={<ComprehensiveDsaPath />}
-            />
-            <Route
-              path="/roadmap/data-analytics"
-              element={<DataAnalyticsRoadmap />}
-            />
+            <Route path="/roadmap/mobile-development" element={<MobileDevRoadmap />} />
+            <Route path="/roadmap/data-science" element={<DataScienceRoadmap />} />
+            <Route path="/roadmap/comprehensive-dsa-path" element={<ComprehensiveDsaPath />} />
+            <Route path="/roadmap/data-analytics" element={<DataAnalyticsRoadmap />} />
             <Route path="/roadmap/blockchain" element={<BlockChainRoadmap />} />
             <Route path="/roadmap/ai-ml" element={<AiMlRoadmap />} />
-            <Route
-              path="/roadmap/cybersecurity"
-              element={<CybersecurityRoadmap />}
-            />
-            <Route
-              path="/roadmap/cloud-computing"
-              element={<CloudComputingRoadmap />}
-            />
-            <Route
-              path="/roadmap/ui-ux-design"
-              element={<UiUxDesignRoadmap />}
-            />
+            <Route path="/roadmap/cybersecurity" element={<CybersecurityRoadmap />} />
+            <Route path="/roadmap/cloud-computing" element={<CloudComputingRoadmap />} />
+            <Route path="/roadmap/ui-ux-design" element={<UiUxDesignRoadmap />} />
 
             {/* ✅ Paths */}
             <Route path="/paths" element={<PathsLanding />} />
             <Route path="/paths/:slug" element={<PathDetail />} />
 
             <Route path="/learn/tools" element={<LearnTools />} />
+            
+            {/* ✅ Projects Routes */}
             <Route path="/projects" element={<ProjectGallery />} />
-            <Route
-              path="/free-certificates"
-              element={<FreeCertificateCourses />}
+            <Route 
+              path="/projects/add" 
+              element={
+                <ProtectedRoute>
+                  <AddProjectForm />
+                </ProtectedRoute>
+              } 
             />
-            <Route
-              path="/InterviewQuestions"
-              element={<InterviewQuestions />}
-            />
+
+            <Route path="/free-certificates" element={<FreeCertificateCourses />} />
+            <Route path="/InterviewQuestions" element={<InterviewQuestions />} />
             <Route path="/verify-certificate" element={<CertificateVerificationPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            
+            {/* ✅ Profile Routes */}
             <Route
               path="/profile"
               element={
@@ -204,7 +185,6 @@ const testimonialsRef = useRef(null);
           {/* 🚀 Fixed Bottom Components */}
           <div className="flex flex-col items-end fixed bottom-6 right-6 z-50 space-y-3">
             <BackToTop />
-            {/* Temporarily show chatbot for all users - remove SignedIn wrapper for testing */}
             <BuildOnCoffeeChatbot />
           </div>
 
