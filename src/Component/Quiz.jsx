@@ -56,11 +56,12 @@ import { restVsGraphQLQuiz } from "../../data/restVsGraphQLQuiz.js";
 import { microservicesArchitectureQuiz } from "../../data/microservicesArchitectureQuiz.js";
 import { databaseOptimizationAndIndexingQuiz } from "../../data/databaseOptimizationAndIndexingQuiz.js";
 import { cachingQuiz } from "../../data/cachingQuiz.js";
-import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.js";
+import { linuxAndShellScriptingQuiz } from "../../data/linuxAndShellScriptingQuiz.fixed.js";
 import { monitoringAndLoggingQuiz } from "../../data/monitoringAndLoggingQuiz.js";
 import { serverlessComputingQuiz } from "../../data/serverlessComputingQuiz.js";
 import { networkingFundamentalsQuiz } from "../../data/networkingFundamentalsQuiz.js";
 import { algorithmsAndProblemSolvingQuiz } from "../../data/algorithmsAndProblemSolvingQuiz.js";
+import { mongoDBQuiz } from "../../data/mongoDBQuiz.js";
 
 // Constants
 const QUIZ_DIFFICULTY_LEVELS = ["beginner", "intermediate", "advanced"];
@@ -146,6 +147,11 @@ const QUIZ_CONFIGURATION = {
     questions: databaseQuiz.questions,
     icon: <BookOpen className="w-8 h-8 text-purple-500" />,
     description: "Test your knowledge of both SQL and NoSQL databases.",
+  },
+  MongoDB: {
+    questions: mongoDBQuiz.questions,
+    icon: <Code className="w-8 h-8 text-green-600" />,
+    description: "Test your MongoDB NoSQL database knowledge from basics to advanced.",
   },
   TypeScript: {
     questions: typescriptQuiz.questions,
