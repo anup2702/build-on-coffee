@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 /**
  * Foundational CS Journey Course
  * 
