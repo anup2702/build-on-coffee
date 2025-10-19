@@ -1,5 +1,6 @@
 -- Create certificates table in Supabase
 -- Run this SQL in your Supabase SQL Editor
+-- updated
 
 CREATE TABLE IF NOT EXISTS certificates (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
