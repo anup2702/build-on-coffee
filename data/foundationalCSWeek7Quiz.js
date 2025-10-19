@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 /**
  * Foundational CS Week 7 Quiz - Computer Networks & OS
  * Topics: Networking Basics, OSI Model, IP Addressing, OS Fundamentals

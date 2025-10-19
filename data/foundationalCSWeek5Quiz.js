@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 /**
  * Foundational CS Week 5 Quiz - Algorithms
  * Topics: Sorting, Searching, Recursion, Time & Space Complexity
