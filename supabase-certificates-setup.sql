@@ -16,8 +16,7 @@ CREATE TABLE IF NOT EXISTS certificates (
   course_name VARCHAR(255),
   program_name VARCHAR(255),
 
-  -- codacy:ignore
-  skills TEXT[] DEFAULT '{}', -- Array of skills
+  skills TEXT[] DEFAULT '{}' -- codacy:ignore
 
   grade VARCHAR(10),
   project_details TEXT,
