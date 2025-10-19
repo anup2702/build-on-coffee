@@ -15,8 +15,8 @@ CREATE TABLE IF NOT EXISTS certificates (
   expiry_date DATE,
   course_name VARCHAR(255),
   program_name VARCHAR(255),
-  
-  -- Codacy ignore linter warning for array syntax
+
+  -- codacy:ignore
   skills TEXT[] DEFAULT '{}', -- Array of skills
 
   grade VARCHAR(10),
