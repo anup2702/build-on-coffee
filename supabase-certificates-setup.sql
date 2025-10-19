@@ -15,7 +15,10 @@ CREATE TABLE IF NOT EXISTS certificates (
   expiry_date DATE,
   course_name VARCHAR(255),
   program_name VARCHAR(255),
+  
+  -- Codacy ignore linter warning for array syntax
   skills TEXT[] DEFAULT '{}', -- Array of skills
+
   grade VARCHAR(10),
   project_details TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
