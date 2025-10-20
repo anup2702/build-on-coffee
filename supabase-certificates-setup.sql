@@ -15,9 +15,7 @@ CREATE TABLE IF NOT EXISTS certificates (
   expiry_date DATE,
   course_name VARCHAR(255),
   program_name VARCHAR(255),
-
-  skills TEXT[] DEFAULT '{}' -- codacy:ignore
-
+  skills TEXT[] DEFAULT '{}', -- ✅ ONLY CHANGE: Added comma here
   grade VARCHAR(10),
   project_details TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
