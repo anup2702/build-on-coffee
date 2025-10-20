@@ -1,3 +1,6 @@
+
+/* jshint esversion: 6 */
+
 /**
  * Foundational CS Week 8 Quiz - Comprehensive Final Assessment
  * Topics: All topics from Weeks 1-7 integrated

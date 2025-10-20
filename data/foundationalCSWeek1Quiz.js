@@ -1,3 +1,8 @@
+
+
+/* jshint esversion: 6 */
+
+
 /**
  * Foundational CS Week 1-2 Quiz - Programming Fundamentals
  * Topics: Variables, Data Types, Control Flow, Loops, Functions, OOP Basics

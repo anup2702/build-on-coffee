@@ -61,6 +61,7 @@ import ComprehensiveDsaPath from "./Component/Roadmaps/ComprehensiveDsaPath";
 import Quiz from "./Component/Quiz";
 import Weeklytask from "./Component/Weeklytask";
 import CertificateVerificationPage from "./Component/CertificateVerificationPage";
+import NotFound from "./Component/NotFound";
 
 // ✅ NEW: Import AddProjectForm
 import AddProjectForm from "./Component/AddProjectForm";
@@ -182,6 +183,8 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+            {/* 404 - Catch-all */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
 
           {/* 🚀 Fixed Bottom Components */}

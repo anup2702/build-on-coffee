@@ -1,3 +1,7 @@
+
+
+/* jshint esversion: 6 */
+
 /**
  * Foundational CS Week 6 Quiz - Databases & SQL
  * Topics: Database Fundamentals, SQL Queries, Joins, Database Design
