@@ -572,8 +572,8 @@ This project is licensed under the MIT License - see the [`License`](https://git
 
 | Role          | Name               | GitHub Profile                                      | LinkedIn Profile                                                        |
 | ------------- | ------------------ | --------------------------------------------------- | ----------------------------------------------------------------------- |
-| Mentor 1 | DIPAK THAKUR  |  [dipak2005](https://github.com/dipak2005) | [gecr-ai](https://www.linkedin.com/in/gecr-ai230200143068/) |
-| Mentor 2 | Pragna |  [pragnaa](https://github.com/pragnaa) | [pragna-h-m](https://www.linkedin.com/in/pragna-h-m-a722742a2/) |
+| Mentor 1 | DIPAK THAKUR  | [dipak2005](https://github.com/dipak2005)       | [gecr-ai](https://www.linkedin.com/in/gecr-ai230200143068/)     |
+| Mentor 2 | MUSTAFA GOHAR | [Mustafagohar](https://github.com/Mustafagohar) | [Mustafa](https://www.linkedin.com/in/mustafa-gohar-4a5289254/) |
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
