@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Github, Users, Award } from "lucide-react";
 import { useTheme } from "./context/ThemeContext";
+import ImageWithFallback from "./ImageWithFallback";
 
 export default function Team() {
   const { isDark } = useTheme();
@@ -17,7 +18,7 @@ export default function Team() {
     {
       name: "Apekshaa Yadav",
       role: "Graphic Designer Intern",
-      image: "apeksha.jpg",
+      image: "/apeksha.jpg",
       linkedIn: "https://www.linkedin.com/in/apekshaa-yadav-80a093350",
     },
   ];
@@ -77,9 +78,9 @@ export default function Team() {
       className={`flex flex-col items-center text-center rounded-2xl shadow-lg p-6 transition-all duration-300 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 hover:shadow-xl`}
     >
       <div className="relative mb-4">
-        <img
+        <ImageWithFallback
           src={person.image}
-          alt={person.name}
+          alt={`${person.name} profile picture`}
           className="w-20 h-20 rounded-2xl object-cover shadow-md"
         />
         {isContributor && (
